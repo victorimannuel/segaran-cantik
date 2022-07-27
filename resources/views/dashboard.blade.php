@@ -32,6 +32,8 @@
 </head>
 <body>
     <aside state="open">
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
         <div id="title">
             <span id="logo">
                 <img src={{ asset("assets/img/icons/segaran-icon.png")  }} alt="" width="50" height="50" navHide="">
@@ -65,13 +67,9 @@
         </nav>
 
 
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
             <button type=submit id="keluar" name="Keluar" class="button" navHide="" style="margin-left:-3.5rem">Keluar</button>
-        </form>
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <input type="image" src="{{ asset('/assets/img/icons/log-out.png') }}" alt="log out" width="50" class="button" hidden id="logout"/>
+
+            <input type="image" style="width: 50px; height: 50px;" src="{{ asset('/assets/img/icons/log-out.png') }}" alt="log out" width="50" class="button" hidden id="logout"/>
         </form>
     </aside>
 

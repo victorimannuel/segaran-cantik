@@ -40,7 +40,7 @@
 
 </aside>
 
-<main class="d-flex flex-column">
+<main class="d-flex flex-column position-absolute vw-80">
     <header class="d-flex justify-content-center m-5">
         <span>
             <h1>Dashboard</h1>

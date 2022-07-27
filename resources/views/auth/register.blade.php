@@ -12,26 +12,26 @@
             @csrf
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" class="form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp"
                 name="email">
                 <div id="emailHelp" class="form-text"></div>
               </div>
 
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Nama</label>
-                <input type="text" class="form-control-lg" id="exampleInputPassword1"
+                <input type="text" class="form-control form-control-lg" id="exampleInputPassword1"
                 name="name">
               </div>
 
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control-lg" id="exampleInputPassword1"
+                <input type="password" class="form-control form-control-lg" id="exampleInputPassword1"
                 name="password">
               </div>
 
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control-lg" id="exampleInputPassword1"
+                <input type="password" class="form-control form-control-lg" id="exampleInputPassword1"
                 name="password-confirmation">
               </div>
             

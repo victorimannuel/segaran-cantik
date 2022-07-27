@@ -1,0 +1,76 @@
+html{
+    font-family: 'Poppins', sans-serif;
+    font-size: 62.5%;
+}
+
+body{
+    margin: 0;
+    background: #F0F2FA;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside{
+    background: #363740;
+    position: fixed;
+    height: 100%;
+    width: 25.5rem;
+    left: 0;
+    
+    color: #F8FAFC;
+}
+
+aside button{
+    background: #2489F4;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+aside > *{
+    padding: 2em;
+    display: flex;
+}
+
+aside header{
+}
+
+nav li{
+    color: #CBD5E1;
+}
+
+nav li:hover{
+    background: #3F4049;
+}
+nav li[selected]{
+    background: #3F4049;
+}
+nav li[selected] #selectedMark{
+    background: #D9DDF9;
+    width: 0.3rem;
+}
+
+footer button{
+    width: 13.7rem;
+    height: 5rem;
+    background: #2489F4 !important;
+}
+
+footer button:hover{
+    background: rgb(36, 137, 244, 0.8) !important;
+}
+
+main{
+    background: hotpink;
+    height: 100%;
+    left: 25.5rem;
+}
+
+main header{
+    background: blue;
+}
+
+

@@ -9,6 +9,8 @@
     @include('layouts.import')
     
     <link rel="stylesheet" href={{ asset('assets/styles/main.css') }}>
+    <link rel="stylesheet" href={{ asset('assets/styles/sidebar.css') }}>
+
 
     <title>Segaran App | Main {{-- {{ $page }}  --}}</title>
 </head>

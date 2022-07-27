@@ -64,7 +64,6 @@
             </ul>
         </nav>
 
-
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type=submit id="keluar" name="Keluar" class="button" navHide="" style="margin-left:-3.5rem">Keluar</button>
@@ -101,25 +100,26 @@
 
         <section>
             <div class="card-container">
-                <div id="card-1"class="card">
-                    <h2>Jumlah Dusun</h1>
-                    <h1 value="60">60</h1>
+                <div id="card-1" class="card">
+                    <h1>Jumlah Dusun</h1>
+                    <h1 value="60">6</h1>
                 </div>
-                <div id="card-2"class="card">
-                    <h2>Jumlah RW</h1>
-                    <h1>60</h1>
+                <div id="card-2" class="card">
+                    <h1>Jumlah RW</h1>
+                    <h1>6</h1>
                 </div>
-                <div id="card-3"class="card">
-                    <h2>Jumlah RT</h1>
-                    <h1>60</h1>
+                <div id="card-3" class="card">
+                    <h1>Jumlah RT</h1>
+                    <h1>30</h1>
                 </div>
-                <div id="card-4"class="card">
-                    <h2>Jumlah Penduduk</h1>
-                    <h1>60</h1>
+                <div id="card-4" class="card">
+                    <h1>Jumlah Penduduk</h1>
+                    <h1>10150</h1>
                 </div>
             </div>
             <div class="table">
-                <head>Data Warga Desa  Segaran</head>
+                <a class="btn btn-primary" href="/form-penduduk">Tambah Penduduk</a>
+                <head>Data Warga Desa Segaran</head>
                 <div class="sort"></div>
                 <div class="data"></div>
 

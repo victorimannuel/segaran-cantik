@@ -32,7 +32,7 @@
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control form-control-lg" id="exampleInputPassword1"
-                name="password-confirmation">
+                name="password_confirmation">
               </div>
             
               

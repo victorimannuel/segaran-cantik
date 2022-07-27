@@ -21,7 +21,7 @@
               </div>
             
             <div class="row mb-4">
-                <div class="col d-flex justify-content-center">
+                <div class="col d-flex justify-content-start">
                   <!-- Checkbox -->
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
@@ -29,7 +29,7 @@
                   </div>
                 </div>
             
-                <div class="col">
+                <div class="col text-end">
                   <!-- Simple link -->
                   <a href={{ route('password.request') }}>Lupa password?</a>
                 </div>

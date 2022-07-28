@@ -1,10 +1,11 @@
 html{
     font-family: 'Poppins', sans-serif;
     font-size: 62.5%;
+
+    --sidewidth: 25.5rem;
 }
 
 body{
-    margin: 0;
     background: #F0F2FA;
     width: 100vw;
     height: 100vh;
@@ -12,14 +13,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 aside{
     background: #363740;
-    position: fixed;
     height: 100%;
-    width: 25.5rem;
-    left: 0;
+    width: var(--sidewidth);
     
     color: #F8FAFC;
 }
@@ -35,20 +35,17 @@ aside > *{
     display: flex;
 }
 
-aside header{
-}
-
-nav li{
+aside nav li{
     color: #CBD5E1;
 }
 
-nav li:hover{
+aside nav li:hover{
     background: #3F4049;
 }
-nav li[selected]{
+aside nav li[selected]{
     background: #3F4049;
 }
-nav li[selected] #selectedMark{
+aside nav li[selected] #selectedMark{
     background: #D9DDF9;
     width: 0.3rem;
 }
@@ -64,12 +61,16 @@ footer button:hover{
 }
 
 main{
-    background: hotpink;
-    height: 100%;
+    /* background: hotpink; */
+    width: max(100% - var(--sidewidth));
 }
 
 main header{
-    background: blue;
+    /* background: blue; */
 }
 
-
+main header #line{
+    width: 0.3rem;
+    height: 3.2rem;
+    background: #DFE0EB;
+}

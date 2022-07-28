@@ -2,7 +2,12 @@
 
 @section('main-body')
 
-<aside state="open" class="d-flex flex-column">
+
+
+
+<aside state="open" class="d-flex flex-column position-absolute start-0
+
+">
     @csrf
     <header class="d-flex justify-content-center ms-2 me-auto mb-5">
         <img src={{ asset("assets/img/icons/segaran-icon.png")  }} alt="" width="50" height="50">
@@ -15,13 +20,13 @@
     
     <nav class="navbar navbar-dark">
         <ul class="navbar-nav w-100">
-            <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2" selected>
+            <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2" selected role="button">
                 <div id="selectedMark" class="position-absolute h-100"></div>
                 <a class="nav-link ps-5 pe-auto active" aria-current="page" href="#">
                     <img src="{{ asset("assets/img/icons/home.png") }}" alt="" class="me-4" width="25" height="25">
                     Dashboard</a>
             </li>
-            <li class="nav-item fs-3 ps-5 pe-auto d-flex">
+            <li class="nav-item fs-3 ps-5 pe-auto d-flex" role="button">
                 <div id="selectedMark" class="position-absolute h-100"></div>
                 <a class="nav-link" aria-current="page" href="#">
                 <img src="{{ asset("assets/img/icons/folder.png") }}" alt=""
@@ -40,54 +45,88 @@
 
 </aside>
 
-<main class="d-flex flex-column position-absolute vw-80">
-    <header class="d-flex justify-content-center m-5">
+<main class="d-flex flex-column position-absolute end-0 top-0 vw-80">
+    <header class="d-flex justify-content-between align-items-center m-5">
         <span>
-            <h1>Dashboard</h1>
+            <h1 class="h1"><b>Dashboard</b></h1>
         </span>
-        <span id="top-right">
-            <img src={{ asset("assets/img/icons/notif.png" )  }} alt="notification" width="30" height="30" class="button">
-            <div id="divider">|</div>
+        <span class="d-flex flex-row align-items-center">
+            <div href="#">
+                <img src={{ asset("assets/img/icons/notif.png" )  }} alt="notification" width="30" height="30" role="button">
+            </div> 
+            <div class="ps-4">
+                <div id="line">
 
-            <div class="profile button">
-                <p id="name" value="Kepala Desa">Kepala Desa</p>
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center fs-3 px-5" role="button">
+                <p id="name" value="Kepala Desa" class="px-3 m-0">Kepala Desa</p>
 
 
-                <div id="profile-circle">
-
+                <div>
                     <img src= {{ asset("assets/img/avatar-man.png" ) }} alt="profile" width="50" height="50">
                 </div>
             </div>
-
+            
         </span>
 
 
     </header>
 
-    <section>
-        <div class="card-container">
-            <div id="card-1"class="card">
-                <h2>Jumlah Dusun</h1>
-                <h1 value="60">60</h1>
+    <section class="mx-5 align-self-center d-flex justify-content-center">
+        <div class="container text-center mw-100 p-0 d-flex justify-content-between" style="">
+            
+            <div class="card me-5">
+                <div class="card-body d-flex justify-content-center flex-column">
+                    <h5 class="card-title">Jumlah Dusun
+
+                    </h5>
+                    <p class="card-text">
+                        60
+                    </p>
+                </div>
             </div>
-            <div id="card-2"class="card">
-                <h2>Jumlah RW</h1>
-                <h1>60</h1>
+            <div class="card mx-5">
+                <div class="card-body d-flex justify-content-center flex-column ">
+                    <h5 class="card-title">
+                        Jumlah RW
+                    </h5>
+                    <p class="card-text">
+                        60
+                    </p>
+                </div>
             </div>
-            <div id="card-3"class="card">
-                <h2>Jumlah RT</h1>
-                <h1>60</h1>
+            <div class="card mx-5">
+                <div class="card-body d-flex justify-content-center flex-column">
+                    <h5 class="card-title">
+                        Jumlah RT
+                    </h5>
+                    <p class="card-text">
+                        60
+                    </p>
+                </div>
+
             </div>
-            <div id="card-4"class="card">
-                <h2>Jumlah Penduduk</h1>
-                <h1>60</h1>
+            <div class="card ms-5">
+                <div class="card-body d-flex justify-content-center flex-column">
+                    <h5 class="card-title">
+                        Jumlah Penduduk
+                    </h5>
+                    <p class="card-text">
+                        60
+                    </p>
+                </div>
+
             </div>
         </div>
-        <div class="table">
-            <head>Data Warga Desa  Segaran</head>
-            <div class="sort"></div>
-            <div class="data"></div>
 
+        <div class="container mw-100 mx-0 mt-5 card">
+            <table class="table">
+                <h1 class="text-center">Data Warga Desa  Segaran</h1>
+                <thead></thead>
+                <tr></tr>
+            </table>
+            <head></head>
 
         </div>
 

@@ -10,6 +10,7 @@
     
     <link rel="stylesheet" href={{ asset('assets/styles/main.css') }}>
     <link rel="stylesheet" href={{ asset('assets/styles/sidebar.css') }}>
+    <link rel="stylesheet" href={{ asset('assets/styles/dashboard.css') }}>
 
 
     <title>Segaran App | Main {{-- {{ $page }}  --}}</title>

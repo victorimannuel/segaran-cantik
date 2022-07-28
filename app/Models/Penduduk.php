@@ -26,8 +26,5 @@ class Penduduk extends Model
         'telepon', 'no_ijazah', 'nik_ayah', 'nik_ibu', 'tgl_cerai', 'no_akta_cerai', 'gol_darah',
         'penyandang_cacat',
     ];
-//    protected $fillable = [
-//        'no_kk', 'nik', 'nama',
-//    ];
 }
 

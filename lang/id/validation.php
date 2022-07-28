@@ -87,7 +87,7 @@ return [
     'min'       => [
         'numeric' => ':attribute minimal bernilai :min.',
         'file'    => ':attribute minimal berukuran :min kilobita.',
-        'string'  => ':attribute minimal berisi :min karakter.',
+        'string'  => 'Minimal berisi :min karakter.',
         'array'   => ':attribute minimal terdiri dari :min anggota.',
     ],
     'not_in'               => ':attribute yang dipilih tidak valid.',

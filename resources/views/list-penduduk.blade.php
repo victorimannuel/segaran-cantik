@@ -7,7 +7,7 @@
     <title>Laravel</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-{{--    <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/list-penduduk.css') }}">--}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/list-penduduk.css') }}">
 </head>
 <body>
 <div class="table-responsive custom-font">
@@ -25,10 +25,8 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($penduduk as $penduduk)
-            <tr onclick="{{ route('dashboard') }}">
-{{--            <tr class="table-row" onclick="document.location = '/form-penduduk';">--}}
-            <tr class="table-row" data-href="/">
+        @foreach($penduduks as $penduduk)
+            <tr onclick="window.location='{{ route('list-penduduk.show', ['penduduk' => $penduduk])}}'" style="cursor: pointer;">
                 <td>{{ $penduduk->id }}</td>
                 <td>{{ $penduduk->no_kk }}</td>
                 <td>{{ $penduduk->nama}}</td>
@@ -41,5 +39,21 @@
         @endforeach
         </tbody>
     </table>
+
 </div>
+{{--<select id="pagination">--}}
+{{--    <option value="5" @if($items == 5) selected @endif >5</option>--}}
+{{--    <option value="10" @if($items == 10) selected @endif >10</option>--}}
+{{--    <option value="25" @if($items == 25) selected @endif >25</option>--}}
+{{--</select>--}}
+{{--{{ $penduduks->links('pagination::bootstrap-4') }}--}}
+{{ $penduduks->links() }}
+
+{{--<script>--}}
+{{--    document.getElementById('pagination').onchange = function() {--}}
+{{--        console.log({{ $items}});--}}
+{{--        window.location = "{!! $penduduks->url(1) !!}&items=" + this.value;--}}
+{{--        --}}{{--window.location = "{!! $penduduk !!}&items=" + this.value;--}}
+{{--    };--}}
+{{--</script>--}}
 </body>

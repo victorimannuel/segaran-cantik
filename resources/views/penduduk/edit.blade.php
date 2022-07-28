@@ -20,27 +20,12 @@
     <form method="post" action="{{ route('penduduk.store') }}">
         <!-- CROSS Site Request Forgery Protection -->
         @csrf
-{{--        <div class="form-group">--}}
-{{--            <label>NOMOR KK</label>--}}
-{{--            <input type="text" class="form-control" name="no_kk" id="no_kk">--}}
-{{--        </div>--}}
-{{--        <div class="form-group">--}}
-{{--            <label>NIK</label>--}}
-{{--            <input type="text" class="form-control" name="nik" id="nik">--}}
-{{--        </div>--}}
-{{--        <div class="form-group">--}}
-{{--            <label>NAMA</label>--}}
-{{--            <input type="text" class="form-control" name="nama" id="nama">--}}
-{{--        </div>--}}
-{{--        <input type="submit" name="send" value="Submit" class="btn btn-dark btn-block">--}}
-{{--        <div class="container">--}}
-{{--            <form>--}}
                 <h2>Form Data Penduduk Desa Segaran</h2>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="no_kk">NOMOR KK</label>
-                            <input type="text" class="form-control" placeholder="Nomor KK" id="no_kk" name="no_kk">
+                            <input type="text" class="form-control" value="{{ $penduduk->no_kk }}" placeholder="Nomor KK" id="no_kk" name="no_kk">
                             <!-- Error -->
                             @if ($errors->has('no_kk'))
                                 <div class="error">
@@ -63,14 +48,14 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="nik">NIK</label>
-                            <input type="text" class="form-control" placeholder="NIK" id="nik" name="nik">
+                            <input type="text" class="form-control" value="{{ $penduduk->nik }}" placeholder="NIK" id="nik" name="nik">
                         </div>
                     </div>
                     <!--  col-md-6   -->
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="nama">NAMA</label>
-                            <input type="text" class="form-control" id="nama" placeholder="Nama" name="nama">
+                            <input type="text" class="form-control" value="{{ $penduduk->nama }}" id="nama" placeholder="Nama" name="nama">
                         </div>
                     </div>
                     <!--  col-md-6   -->
@@ -82,12 +67,12 @@
                         <div class="form-group">
                             <label for="hub_keluarga">HUBUNGAN KELUARGA</label>
                             <select class="selectpicker form-control" id="hub_keluarga" name="hub_keluarga">
-                                <option selected value="Kepala Keluarga">Kepala Keluarga</option>
-                                <option value="Ibu">Ibu</option>
-                                <option value="Anak">Anak</option>
-                                <option value="Suami">Suami</option>
-                                <option value="Istri">Istri</option>
-                                <option value="Saudara">Saudara</option>
+                                <option value="Kepala Keluarga" {{$penduduk->hub_keluarga == 'Kepala keluarga' ? 'selected':''}}>Kepala Keluarga</option>
+                                <option value="Ibu" {{$penduduk->hub_keluarga == 'Ibu' ? 'selected':''}}>Ibu</option>
+                                <option value="Anak" {{$penduduk->hub_keluarga == 'Anak' ? 'selected':''}}>Anak</option>
+                                <option value="Suami" {{$penduduk->hub_keluarga == 'Suami' ? 'selected':''}}>Suami</option>
+                                <option value="Istri" {{$penduduk->hub_keluarga == 'Istri' ? 'selected':''}}>Istri</option>
+                                <option value="Saudara" {{$penduduk->hub_keluarga == 'Saudara' ? 'selected':''}}>Saudara</option>
                             </select>
 {{--                            <label for="hub_keluarga">HUBUNGAN KELUARGA</label>--}}
 {{--                            <input type="text" class="form-control" id="hub_keluarga" name="hub_keluarga" placeholder="Hubungan Keluarga">--}}
@@ -472,13 +457,18 @@
             <!--  col-md-6   -->
             <div class="col-md-4">
                 <div class="form-group">
+                    <input type="text" value="">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <input type="submit" name="" value="Hapus" class="btn btn-danger btn-block">
+                                <label class="switch">
+                                    <input type="checkbox" id="edit" onchange="clickEdit()">
+{{--                                    <span class="slider"></span>--}}
+                                </label>
+{{--                                <input type="submit" name="" value="Hapus" class="btn btn-danger btn-block">--}}
                             </div>
                         </div>
                         <!--  col-md-6   -->
@@ -503,5 +493,20 @@
         </div>
     </form>
 {{--</div>--}}
+<script>
+    // function clickEdit(value) {
+    //     console.log(document.getElementById('no_kk').value)
+    // }
+
+    function clickEdit() {
+        var edit = document.getElementById("edit");
+        console.log(edit.value);
+        // if (edit.innerHTML === "Hello") {
+        //     x.innerHTML = "Swapped text!";
+        // } else {
+        //     x.innerHTML = "Hello";
+        // }
+    }
+</script>
 </body>
 </html>

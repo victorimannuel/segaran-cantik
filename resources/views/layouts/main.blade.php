@@ -12,6 +12,7 @@
     <link rel="stylesheet" href={{ asset('assets/styles/sidebar.css') }}>
     <link rel="stylesheet" href={{ asset('assets/styles/dashboard.css') }}>
 
+    <script src="{{ asset('assets/scripts/sidebar.js') }}"></script>
 
     <title>Segaran App | Main {{-- {{ $page }}  --}}</title>
 </head>

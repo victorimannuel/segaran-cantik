@@ -20,18 +20,17 @@
         
         <nav class="navbar navbar-dark">
             <ul class="navbar-nav w-100">
-                <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2" selected role="button">
+                <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2"  role="button">
                     <div id="selectedMark" class="position-absolute h-100"></div>
                     <a class="nav-link ps-5 pe-auto active" aria-current="page" href="./dashboard">
                         <img src="{{ asset("assets/img/icons/home.png") }}" alt="" class="me-4" width="25" height="25">
                         Dashboard</a>
                 </li>
-                <li class="nav-item fs-3 ps-5 pe-auto d-flex" role="button">
+                <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2"  selected role="button">
                     <div id="selectedMark" class="position-absolute h-100"></div>
-                    <a class="nav-link" aria-current="page" href="./statistik">
-                    <img src="{{ asset("assets/img/icons/folder.png") }}" alt=""
-                    class="me-4" width="25" height="25">
-                    Statistik</a>
+                    <a class="nav-link ps-5 pe-auto active" aria-current="page" href="./dashboard">
+                        <img src="{{ asset("assets/img/icons/folder.png") }}" alt="" class="me-4" width="25" height="25">
+                        Statistik</a>
                 </li>
             </ul>
             

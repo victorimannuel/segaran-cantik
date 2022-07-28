@@ -23,4 +23,9 @@ Route::get('/dashboard', function () {
     return view('main.dashboard');
 })->middleware(['auth'])->name('main.dashboard');
 
+
+Route::get('/statistik', function () {
+    return view('main.statistik');
+})->middleware(['auth'])->name('main.statistik');
+
 require __DIR__.'/auth.php';

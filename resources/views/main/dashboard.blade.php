@@ -4,8 +4,7 @@
 
     <div id= "sidebarState" state="aside-open">
 
-        <aside class="d-flex flex-column position-absolute start-0 top-0
-    ">
+        <aside class="d-flex flex-column position-absolute start-0 top-0">
             @csrf
             <header class="d-flex justify-content-center ms-2 me-auto mb-5">
                 <img src={{ asset("assets/img/icons/segaran-icon.png")  }} alt="" width="50" height="50" class="hiddenWhenClosed">
@@ -41,6 +40,7 @@
             </nav>
             <footer class="mt-auto mx-auto">
                 <form method="POST" action="{{ route('logout') }}">
+                    @csrf
                     <input type="image" src="{{ asset("assets/img/icons/log-out.png") }}" class="hiddenWhenOpen" width="30">
                     <button class="btn btn-secondary btn-lg fs-2 fw-bold hiddenWhenClosed" >Keluar</button>
                 </form>
@@ -85,7 +85,7 @@
 
                             </h5>
                             <p class="card-text">
-                                60
+                                6
                             </p>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                                 Jumlah RW
                             </h5>
                             <p class="card-text">
-                                60
+                                9
                             </p>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                                 Jumlah RT
                             </h5>
                             <p class="card-text">
-                                60
+                                30
                             </p>
                         </div>
 
@@ -116,7 +116,7 @@
                                 Jumlah Penduduk
                             </h5>
                             <p class="card-text">
-                                60
+                                <span>{{ $jumlah_penduduk }}</span>
                             </p>
                         </div>
 
@@ -124,11 +124,23 @@
                 </div>
 
                 <div class="container mw-100 mx-0 mt-5 card">
-                    <table class="table">
+{{--                    <table class="table">--}}
                         <h1 class="text-center">Data Warga Desa  Segaran</h1>
-                        <thead></thead>
-                        <tr></tr>
-                    </table>
+                        <form action="/search" method="POST" role="search">
+                            @csrf
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="q" placeholder="Cari Data">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+{{--                        <thead></thead>--}}
+{{--                        <tr></tr>--}}
+                        @include('list-penduduk')
+{{--                    </table>--}}
                     <head></head>
 
                 </div>

@@ -28,7 +28,7 @@ class PendudukController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-//            'name' => 'required',
+            'name' => 'required',
 //            'email' => 'required|email',
 //            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
 //            'subject'=>'required',
@@ -36,15 +36,15 @@ class PendudukController extends Controller
             'no_kk' => 'required|max:16|min:16',
 //            'validasi' => 'required',
             'nik' => 'required|max:16|min:16',
-            'hub_keluarga' => 'required',
-            'status_kawin' => 'required',
-            'jenis_kelamin' => 'required',
-            'agama' => 'required',
-            'tempat_lahir' => 'required',
-            'tgl_lahir' => 'required',
-            'rt' => 'required',
-            'rw' => 'required',
-            'dusun' => 'required',
+//            'hub_keluarga' => 'required',
+//            'status_kawin' => 'required',
+//            'jenis_kelamin' => 'required',
+//            'agama' => 'required',
+//            'tempat_lahir' => 'required',
+//            'tgl_lahir' => 'required',
+//            'rt' => 'required',
+//            'rw' => 'required',
+//            'dusun' => 'required',
         ]);
 
 //            'tempat_lahir', 'tgl_lahir', 'umur', 'hub_keluarga',
@@ -74,4 +74,5 @@ class PendudukController extends Controller
 //            ->withItems($items);
 //        return view('club.' . config('app.locale') . '.index')
     }
+
 }

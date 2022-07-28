@@ -26,7 +26,7 @@
         </thead>
         <tbody>
         @foreach($penduduks as $penduduk)
-            <tr onclick="window.location='{{ route('list-penduduk.show', ['penduduk' => $penduduk])}}'" style="cursor: pointer;">
+            <tr onclick="window.location='{{ route('edit-penduduk.show', ['id_penduduk' => $penduduk->id])}}'" style="cursor: pointer;">
                 <td>{{ $penduduk->id }}</td>
                 <td>{{ $penduduk->no_kk }}</td>
                 <td>{{ $penduduk->nama}}</td>

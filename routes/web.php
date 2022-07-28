@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\PendudukController;
+use App\Http\Controllers\PendudukController;
+use Illuminate\Support\Facades\Input;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,7 @@ Route::get('/statistik', function () {
     return view('main.statistik');
 })->middleware(['auth'])->name('main.statistik');
 
-Route::get('/edit-penduduk/{penduduk}', [PendudukController::class, 'editForm']
+Route::get('/edit-penduduk/{id_penduduk}', [PendudukController::class, 'editForm']
 )->name('edit-penduduk.show');
 Route::get('/tambah-penduduk', [PendudukController::class, 'createForm']
 );
@@ -39,5 +40,13 @@ Route::get('/list-penduduk', [PendudukController::class, 'show_data']
 )->name('list-penduduk.show');
 //Route::post('/list-penduduk', [PendudukController::class, 'store']
 //)->name('penduduk.store');
+
+Route::any('/search',function(){
+    $q = Input::get ( 'q' );
+    $user = Input::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
+    if(count($user) > 0)
+        return view('welcome')->withDetails($user)->withQuery ( $q );
+    else return view ('welcome')->withMessage('No Details found. Try to search again !');
+});
 
 require __DIR__.'/auth.php';

@@ -24,6 +24,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('main.dashboard');
 
 
+Route::get('/notif', function () {
+    return view('main.components.notif');
+});
+
 Route::get('/statistik', function () {
     return view('main.statistik');
 })->middleware(['auth'])->name('main.statistik');

@@ -31,3 +31,8 @@ main header #line{
     height: 3.2rem;
     background: #DFE0EB;
 }
+
+.modal{
+    position: absolute;
+    right: 0;
+}

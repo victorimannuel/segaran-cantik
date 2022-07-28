@@ -54,8 +54,13 @@
                 <h1 class="h1"><b>Overview</b></h1>
             </span>
             <span class="d-flex flex-row align-items-center">
+                
+                @include('main.components.notif')
+
                 <div href="#">
-                    <img src={{ asset("assets/img/icons/notif.png" )  }} alt="notification" width="30" height="30" role="button">
+                    <img src={{ asset("assets/img/icons/notif.png" )  }} alt="notification" width="30" height="30" role="button" 
+                    type="button" data-bs-toggle="modal"  data-bs-target="#notificationModal"
+                    >
                 </div> 
                 <div class="ps-4">
                     <div id="line">

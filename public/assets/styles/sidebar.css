@@ -1,3 +1,134 @@
-aside[state="closed"]{
-    width: 8rem;
+html{
+    --sidewidth: 25.5rem;
+    --sidewidthClosed: 8rem;
+}
+
+aside{
+    transition: width 0.3s, display 0.3s;
+}
+
+main{
+    transition: width 0.3s;
+}
+
+/* if open */
+#sidebarState[state = "aside-open"] aside{
+    background: #363740;
+    height: 100%;
+    width: var(--sidewidth);
+    
+    color: #F8FAFC;
+}
+
+#sidebarState[state = "aside-open"] aside button{
+    background: #2489F4;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+#sidebarState[state = "aside-open"] aside header{
+    padding: 2em;
+    display: flex;
+}
+
+#sidebarState[state = "aside-open"] aside nav{
+    width: 100%;
+}
+
+#sidebarState[state = "aside-open"] aside nav li{
+    color: #CBD5E1;
+}
+
+#sidebarState[state = "aside-open"] aside nav li:hover{
+    background: #3F4049;
+}
+#sidebarState[state = "aside-open"] aside nav li[selected]{
+    background: #3F4049;
+}
+#sidebarState[state = "aside-open"] aside nav li[selected] #selectedMark{
+    background: #D9DDF9;
+    width: 0.3rem;
+}
+#sidebarState[state = "aside-open"] footer{
+    margin-bottom: 2em;
+}
+
+#sidebarState[state = "aside-open"] footer button{
+    padding: 0;
+    width: 13.7rem;
+    height: 5rem;
+    background: #2489F4 !important;
+}
+
+#sidebarState[state = "aside-open"] footer button:hover{
+    background: rgb(36, 137, 244, 0.8) !important;
+}
+
+#sidebarState[state = "aside-open"] .hiddenWhenOpen{
+    display: none;
+}
+
+#sidebarState[state = "aside-open"] main{
+    width: max(100% - var(--sidewidth));
+}
+
+/* else */
+#sidebarState[state = "aside-closed"] aside {
+    background: #363740;
+    height: 100%;
+    width: var(--sidewidthClosed);
+    
+    color: #F8FAFC;
+}
+
+#sidebarState[state = "aside-closed"] aside button{
+    background: #2489F4;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+#sidebarState[state = "aside-closed"] aside header{
+    padding: 2em;
+    display: flex;
+}
+
+#sidebarState[state = "aside-closed"] aside nav{
+    width: 100%;
+}
+
+#sidebarState[state = "aside-closed"] aside nav li{
+    color: #CBD5E1;
+}
+
+#sidebarState[state = "aside-closed"] aside nav li:hover{
+    background: #3F4049;
+}
+#sidebarState[state = "aside-closed"] aside nav li[selected]{
+    background: #3F4049;
+}
+#sidebarState[state = "aside-closed"] aside nav li[selected] #selectedMark{
+    background: #D9DDF9;
+    width: 0.3rem;
+}
+#sidebarState[state = "aside-closed"] footer{
+    margin-bottom: 2em;
+}
+
+#sidebarState[state = "aside-closed"] footer button{
+    padding: 0;
+    width: 13.7rem;
+    height: 5rem;
+    background: #2489F4 !important;
+}
+
+#sidebarState[state = "aside-closed"] footer button:hover{
+    background: rgb(36, 137, 244, 0.8) !important;
+}
+
+#sidebarState[state = "aside-closed"] .hiddenWhenClosed{
+    display: none;
+}
+
+#sidebarState[state = "aside-closed"] main{
+    width: max(100% - var(--sidewidthClosed));
 }

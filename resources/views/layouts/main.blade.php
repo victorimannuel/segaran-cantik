@@ -8,11 +8,13 @@
     
     @include('layouts.import')
     
+    {{--  css yang digunakan --}}
     <link rel="stylesheet" href={{ asset('assets/styles/main.css') }}>
     <link rel="stylesheet" href={{ asset('assets/styles/sidebar.css') }}>
     <link rel="stylesheet" href={{ asset('assets/styles/dashboard.css') }}>
 
-    <script src="{{ asset('assets/scripts/sidebar.js') }}"></script>
+    {{--  js yang digunakan--}}
+    <script src="{{ asset('assets/scripts/sidebar.js') }}" async defer></script>
 
     <title>Segaran App | Main {{-- {{ $page }}  --}}</title>
 </head>

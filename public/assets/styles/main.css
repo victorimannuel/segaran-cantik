@@ -16,49 +16,6 @@ body{
 
 }
 
-aside{
-    background: #363740;
-    height: 100%;
-    width: var(--sidewidth);
-    
-    color: #F8FAFC;
-}
-
-aside button{
-    background: #2489F4;
-    padding: 1em;
-    border-radius: 10px;
-}
-
-aside > *{
-    padding: 2em;
-    display: flex;
-}
-
-aside nav li{
-    color: #CBD5E1;
-}
-
-aside nav li:hover{
-    background: #3F4049;
-}
-aside nav li[selected]{
-    background: #3F4049;
-}
-aside nav li[selected] #selectedMark{
-    background: #D9DDF9;
-    width: 0.3rem;
-}
-
-footer button{
-    width: 13.7rem;
-    height: 5rem;
-    background: #2489F4 !important;
-}
-
-footer button:hover{
-    background: rgb(36, 137, 244, 0.8) !important;
-}
 
 main{
     /* background: hotpink; */

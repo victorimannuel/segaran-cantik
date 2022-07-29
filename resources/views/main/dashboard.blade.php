@@ -63,11 +63,11 @@
                     </div>
                 </div>
                 <div class="d-flex flex-row align-items-center fs-3 px-5" role="button">
-                    <p id="name" value="Kepala Desa" class="px-3 m-0">Kepala Desa</p>
+                    <p id="name" value="Kepala Desa" class="px-3 m-0">{{ $user_name }}</p>
 
 
                     <div>
-                        <img src= {{ asset("assets/img/avatar-man.png" ) }} alt="profile" width="50" height="50">
+{{--                        <img src= {{ asset("assets/img/avatar-man.png" ) }} alt="profile" width="50" height="50">--}}
                     </div>
                 </div>
 

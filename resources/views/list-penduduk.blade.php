@@ -41,19 +41,24 @@
     </table>
 
 </div>
-{{--<select id="pagination">--}}
-{{--    <option value="5" @if($items == 5) selected @endif >5</option>--}}
-{{--    <option value="10" @if($items == 10) selected @endif >10</option>--}}
-{{--    <option value="25" @if($items == 25) selected @endif >25</option>--}}
-{{--</select>--}}
+<select id="pagination">
+    <option value="10" >10</option>
+    <option value="25" >25</option>
+    <option value="50" >50</option>
+    <option value="75" >75</option>
+    <option value="100" selected >100</option>
+    <option value="200" >200</option>
+{{--    <option value="200" @if($items == 25) selected @endif >200</option>--}}
+</select>
 {{--{{ $penduduks->links('pagination::bootstrap-4') }}--}}
+{{--{{ $penduduks->append('items', $items)->links() }}--}}
 {{ $penduduks->links() }}
 
-{{--<script>--}}
-{{--    document.getElementById('pagination').onchange = function() {--}}
-{{--        console.log({{ $items}});--}}
-{{--        window.location = "{!! $penduduks->url(1) !!}&items=" + this.value;--}}
-{{--        --}}{{--window.location = "{!! $penduduk !!}&items=" + this.value;--}}
-{{--    };--}}
-{{--</script>--}}
+<script>
+    document.getElementById('pagination').onchange = function() {
+        {{--console.log({{ $items}});--}}
+        window.location = "{!! $penduduks->url(1) !!}&items=" + this.value;
+        {{--window.location = "{!! $penduduk !!}&items=" + this.value;--}}
+    };
+</script>
 </body>

@@ -11,6 +11,10 @@ main{
     transition: width 0.3s;
 }
 
+#menu-toggle:hover{
+    opacity: 0.8;
+}
+
 /* if open */
 #sidebarState[state = "aside-open"] aside{
     background: #363740;

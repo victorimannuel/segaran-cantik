@@ -22,7 +22,6 @@ class PendudukComposer
 //        }
 
         $items = $this->request->items ?? 100;      // get the pagination number or a default
-//        $items = 100;
 
         $penduduk_paginated = Penduduk::where(
             "nama","like","%".$this->request->get("q")."%"

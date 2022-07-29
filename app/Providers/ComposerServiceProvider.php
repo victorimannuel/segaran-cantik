@@ -12,7 +12,7 @@ class ComposerServiceProvider extends ServiceProvider
     {
 // Using class based composers...
         View::composer(
-            'main/dashboard', 'App\Http\ViewComposers\PendudukComposer'
+            ['main/dashboard', 'main/statistik'], 'App\Http\ViewComposers\PendudukComposer'
         );
     }
 

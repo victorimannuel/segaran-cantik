@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('main.dashboard');
+    return view('main.dashboard', [ 'page' => 'dashboard']);
 })->middleware(['auth'])->name('main.dashboard');
 
 Route::get('/notif', function () {
@@ -30,7 +30,7 @@ Route::get('/notif', function () {
 });
 
 Route::get('/statistik', function () {
-    return view('main.statistik');
+    return view('main.statistik', [ 'page' => 'statistik']);
 })->middleware(['auth'])->name('main.statistik');
 
 Route::get('/edit-penduduk/{id_penduduk}', [PendudukController::class, 'editForm']

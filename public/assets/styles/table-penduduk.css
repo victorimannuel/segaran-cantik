@@ -19,4 +19,5 @@
 
 #list-penduduk tbody tr td{
     text-transform: uppercase;
+    padding: 1em 0 1em 0;
 }

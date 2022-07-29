@@ -6,7 +6,7 @@
         <h1>Segaran </h1>
         <h4>Dashboard</h4>
     </span>
-        <img src={{ asset("assets/img/icons/menu-toggle.png") }} alt="" id="menu-toggle" width="40" height="40" role="button">
+        <img src={{ asset("assets/img/icons/menu-toggle.png") }} alt="" id="menu-toggle"     width="40" height="40" role="button">
     </header>
 
     <nav class="navbar navbar-dark p-0">

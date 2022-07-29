@@ -4,49 +4,7 @@
 
     <div id= "sidebarState" state="aside-open">
 
-        <aside class="d-flex flex-column position-absolute start-0 top-0">
-            @csrf
-            <header class="d-flex justify-content-center ms-2 me-auto mb-5">
-                <img src={{ asset("assets/img/icons/segaran-icon.png")  }} alt="" width="50" height="50" class="hiddenWhenClosed">
-                <span class="mx-3 hiddenWhenClosed">
-                <h1>Segaran </h1>
-                <h4>Dashboard</h4>
-            </span>
-                <img src={{ asset("assets/img/icons/menu-toggle.png") }} alt="" id="menu-toggle" width="40" height="40" role="button">
-            </header>
-
-            <nav class="navbar navbar-dark">
-                <ul class="navbar-nav w-100">
-                    <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2" selected role="button">
-                        <div id="selectedMark" class="position-absolute h-100"></div>
-                        <a class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" href="./dashboard">
-                            <img src="{{ asset("assets/img/icons/home.png") }}" alt="" class="me-4" width="25" height="25">
-                            <p
-                                class="hiddenWhenClosed m-0"
-                            >Overview</p>
-                        </a>
-                    </li>
-                    <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2" role="button">
-                        <div id="selectedMark" class="position-absolute h-100"></div>
-                        <a class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" href="./statistik">
-                            <img src="{{ asset("assets/img/icons/folder.png") }}" alt="" class="me-4" width="25" height="25">
-                            <p
-                                class="hiddenWhenClosed m-0"
-                            >Statistik</p>
-                        </a>
-                    </li>
-                </ul>
-
-            </nav>
-            <footer class="mt-auto mx-auto">
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <input type="image" src="{{ asset("assets/img/icons/log-out.png") }}" class="hiddenWhenOpen" width="30">
-                    <button class="btn btn-secondary btn-lg fs-2 fw-bold hiddenWhenClosed" >Keluar</button>
-                </form>
-            </footer>
-
-        </aside>
+        @include('main.components.sidebar')
 
         <main class="d-flex flex-column position-absolute end-0 top-0 vw-80">
             <header class="d-flex justify-content-between align-items-center m-5">
@@ -123,9 +81,13 @@
                     </div>
                 </div>
 
-                <div class="container mw-100 mx-0 mt-5 card">
-{{--                    <table class="table">--}}
-                        <h1 class="text-center">Data Warga Desa  Segaran</h1>
+                <div class="container mw-100 mx-0 mt-5 card p-0">
+                {{-- <table class="table"> --}}
+                    <h1 class="text-center py-3">
+                        <b>Data Warga Desa Segaran</b>
+                    </h1>
+                    <div class="fs-4">
+
                         <form action="/search" method="POST" role="search">
                             @csrf
                             <div class="input-group">
@@ -137,11 +99,11 @@
                                 </span>
                             </div>
                         </form>
-{{--                        <thead></thead>--}}
-{{--                        <tr></tr>--}}
-                        @include('list-penduduk')
-{{--                    </table>--}}
-                    <head></head>
+                        @include('main.components.table-penduduk')
+                    </div>
+                {{-- <thead></thead> --}}
+                {{--<tr></tr>--}}
+                {{--</table>--}}
 
                 </div>
 

@@ -6,6 +6,7 @@
 
             <img src={{ asset("assets/img/icons/notif.png" )  }} alt="notification" width="30" height="30" role="button"
             type="button" class="" data-bs-toggle="modal" data-bs-target="#notificationModal"
+            data-backdrop="false"
             >
         <div class="ps-4">
             <div id="line">

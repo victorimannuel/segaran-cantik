@@ -15,6 +15,10 @@ main{
     opacity: 0.8;
 }
 
+.modal-backdrop {
+    background-color: transparent !important;
+ }
+
 /* if open */
 #sidebarState[state = "aside-open"] aside{
     background: #363740;

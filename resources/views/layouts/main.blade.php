@@ -11,7 +11,6 @@
     {{--  css yang digunakan --}}
     <link rel="stylesheet" href={{ asset('assets/styles/main.css') }}>
     <link rel="stylesheet" href={{ asset('assets/styles/sidebar.css') }}>
-    <link rel="stylesheet" href={{ asset('assets/styles/dashboard.css') }}>
     <link rel="stylesheet" href={{ asset('assets/styles/table-penduduk.css') }}>
 
     {{--  js yang digunakan--}}

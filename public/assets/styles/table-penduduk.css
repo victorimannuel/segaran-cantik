@@ -17,6 +17,12 @@
     color: #94A3B8; 
 }
 
+#list-penduduk thead tr th{
+    padding-left: 0;
+    padding-right: 0;
+
+}
+
 #list-penduduk tbody tr td{
     text-transform: uppercase;
     padding: 1em 0 1em 0;

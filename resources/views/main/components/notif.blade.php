@@ -18,4 +18,9 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#notificationModal').modal('show');
+    });
+</script>
 

@@ -12,7 +12,7 @@
 
             </div>
         </div>
-        <div class="d-flex flex-row align-items-center fs-3 px-5" role="button">
+        <div class="d-flex flex-row align-items-center fs-3 px-5">
             <p id="name" value="Kepala Desa" class="px-3 m-0">Kepala Desa</p>
 
             <div>

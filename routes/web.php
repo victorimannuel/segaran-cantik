@@ -35,6 +35,8 @@ Route::get('/statistik', function () {
 
 Route::get('/edit-penduduk/{id_penduduk}', [PendudukController::class, 'editForm']
 )->name('edit-penduduk.show');
+Route::get('/edit-penduduk/readonly/{id_penduduk}', [PendudukController::class, 'readOnlyForm']
+)->name('view-penduduk.show');
 Route::get('/tambah-penduduk', [PendudukController::class, 'createForm']
 );
 Route::post('/tambah-penduduk', [PendudukController::class, 'store']

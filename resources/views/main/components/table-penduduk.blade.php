@@ -27,7 +27,7 @@
                 <td >
 
                     <button type="button" class="btn btn-lg btn-dark"
-                            onclick="window.location='{{ route('edit-penduduk.show', ['id_penduduk' => $penduduk->id])}}'"
+                            onclick="window.location='{{ route('view-penduduk.show', ['id_penduduk' => $penduduk->id])}}'"
                     >
                         Detail
                     </button>

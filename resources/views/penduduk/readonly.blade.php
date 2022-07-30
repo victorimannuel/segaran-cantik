@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/form-penduduk.css') }}">
 </head>
 <body>
-{{--<div class="container mt-5">--}}
 <!-- Success message -->
 @if(Session::has('success'))
     <div class="alert alert-success">
@@ -397,18 +396,25 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input type="button" href="/dashboard" value="Hapus" class="btn btn-danger btn-block" style="color: white;"></input>
                     </div>
                 </div>
                 <!--  col-md-6   -->
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input type="button" href="/dashboard" value="Kembali" class="btn btn-warning btn-block" style="color: white;"></input>
+                        <button type="button" class="btn btn-warning btn-block" style="color: white;"
+                                onclick="window.location='{{ route('main.dashboard')}}'"
+                        >
+                            Kembali
+                        </button>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input type="submit" name="send" value="Simpan" class="btn btn-success btn-block">
+                        <button type="button" class="btn btn-success btn-block"
+                                onclick="window.location='{{ route('edit-penduduk.show', ['id_penduduk' => $penduduk->id])}}'"
+                        >
+                            Edit
+                        </button>
                     </div>
                 </div>
             </div>

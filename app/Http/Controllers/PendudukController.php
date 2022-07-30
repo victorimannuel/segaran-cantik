@@ -18,6 +18,13 @@ class PendudukController extends Controller
         return view('penduduk/create');
     }
 
+    public function readOnlyForm($id)
+    {
+        $data = $this->penduduk->find($id);
+        ;
+        return view('penduduk/readonly', ['penduduk' => $data]);
+    }
+
     public function editForm($id)
     {
         $data = $this->penduduk->find($id);

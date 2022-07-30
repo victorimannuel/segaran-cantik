@@ -26,12 +26,11 @@
                 <td >{{ $penduduk->validasi }}</td>
                 <td >
 
-                <button type="button" class="btn btn-lg btn-dark"
-                onclick="window.location='{{ route('edit-penduduk.show', ['id_penduduk' => $penduduk->id])}}'"
-                >
-                Detail
-                </button>
-
+                    <button type="button" class="btn btn-lg btn-dark"
+                            onclick="window.location='{{ route('edit-penduduk.show', ['id_penduduk' => $penduduk->id])}}'"
+                    >
+                        Detail
+                    </button>
 
                 </td>
             </tr>
@@ -40,20 +39,11 @@
     </table>
 
 </div>
-<select id="pagination">
-    <option value="10" >10</option>
-    <option value="25" >25</option>
-    <option value="50" >50</option>
-    <option value="75" >75</option>
-    <option value="100" selected >100</option>
-    <option value="200" >200</option>
-    {{--    <option value="200" @if($items == 25) selected @endif >200</option>--}}
-</select>
 
 {{ $penduduks->links() }}
 
 <script>
     document.getElementById('pagination').onchange = function() {
-            window.location = "{!! $penduduks->url(1) !!}&items=" + this.value;
+        window.location = "{!! $penduduks->url(1) !!}&items=" + this.value;
     };
 </script>

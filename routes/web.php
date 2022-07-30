@@ -46,12 +46,7 @@ Route::get('/list-penduduk', [PendudukController::class, 'show_data']
 //)->name('penduduk.store');
 
 Route::any('/search',function(){
-//    $q = Input::get ( 'q' );
-//    $user = Input::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
-//    if(count($user) > 0)
-//        return view('welcome')->withDetails($user)->withQuery ( $q );
-//    else return view ('welcome')->withMessage('No Details found. Try to search again !');
-    return view('main/dashboard');
+    return view('main/dashboard', [ 'page' => 'dashboard']);
 });
 
 require __DIR__.'/auth.php';

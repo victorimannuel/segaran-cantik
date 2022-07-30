@@ -10,519 +10,408 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/form-penduduk.css') }}">
 </head>
 <body>
-{{--<div class="container mt-5">--}}
-    <!-- Success message -->
-    @if(Session::has('success'))
-        <div class="alert alert-success">
-            {{Session::get('success')}}
+<!-- Success message -->
+@if(Session::has('success'))
+    <div class="alert alert-success">
+        {{Session::get('success')}}
+    </div>
+@endif
+<form method="post" action="{{ route('penduduk.store') }}">
+    <!-- CROSS Site Request Forgery Protection -->
+    @csrf
+    <h2>Form Data Penduduk Desa Segaran</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="no_kk">NOMOR KK</label>
+                <input type="text" class="form-control" value="{{ isset($penduduk) ? $penduduk->no_kk : '' }}" placeholder="Nomor KK" id="no_kk" name="no_kk">
+                {{--                            <input type="text" class="form-control" placeholder="Nomor KK" id="no_kk" name="no_kk">--}}
+                <!-- Error -->
+                @if ($errors->has('no_kk'))
+                    <div class="error">
+                        {{ $errors->first('no_kk') }}
+                    </div>
+                @endif
+            </div>
         </div>
-    @endif
-    <form method="post" action="{{ route('penduduk.store') }}">
-        <!-- CROSS Site Request Forgery Protection -->
-        @csrf
-{{--        <div class="form-group">--}}
-{{--            <label>NOMOR KK</label>--}}
-{{--            <input type="text" class="form-control" name="no_kk" id="no_kk">--}}
-{{--        </div>--}}
-{{--        <div class="form-group">--}}
-{{--            <label>NIK</label>--}}
-{{--            <input type="text" class="form-control" name="nik" id="nik">--}}
-{{--        </div>--}}
-{{--        <div class="form-group">--}}
-{{--            <label>NAMA</label>--}}
-{{--            <input type="text" class="form-control" name="nama" id="nama">--}}
-{{--        </div>--}}
-{{--        <input type="submit" name="send" value="Submit" class="btn btn-dark btn-block">--}}
-{{--        <div class="container">--}}
-{{--            <form>--}}
-                <h2>Form Data Penduduk Desa Segaran</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="no_kk">NOMOR KK</label>
-                            <input type="text" class="form-control" value="{{ isset($penduduk) ? $penduduk->no_kk : '' }}" placeholder="Nomor KK" id="no_kk" name="no_kk">
-{{--                            <input type="text" class="form-control" placeholder="Nomor KK" id="no_kk" name="no_kk">--}}
-                            <!-- Error -->
-                            @if ($errors->has('no_kk'))
-                                <div class="error">
-                                    {{ $errors->first('no_kk') }}
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-{{--                            <label for="last"></label>--}}
-{{--                            <input type="text" class="form-control" placeholder="" id="last" name>--}}
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                </div>
+        <!--  col-md-6   -->
+        <div class="col-md-6">
+            <div class="form-group">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="nik">NIK</label>
-                            <input type="text" class="form-control" placeholder="NIK" id="nik" name="nik">
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="nama">NAMA</label>
-                            <input type="text" class="form-control" id="nama" placeholder="Nama" name="nama">
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                </div>
-                <!--  row   -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="nik">NIK</label>
+                <input type="text" class="form-control" placeholder="NIK" id="nik" name="nik">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="nama">NAMA</label>
+                <input type="text" class="form-control" id="nama" placeholder="Nama" name="nama">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="hub_keluarga">HUBUNGAN KELUARGA</label>
-                            <select class="selectpicker form-control" id="hub_keluarga" name="hub_keluarga">
-                                <option selected value="Kepala Keluarga">Kepala Keluarga</option>
-                                <option value="Ibu">Ibu</option>
-                                <option value="Anak">Anak</option>
-                                <option value="Suami">Suami</option>
-                                <option value="Istri">Istri</option>
-                                <option value="Saudara">Saudara</option>
-                            </select>
-{{--                            <label for="hub_keluarga">HUBUNGAN KELUARGA</label>--}}
-{{--                            <input type="text" class="form-control" id="hub_keluarga" name="hub_keluarga" placeholder="Hubungan Keluarga">--}}
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="status_kawin">STATUS PERKAWINAN</label>
-                            <select class="selectpicker form-control" id="status_kawin" name="status_kawin">
-                                <option selected value="Belum Kawin">Belum Kawin</option>
-                                <option value="Kawin">Kawin</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                </div>
-                <!--  row   -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="hub_keluarga">HUBUNGAN KELUARGA</label>
+                <select class="selectpicker form-control" id="hub_keluarga" name="hub_keluarga">
+                    <option selected value="Kepala Keluarga">Kepala Keluarga</option>
+                    <option value="Ibu">Ibu</option>
+                    <option value="Anak">Anak</option>
+                    <option value="Suami">Suami</option>
+                    <option value="Istri">Istri</option>
+                    <option value="Saudara">Saudara</option>
+                </select>
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="status_kawin">STATUS PERKAWINAN</label>
+                <select class="selectpicker form-control" id="status_kawin" name="status_kawin">
+                    <option selected value="Belum Kawin">Belum Kawin</option>
+                    <option value="Kawin">Kawin</option>
+                </select>
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="jenis_kelamin">JENIS KELAMIN</label>
-                            <select class="selectpicker form-control" id="jenis_kelamin" name="jenis_kelamin">
-                                <option selected value="Laki-laki">Laki-laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="agama">AGAMA</label>
-                            <select class="selectpicker form-control" id="agama" name="agama">
-                                <option selected value="Islam">Islam</option>
-                                <option value="Kristen">Kristen</option>
-                                <option value="Katolik">Katolik</option>
-                                <option value="Hindu">Hindu</option>
-                                <option value="Buddha">Buddha</option>
-                                <option value="Konghucu">Konghucu</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                </div>
-                <!--  row   -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="jenis_kelamin">JENIS KELAMIN</label>
+                <select class="selectpicker form-control" id="jenis_kelamin" name="jenis_kelamin">
+                    <option selected value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="agama">AGAMA</label>
+                <select class="selectpicker form-control" id="agama" name="agama">
+                    <option selected value="Islam">Islam</option>
+                    <option value="Kristen">Kristen</option>
+                    <option value="Katolik">Katolik</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Buddha">Buddha</option>
+                    <option value="Konghucu">Konghucu</option>
+                </select>
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="tempat_lahir">TEMPAT LAHIR</label>
-                            <input type="text" class="form-control" placeholder="Tempat Lahir" id="tempat_lahir" name="tempat_lahir">
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="tgl_lahir">TANGGAL LAHIR</label>
-                            <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir">
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                </div>
-                <!--  row   -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="tempat_lahir">TEMPAT LAHIR</label>
+                <input type="text" class="form-control" placeholder="Tempat Lahir" id="tempat_lahir" name="tempat_lahir">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="tgl_lahir">TANGGAL LAHIR</label>
+                <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="rt">RT</label>
-                            <select class="selectpicker form-control" id="rt" name="rt">
-                                <option selected value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="rw">RW</label>
-                            <select class="selectpicker form-control" id="rw" name="rw">
-                                <option selected value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="dusun">DUSUN</label>
-                            <select class="selectpicker form-control" id="dusun" name="dusun">
-                                <option selected value="KRAJAN">KRAJAN</option>
-                                <option value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
-                                <option value="PUTAT">PUTAT</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                </div>
-                <!--  row   -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="rt">RT</label>
+                <select class="selectpicker form-control" id="rt" name="rt">
+                    <option selected value="1">1</option>
+                    @for ($i = 2; $i <= 30; $i++)
+                        <option value="{{ $i }}">{{ $i }}</option>
+                    @endfor
+                </select>
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="rw">RW</label>
+                <select class="selectpicker form-control" id="rw" name="rw">
+                    <option selected value="1">1</option>
+                    @for ($i = 2; $i <= 9; $i++)
+                        <option value="{{ $i }}">{{ $i }}</option>
+                    @endfor
+                </select>
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="dusun">DUSUN</label>
+                <select class="selectpicker form-control" id="dusun" name="dusun">
+                    <option selected value="KRAJAN">KRAJAN</option>
+                    <option value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
+                    <option value="PUTAT">PUTAT</option>
+                </select>
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
 
-                <div class="row">
-{{--                    <div class="col-md-6">--}}
-{{--                        <div class="form-group">--}}
-{{--                            <label for="dusun">DUSUN</label>--}}
-{{--                            <select class="selectpicker form-control" id="dusun" name="dusun">--}}
-{{--                                <option selected value="KRAJAN">KRAJAN</option>--}}
-{{--                                <option value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>--}}
-{{--                                <option value="PUTAT">PUTAT</option>--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-                    <!--  col-md-6   -->
-{{--                    <div class="col-md-12">--}}
-{{--                        <div class="form-group">--}}
-{{--                            <label for="alamat">ALAMAT</label>--}}
-{{--                            <textarea rows="2" cols="50" class="form-control" id="alamat" name="alamat"></textarea>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-                    <!--  col-md-6   -->
-                </div>
-                <!--  row   -->
     <hr/>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="status_pendidikan">STATUS PENDIDIKAN</label>
-                            <select class="selectpicker form-control" id="status_pendidikan" name="status_pendidikan">
-                                <option selected value="BELUM TAMAT">BELUM TAMAT</option>
-                                <option value="TAMAT">TAMAT</option>
-                                <option value="BELUM SEKOLAH">BELUM SEKOLAH</option>
-                            </select>
-                        </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="status_pendidikan">STATUS PENDIDIKAN</label>
+                <select class="selectpicker form-control" id="status_pendidikan" name="status_pendidikan">
+                    <option selected value="BELUM TAMAT">BELUM TAMAT</option>
+                    <option value="TAMAT">TAMAT</option>
+                    <option value="BELUM SEKOLAH">BELUM SEKOLAH</option>
+                </select>
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="pendidikan">PENDIDIKAN</label>
+                <select class="selectpicker form-control" id="pendidikan" name="pendidikan">
+                    <option value="D1">D1</option>
+                    <option value="D2">D2</option>
+                    <option value="D3">D3</option>
+                    <option selected value="S1">S1</option>
+                    <option value="S2">S2</option>
+                    <option value="S3">S3</option>
+                </select>
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="nama_ayah">NAMA AYAH</label>
+                <input type="text" class="form-control" placeholder="Nama Ayah" id="nama_ayah" name="nama_ayah">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="nama_ibu">NAMA IBU</label>
+                <input type="text" class="form-control" placeholder="Nama Ibu" id="nama_ibu" name="nama_ibu">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="nik_ayah">NIK AYAH</label>
+                <input type="text" class="form-control" placeholder="NIK Ayah" id="nik_ayah" name="nik_ayah">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="nik_ibu">NIK IBU</label>
+                <input type="text" class="form-control" placeholder="NIK Ibu" id="nik_ibu" name="nik_ibu">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
+
+    <hr/>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="tgl_nikah">TANGGAL NIKAH</label>
+                <input type="date" class="form-control" id="tgl_nikah" name="tgl_nikah">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="no_buku_nikah">NOMOR BUKU NIKAH</label>
+                <input type="text" class="form-control" placeholder="Nomor Buku Nikah" id="no_buku_nikah" name="no_buku_nikah">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="kua">KUA</label>
+                <input type="text" class="form-control" placeholder="KUA" id="kua" name="kua">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="akte_lahir">AKTE KELAHIRAN /SURAT KENAL LAHIR</label>
+                <input type="text" class="form-control" placeholder="Akte Kelahiran / Surat Kenal Lahir" id="akte_lahir" name="akte_lahir">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="no_bpjs">NOMOR PBI JK / BPJS</label>
+                <input type="text" class="form-control" placeholder="Nomor PBI JK / BPJS" id="no_bpjs" name="no_bpjs">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="telepon">TELEPON</label>
+                <input type="tel" class="form-control" placeholder="Telepon" id="telepon" name="telepon">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="tgl_kematian">TANGGAL KEMATIAN</label>
+                <input type="date" class="form-control" id="tgl_kematian" name="tgl_kematian">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="pukul_kematian">TANGGAL KEMATIAN</label>
+                <input type="time" class="form-control" id="pukul_kematian" name="pukul_kematian">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="ket_kematian">KETERANGAN KEMATIAN</label>
+                <input type="text" class="form-control" placeholder="Keterangan Kematian" id="ket_kematian" name="ket_kematian">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="jabatan">JABATAN</label>
+                <input type="text" class="form-control" placeholder="Jabatan" id="jabatan" name="jabatan">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="no_ijazah">NOMOR IJAZAH / STB</label>
+                <input type="text" class="form-control" placeholder="Nomor Ijazah / STB" id="no_ijazah" name="no_ijazah">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="tgl_cerai">TANGGAL PERCERAIAN</label>
+                <input type="date" class="form-control" id="tgl_cerai" name="tgl_cerai">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="no_akta_cerai">NOMOR AKTA CERAI</label>
+                <input type="text" class="form-control" placeholder="Nomor Akta Cerai" id="no_akta_cerai" name="no_akta_cerai">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="gol_darah">GOLONGAN DARAH</label>
+                <select class="selectpicker form-control" id="gol_darah" name="gol_darah">
+                    <option selected value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="AB">AB</option>
+                    <option value="O">O</option>
+                </select>
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="penyandang_cacat">PENYANDANG CACAT</label>
+                <select class="selectpicker form-control" id="penyandang_cacat" name="penyandang_cacat">
+                    <option selected value="Ya">Ya</option>
+                    <option value="Tidak">Tidak</option>
+                </select>
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+        <div class="col-md-4">
+            <div class="form-group">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
                     </div>
-                    <!--  col-md-6   -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="pendidikan">PENDIDIKAN</label>
-                            <select class="selectpicker form-control" id="pendidikan" name="pendidikan">
-                                <option value="D1">D1</option>
-                                <option value="D2">D2</option>
-                                <option value="D3">D3</option>
-                                <option selected value="S1">S1</option>
-                                <option value="S2">S2</option>
-                                <option value="S3">S3</option>
-                            </select>
-                        </div>
+                </div>
+                <!--  col-md-6   -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="button" href="/dashboard" value="Kembali" class="btn btn-warning btn-block" style="color: white;"></input>
                     </div>
-                    <!--  col-md-6   -->
                 </div>
-                <!--  row   -->
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="nama_ayah">NAMA AYAH</label>
-                            <input type="text" class="form-control" placeholder="Nama Ayah" id="nama_ayah" name="nama_ayah">
-                        </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="submit" name="send" value="Simpan" class="btn btn-success btn-block">
                     </div>
-                    <!--  col-md-6   -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="nama_ibu">NAMA IBU</label>
-                            <input type="text" class="form-control" placeholder="Nama Ibu" id="nama_ibu" name="nama_ibu">
-                        </div>
-                    </div>
-                    <!--  col-md-6   -->
-                </div>
-                <!--  row   -->
-
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="nik_ayah">NIK AYAH</label>
-                    <input type="text" class="form-control" placeholder="NIK Ayah" id="nik_ayah" name="nik_ayah">
                 </div>
             </div>
-            <!--  col-md-6   -->
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="nik_ibu">NIK IBU</label>
-                    <input type="text" class="form-control" placeholder="NIK Ibu" id="nik_ibu" name="nik_ibu">
-                </div>
-            </div>
-            <!--  col-md-6   -->
         </div>
-        <!--  row   -->
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
+</form>
 
-        <hr/>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="tgl_nikah">TANGGAL NIKAH</label>
-                    <input type="date" class="form-control" id="tgl_nikah" name="tgl_nikah">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="no_buku_nikah">NOMOR BUKU NIKAH</label>
-                    <input type="text" class="form-control" placeholder="Nomor Buku Nikah" id="no_buku_nikah" name="no_buku_nikah">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="kua">KUA</label>
-                    <input type="text" class="form-control" placeholder="KUA" id="kua" name="kua">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-        </div>
-        <!--  row   -->
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="akte_lahir">AKTE KELAHIRAN /SURAT KENAL LAHIR</label>
-                    <input type="text" class="form-control" placeholder="Akte Kelahiran / Surat Kenal Lahir" id="akte_lahir" name="akte_lahir">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="no_bpjs">NOMOR PBI JK / BPJS</label>
-                    <input type="text" class="form-control" placeholder="Nomor PBI JK / BPJS" id="no_bpjs" name="no_bpjs">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="telepon">TELEPON</label>
-                    <input type="tel" class="form-control" placeholder="Telepon" id="telepon" name="telepon">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-        </div>
-        <!--  row   -->
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="tgl_kematian">TANGGAL KEMATIAN</label>
-                    <input type="date" class="form-control" id="tgl_kematian" name="tgl_kematian">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="pukul_kematian">TANGGAL KEMATIAN</label>
-                    <input type="time" class="form-control" id="pukul_kematian" name="pukul_kematian">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="ket_kematian">KETERANGAN KEMATIAN</label>
-                    <input type="text" class="form-control" placeholder="Keterangan Kematian" id="ket_kematian" name="ket_kematian">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-        </div>
-        <!--  row   -->
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="jabatan">JABATAN</label>
-                    <input type="text" class="form-control" placeholder="Jabatan" id="jabatan" name="jabatan">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="no_ijazah">NOMOR IJAZAH / STB</label>
-                    <input type="text" class="form-control" placeholder="Nomor Ijazah / STB" id="no_ijazah" name="no_ijazah">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-        </div>
-        <!--  row   -->
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="tgl_cerai">TANGGAL PERCERAIAN</label>
-                    <input type="date" class="form-control" id="tgl_cerai" name="tgl_cerai">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="no_akta_cerai">NOMOR AKTA CERAI</label>
-                    <input type="text" class="form-control" placeholder="Nomor Akta Cerai" id="no_akta_cerai" name="no_akta_cerai">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-        </div>
-        <!--  row   -->
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="gol_darah">GOLONGAN DARAH</label>
-                    <select class="selectpicker form-control" id="gol_darah" name="gol_darah">
-                        <option selected value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="AB">AB</option>
-                        <option value="O">O</option>
-                    </select>
-                </div>
-            </div>
-            <!--  col-md-6   -->
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="penyandang_cacat">PENYANDANG CACAT</label>
-                    <select class="selectpicker form-control" id="penyandang_cacat" name="penyandang_cacat">
-                        <option selected value="Ya">Ya</option>
-                        <option value="Tidak">Tidak</option>
-                    </select>
-                </div>
-            </div>
-            <!--  col-md-6   -->
-        </div>
-        <!--  row   -->
-
-{{--        <p>--}}
-{{--            <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>--}}
-{{--            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>--}}
-{{--            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>--}}
-{{--        </p>--}}
-{{--        <div class="row">--}}
-{{--            <div class="col">--}}
-{{--                <div class="collapse multi-collapse" id="multiCollapseExample1">--}}
-{{--                    <div class="card card-body">--}}
-{{--                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col">--}}
-{{--                <div class="collapse multi-collapse" id="multiCollapseExample2">--}}
-{{--                    <div class="card card-body">--}}
-{{--                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-        {{--                <label for="contact-preference">When is the best time of day to reach you?</label>--}}
-{{--                <div class="radio">--}}
-{{--                    <label>--}}
-{{--                        <input type="radio" name="contact-preference" id="contact-preference" value="am" checked>Morning--}}
-{{--                    </label>--}}
-{{--                </div>--}}
-{{--                <div class="radio">--}}
-{{--                    <label>--}}
-{{--                        <input type="radio" name="contact-preference" id="contact-preference" value="pm" checked>Evening--}}
-{{--                    </label>--}}
-{{--                </div>--}}
-
-{{--                <label for="newsletter">Would you like to recieve our email newsletter?</label>--}}
-{{--                <div class="checkbox">--}}
-{{--                    <label>--}}
-{{--                        <input type="checkbox" value="Sure!" id="newsletter"> Sure!--}}
-{{--                    </label>--}}
-{{--                </div>--}}
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                </div>
-            </div>
-            <!--  col-md-6   -->
-            <div class="col-md-4">
-                <div class="form-group">
-                    <input type="text" value="">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="switch">
-                                    <input type="checkbox" id="edit" onchange="clickEdit()">
-{{--                                    <span class="slider"></span>--}}
-                                </label>
-{{--                                <input type="submit" name="" value="Hapus" class="btn btn-danger btn-block">--}}
-                            </div>
-                        </div>
-                        <!--  col-md-6   -->
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="submit" name="" value="Kembali" class="btn btn-warning btn-block" style="color: white;">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="submit" name="send" value="Simpan" class="btn btn-success btn-block">
-                            </div>
-                        </div>
-                </div>
-            </div>
-            <!--  col-md-6   -->
-        </div>
-        <!--  row   -->
-{{--                <input type="submit" class="btn btn-primary">Simpan</input>--}}
-
-    </form>
-        </div>
-    </form>
-{{--</div>--}}
-<script>
-    // function clickEdit(value) {
-    //     console.log(document.getElementById('no_kk').value)
-    // }
-
-    function clickEdit() {
-        var edit = document.getElementById("edit");
-        console.log(edit.value);
-        // if (edit.innerHTML === "Hello") {
-        //     x.innerHTML = "Swapped text!";
-        // } else {
-        //     x.innerHTML = "Hello";
-        // }
-    }
-</script>
 </body>
 </html>

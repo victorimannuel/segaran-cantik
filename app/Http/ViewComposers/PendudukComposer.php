@@ -17,19 +17,39 @@ class PendudukComposer
 
     public function compose(View $view)
     {
-//        if($this->request == 0) {
-//            $items = $this->request->items ?? 100;      // get the pagination number or a default
-//        }
+        $items = request('items') ?? 100;  // get the pagination number or a default
 
-        $items = $this->request->items ?? 100;      // get the pagination number or a default
+        $query = Penduduk::query();
 
-        $penduduk_paginated = Penduduk::where(
-            "nama","like","%".$this->request->get("q")."%"
-        )->orWhere(
-            "nik","like","%".$this->request->get("q")."%"
-        )->orWhere(
-            "no_kk","like","%".$this->request->get("q")."%"
-        )->paginate($items)->appends(['items' => $items]);
+        if (request('q') != '') {
+            $query->when($this->request->has('q'), function ($q) {
+                return $q->where(
+                    "nama", "like", "%" . request("q") . "%"
+                )->orWhere(
+                    "nik", "like", "%" . request("q") . "%"
+                )->orWhere(
+                    "no_kk", "like", "%" . request("q") . "%"
+                );
+            });
+        }
+
+        if (request('rt') != 'RT') {
+            $query->when($this->request->has('rt'), function ($q) {
+                return $q->where("rt", "=", request('rt'));
+            });
+        }
+        if (request('rw') != 'RW') {
+            $query->when($this->request->has('rw'), function ($q) {
+                return $q->where("rw", "=", request('rw'));
+            });
+        }
+        if (request('dusun') != 'DUSUN') {
+            $query->when($this->request->has('dusun'), function ($q) {
+                return $q->where("dusun", "=", request('dusun'));
+            });
+        }
+
+        $penduduk_paginated = $query->paginate($items)->appends(['items' => $items]);
 
         $penduduk = Penduduk::all();
         $jumlah_penduduk = count($penduduk);
@@ -41,6 +61,9 @@ class PendudukComposer
             'items' => $items,
             'jumlah_penduduk' => $jumlah_penduduk,
             'user_name' => $user_name,
+            'rt' => request('rt'),
+            'rw' => request('rw'),
+            'q' => request('q'),
         ]);
     }
 }

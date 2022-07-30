@@ -20,5 +20,19 @@
 </head>
 <body>
 @yield('main-body')
+<script>
+    document.getElementById('rt').onchange = function() {
+            this.form.submit();
+    };
+    document.getElementById('rw').onchange = function() {
+            this.form.submit();
+    };
+    document.getElementById('dusun').onchange = function() {
+            this.form.submit();
+    };
+    // document.getElementById('q').onchange = function() {
+    //     this.form.submit();
+    // };
+</script>
 </body>
 </html>

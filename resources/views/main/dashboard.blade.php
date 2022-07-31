@@ -14,7 +14,7 @@
 
                 @include('main.components.cards')
 
-                <div class="container mw-100 mx-0 mt-5 card p-0">
+                <div class="container mw-100 mx-0 my-5 card p-0">
                     <div class="row">
                         <div class="col-md-4" style="padding-top:1rem; padding-left:2rem;">
                             <form action="/tambah-penduduk">
@@ -39,7 +39,7 @@
                     </div>
                     <div class="fs-4">
                         <form action="/search" method="POST" role="search">
-{{--                        <form action="/dashboard/search" method="POST" role="search">--}}
+{{--                    <form action="/dashboard/search" method="POST" role="search">--}}
                             <div class="row" style="width: 100rem; justify-items: center;">
                                 @csrf
                                 <div class="col-md-3">
@@ -78,13 +78,17 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        {{-- </form> --}}
 
                         @include('main.components.table-penduduk')
 
                     </div>
                 </div>
             </section>
+
+            <footer class="mt-5">
+
+            </footer>
         </main>
     </div>
 

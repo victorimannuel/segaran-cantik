@@ -14,9 +14,10 @@
         </tr>
         </thead>
         <tbody>
+        @php $i = 1; @endphp
         @foreach($penduduks as $penduduk)
             <tr >
-                <td class="text-center pe-3"><b>{{ $penduduk->id }}</b></td>
+                <td class="text-center pe-3"><b>{{ $i }}</b></td>
                 <td >{{ $penduduk->no_kk }}</td>
                 <td >{{ $penduduk->nama }}</td>
                 <td >{{ $penduduk->nik  }}</td>
@@ -34,6 +35,7 @@
 
                 </td>
             </tr>
+            @php $i += 1; @endphp
         @endforeach
         </tbody>
     </table>

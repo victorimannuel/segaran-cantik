@@ -47,7 +47,11 @@ Route::get('/list-penduduk', [PendudukController::class, 'show_data']
 //Route::post('/list-penduduk', [PendudukController::class, 'store']
 //)->name('penduduk.store');
 
-Route::any('/search',function(){
+Route::any('/search', function(){
+    return view('main/dashboard', [ 'page' => 'dashboard']);
+});
+
+Route::any('/dashboard/search', function(){
     return view('main/dashboard', [ 'page' => 'dashboard']);
 });
 

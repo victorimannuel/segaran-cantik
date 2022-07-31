@@ -39,6 +39,7 @@
                     </div>
                     <div class="fs-4">
                         <form action="/search" method="POST" role="search">
+{{--                        <form action="/dashboard/search" method="POST" role="search">--}}
                             <div class="row" style="width: 100rem; justify-items: center;">
                                 @csrf
                                 <div class="col-md-3">

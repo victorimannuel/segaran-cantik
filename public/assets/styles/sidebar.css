@@ -10,6 +10,10 @@ aside{
 aside button{
     border-radius: 5px;
 }
+
+aside ul a{
+    
+}
 main{
     transition: width 0.3s;
 }

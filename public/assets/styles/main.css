@@ -31,6 +31,10 @@ main header #line{
     background: #DFE0EB;
 }
 
+main header #notificationButton:hover {
+    opacity: 0.8;
+}
+
 section {
     /* background: yellow; */
     width: 90%;

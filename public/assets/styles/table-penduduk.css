@@ -39,7 +39,15 @@
 }
 
 #container-penduduk .form-select, #container-penduduk .form-control{
-    height: 4rem;
+    height: 3.5rem;
     width: auto;
-    font-size: 1.6rem;
+    min-width: 5em;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: 1px solid #475569;
+    border-radius: 5px; 
+}
+
+#searchIcon{
+    height: 25px;
 }

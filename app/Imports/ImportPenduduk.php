@@ -20,6 +20,9 @@ class ImportPenduduk implements ToModel, WithStartRow
             'validasi' => $row[2],
             'nik' => $row[3],
             'nama' => $row[4],
+            'rt' => $row[18],
+            'rw' => $row[19],
+            'dusun' => $row[20],
         ]);
     }
 

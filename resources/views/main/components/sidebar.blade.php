@@ -12,7 +12,7 @@
     <nav class="navbar navbar-dark p-0">
         <ul class="navbar-nav w-100 ">
             <a href="./dashboard" class="text-decoration-none mb-3">
-            @if ($page === 'dashboard')
+            @if ($page === 'Overview')
                 <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
             @else
                 <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">
@@ -29,7 +29,7 @@
             </a>
 
             <a href="./statistik" class="text-decoration-none mb-3">
-            @if ($page === 'statistik')
+            @if ($page === 'Statistik')
                 <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
             @else
                 <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">
@@ -46,7 +46,7 @@
             </a>
 
             <a href="./file-import" class="text-decoration-none mb-3">
-                @if ($page === 'file-import')
+                @if ($page === 'File')
                     <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
                 @else
                     <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">
@@ -54,10 +54,10 @@
     
                     <div id="selectedMark" class="position-absolute h-100"></div>
                         <div class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" >
-                            <img src="{{ asset("assets/img/icons/folder.png") }}" alt="" class="me-4" width="25" height="25">
+                            <img src="{{ asset("assets/img/icons/database-window.png") }}" alt="" class="me-4" width="25" height="25">
                             <p
                                 class="hiddenWhenClosed m-0"
-                            >File</p>
+                            >Export & Import</p>
                         </div>
                     </li>
                 </a>

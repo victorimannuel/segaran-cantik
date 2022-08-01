@@ -36,7 +36,6 @@ class PendudukController extends Controller
     }
     public function store(Request $request)
     {
-        error_log('test');
         $this->validate($request, [
             'nama' => 'required',
 //            'no_kk' => 'required|max:16|min:16',
@@ -81,6 +80,7 @@ class PendudukController extends Controller
 //            'gol_darah',
 //            'penyandang_cacat',
         ]);
+
         //  Store data in database
         Penduduk::create($request->all());
 
@@ -96,6 +96,9 @@ class PendudukController extends Controller
             'no_kk' => $request->no_kk,
             'nama' => $request->nama,
             'nik' => $request->nik,
+            'dusun' => $request->dusun,
+            'rw' => $request->rw,
+            'rt' => $request->rt,
         ]);
 
         $penduduk = $this->penduduk->find($request->id_penduduk);
@@ -160,7 +163,7 @@ class PendudukController extends Controller
     }
 
     public function importView(Request $request){
-        return view('excel/importFile');
+        return view('main/export-import', ['page' => 'File']);
     }
 
     public function import(Request $request){

@@ -13,15 +13,14 @@
                 <b>Data Warga Desa Segaran</b>
             </h1>
         </div>
-
-        <div class="col-md d-flex flex-row-reverse">
-            <select id="pagination" class="form-select">
-                <option value="10" >10</option>
-                <option value="50" >50</option>
-                <option value="25" >25</option>
-                <option value="75" >75</option>
-                <option value="100">100</option>
-                <option value="200">200</option>
+        <div class="col-md-4 d-flex flex-row-reverse">
+            <select id="pagination" style="height: 3rem;">
+                <option value="10" {{$items == 10 ? 'selected':''}}>10</option>
+                <option value="25" {{$items == 25 ? 'selected':''}}>25</option>
+                <option value="50" {{$items == 50 ? 'selected':''}}>50</option>
+                <option value="75" {{$items == 75 ? 'selected':''}}>75</option>
+                <option value="100" {{$items == 100 ? 'selected':''}} >100</option>
+                <option value="200" {{$items == 200 ? 'selected':''}}>200</option>
             </select>
         </div>
 

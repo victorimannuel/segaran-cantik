@@ -21,6 +21,11 @@
     <title>Segaran App | Main {{-- {{ $page }}  --}}</title>
 </head>
 <body>
+@if(Session::has('success'))
+    <div class="alert alert-success">
+        {{Session::get('success')}}
+    </div>
+@endif
 @yield('main-body')
 <script>
     document.getElementById('rt').onchange = function() {
@@ -32,9 +37,6 @@
     document.getElementById('dusun').onchange = function() {
             this.form.submit();
     };
-    // document.getElementById('q').onchange = function() {
-    //     this.form.submit();
-    // };
 </script>
 </body>
 </html>

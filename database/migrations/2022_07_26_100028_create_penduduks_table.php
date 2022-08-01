@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('penduduks', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('no_kk');
+            $table->string('no_kk')->nullable();
             $table->string('validasi')->nullable();
-            $table->string('nik');
-            $table->string('nama');
+            $table->string('nik')->nullable();
+            $table->string('nama')->nullable();
             $table->string('tempat_lahir')->nullable();
             $table->date('tgl_lahir')->nullable();
 //            $table->string('umur')->nullable();

@@ -17,7 +17,8 @@
         {{Session::get('success')}}
     </div>
 @endif
-<form method="post" action="{{ route('penduduk.store') }}">
+{{--<form method="post" action="{{ route('penduduk.store') }}">--}}
+<form method="post" action="{{ route('penduduk.update', ['id_penduduk' => $penduduk->id]) }}">
     <!-- CROSS Site Request Forgery Protection -->
     @csrf
     <h2>Form Data Penduduk Desa Segaran</h2>

@@ -37,10 +37,13 @@ Route::get('/edit-penduduk/{id_penduduk}', [PendudukController::class, 'editForm
 )->name('edit-penduduk.show');
 Route::get('/edit-penduduk/readonly/{id_penduduk}', [PendudukController::class, 'readOnlyForm']
 )->name('view-penduduk.show');
-Route::get('/tambah-penduduk', [PendudukController::class, 'createForm']
-);
+
+Route::get('/tambah-penduduk', [PendudukController::class, 'createForm']);
 Route::post('/tambah-penduduk', [PendudukController::class, 'store']
 )->name('penduduk.store');
+
+Route::post('/edit-penduduk/save/{id_penduduk}', [PendudukController::class, 'update']
+)->name('penduduk.update');
 
 Route::get('/list-penduduk', [PendudukController::class, 'show_data']
 )->name('list-penduduk.show');
@@ -54,5 +57,9 @@ Route::any('/search', function(){
 Route::any('/dashboard/search', function(){
     return view('main/dashboard', [ 'page' => 'dashboard']);
 });
+
+Route::get('/file-import',[PendudukController::class,'importView'])->name('import-view');
+Route::post('/import',[PendudukController::class,'import'])->name('import');
+Route::get('/export-penduduk',[PendudukController::class,'exportPenduduk'])->name('export-penduduk');
 
 require __DIR__.'/auth.php';

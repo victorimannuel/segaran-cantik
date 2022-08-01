@@ -21,17 +21,6 @@ class PendudukComposer
 
         $query = Penduduk::query();
 
-        if (request('q') != '') {
-            $query->when($this->request->has('q'), function ($q) {
-                return $q->where(
-                    "nama", "like", "%" . request("q") . "%"
-                )->orWhere(
-                    "nik", "like", "%" . request("q") . "%"
-                )->orWhere(
-                    "no_kk", "like", "%" . request("q") . "%"
-                );
-            });
-        }
 
         if (request('rt') != 'RT') {
             $query->when($this->request->has('rt'), function ($q) {
@@ -46,6 +35,17 @@ class PendudukComposer
         if (request('dusun') != 'DUSUN') {
             $query->when($this->request->has('dusun'), function ($q) {
                 return $q->where("dusun", "=", request('dusun'));
+            });
+        }
+        if (request('q') != '') {
+            $query->when($this->request->has('q'), function ($q) {
+                return $q->where(
+                    "nama", "like", "%" . request("q") . "%"
+                )->orWhere(
+                    "nik", "like", "%" . request("q") . "%"
+                )->orWhere(
+                    "no_kk", "like", "%" . request("q") . "%"
+                );
             });
         }
 

@@ -104,18 +104,15 @@
                 @endforeach
                 </tbody>
             </table>
-
         </div>
 
         {{ $penduduks->links() }}
-
 
         <script>
             document.getElementById('pagination').onchange = function() {
                 window.location = "{!! $penduduks->url(1) !!}&items=" + this.value;
             };
         </script>
-
 
     </div>
 </div>

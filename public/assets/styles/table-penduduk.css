@@ -27,3 +27,19 @@
     text-transform: uppercase;
     padding: 1em 0 1em 0;
 }
+
+#container-penduduk .main-button{
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 9em;
+    height: 2.5em;
+    padding: 0;
+    background: #2489F4 !important;
+}
+
+#container-penduduk .form-select, #container-penduduk .form-control{
+    height: 4rem;
+    width: auto;
+    font-size: 1.6rem;
+}

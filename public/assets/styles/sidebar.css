@@ -7,6 +7,9 @@ aside{
     transition: width 0.3s, display 0.3s;
 }
 
+aside button{
+    border-radius: 5px;
+}
 main{
     transition: width 0.3s;
 }
@@ -31,7 +34,6 @@ main{
 #sidebarState[state = "aside-open"] aside button{
     background: #2489F4;
     padding: 1em;
-    border-radius: 10px;
 }
 
 #sidebarState[state = "aside-open"] aside header{
@@ -92,7 +94,6 @@ main{
 #sidebarState[state = "aside-closed"] aside button{
     background: #2489F4;
     padding: 1em;
-    border-radius: 10px;
 }
 
 #sidebarState[state = "aside-closed"] aside header{

@@ -14,6 +14,10 @@
 
                 @include('main.components.cards')
 
+
+                @include('main.components.table-penduduk')
+
+{{--<<<<<<< HEAD--}}
                 <div class="container mw-100 mx-0 mt-5 card p-0">
                     <div class="row">
                         <div class="col-md-4" style="padding-top:1rem; padding-left:2rem;">
@@ -78,12 +82,13 @@
                                 </div>
                             </div>
                         </form>
-
-                        @include('main.components.table-penduduk')
-
                     </div>
                 </div>
             </section>
+
+            <footer class="mt-5">
+
+            </footer>
         </main>
     </div>
 

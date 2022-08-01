@@ -1,6 +1,6 @@
-<div class="container text-center mw-100 p-0 d-flex justify-content-between" style="">
+<div class="container text-center mw-100 p-0 d-flex justify-content-between row align-self-center" style="">
 
-    <div class="card me-4">
+    <div class="card me-4 col-sm">
         <div class="card-body d-flex justify-content-center flex-column">
             <h5 class="card-title">Jumlah Dusun
 
@@ -10,7 +10,7 @@
             </p>
         </div>
     </div>
-    <div class="card mx-4">
+    <div class="card mx-4 col-sm">
         <div class="card-body d-flex justify-content-center flex-column ">
             <h5 class="card-title">
                 Jumlah RW
@@ -20,7 +20,7 @@
             </p>
         </div>
     </div>
-    <div class="card mx-4">
+    <div class="card mx-4 col-sm">
         <div class="card-body d-flex justify-content-center flex-column">
             <h5 class="card-title">
                 Jumlah RT
@@ -31,7 +31,7 @@
         </div>
 
     </div>
-    <div class="card ms-4">
+    <div class="card ms-4 col-sm">
         <div class="card-body d-flex justify-content-center flex-column">
             <h5 class="card-title">
                 Jumlah Penduduk

@@ -37,13 +37,30 @@
 
                 <div id="selectedMark" class="position-absolute h-100"></div>
                     <div class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" >
-                        <img src="{{ asset("assets/img/icons/folder.png") }}" alt="" class="me-4" width="25" height="25">
+                        <img src="{{ asset("assets/img/icons/stats.png") }}" alt="" class="me-4" width="25" height="25">
                         <p
                             class="hiddenWhenClosed m-0"
                         >Statistik</p>
                     </div>
                 </li>
             </a>
+
+            <a href="./file-import" class="text-decoration-none">
+                @if ($page === 'file-import')
+                    <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2" selected role="button">
+                @else
+                    <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2" role="button">
+                @endif
+    
+                    <div id="selectedMark" class="position-absolute h-100"></div>
+                        <div class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" >
+                            <img src="{{ asset("assets/img/icons/folder.png") }}" alt="" class="me-4" width="25" height="25">
+                            <p
+                                class="hiddenWhenClosed m-0"
+                            >File</p>
+                        </div>
+                    </li>
+                </a>
 
         </ul>
 

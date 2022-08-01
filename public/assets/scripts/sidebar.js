@@ -9,3 +9,15 @@ menuToggle.addEventListener('click', () => {
         sidebarState.setAttribute("state", "aside-closed")
 })
 
+/* trying out media query */
+
+// let mediaQuery = window.matchMedia('(min-width: 768px)')
+
+// function handleMediaQuery(e) {
+//     if(e.matches){
+//         alert('bisa bwang')
+//     }
+// }
+
+// mediaQuery.addListener(handleMediaQuery)
+// handleTabletChange(mediaQuery)

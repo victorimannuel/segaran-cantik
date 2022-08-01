@@ -1,3 +1,69 @@
+<div id="container-penduduk" class="container mw-100 mx-0 my-5 card p-0">
+    <div class="row my-5">
+        <div class="col-md-4">
+            <form action="/tambah-penduduk">
+                <button class="btn btn-primary btn-lg main-button">Tambah Data</button>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <h1 class="text-center">
+                <b>Data Warga Desa Segaran</b>
+            </h1>
+        </div>
+        <div class="col-md-4 d-flex flex-row-reverse">
+            <select id="pagination" class="form-select">
+                <option value="10" >10</option>
+                <option value="25" >25</option>
+                <option value="50" >50</option>
+                <option value="75" >75</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+            </select>
+        </div>
+    </div>
+    <div class="fs-4">
+        <form action="/search" method="POST" role="search">
+{{--                    <form action="/dashboard/search" method="POST" role="search">--}}
+            <div class="row w-100 justify-content-evenly">
+                @csrf
+                <div class="col-md-3 w-auto h-auto">
+                    <select id="dusun" name="dusun" class="form-select">
+                        <option selected value="DUSUN">DUSUN</option>
+                        <option value="KRAJAN">KRAJAN</option>
+                        <option value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
+                        <option value="PUTAT">PUTAT</option>
+                    </select>
+                </div>
+                <div class="col-md-3 w-auto h-auto">
+                    <select id="rw" name="rw" class="form-select">
+                        <option selected value="RW">RW</option>
+                        @for ($i = 1; $i <= 9; $i++)
+                            <option {{ $rw == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                        @endfor
+                    </select>
+                </div>
+                <div class="col-md-3 w-auto h-auto">
+                    <select id="rt" name="rt" class="form-select">
+                        <option selected value="RT">RT</option>
+                        @for ($i = 1; $i <= 30; $i++)
+                            <option {{ $rt == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                        @endfor
+                    </select>
+                </div>
+
+                <div class="col-md-3 w-auto h-auto">
+                    <div class="input-group">
+                        <input type="text" value="{{ $q }}" class="form-control" name="q" placeholder="Cari Data">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-default">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        {{-- </form> --}}
+
 <div class="table-responsive py-5">
     <table id="list-penduduk" class="table table-hover">
         <thead class="h4">
@@ -44,8 +110,15 @@
 
 {{ $penduduks->links() }}
 
+
 <script>
     document.getElementById('pagination').onchange = function() {
         window.location = "{!! $penduduks->url(1) !!}&items=" + this.value;
     };
 </script>
+
+
+
+</div>
+</div>
+</section>

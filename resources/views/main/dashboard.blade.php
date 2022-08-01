@@ -28,18 +28,17 @@
                         </div>
                         <div class="col-md-4" style="padding-top: 1rem;">
                             <select id="pagination" style="height: 3rem;">
-                                <option value="10" >10</option>
-                                <option value="25" >25</option>
-                                <option value="50" >50</option>
-                                <option value="75" >75</option>
-                                <option value="100" selected >100</option>
-                                <option value="200" >200</option>
+                                <option value="10" {{$items == 10 ? 'selected':''}}>10</option>
+                                <option value="25" {{$items == 25 ? 'selected':''}}>25</option>
+                                <option value="50" {{$items == 50 ? 'selected':''}}>50</option>
+                                <option value="75" {{$items == 75 ? 'selected':''}}>75</option>
+                                <option value="100" {{$items == 100 ? 'selected':''}} >100</option>
+                                <option value="200" {{$items == 200 ? 'selected':''}}>200</option>
                             </select>
                         </div>
                     </div>
                     <div class="fs-4">
                         <form action="/search" method="POST" role="search">
-{{--                        <form action="/dashboard/search" method="POST" role="search">--}}
                             <div class="row" style="width: 100rem; justify-items: center;">
                                 @csrf
                                 <div class="col-md-3">

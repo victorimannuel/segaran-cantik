@@ -24,7 +24,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="no_kk">NOMOR KK</label>
-                <input type="text" class="form-control" value="{{ isset($penduduk) ? $penduduk->no_kk : '' }}" placeholder="Nomor KK" id="no_kk" name="no_kk">
+                <input type="text" class="form-control" placeholder="Nomor KK" id="no_kk" name="no_kk">
                 {{--                            <input type="text" class="form-control" placeholder="Nomor KK" id="no_kk" name="no_kk">--}}
                 <!-- Error -->
                 @if ($errors->has('no_kk'))

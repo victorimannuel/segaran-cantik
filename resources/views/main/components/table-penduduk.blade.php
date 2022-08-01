@@ -1,9 +1,9 @@
 <div id="container-penduduk" class="container mw-100 mx-0 my-5 card p-0">
     <div class="row justify-content-between p-5">
-        <div class="col-md">
+        <div class="col-md-4">
 
             <form action="/tambah-penduduk" class="">
-                <button class="btn btn-primary btn-lg main-button">Tambah Data</button>
+                <button class="btn btn-primary btn-lg button main-button">Tambah Data</button>
             </form>
         </div>
     
@@ -14,7 +14,7 @@
             </h1>
         </div>
         <div class="col-md-4 d-flex flex-row-reverse">
-            <select id="pagination" style="height: 3rem;">
+            <select id="pagination" class="form-select fw-normal">
                 <option value="10" {{$items == 10 ? 'selected':''}}>10</option>
                 <option value="25" {{$items == 25 ? 'selected':''}}>25</option>
                 <option value="50" {{$items == 50 ? 'selected':''}}>50</option>
@@ -25,65 +25,69 @@
         </div>
 
     </div>
-    <form action="/search" id="table-operation" class="d-flex justify-content-center my-2" method="POST" role="search">
+    <form action="/search" id="table-operation" class="d-flex justify-content-between my-2 px-5" method="POST" role="search">
         @csrf
-        <select id="dusun" name="dusun" class="mx-5 form-select">
-            <option selected value="DUSUN">DUSUN</option>
-            <option value="KRAJAN">KRAJAN</option>
-            <option value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
-            <option value="PUTAT">PUTAT</option>
-        </select>
 
-        <select id="rw" name="rw" class="mx-5 form-select">
-            <option selected value="RW">RW</option>
-            @for ($i = 1; $i <= 9; $i++)
-                <option {{ $rw == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
-            @endfor
-        </select>
+        <span class="input-group-text border-rounded bg-white w-50" id="search-addon">
+            <img src="{{ asset('assets/img/icons/search-icon.png') }}" width=20 alt="">
+            <input type="search" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI DATA" value="{{ $q }}" name="q" />
 
-        <select id="rt" name="rt" class="mx-5 form-select">
+        </span>
+        
+        <select id="rt" name="rt" class="mx-3 form-select">
             <option selected value="RT">RT</option>
             @for ($i = 1; $i <= 30; $i++)
                 <option {{ $rt == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
             @endfor
         </select>
 
-        <div class="mx-5 input-group w-auto">
-            <input type="text" value="{{ $q }}" class="form-control w-auto fw-normal" name="q" placeholder="CARI DATA">
-        </div>
-        
+        <select id="rw" name="rw" class="mx-3 form-select">
+            <option selected value="RW">RW</option>
+            @for ($i = 1; $i <= 9; $i++)
+                <option {{ $rw == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+            @endfor
+        </select>
+
+        <select id="dusun" name="dusun" class="ms-3 form-select">
+            <option selected value="DUSUN">DUSUN</option>
+            <option value="KRAJAN">KRAJAN</option>
+            <option value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
+            <option value="PUTAT">PUTAT</option>
+        </select>
     </form>
 
     <div class="table-responsive py-5 fs-4">
+
+        {{-- {{ $penduduks->links() }} --}}
         <table id="list-penduduk" class="table table-hover">
             <thead class="h4">
             <tr>
                 <th scope="col" class="text-center pe-3"><b>No</b></th>
                 <th scope="col">Nomor KK</th>
+                <th scope="col">Validasi</th>
                 <th scope="col">Nama</th>
                 <th scope="col">NIK</th>
-                <th scope="col">RT</th>
-                <th scope="col">RW</th>
+                <th scope="col" class="pe-4">RT</th>
+                <th scope="col" class="pe-4">RW</th>
                 <th scope="col">Dusun</th>
-                <th scope="col">Validasi</th>
                 <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
             @php $i = 1; @endphp
             @foreach($penduduks as $penduduk)
-                <tr >
+                <tr>
                     <td class="text-center pe-3"><b>{{ $i }}</b></td>
                     <td >{{ $penduduk->no_kk }}</td>
+                    <td >{{ $penduduk->validasi }}</td>
                     <td >{{ $penduduk->nama }}</td>
                     <td >{{ $penduduk->nik  }}</td>
                     <td >{{ $penduduk->rt }}</td>
                     <td >{{ $penduduk->rw }}</td>
                     <td >{{ $penduduk->dusun }}</td>
-                    <td >{{ $penduduk->validasi }}</td>
                     <td >
 
-                        <button type="button" class="btn btn-lg btn-dark"
+                        <button type="button" class="btn btn-lg btn-dark button"
                                 onclick="window.location='{{ route('view-penduduk.show', ['id_penduduk' => $penduduk->id])}}'"
                         >
                             Detail
@@ -98,14 +102,10 @@
 
     </div>
 
-    {{ $penduduks->links() }}
-
-
     <script>
         document.getElementById('pagination').onchange = function() {
             window.location = "{!! $penduduks->url(1) !!}&items=" + this.value;
         };
     </script>
-
 
 </div>

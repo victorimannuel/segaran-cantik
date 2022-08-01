@@ -160,7 +160,7 @@ class PendudukController extends Controller
     }
 
     public function importView(Request $request){
-        return view('excel/importFile');
+        return view('excel/importFile', ['page' => 'File']);
     }
 
     public function import(Request $request){

@@ -18,7 +18,7 @@
     
     <link rel="icon" type="image/x-icon" href={{ asset('assets/img/icons/segaran-icon.png') }}>
 
-    <title>Segaran App | Main {{-- {{ $page }}  --}}</title>
+    <title>Segaran Admin | {{ $page }} </title>
 </head>
 <body>
 @if(Session::has('success'))

@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('main.dashboard', [ 'page' => 'dashboard']);
+    return view('main.dashboard', [ 'page' => 'Dashboard']);
 })->middleware(['auth'])->name('main.dashboard');
 
 Route::get('/notif', function () {
@@ -30,7 +30,7 @@ Route::get('/notif', function () {
 });
 
 Route::get('/statistik', function () {
-    return view('main.statistik', [ 'page' => 'statistik']);
+    return view('main.statistik', [ 'page' => 'Statistik']);
 })->middleware(['auth'])->name('main.statistik');
 
 Route::get('/edit-penduduk/{id_penduduk}', [PendudukController::class, 'editForm']
@@ -58,7 +58,7 @@ Route::any('/dashboard/search', function(){
     return view('main/dashboard', [ 'page' => 'dashboard']);
 });
 
-Route::get('/file-import',[PendudukController::class,'importView'])->name('import-view');
+Route::get('/export-import',[PendudukController::class,'importView'])->name('import-view');
 Route::post('/import',[PendudukController::class,'import'])->name('import');
 Route::get('/export-penduduk',[PendudukController::class,'exportPenduduk'])->name('export-penduduk');
 

@@ -11,11 +11,11 @@
 
     <nav class="navbar navbar-dark p-0">
         <ul class="navbar-nav w-100 ">
-            <a href="./dashboard" class="text-decoration-none">
+            <a href="./dashboard" class="text-decoration-none mb-3">
             @if ($page === 'dashboard')
-                <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2" selected role="button">
+                <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
             @else
-                <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2" role="button">
+                <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">
             @endif
 
                 <div id="selectedMark" class="position-absolute h-100"></div>
@@ -28,11 +28,11 @@
                 </li>
             </a>
 
-            <a href="./statistik" class="text-decoration-none">
+            <a href="./statistik" class="text-decoration-none mb-3">
             @if ($page === 'statistik')
-                <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2" selected role="button">
+                <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
             @else
-                <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2" role="button">
+                <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">
             @endif
 
                 <div id="selectedMark" class="position-absolute h-100"></div>
@@ -45,11 +45,11 @@
                 </li>
             </a>
 
-            <a href="./file-import" class="text-decoration-none">
+            <a href="./file-import" class="text-decoration-none mb-3">
                 @if ($page === 'file-import')
-                    <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2" selected role="button">
+                    <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
                 @else
-                    <li class="nav-item fs-3 d-flex align-items-center position-relative mb-2" role="button">
+                    <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">
                 @endif
     
                     <div id="selectedMark" class="position-absolute h-100"></div>

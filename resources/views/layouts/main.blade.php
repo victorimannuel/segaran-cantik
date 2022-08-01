@@ -15,6 +15,8 @@
 
     {{--  js yang digunakan--}}
     <script src="{{ asset('assets/scripts/sidebar.js') }}" async defer></script>
+    
+    <link rel="icon" type="image/x-icon" href={{ asset('assets/img/icons/segaran-icon.png') }}>
 
     <title>Segaran App | Main {{-- {{ $page }}  --}}</title>
 </head>

@@ -1,7 +1,7 @@
 <div id="container-penduduk" class="container mw-100 mx-0 my-5 card p-0">
     <div class="row justify-content-between p-5">
         <div class="col-md-4">
-            <a href="/dashboard/tambah">
+            <a href="/dashboard/penduduk/tambah">
                 <button class="btn btn-primary btn-lg button main-button">Tambah Data</button>
             </a>
         </div>
@@ -24,25 +24,24 @@
 
     </div>
     <form action="/search" id="table-operation" class="d-flex justify-content-between my-2 px-5" method="GET" role="search">
-{{--        @csrf--}}
 
         <span class="input-group-text border-rounded bg-white w-50" id="search-addon">
             <img src="{{ asset('assets/img/icons/search-icon.png') }}" width=20 alt="">
-            <input type="search" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI DATA" value="{{ $q }}" name="q" />
+            <input type="search" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI DATA" value="{{ $pencarian['q'] }}" name="q" />
 
         </span>
 
         <select id="rt" name="rt" class="mx-3 form-select">
             <option selected value="RT">RT</option>
             @for ($i = 1; $i <= 30; $i++)
-                <option {{ $rt == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                <option {{ $pencarian['rt'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
             @endfor
         </select>
 
         <select id="rw" name="rw" class="mx-3 form-select">
             <option selected value="RW">RW</option>
             @for ($i = 1; $i <= 9; $i++)
-                <option {{ $rw == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                <option {{ $pencarian['rw'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
             @endfor
         </select>
 

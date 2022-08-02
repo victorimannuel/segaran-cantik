@@ -4,20 +4,51 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Penduduk extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable, LogsActivity;
 
-//use Illuminate\Database\Eloquent\Model;
-//use App\Traits\Uuids;
-//use Illuminate\Database\Eloquent\SoftDeletes;
+    protected $table = 'penduduks';
+    protected static $logAttributes = ['nama', 'no_kk', 'nik'];
+    protected static $recordEvents = ['updated', 'deleted'];
+    protected static $logFillable = true;
+    protected static $logOnlyDirty = true;
+    protected static $logName = 'penduduk';
 
-//    use Uuids;
-//    use SoftDeletes;
+    function getEventName($eventName) {
+        switch ($eventName) {
+            case 'created':
+                return 'dibuat';
+            case 'updated':
+                return 'diedit';
+            case 'deleted':
+                return 'dihapus';
+        }
+    }
 
-//    protected $table = 'penduduks';
-//    protected $dates = ['deleted_at'];
+    public function getDescriptionForEvent(string $eventName): string
+    {
+        $userId =Auth::id();
+        $user = new User();
+        $userName = $user->find($userId)->name;
+
+        $eventNameIDN = $this->getEventName($eventName);
+
+        return "Data telah $eventNameIDN oleh $userName";
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logOnly(self::$logAttributes)
+            ->logOnlyDirty();
+    }
+
     protected $fillable = [
         'no_kk', 'validasi', 'nik', 'nama', 'tempat_lahir', 'tgl_lahir', 'umur', 'hub_keluarga',
         'status_kawin', 'pendidikan', 'jenis_kelamin', 'agama', 'pekerjaan', 'nama_ayah', 'nama_ibu',

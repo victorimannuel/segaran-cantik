@@ -56,14 +56,39 @@ class PendudukComposer
         $user_id =Auth::id();
         $user = new User();
         $user_name = $user->find($user_id)->name;
+
+        $jumlah_laki = Penduduk::where('jenis_kelamin', '=', 'L')->count();
+        $jumlah_perempuan = Penduduk::where('jenis_kelamin', '=', 'P')->count();
+
+        $balita = Penduduk::whereBetween('umur', [5,11])->count();
+        $anak = Penduduk::whereBetween('umur', [5,11])->count();
+        $remaja = Penduduk::whereBetween('umur', [12,25])->count();
+        $dewasa = Penduduk::whereBetween('umur', [26,45])->count();
+        $lansia = Penduduk::whereBetween('umur', [46,65])->count();
+        $manula = Penduduk::where('umur', '>=', 65)->count();
+
         $view->with([
             'penduduks' => $penduduk_paginated,
             'items' => $items,
             'jumlah_penduduk' => $jumlah_penduduk,
             'user_name' => $user_name,
-            'rt' => request('rt'),
-            'rw' => request('rw'),
-            'q' => request('q'),
+            'jenis_kelamin' => [
+                'jumlah_laki' => $jumlah_laki,
+                'jumlah_perempuan' => $jumlah_perempuan,
+            ],
+            'pencarian' => [
+                'rt' => request('rt'),
+                'rw' => request('rw'),
+                'q' => request('q'),
+            ],
+            'kategori_umur' => [
+                'balita' => $balita,
+                'anak' => $anak,
+                'remaja' => $remaja,
+                'dewasa' => $dewasa,
+                'lansia' => $lansia,
+                'manula' => $manula,
+            ]
         ]);
     }
 }

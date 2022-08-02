@@ -36,7 +36,7 @@ Route::get('/statistik', function () {
 /* versi yang baru */
 Route::get('/dashboard/{id_penduduk}/edit', [PendudukController::class, 'editForm']
 )->name('edit-penduduk.show');
-Route::get('/dashboard/{id_penduduk}', [PendudukController::class, 'readOnlyForm']
+Route::get('/dashboard/penduduk/{id_penduduk}', [PendudukController::class, 'readOnlyForm']
 )->name('view-penduduk.show');
 
 Route::get('/dashboard/tambah', [PendudukController::class, 'createForm']);

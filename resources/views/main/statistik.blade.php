@@ -20,7 +20,7 @@
                       @include('main.charts.jenisKelaminChart')
                       @include('main.charts.umurChart')
                     </div>
-                    </div>
+                  </div>
 
 
                    

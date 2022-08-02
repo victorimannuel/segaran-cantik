@@ -14,7 +14,6 @@
 
                 @include('main.components.cards')
 
-
                 @include('main.components.table-penduduk')
 
             </section>

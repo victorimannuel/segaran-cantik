@@ -13,54 +13,29 @@
 
                 @include('main.components.cards')
 
-                <div class="container mw-100 mx-0 my-5 card">
+                <div class="container mw-100 mx-0 my-5" style="min-height: 60vh;">
                     {{-- canva starts here --}}
-                    <div>
-                        <canvas id="myChart"></canvas>
-                    </div>
-                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                    <script>
-                        const labels = [
-                          'January',
-                          'February',
-                          'March',
-                          'April',
-                          'May',
-                          'June',
-                        ];
-                      
-                        const data = {
-                          labels: labels,
-                          datasets: [{
-                            label: 'My First dataset',
-                            backgroundColor: 'rgb(255, 99, 132)',
-                            borderColor: 'rgb(255, 99, 132)',
-                            data: [0, 10, 5, 2, 20, 30, 45],
-                          }]
-                        };
-                      
-                        const config = {
-                          type: 'line',
-                          data: data,
-                          options: {}
-                        };
-                      </script>
-                      <script>
-                        const myChart = new Chart(
-                          document.getElementById('myChart'),
-                          config
-                        );
-                      </script>
-                      
-                       
-                      
-                       
-                       
-                      
-                    {{-- canva ends here --}}
-                       
-                </div>
+                    <div class="container d-flex justify-content-center">
 
+                      @include('main.charts.jenisKelaminChart')
+                      <div class="card mx-5">
+                        <canvas id="umurChart"></canvas>
+                      </div>
+                    </div>
+                    </div>
+
+
+                   
+                    
+                     
+                    
+                     
+                     
+                    
+                  
+                    {{-- canva ends here --}}
+                     
+              
             </section>
 
 

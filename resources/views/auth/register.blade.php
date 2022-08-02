@@ -10,26 +10,30 @@
 
         <form action="{{ route('register') }}" class="form" method="POST">
             @csrf
-            <div class="my-5">
-                <input type="email" name="email" class="form-control form-control-lg fs-4" id="inputEmail" aria-describedby="emailHelp" placeholder="Email">
+            <div class="my-4">
+                {{-- <label for="" class="form-label fs-3">Email</label>     --}}
+                <input type="email" name="email" class="form-control form-control-lg fs-3" id="inputEmail" aria-describedby="emailHelp" placeholder="Email">
                 <div id="emailHelp" class="form-text"></div>
             </div>
-            <div class="my-5">
-                <input type="text" name="nama" class="form-control form-control-lg fs-4" id="inputNama" aria-describedby="namaHelp" placeholder="Nama">
+            <div class="my-4">
+                {{-- <label for="" class="form-label fs-3">Nama</label>     --}}
+                <input type="text" name="nama" class="form-control form-control-lg fs-3" id="inputNama" aria-describedby="namaHelp" placeholder="Nama">
                 <div id="emailHelp" class="form-text"></div>
             </div>
-            <div class="my-5">
-                <input type="Password" name="Password" class="form-control form-control-lg fs-4" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Password">
+            <div class="my-4">
+                {{-- <label for="" class="form-label fs-3">Password</label>     --}}
+                <input type="Password" name="Password" class="form-control form-control-lg fs-3" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Password">
                 <div id="PasswordHelp" class="form-text"></div>
             </div>
-            <div class="my-5">
-                <input type="Password" name="password_confirmation" class="form-control form-control-lg fs-4" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Confirm Password">
+            <div class="my-4">
+                {{-- <label for="" class="form-label fs-3">Confirm Password</label>     --}}
+                <input type="Password" name="password_confirmation" class="form-control form-control-lg fs-3" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Confirm Password">
                 <div id="PasswordHelp" class="form-text"></div>
             </div>
 
 
-            <div class="d-grid gap-2 mb-3">
-                <button class="btn btn-lg btn-primary" type="submit">Sign Up</button>
+            <div class="d-grid gap-2 my-5">
+                <button class="btn btn-lg btn-primary fs-3" type="submit">Sign Up</button>
             </div>
 
         </form>

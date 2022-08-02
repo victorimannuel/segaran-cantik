@@ -10,7 +10,7 @@
         <form action="{{ route('login') }}" class="form" method="POST">
             @csrf
             <div class="">
-                <input type="email" name="email" class="form-control form-control-lg fs-4 mb-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email anda">
+                <input type="email" name="email" class="form-control form-control-lg fs-3 mb-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email anda">
                 <div id="emailHelp" class="form-text"></div>
                 <div id="emailHelp" class="form-text">Kita tidak akan membagikan email pada siapapun.</div>
             </div>
@@ -20,7 +20,7 @@
 
 
             <div class="d-grid gap-2">
-                <button class="btn btn-lg btn-primary" type="button">Reset</button>
+                <button class="btn btn-lg btn-primary fs-3" type="button">Reset</button>
             </div>
         </form>
     </div>

@@ -46,7 +46,7 @@
             </a>
 
             <a href="./export-import" class="text-decoration-none mb-3">
-                @if ($page === 'File')
+                @if ($page === 'Export / Import Data')
                     <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
                 @else
                     <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">

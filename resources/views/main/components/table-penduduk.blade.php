@@ -1,10 +1,9 @@
 <div id="container-penduduk" class="container mw-100 mx-0 my-5 card p-0">
     <div class="row justify-content-between p-5">
         <div class="col-md-4">
-
-            <form action="/tambah-penduduk" class="">
+            <a href="/dashboard/tambah">
                 <button class="btn btn-primary btn-lg button main-button">Tambah Data</button>
-            </form>
+            </a>
         </div>
 
         <div class="col-md-8 w-auto m-auto">
@@ -56,9 +55,10 @@
 
     </form>
 
-    <div class="table-responsive py-5 fs-4">
-        
-        {{ $penduduks->links() }}
+    <div class="table-responsive py-5 fs-4 d-flex flex-column justify-content-center">
+        <div class="mx-5">
+            {{ $penduduks->links() }}
+        </div>
         <table id="list-penduduk" class="table table-hover">
             <thead class="h4">
             <tr>

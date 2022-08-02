@@ -184,7 +184,7 @@ class PendudukController extends Controller
     }
 
     public function importView(Request $request){
-        return view('main/export-import', ['page' => 'File']);
+        return view('main/export-import', ['page' => 'Export / Import Data']);
     }
 
     public function import(Request $request){

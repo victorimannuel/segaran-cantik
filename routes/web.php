@@ -33,17 +33,31 @@ Route::get('/statistik', function () {
     return view('main.statistik', [ 'page' => 'Statistik']);
 })->middleware(['auth'])->name('main.statistik');
 
-Route::get('/edit-penduduk/{id_penduduk}', [PendudukController::class, 'editForm']
+/* versi yang baru */
+Route::get('/dashboard/{id_penduduk}/edit', [PendudukController::class, 'editForm']
 )->name('edit-penduduk.show');
-Route::get('/edit-penduduk/readonly/{id_penduduk}', [PendudukController::class, 'readOnlyForm']
+Route::get('/dashboard/{id_penduduk}', [PendudukController::class, 'readOnlyForm']
 )->name('view-penduduk.show');
 
-Route::get('/tambah-penduduk', [PendudukController::class, 'createForm']);
-Route::post('/tambah-penduduk', [PendudukController::class, 'store']
+Route::get('/dashboard/tambah', [PendudukController::class, 'createForm']);
+Route::post('/dashboard/tambah', [PendudukController::class, 'store']
 )->name('penduduk.store');
 
-Route::post('/edit-penduduk/save/{id_penduduk}', [PendudukController::class, 'update']
+Route::post('/dashboard/{id_penduduk}/simpan', [PendudukController::class, 'update']
 )->name('penduduk.update');
+/*                  */
+
+// Route::get('/edit-penduduk/{id_penduduk}', [PendudukController::class, 'editForm']
+// )->name('edit-penduduk.show');
+// Route::get('/edit-penduduk/readonly/{id_penduduk}', [PendudukController::class, 'readOnlyForm']
+// )->name('view-penduduk.show');
+
+// Route::get('/tambah-penduduk', [PendudukController::class, 'createForm']);
+// Route::post('/tambah-penduduk', [PendudukController::class, 'store']
+// )->name('penduduk.store');
+
+// Route::post('/edit-penduduk/save/{id_penduduk}', [PendudukController::class, 'update']
+// )->name('penduduk.update');
 
 Route::get('/list-penduduk', [PendudukController::class, 'show_data']
 )->name('list-penduduk.show');

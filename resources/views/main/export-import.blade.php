@@ -10,29 +10,44 @@
 
             @include('main.components.header')
 
-            <section class="card mx-5 align-self-center align-items-center justify-content-start p-5" style="height: 80vh;">
+            <section class=" mx-5 align-self-center align-items-center justify-content-start p-5" style="height: 80vh;">
                 
-                @if(Session::has('success'))
-                    <div class="alert alert-success">
+
+                <form action="{{ route('import') }}" class="w-100" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @if(Session::has('success'))
+                    <div class="alert alert-success fs-3">
                         {{Session::get('success')}}
                     </div>
+                    @endif
+                    <div class="container d-flex flex-row justify-content-between w-100 align-items-between p-0">
 
-                @endif
-                <h1 class="text-center mb-5">
-                    <b>Export / Import Data</b>
-                </h1>
-                <p class="fs-3">
-                    Disini anda bisa melakukan melakukan export terhadap
-                </p>
+                        <div class="me-5 w-50 p-5 card d-flex justify-content-between" >
+                            <div class="text">
+                                <h1><b>Export</b></h1>
+                                <p class="fs-3 my-4">
+                                    Untuk memastikan data yang telah diisikan di sini tidak hilang, anda bisa mendownload data tersebut dengan klik di bawah ini
+                                </p>
+                            </div>
+                            <a class="btn btn-success btn-lg fs-3 my-4" href="{{ route('export-penduduk') }}">Export Data Penduduk</a>
+                        </div>
+    
+    
+                        <div class="ms-5 w-50 p-5 card d-flex justify-content-between" >
+                            <div class="text">
+                                <h1><b>Import</b></h1>
+                                <p class="fs-3 my-4">Untuk mempermudah dalam penginputan data, anda dapat mengimport data tersebut di bawah ini
+                                </p>
 
-                <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group d-flex flex-column justify-content-center">
-                        <label for="customFile" class="form-label text-start fs-3">Pilih file Excel atau CSV</label>
-                        <input class="form-control fs-3" type="file" id="customFIle" name="file">
+                            </div>
+        
+                            <div class="form-group d-flex flex-column justify-content-center">
+                                <label for="customFile" class="form-label text-start fs-4">Pilih file Excel atau CSV</label>
+                                <input class="form-control fs-4" type="file" id="customFIle" name="file">
+                            </div>
+                            <button class="btn btn-primary btn-lg fs-3 my-4">Import Data Penduduk</button> 
+                        </div>
                     </div>
-                    <button class="btn btn-primary btn-lg">Import Penduduk</button>
-                    <a class="btn btn-success btn-lg" href="{{ route('export-penduduk') }}">Export Penduduk</a>
                 </form>
             </section>
 

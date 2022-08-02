@@ -20,13 +20,15 @@
             @endif
             <div class="my-5">
                 <input type="email" name="email" class="form-control form-control-lg fs-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email anda">
+            <div class="my-3">
+                <input type="email" name="email" class="form-control form-control-lg fs-3 py-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email anda">
                 <div id="emailHelp" class="form-text"></div>
             </div>
-            <div class="my-5">
-                <input type="password" class="form-control form-control-lg fs-4 text-opacity-50" id="exampleInputPassword1" name="password" placeholder="Password" >
+            <div class="my-3">
+                <input type="password" class="form-control form-control-lg fs-3 text-opacity-50 py-2" id="exampleInputPassword1" name="password" placeholder="Password" >
             </div>
 
-            <div class="row mb-4">
+            <div class="row mb-4 fs-3">
                 <div class="col d-flex justify-content-start">
                     <!-- Checkbox -->
                     <div class="form-check">
@@ -42,7 +44,7 @@
             </div>
 
             <div class="d-grid gap-2">
-                <button class="btn btn-lg btn-primary" type="submit">Login</button>
+                <button class="btn btn-lg btn-primary  fs-3" type="submit">Login</button>
             </div>
 
         </form>

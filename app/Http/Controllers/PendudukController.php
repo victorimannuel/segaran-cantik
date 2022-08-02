@@ -10,9 +10,11 @@ use App\Models\Penduduk;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
+use Spatie\Activitylog\Models\Activity;
 
 class PendudukController extends Controller
 {
+
     public function __construct()
     {
         $this->penduduk = new Penduduk();
@@ -26,7 +28,19 @@ class PendudukController extends Controller
     public function readOnlyForm($id)
     {
         $data = $this->penduduk->find($id);
-        return view('penduduk/readonly', ['penduduk' => $data]);
+//        $activityLog = DB::table('activity_log')->where('subject_id', $id);
+        $activityLog = Activity::all()->where('subject_id', $id);
+        $oldArr = [];
+//        $properties = json_decode($activityLog[0]->properties, true);
+//        foreach ($properties as $prop) {
+//            foreach ($prop as $p) {
+//                error_log($p);
+//                array_push($oldArr, )
+//                        }
+//        }
+//        error_log($activityLog);
+//        error_log($properties[]);
+        return view('penduduk/readonly', ['penduduk' => $data, 'activityLogs' => $activityLog]);
     }
 
     public function editForm($id)
@@ -38,7 +52,7 @@ class PendudukController extends Controller
     {
         $this->validate($request, [
             'nama' => 'required',
-//            'no_kk' => 'required|max:16|min:16',
+            'no_kk' => 'required|max:16|min:16',
 //            'validasi' => 'required',
 //            'nik' => 'required|max:16|min:16',
 //            'hub_keluarga' => 'required',
@@ -92,16 +106,23 @@ class PendudukController extends Controller
 
     public function update(Request $request)
     {
-        DB::table('penduduks')->where('id',$request->id_penduduk)->update([
-            'no_kk' => $request->no_kk,
-            'nama' => $request->nama,
-            'nik' => $request->nik,
-            'dusun' => $request->dusun,
-            'rw' => $request->rw,
-            'rt' => $request->rt,
-        ]);
+//        DB::table('penduduks')->where('id',$request->id_penduduk)->update([
+//            'no_kk' => $request->no_kk,
+//            'nama' => $request->nama,
+//            'nik' => $request->nik,
+//            'dusun' => $request->dusun,
+//            'rw' => $request->rw,
+//            'rt' => $request->rt,
+//        ]);
 
-        $penduduk = $this->penduduk->find($request->id_penduduk);
+        $penduduk = Penduduk::find($request->id_penduduk);
+        $penduduk->no_kk = $request->no_kk;
+        $penduduk->nama = $request->nama;
+        $penduduk->nik = $request->nik;
+        $penduduk->dusun = $request->dusun;
+        $penduduk->rw = $request->rw;
+        $penduduk->rt = $request->rt;
+        $penduduk->save();
 
         return view('penduduk/readonly', [
             'penduduk' => $penduduk,
@@ -167,7 +188,6 @@ class PendudukController extends Controller
     }
 
     public function import(Request $request){
-        error_log($request->file('file'));
         Excel::import(new ImportPenduduk, $request->file('file')->store('files'));
         return redirect()->back()->with('success', 'File berhasil diimport');
     }

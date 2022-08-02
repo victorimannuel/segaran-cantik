@@ -63,7 +63,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="hub_keluarga">HUBUNGAN KELUARGA</label>
-                <select class="selectpicker form-control" readonly id="hub_keluarga" name="hub_keluarga">
+                <select class="selectpicker form-control" readonly id="hub_keluarga" name="hub_keluarga" style="cursor: not-allowed;">
                     <option value="Kepala Keluarga" {{$penduduk->hub_keluarga == 'Kepala keluarga' ? 'selected':''}}>Kepala Keluarga</option>
                     <option value="Ibu" {{$penduduk->hub_keluarga == 'Ibu' ? 'selected':''}}>Ibu</option>
                     <option value="Anak" {{$penduduk->hub_keluarga == 'Anak' ? 'selected':''}}>Anak</option>
@@ -77,7 +77,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="status_kawin">STATUS PERKAWINAN</label>
-                <select class="selectpicker form-control" readonly id="status_kawin" name="status_kawin">
+                <select class="selectpicker form-control" readonly id="status_kawin" name="status_kawin" style="cursor: not-allowed;">
                     <option selected value="Belum Kawin">Belum Kawin</option>
                     <option value="Kawin">Kawin</option>
                 </select>
@@ -91,7 +91,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="jenis_kelamin">JENIS KELAMIN</label>
-                <select class="selectpicker form-control" readonly id="jenis_kelamin" name="jenis_kelamin">
+                <select class="selectpicker form-control" readonly id="jenis_kelamin" name="jenis_kelamin" style="cursor: not-allowed;">
                     <option selected value="Laki-laki">Laki-laki</option>
                     <option value="Perempuan">Perempuan</option>
                 </select>
@@ -101,7 +101,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="agama">AGAMA</label>
-                <select class="selectpicker form-control" readonly id="agama" name="agama">
+                <select class="selectpicker form-control" readonly id="agama" name="agama" style="cursor: not-allowed;">
                     <option selected value="Islam">Islam</option>
                     <option value="Kristen">Kristen</option>
                     <option value="Katolik">Katolik</option>
@@ -137,7 +137,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="rt">RT</label>
-                <select class="selectpicker form-control" readonly id="rt" name="rt">
+                <select class="selectpicker form-control" readonly id="rt" name="rt" style="cursor: not-allowed;">
                     <option selected value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -151,7 +151,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="rw">RW</label>
-                <select class="selectpicker form-control" readonly id="rw" name="rw">
+                <select class="selectpicker form-control" readonly id="rw" name="rw" style="cursor: not-allowed;">
                     <option selected value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -165,7 +165,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="dusun">DUSUN</label>
-                <select class="selectpicker form-control" readonly id="dusun" name="dusun">
+                <select class="selectpicker form-control" readonly id="dusun" name="dusun" style="cursor: not-allowed;">
                     <option selected value="KRAJAN">KRAJAN</option>
                     <option value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
                     <option value="PUTAT">PUTAT</option>
@@ -182,7 +182,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="status_pendidikan">STATUS PENDIDIKAN</label>
-                <select class="selectpicker form-control" readonly id="status_pendidikan" name="status_pendidikan">
+                <select class="selectpicker form-control" readonly id="status_pendidikan" name="status_pendidikan" style="cursor: not-allowed;">
                     <option selected value="BELUM TAMAT">BELUM TAMAT</option>
                     <option value="TAMAT">TAMAT</option>
                     <option value="BELUM SEKOLAH">BELUM SEKOLAH</option>
@@ -193,7 +193,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="pendidikan">PENDIDIKAN</label>
-                <select class="selectpicker form-control" readonly id="pendidikan" name="pendidikan">
+                <select class="selectpicker form-control" readonly id="pendidikan" name="pendidikan" style="cursor: not-allowed;">
                     <option value="D1">D1</option>
                     <option value="D2">D2</option>
                     <option value="D3">D3</option>
@@ -360,7 +360,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="gol_darah">GOLONGAN DARAH</label>
-                <select class="selectpicker form-control" value="{{ $penduduk->gol_darah }}" readonly id="gol_darah" name="gol_darah">
+                <select class="selectpicker form-control" value="{{ $penduduk->gol_darah }}" readonly id="gol_darah" name="gol_darah" style="cursor: not-allowed;">
                     <option selected value="A">A</option>
                     <option value="B">B</option>
                     <option value="AB">AB</option>
@@ -372,7 +372,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="penyandang_cacat">PENYANDANG CACAT</label>
-                <select class="selectpicker form-control" value="{{ $penduduk->penyandang_cacat }}" readonly id="penyandang_cacat" name="penyandang_cacat">
+                <select class="selectpicker form-control" value="{{ $penduduk->penyandang_cacat }}" readonly id="penyandang_cacat" name="penyandang_cacat" style="cursor: not-allowed;">
                     <option selected value="Ya">Ya</option>
                     <option value="Tidak">Tidak</option>
                 </select>
@@ -422,9 +422,59 @@
         <!--  col-md-6   -->
     </div>
     <!--  row   -->
-
 </form>
 </div>
+<div>
+    <table class="table-bordered">
+        @if(isset($activityLogs))
+            @foreach($activityLogs as $log)
+                @php
+                    $properties = json_decode($log->properties, true);
+                @endphp
+                <tr>
+                    <td>
+                        {{ $log->description}} - {{ $log->updated_at->format('l jS F Y h:i:s A')}}
+                    </td>
+                    <td>
+                        <table class="table-bordered">
+                        @foreach($properties as $prop)
+                            <td>
+                                @foreach($prop as $p)
+                                    @if($loop->last)
+                                        <tr>{{$p}} -></tr>
+                                    @else
+                                        <tr>{{$p}}</tr>
+                                    @endif
+                                @endforeach
+                            </td>
+                        @endforeach
+                        </table>
+                    </td>
+                </tr>
+            @endforeach
+        @endif
+    </table>
+</div>
 </form>
+<script>
+    var selectable = [
+        'hub_keluarga',
+        'status_kawin',
+        'jenis_kelamin',
+        'agama',
+        'rt',
+        'rw',
+        'dusun',
+        'status_pendidikan',
+        'pendidikan',
+        'gol_darah',
+        'penyandang_cacat',
+    ];
+    for (let i = 0; i < selectable.length; i++) {
+        document.getElementById(selectable[i]).prop("readonly", isReadOnly);
+        document.getElementById(selectable[i]).toggleClass("my-read-only-class", isReadOnly);
+        document.getElementById(selectable[i]).find("option").prop("hidden", isReadOnly);
+    }
+</script>
 </body>
 </html>

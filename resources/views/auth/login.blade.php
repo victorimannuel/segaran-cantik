@@ -10,6 +10,14 @@
 
         <form action="{{ route('login') }}" class="form" method="POST">
             @csrf
+            @if ($errors->any())
+{{--                @foreach ($errors->all() as $error)--}}
+                    <div class="error">
+{{--                        {{ $errors }}--}}
+                        {{ $errors->first('failed') }}
+                    </div>
+{{--                @endforeach--}}
+            @endif
             <div class="my-5">
                 <input type="email" name="email" class="form-control form-control-lg fs-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email anda">
                 <div id="emailHelp" class="form-text"></div>

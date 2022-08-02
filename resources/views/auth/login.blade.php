@@ -4,20 +4,18 @@
 @section('landing-body')
     <div class="container">
         <img src="{{ asset('assets/img/icons/segaran-icon.png') }}" alt="logo" width="48" height="48" />
-        <p class="light">Dashboard Segaran</p>
-        <h1 style="text-align: center;">Log In to Dashboard Segaran</h1>
+        <p class="light">Segaran Admin</p>
+        <h1 style="text-align: center;">Log In ke Segaran Admin</h1>
         <p class="form-label light">Masukkan Email dan Password di bawah</p>
 
         <form action="{{ route('login') }}" class="form" method="POST">
             @csrf
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div class="my-5">
+                <input type="email" name="email" class="form-control form-control-lg fs-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email anda">
                 <div id="emailHelp" class="form-text"></div>
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="password" >
+            <div class="my-5">
+                <input type="password" class="form-control form-control-lg fs-4 text-opacity-50" id="exampleInputPassword1" name="password" placeholder="Password" >
             </div>
 
             <div class="row mb-4">

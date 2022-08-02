@@ -57,7 +57,7 @@
     </form>
 
     <div class="table-responsive py-5 fs-4">
-
+        
         {{ $penduduks->links() }}
         <table id="list-penduduk" class="table table-hover">
             <thead class="h4">

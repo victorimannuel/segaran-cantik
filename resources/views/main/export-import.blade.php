@@ -10,38 +10,36 @@
 
             @include('main.components.header')
 
-            <section class="card mx-5 align-self-center d-flex justify-content-center" style="height: 80vh;">
+            <section class="card mx-5 align-self-center align-items-center justify-content-start p-5" style="height: 80vh;">
                 
-@if(Session::has('success'))
-    <div class="alert alert-success">
-        {{Session::get('success')}}
-    </div>
-
-        @endif
-        <div class="container mt-5 text-center">
-            <h2 class="mb-4">
-                Import Export Excel & CSV File
-            </h2>
-            <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="form-group mb-4">
-                    <div class="custom-file text-left">
-                        <input type="file" name="file" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile" id="customFileLabel">Choose file</label>
+                @if(Session::has('success'))
+                    <div class="alert alert-success">
+                        {{Session::get('success')}}
                     </div>
-                </div>
-                <button class="btn btn-primary">Import Penduduk</button>
-                <a class="btn btn-success" href="{{ route('export-penduduk') }}">Export Penduduk</a>
-            </form>
-        </div>
 
+                @endif
+                <h1 class="text-center mb-5">
+                    <b>Export / Import Data</b>
+                </h1>
+                <p class="fs-3">
+                    Disini anda bisa melakukan melakukan export terhadap
+                </p>
 
-    </section>
+                <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group d-flex flex-column justify-content-center">
+                        <label for="customFile" class="form-label text-start fs-3">Pilih file Excel atau CSV</label>
+                        <input class="form-control fs-3" type="file" id="customFIle" name="file">
+                    </div>
+                    <button class="btn btn-primary btn-lg">Import Penduduk</button>
+                    <a class="btn btn-success btn-lg" href="{{ route('export-penduduk') }}">Export Penduduk</a>
+                </form>
+            </section>
 
-    <footer class="mt-5">
+            <footer class="mt-5">
 
-    </footer>
-</main>
+            </footer>
+        </main>
 </div>
 
 @endsection

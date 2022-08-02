@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href={{ asset('assets/styles/landing.css') }}>
 
-    <title>Segaran App | {{ $page }}</title>
+    <title>Segaran Admin | {{ $page }}</title>
 </head>
 <body>
 @yield('landing-body')

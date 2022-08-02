@@ -3,15 +3,15 @@
 @section('landing-body')
     <div class="container">
         <img src="{{ asset('assets/img/icons/segaran-icon.png') }}" alt="logo" width="48" height="48" />
-        <p class="light">Dashboard Segaran</p>
+        <p class="light">Segaran Admin</p>
         <h1>Atur Ulang Kata Sandi</h1>
         <p class="light">Masukkan Email di bawah ini</p>
 
         <form action="{{ route('login') }}" class="form" method="POST">
             @csrf
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" class="form-control-lg form-control form-control-lg form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div class="">
+                <input type="email" name="email" class="form-control form-control-lg fs-4 mb-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email anda">
+                <div id="emailHelp" class="form-text"></div>
                 <div id="emailHelp" class="form-text">Kita tidak akan membagikan email pada siapapun.</div>
             </div>
 

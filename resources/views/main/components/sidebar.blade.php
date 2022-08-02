@@ -57,7 +57,7 @@
                             <img src="{{ asset("assets/img/icons/database-window.png") }}" alt="" class="me-4" width="25" height="25">
                             <p
                                 class="hiddenWhenClosed m-0"
-                            >Export & Import</p>
+                            >Export / Import</p>
                         </div>
                     </li>
                 </a>

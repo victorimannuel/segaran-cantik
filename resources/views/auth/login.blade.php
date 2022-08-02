@@ -56,7 +56,7 @@
                 <div class="col d-flex justify-content-start">
                     <!-- Checkbox -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked name="remember"/>
                         <label class="form-check-label" for="form2Example31"> Ingat saya </label>
                     </div>
                 </div>

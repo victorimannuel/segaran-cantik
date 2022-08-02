@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Input;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('auth.login', [
         "name" => "Kepala Desa",
@@ -31,37 +32,24 @@ Route::get('/notif', function () {
 
 Route::get('/statistik', function () {
     return view('main.statistik', [ 'page' => 'Statistik']);
-//    return view('main.statistik', [PendudukController::class, 'showChart']);
 })->middleware(['auth'])->name('main.statistik');
 
 /* versi yang baru */
-Route::get('/dashboard/{id_penduduk}/edit', [PendudukController::class, 'editForm']
+Route::get('/dashboard/penduduk/{id_penduduk}/edit', [PendudukController::class, 'editForm']
 )->name('edit-penduduk.show');
-Route::get('/dashboard/{id_penduduk}', [PendudukController::class, 'readOnlyForm']
+Route::get('/dashboard/penduduk/{id_penduduk}/read', [PendudukController::class, 'readOnlyForm']
 )->name('view-penduduk.show');
 
-Route::get('/dashboard/tambah', [PendudukController::class, 'createForm']);
-Route::post('/dashboard/tambah', [PendudukController::class, 'store']
+Route::get('/dashboard/penduduk/tambah/', [PendudukController::class, 'createForm']);
+Route::post('/dashboard/penduduk/tambah/', [PendudukController::class, 'store']
 )->name('penduduk.store');
 
 Route::post('/dashboard/{id_penduduk}/simpan', [PendudukController::class, 'update']
 )->name('penduduk.update');
 /*                  */
 
-// Route::get('/edit-penduduk/{id_penduduk}', [PendudukController::class, 'editForm']
-// )->name('edit-penduduk.show');
-// Route::get('/edit-penduduk/readonly/{id_penduduk}', [PendudukController::class, 'readOnlyForm']
-// )->name('view-penduduk.show');
-
-// Route::get('/tambah-penduduk', [PendudukController::class, 'createForm']);
-// Route::post('/tambah-penduduk', [PendudukController::class, 'store']
-// )->name('penduduk.store');
-
-// Route::post('/edit-penduduk/save/{id_penduduk}', [PendudukController::class, 'update']
-// )->name('penduduk.update');
-
-Route::get('/list-penduduk', [PendudukController::class, 'show_data']
-)->name('list-penduduk.show');
+//Route::get('/list-penduduk', [PendudukController::class, 'show_data']
+//)->name('list-penduduk.show');
 //Route::post('/list-penduduk', [PendudukController::class, 'store']
 //)->name('penduduk.store');
 

@@ -18,9 +18,7 @@
                     <div class="container d-flex justify-content-center">
 
                       @include('main.charts.jenisKelaminChart')
-                      <div class="card mx-5">
-                        <canvas id="umurChart"></canvas>
-                      </div>
+                      @include('main.charts.umurChart')
                     </div>
                     </div>
 

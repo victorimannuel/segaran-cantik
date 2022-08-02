@@ -28,7 +28,6 @@ class PendudukController extends Controller
     public function readOnlyForm($id)
     {
         $data = $this->penduduk->find($id);
-//        $activityLog = DB::table('activity_log')->where('subject_id', $id);
         $activityLog = Activity::all()->where('subject_id', $id);
         $oldArr = [];
 //        $properties = json_decode($activityLog[0]->properties, true);
@@ -45,7 +44,7 @@ class PendudukController extends Controller
 
     public function editForm($id)
     {
-        $data = $this->penduduk->find($id);
+        $data = Penduduk::find($id);
         return view('penduduk/edit', ['penduduk' => $data]);
     }
 
@@ -107,15 +106,6 @@ class PendudukController extends Controller
 
     public function update(Request $request)
     {
-//        DB::table('penduduks')->where('id',$request->id_penduduk)->update([
-//            'no_kk' => $request->no_kk,
-//            'nama' => $request->nama,
-//            'nik' => $request->nik,
-//            'dusun' => $request->dusun,
-//            'rw' => $request->rw,
-//            'rt' => $request->rt,
-//        ]);
-
         $penduduk = Penduduk::find($request->id_penduduk);
         $penduduk->no_kk = $request->no_kk;
         $penduduk->nama = $request->nama;
@@ -195,13 +185,6 @@ class PendudukController extends Controller
 
     public function exportPenduduk(Request $request){
         return Excel::download(new ExportPenduduk, 'penduduks.xlsx');
-    }
-
-    public function showChart(Request $request) {
-        $laki = Penduduk::where('jenis_kelamin', '=', 'L');
-        $perempuan = Penduduk::find('jenis_kelamin', '=', 'P');
-//        return view('main/statistik', ['page' => 'Statistik', 'laki' => $laki, 'perempuan' => $perempuan]);
-        return view('main/statistik', ['page' => 'Statistik']);
     }
 
 }

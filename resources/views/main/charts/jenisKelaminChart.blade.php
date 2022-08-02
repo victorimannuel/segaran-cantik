@@ -1,10 +1,11 @@
 <div class="card mx-5 p-5">
     <h1 class="text-center"><b>Jenis Kelamin</b></h1>
     <canvas id="jenisKelaminChart" class="p-5" width=400 height=400></canvas>
-    
+
   </div>
   <script>
     const ctx = document.getElementById('jenisKelaminChart').getContext('2d');
+    console.log({{json_encode($jumlah_laki, JSON_HEX_TAG)}});
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -12,8 +13,8 @@
             datasets: [{
                 label: 'Penduduk',
                 data: [
-                  {{ '1000' }},
-                  {{ '600' }}
+                  {{ $jumlah_laki }},
+                  {{ $jumlah_perempuan }}
                 ],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',

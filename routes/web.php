@@ -19,7 +19,7 @@ Route::get('/', function () {
         "name" => "Kepala Desa",
         "page" => "Login"
     ]);
-});
+})->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('main.dashboard', [ 'page' => 'Dashboard']);
@@ -31,6 +31,7 @@ Route::get('/notif', function () {
 
 Route::get('/statistik', function () {
     return view('main.statistik', [ 'page' => 'Statistik']);
+//    return view('main.statistik', [PendudukController::class, 'showChart']);
 })->middleware(['auth'])->name('main.statistik');
 
 /* versi yang baru */

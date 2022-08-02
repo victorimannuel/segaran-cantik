@@ -48,6 +48,7 @@ class PendudukController extends Controller
         $data = $this->penduduk->find($id);
         return view('penduduk/edit', ['penduduk' => $data]);
     }
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -194,6 +195,13 @@ class PendudukController extends Controller
 
     public function exportPenduduk(Request $request){
         return Excel::download(new ExportPenduduk, 'penduduks.xlsx');
+    }
+
+    public function showChart(Request $request) {
+        $laki = Penduduk::where('jenis_kelamin', '=', 'L');
+        $perempuan = Penduduk::find('jenis_kelamin', '=', 'P');
+//        return view('main/statistik', ['page' => 'Statistik', 'laki' => $laki, 'perempuan' => $perempuan]);
+        return view('main/statistik', ['page' => 'Statistik']);
     }
 
 }

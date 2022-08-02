@@ -92,8 +92,8 @@
             <div class="form-group">
                 <label for="jenis_kelamin">JENIS KELAMIN</label>
                 <select class="selectpicker form-control" readonly id="jenis_kelamin" name="jenis_kelamin" style="cursor: not-allowed;">
-                    <option selected value="Laki-laki">Laki-laki</option>
-                    <option value="Perempuan">Perempuan</option>
+                    <option selected value="L">Laki-laki</option>
+                    <option value="P">Perempuan</option>
                 </select>
             </div>
         </div>

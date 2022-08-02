@@ -17,12 +17,12 @@
             </div>
             <div class="my-4">
                 {{-- <label for="" class="form-label fs-3">Nama</label>     --}}
-                <input type="text" name="nama" class="form-control form-control-lg fs-3" id="inputNama" aria-describedby="namaHelp" placeholder="Nama">
+                <input type="text" name="name" class="form-control form-control-lg fs-3" id="inputNama" aria-describedby="namaHelp" placeholder="Nama">
                 <div id="emailHelp" class="form-text"></div>
             </div>
             <div class="my-4">
                 {{-- <label for="" class="form-label fs-3">Password</label>     --}}
-                <input type="Password" name="Password" class="form-control form-control-lg fs-3" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Password">
+                <input type="Password" name="password" class="form-control form-control-lg fs-3" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Password">
                 <div id="PasswordHelp" class="form-text"></div>
             </div>
             <div class="my-4">

@@ -56,11 +56,17 @@ class PendudukComposer
         $user_id =Auth::id();
         $user = new User();
         $user_name = $user->find($user_id)->name;
+
+        $jumlah_laki = Penduduk::where('jenis_kelamin', '=', 'L')->count();
+        $jumlah_perempuan = Penduduk::where('jenis_kelamin', '=', 'P')->count();
+
         $view->with([
             'penduduks' => $penduduk_paginated,
             'items' => $items,
             'jumlah_penduduk' => $jumlah_penduduk,
             'user_name' => $user_name,
+            'jumlah_laki' => $jumlah_laki,
+            'jumlah_perempuan' => $jumlah_perempuan,
             'rt' => request('rt'),
             'rw' => request('rw'),
             'q' => request('q'),

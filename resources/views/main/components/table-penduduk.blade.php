@@ -28,21 +28,21 @@
 
         <span class="input-group-text border-rounded bg-white w-50" id="search-addon">
             <img src="{{ asset('assets/img/icons/search-icon.png') }}" width=20 alt="">
-            <input type="search" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI DATA" value="{{ $q }}" name="q" />
+            <input type="search" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI DATA" value="{{ $pencarian['q'] }}" name="q" />
 
         </span>
 
         <select id="rt" name="rt" class="mx-3 form-select">
             <option selected value="RT">RT</option>
             @for ($i = 1; $i <= 30; $i++)
-                <option {{ $rt == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                <option {{ $pencarian['rt'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
             @endfor
         </select>
 
         <select id="rw" name="rw" class="mx-3 form-select">
             <option selected value="RW">RW</option>
             @for ($i = 1; $i <= 9; $i++)
-                <option {{ $rw == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                <option {{ $pencarian['rw'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
             @endfor
         </select>
 

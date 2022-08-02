@@ -60,16 +60,35 @@ class PendudukComposer
         $jumlah_laki = Penduduk::where('jenis_kelamin', '=', 'L')->count();
         $jumlah_perempuan = Penduduk::where('jenis_kelamin', '=', 'P')->count();
 
+        $balita = Penduduk::whereBetween('umur', [5,11]);
+        $anak = Penduduk::whereBetween('umur', [5,11]);
+        $remaja = Penduduk::whereBetween('umur', [12,25]);
+        $dewasa = Penduduk::whereBetween('umur', [26,45]);
+        $lansia = Penduduk::whereBetween('umur', [46,65]);
+        $manula = Penduduk::where('umur', '>=', 65);
+
         $view->with([
             'penduduks' => $penduduk_paginated,
             'items' => $items,
             'jumlah_penduduk' => $jumlah_penduduk,
             'user_name' => $user_name,
-            'jumlah_laki' => $jumlah_laki,
-            'jumlah_perempuan' => $jumlah_perempuan,
-            'rt' => request('rt'),
-            'rw' => request('rw'),
-            'q' => request('q'),
+            'jenis_kelamin' => [
+                'jumlah_laki' => $jumlah_laki,
+                'jumlah_perempuan' => $jumlah_perempuan,
+            ],
+            'pencarian' => [
+                'rt' => request('rt'),
+                'rw' => request('rw'),
+                'q' => request('q'),
+            ],
+            'kategori_umur' => [
+                'balita' => $balita,
+                '$anak' => $anak,
+                '$remaja' => $remaja,
+                '$dewasa' => $dewasa,
+                '$lansia' => $lansia,
+                '$manula' => $manula,
+            ]
         ]);
     }
 }

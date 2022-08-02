@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('tempat_lahir')->nullable();
             $table->date('tgl_lahir')->nullable();
-//            $table->string('umur')->nullable();
+            $table->string('umur')->nullable();
             $table->string('hub_keluarga')->nullable();
             $table->string('status_kawin')->nullable();
             $table->string('pendidikan')->nullable();

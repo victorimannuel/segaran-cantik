@@ -5,7 +5,6 @@
   </div>
   <script>
     const ctx = document.getElementById('jenisKelaminChart').getContext('2d');
-    console.log({{json_encode($jumlah_laki, JSON_HEX_TAG)}});
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -13,8 +12,8 @@
             datasets: [{
                 label: 'Penduduk',
                 data: [
-                  {{ $jumlah_laki }},
-                  {{ $jumlah_perempuan }}
+                  {{ $jenis_kelamin['jumlah_laki'] }},
+                  {{ $jenis_kelamin['jumlah_perempuan'] }},
                 ],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',

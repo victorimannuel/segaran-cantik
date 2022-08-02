@@ -29,16 +29,6 @@ class PendudukController extends Controller
     {
         $data = $this->penduduk->find($id);
         $activityLog = Activity::all()->where('subject_id', $id);
-        $oldArr = [];
-//        $properties = json_decode($activityLog[0]->properties, true);
-//        foreach ($properties as $prop) {
-//            foreach ($prop as $p) {
-//                error_log($p);
-//                array_push($oldArr, )
-//                        }
-//        }
-//        error_log($activityLog);
-//        error_log($properties[]);
         return view('penduduk/readonly', ['penduduk' => $data, 'activityLogs' => $activityLog]);
     }
 
@@ -115,9 +105,13 @@ class PendudukController extends Controller
         $penduduk->rt = $request->rt;
         $penduduk->save();
 
+        $penduduk = Penduduk::find($request->id_penduduk);
+        $activityLog = Activity::all()->where('subject_id', $request->id_penduduk);
+
         return view('penduduk/readonly', [
             'penduduk' => $penduduk,
-            'success', 'Penduduk berhasil diedit',
+            'success' => 'Penduduk berhasil diedit',
+            'activityLogs' => $activityLog
         ]);
     }
 

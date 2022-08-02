@@ -44,7 +44,9 @@ Route::get('/dashboard/penduduk/tambah/', [PendudukController::class, 'createFor
 Route::post('/dashboard/penduduk/tambah/', [PendudukController::class, 'store']
 )->name('penduduk.store');
 
-Route::post('/dashboard/{id_penduduk}/simpan', [PendudukController::class, 'update']
+Route::get('/dashboard/penduduk/{id_penduduk}/simpan', [PendudukController::class, 'update']
+);
+Route::post('/dashboard/penduduk/{id_penduduk}/simpan', [PendudukController::class, 'update']
 )->name('penduduk.update');
 /*                  */
 

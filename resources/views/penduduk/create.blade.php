@@ -10,17 +10,16 @@
 
             @include('main.components.header')
 
-            <section class="mx-5 align-self-center d-flex justify-content-center">
+            <section class="mx-5 align-self-center d-flex justify-content-center card p-5">
                 <!-- Success message -->
                 @if(Session::has('success'))
                     <div class="alert alert-success">
                         {{Session::get('success')}}
                     </div>
                 @endif
-                <form method="post" action="{{ route('penduduk.store') }}">
+                <form class="form-penduduk pb-5" method="post" action="{{ route('penduduk.store') }}">
                     <!-- CROSS Site Request Forgery Protection -->
                     @csrf
-                    <h2>Form Data Penduduk Desa Segaran</h2>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">

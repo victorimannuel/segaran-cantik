@@ -7,8 +7,9 @@
             <img id="notificationButton" src={{ asset("assets/img/icons/notif-dot.png" )  }} alt="notification" width="30" height="30" role="button"
             type="button" class="" data-bs-toggle="modal" data-bs-target="#notificationModal"
             data-backdrop="false"
+            hidden
             >
-        <div class="ps-4">
+        <div class="ps-4" hidden>
             <div id="line">
 
             </div>

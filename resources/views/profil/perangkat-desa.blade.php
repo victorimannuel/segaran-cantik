@@ -1,4 +1,5 @@
-<div class="row content-container">
+<div class="row content-container" style="width:80%; 
+overflow-y: scroll;">
     <div class="column">
         <ul>
             <li>

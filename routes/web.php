@@ -31,7 +31,7 @@ Route::get('/notif', function () {
 });
 
 Route::get('/statistik', function () {
-    return view('main.statistik', [ 'page' => 'Statistik']);
+    return view('main.statistik', ['page' => 'Statistik']);
 })->middleware(['auth'])->name('main.statistik');
 
 /* versi yang baru */
@@ -49,11 +49,6 @@ Route::get('/dashboard/penduduk/{id_penduduk}/simpan', [PendudukController::clas
 Route::post('/dashboard/penduduk/{id_penduduk}/simpan', [PendudukController::class, 'update']
 )->name('penduduk.update');
 /*                  */
-
-//Route::get('/list-penduduk', [PendudukController::class, 'show_data']
-//)->name('list-penduduk.show');
-//Route::post('/list-penduduk', [PendudukController::class, 'store']
-//)->name('penduduk.store');
 
 Route::any('/search', function(){
     return view('main/dashboard', [ 'page' => 'dashboard']);

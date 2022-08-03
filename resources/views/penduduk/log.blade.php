@@ -1,12 +1,12 @@
-<aside>
+{{--<aside>--}}
     <table class="table-responsive">
         @foreach($activityLogs as $log)
             <tr>
-                <td>
+                <td class="col-2">
                     <hr/>
                     {{ $log->description }} {{ $log->updated_at }}
                 </td>
-                <td>
+                <td class="col-2">
                 </td>
             </tr>
             <tr>
@@ -55,4 +55,4 @@
             </tr>
         @endforeach
     </table>
-</aside>
+{{--</aside>--}}

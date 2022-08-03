@@ -47,9 +47,12 @@
 
         <select id="dusun" name="dusun" class="ms-3 form-select">
             <option selected value="DUSUN">DUSUN</option>
-            <option value="KRAJAN">KRAJAN</option>
-            <option value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
-            <option value="PUTAT">PUTAT</option>
+            <option {{ $pencarian['dusun'] == "KRAJAN" ? 'selected':'' }} value="KRAJAN">KRAJAN</option>
+            <option {{ $pencarian['dusun'] == "PUTAT" ? 'selected':'' }} value="PUTAT">PUTAT</option>
+            <option {{ $pencarian['dusun'] == "SUMBERBANTENG" ? 'selected':'' }} value="SUMBERBANTENG">SUMBERBANTENG</option>
+            <option {{ $pencarian['dusun'] == "SUMBERJABON" ? 'selected':'' }} value="SUMBERJABON">SUMBERJABON</option>
+            <option {{ $pencarian['dusun'] == "SUMBERKOTES KULON" ? 'selected':'' }} value="SUMBERKOTES KULON">SUMBERKOTES KULON</option>
+            <option {{ $pencarian['dusun'] == "SUMBERKOTES WETAN" ? 'selected':'' }} value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
         </select>
 
     </form>

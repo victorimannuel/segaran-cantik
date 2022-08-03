@@ -14,11 +14,11 @@
                 <!-- Success message -->
 
                 @if(Session::has('success'))
-                <div class="alert alert-success">
-                    {{Session::get('success')}}
-                </div>
+                    <div class="alert alert-success">
+                        {{Session::get('success')}}
+                    </div>
                 @endif
-                
+
                 <form class="form-penduduk pb-5" method="post" action="{{ route('penduduk.store') }}">
                     <!-- CROSS Site Request Forgery Protection -->
                     @csrf
@@ -42,7 +42,7 @@
                         </div>
                         <!--  col-md-6   -->
                     </div>
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -60,18 +60,24 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="hub_keluarga">HUBUNGAN KELUARGA</label>
                                 <select class="selectpicker form-select" disabled id="hub_keluarga" name="hub_keluarga" style="cursor: not-allowed;">
+                                    <option value="Kepala Keluarga" selected>-- HUBUNGAN KELUARGA --</option>
                                     <option value="Kepala Keluarga" {{$penduduk->hub_keluarga == 'Kepala keluarga' ? 'selected':''}}>Kepala Keluarga</option>
-                                    <option value="Ibu" {{$penduduk->hub_keluarga == 'Ibu' ? 'selected':''}}>Ibu</option>
+                                    <option value="Ibu" {{$penduduk->hub_keluarga == 'Suami' ? 'selected':''}}>Suami</option>
+                                    <option value="Ibu" {{$penduduk->hub_keluarga == 'Istri' ? 'selected':''}}>Istri</option>
                                     <option value="Anak" {{$penduduk->hub_keluarga == 'Anak' ? 'selected':''}}>Anak</option>
-                                    <option value="Suami" {{$penduduk->hub_keluarga == 'Suami' ? 'selected':''}}>Suami</option>
-                                    <option value="Istri" {{$penduduk->hub_keluarga == 'Istri' ? 'selected':''}}>Istri</option>
-                                    <option value="Saudara" {{$penduduk->hub_keluarga == 'Saudara' ? 'selected':''}}>Saudara</option>
+                                    <option value="Ibu" {{$penduduk->hub_keluarga == 'Menantu' ? 'selected':''}}>Menantu</option>
+                                    <option value="Ibu" {{$penduduk->hub_keluarga == 'Cucu' ? 'selected':''}}>Cucu</option>
+                                    <option value="Suami" {{$penduduk->hub_keluarga == 'Orang Tua' ? 'selected':''}}>Orang Tua</option>
+                                    <option value="Istri" {{$penduduk->hub_keluarga == 'Mertua' ? 'selected':''}}>Mertua</option>
+                                    <option value="Saudara" {{$penduduk->hub_keluarga == 'Famili' ? 'selected':''}}>Famili</option>
+                                    <option value="Saudara" {{$penduduk->hub_keluarga == 'Pembantu' ? 'selected':''}}>Pembantu</option>
+                                    <option value="Saudara" {{$penduduk->hub_keluarga == 'Lainnya' ? 'selected':''}}>Lainnya</option>
                                 </select>
                             </div>
                         </div>
@@ -88,7 +94,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -116,7 +122,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -134,7 +140,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -177,9 +183,9 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <hr/>
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -208,7 +214,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -226,8 +232,8 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
-                
+
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -245,7 +251,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <hr/>
                     <div class="row">
                         <div class="col-md-4">
@@ -271,7 +277,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -296,7 +302,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -321,7 +327,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -339,7 +345,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -357,7 +363,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -383,7 +389,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -409,7 +415,7 @@
                         </div>
                         <!--  col-md-6   -->
                     </div>
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -427,7 +433,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -455,7 +461,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -483,7 +489,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -501,7 +507,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -544,9 +550,9 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <hr/>
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -575,7 +581,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -593,8 +599,8 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
-                
+
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -612,7 +618,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <hr/>
                     <div class="row">
                         <div class="col-md-4">
@@ -638,7 +644,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -663,7 +669,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -688,7 +694,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -706,7 +712,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -724,7 +730,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -750,7 +756,7 @@
                         <!--  col-md-6   -->
                     </div>
                     <!--  row   -->
-                
+
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -780,14 +786,12 @@
                             </div>
                         </div>
                     </div>
-                    </form>
-                
-                    <div>
-                    <div class="log">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae corporis, minus neque eum laudantium veniam quidem pariatur accusantium aperiam, voluptatibus officia possimus dolore a quae nemo delectus fugit iure illo odit dolorum rem enim ad? Impedit quis quo consequatur culpa iste ex ullam quod quisquam ea. Tempore, vitae excepturi minima a ab praesentium exercitationem voluptatem? Vero perferendis, ab repellendus, amet consequatur dolorum nostrum labore beatae eligendi illo magni. Itaque, porro nostrum! Porro aut, animi suscipit voluptates enim commodi dignissimos culpa. Eos quaerat accusantium laudantium aperiam reprehenderit earum eligendi quos dolores. Debitis vel dignissimos excepturi pariatur! Maxime beatae eos minus eius!
-                    </div>
-                    @include('penduduk.log')
-                
+                </form>
+
+                {{--                    <div>--}}
+                {{--                    <div class="log">--}}
+                @include('penduduk.log')
+                {{--                    </div>--}}
 
             </section>
 
@@ -798,27 +802,6 @@
     </div>
 
 @endsection
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script>
     var selectable = [

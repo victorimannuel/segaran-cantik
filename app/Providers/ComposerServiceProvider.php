@@ -10,9 +10,13 @@ class ComposerServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-// Using class based composers...
+        // Using class based composers...
         View::composer(
-            ['main/dashboard', 'main/statistik', 'main/export-import'], 'App\Http\ViewComposers\PendudukComposer'
+            [
+                'main/dashboard', 'main/statistik', 'main/export-import',
+                'penduduk/create', 'penduduk/edit', 'penduduk/readonly'
+            ],
+            'App\Http\ViewComposers\PendudukComposer'
         );
     }
 
@@ -23,6 +27,5 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-//
     }
 }

@@ -80,6 +80,7 @@ class PendudukComposer
                 'rt' => request('rt'),
                 'rw' => request('rw'),
                 'q' => request('q'),
+                'dusun' => request('dusun'),
             ],
             'kategori_umur' => [
                 'balita' => $balita,

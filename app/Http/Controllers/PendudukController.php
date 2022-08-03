@@ -8,7 +8,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Penduduk;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use Spatie\Activitylog\Models\Activity;
 
@@ -22,7 +21,8 @@ class PendudukController extends Controller
 
     public function createForm()
     {
-        return view('penduduk/create');
+        return view('penduduk/create', [
+            'page' => 'Tambah Penduduk']);
     }
 
 
@@ -31,12 +31,10 @@ class PendudukController extends Controller
         $data = $this->penduduk->find($id);
         $activityLog = Activity::all()->where('subject_id', $id);
         return view('penduduk/readonly', [
-            'penduduk' => $data, 
-            'activityLogs' => $activityLog, 
-            'page' => 'Data Penduduk', 
-            'user_name' => 'user',
+            'penduduk' => $data,
+            'activityLogs' => $activityLog,
+            'page' => 'Data Penduduk',
             'aside_state' => 'closed'
-            
         ]);
     }
 
@@ -44,9 +42,9 @@ class PendudukController extends Controller
     {
         $data = Penduduk::find($id);
         return view('penduduk/edit', [
-            'penduduk' => $data, 
+            'penduduk' => $data,
             'page' => 'Ubah Data Penduduk',
-            'user_name' => 'user',
+//            'user_name' => 'user',
             'aside_state' => 'closed'
         ]);
     }
@@ -123,6 +121,7 @@ class PendudukController extends Controller
 
         return view('penduduk/readonly', [
             'penduduk' => $penduduk,
+            'page' => 'Data Penduduk',
             'success' => 'Penduduk berhasil diedit',
             'activityLogs' => $activityLog
         ]);

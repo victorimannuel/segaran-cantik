@@ -1,9 +1,11 @@
 {{--<aside>--}}
-    <table class="table-responsive">
+    <div class="container">
+
+    </div>
+    <table class="table-responsive" hidden>
         @foreach($activityLogs as $log)
             <tr>
                 <td class="col-2">
-                    <hr/>
                     {{ $log->description }} {{ $log->updated_at }}
                 </td>
                 <td class="col-2">
@@ -16,6 +18,7 @@
                     $i_new = 0;
                     $i_old = 0;
                 @endphp
+
                 <td>
                     <table class="table-responsive">
                         <tr><b>Variabel</b></tr>
@@ -55,4 +58,10 @@
             </tr>
         @endforeach
     </table>
+
+    <script>
+        function log(){
+            if()
+        }
+    </script>
 {{--</aside>--}}

@@ -80,6 +80,11 @@ section {
     font-size: 4.2rem;
 }
 
+.notif-container:hover{
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+
 @media screen {
 
 }

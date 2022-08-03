@@ -7,7 +7,8 @@
         <h1>Atur Ulang Kata Sandi</h1>
         <p class="light">Masukkan Email di bawah ini</p>
 
-        <form action="{{ route('login') }}" class="form" method="POST">
+{{--        <form action="{{ route('login') }}" class="form" method="POST">--}}
+        <form action="{{ route('password.email') }}" class="form" method="POST">
             @csrf
             <div class="">
                 <input type="email" name="email" class="form-control form-control-lg fs-3 mb-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email anda">
@@ -20,7 +21,7 @@
 
 
             <div class="d-grid gap-2">
-                <button class="btn btn-lg btn-primary fs-3" type="button">Reset</button>
+                <button name="send" class="btn btn-lg btn-primary fs-3" type="button">Reset</button>
             </div>
         </form>
     </div>

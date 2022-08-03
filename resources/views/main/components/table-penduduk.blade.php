@@ -46,13 +46,13 @@
         </select>
 
         <select id="dusun" name="dusun" class="ms-3 form-select">
-            <option selected value="DUSUN">DUSUN</option>
-            <option {{ $pencarian['dusun'] == "KRAJAN" ? 'selected':'' }} value="KRAJAN">KRAJAN</option>
-            <option {{ $pencarian['dusun'] == "PUTAT" ? 'selected':'' }} value="PUTAT">PUTAT</option>
-            <option {{ $pencarian['dusun'] == "SUMBERBANTENG" ? 'selected':'' }} value="SUMBERBANTENG">SUMBERBANTENG</option>
-            <option {{ $pencarian['dusun'] == "SUMBERJABON" ? 'selected':'' }} value="SUMBERJABON">SUMBERJABON</option>
-            <option {{ $pencarian['dusun'] == "SUMBERKOTES KULON" ? 'selected':'' }} value="SUMBERKOTES KULON">SUMBERKOTES KULON</option>
-            <option {{ $pencarian['dusun'] == "SUMBERKOTES WETAN" ? 'selected':'' }} value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
+            <option selected value="DUSUN" {{$jabatan == 'PUSAT'? 'enabled':'disabled'}}>DUSUN</option>
+            <option {{ $pencarian['dusun'] == "KRAJAN" ? 'selected':'' }} value="KRAJAN" {{$jabatan == 'PUSAT'? 'enabled':'disabled'}}>KRAJAN</option>
+            <option {{ $pencarian['dusun'] == "PUTAT" || $jabatan == 'KASUN PUTAT' ? 'selected':'' }} value="PUTAT" {{$jabatan == 'KASUN PUTAT' || $jabatan == 'PUSAT'? 'enabled':'disabled'}}>PUTAT</option>
+            <option {{ $pencarian['dusun'] == "SUMBERBANTENG" ? 'selected':'' }} value="SUMBERBANTENG" {{$jabatan == 'KASUN SUMBERBANTENG' || $jabatan == 'PUSAT'? 'enabled':'disabled'}}>SUMBERBANTENG</option>
+            <option {{ $pencarian['dusun'] == "SUMBERJABON" ? 'selected':'' }} value="SUMBERJABON" {{$jabatan == 'KASUN SUMBERJABON' || $jabatan == 'PUSAT'? 'enabled':'disabled'}}>SUMBERJABON</option>
+            <option {{ $pencarian['dusun'] == "SUMBERKOTES KULON" ? 'selected':'' }} value="SUMBERKOTES KULON" {{$jabatan == 'KASUN SUMBERKOTES KULON' || $jabatan == 'PUSAT'? 'enabled':'disabled'}}>SUMBERKOTES KULON</option>
+            <option {{ $pencarian['dusun'] == "SUMBERKOTES WETAN" ? 'selected':'' }} value="SUMBERKOTES WETAN" {{$jabatan == 'KASUN SUMBERKOTES WETAN' || $jabatan == 'PUSAT'? 'enabled':'disabled'}}>SUMBERKOTES WETAN</option>
         </select>
 
     </form>
@@ -108,6 +108,24 @@
         document.getElementById('pagination').onchange = function() {
             window.location = "{!! $penduduks->url(1) !!}&items=" + this.value;
         };
+        var jabatan = [
+            'KASUN PUTAT',
+            'KASUN SUMBERBANTENG',
+            'KASUN SUMBERJABON',
+            'KASUN SUMBERKOTES WETAN',
+            'KASUN SUMBERKOTES KULON',
+        ];
+        console.log({{ $jabatan }});
+        {{--if ({{ $jabatan }} in jabatan) {--}}
+        {{--    var selectable = [--}}
+        {{--        'dusun',--}}
+        {{--    ];--}}
+        {{--    for (let i = 0; i < selectable.length; i++) {--}}
+        {{--        document.getElementById(selectable[i]).prop("disabled", isdisabled);--}}
+        {{--        document.getElementById(selectable[i]).toggleClass("my-read-only-class", isdisabled);--}}
+        {{--        document.getElementById(selectable[i]).find("option").prop("hidden", isdisabled);--}}
+        {{--    }--}}
+        {{--}--}}
     </script>
 
 </div>

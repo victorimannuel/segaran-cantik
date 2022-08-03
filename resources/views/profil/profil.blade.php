@@ -335,7 +335,7 @@
 {{--                    <img class="gimg" id="gimg" src="assets/img/Galeri/lahan.png" alt="lahan" onclick="openModal();currentSlide(3)" />--}}
                     <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/lahan.png') }}" alt="lahan" onclick="openModal();currentSlide(3)" />
 {{--                    <img class="gimg" id="gimg" src="assets/img/Galeri/Posyandu.JPG" alt="mpls" onclick="openModal();currentSlide(14)" />--}}
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/Posyandu.png') }}" alt="mpls" onclick="openModal();currentSlide(14)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/Posyandu.JPG') }}" alt="mpls" onclick="openModal();currentSlide(14)" />
                 </div>
                 <div class="gcolumn">
                     <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/mpls.png') }}" alt="mpls" onclick="openModal();currentSlide(4)" />
@@ -353,7 +353,7 @@
                 <div class="gcolumn">
                     <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
                     <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/vaksinasi.png') }}" alt="vaksin" onclick="openModal();currentSlide(12)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/suro.png') }}" alt="futsal" onclick="openModal();currentSlide(15)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/suro.JPG') }}" alt="futsal" onclick="openModal();currentSlide(15)" />
                     <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
 
                 </div>

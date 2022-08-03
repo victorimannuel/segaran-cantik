@@ -44,7 +44,6 @@ class PendudukController extends Controller
         return view('penduduk/edit', [
             'penduduk' => $data,
             'page' => 'Ubah Data Penduduk',
-//            'user_name' => 'user',
             'aside_state' => 'closed'
         ]);
     }
@@ -53,7 +52,7 @@ class PendudukController extends Controller
     {
         $this->validate($request, [
             'nama' => 'required',
-            'no_kk' => 'required|max:16|min:16',
+//            'no_kk' => 'required|max:16|min:16',
 //            'validasi' => 'required',
 //            'nik' => 'required|max:16|min:16',
 //            'hub_keluarga' => 'required',
@@ -109,12 +108,41 @@ class PendudukController extends Controller
     {
         $penduduk = Penduduk::find($request->id_penduduk);
         $penduduk->no_kk = $request->no_kk;
-        $penduduk->nama = $request->nama;
+        $penduduk->validasi = $request->validasi;
         $penduduk->nik = $request->nik;
+        $penduduk->nama = $request->nama;
+        $penduduk->tempat_lahir = $request->tempat_lahir;
+        $penduduk->tgl_lahir = $request->tgl_lahir;
+        $penduduk->umur = $request->umur;
         $penduduk->hub_keluarga = $request->hub_keluarga;
-        $penduduk->dusun = $request->dusun;
-        $penduduk->rw = $request->rw;
+        $penduduk->status_kawin = $request->status_kawin;
+        $penduduk->pendidikan = $request->pendidikan;
+        $penduduk->jenis_kelamin = $request->jenis_kelamin;
+        $penduduk->agama = $request->agama;
+        $penduduk->pekerjaan = $request->pekerjaan;
+        $penduduk->nama_ayah = $request->nama_ayah;
+        $penduduk->nama_ibu = $request->nama_ibu;
+        $penduduk->status_pendidikan = $request->status_pendidikan;
         $penduduk->rt = $request->rt;
+        $penduduk->rw = $request->rw;
+        $penduduk->dusun = $request->dusun;
+        $penduduk->tgl_nikah = $request->tgl_nikah;
+        $penduduk->no_buku_nikah = $request->no_buku_nikah;
+        $penduduk->kua = $request->kua;
+        $penduduk->akte_lahir = $request->akte_lahir;
+        $penduduk->tgl_kematian = $request->tgl_kematian;
+        $penduduk->pukul_kematian = $request->pukul_kematian;
+        $penduduk->ket_kematian = $request->ket_kematian;
+        $penduduk->no_bpjs = $request->no_bpjs;
+        $penduduk->jabatan = $request->jabatan;
+        $penduduk->telepon = $request->telepon;
+        $penduduk->no_ijazah = $request->no_ijazah;
+        $penduduk->nik_ayah = $request->nik_ayah;
+        $penduduk->nik_ibu = $request->nik_ibu;
+        $penduduk->tgl_cerai = $request->tgl_cerai;
+        $penduduk->no_akta_cerai = $request->no_akta_cerai;
+        $penduduk->gol_darah = $request->gol_darah;
+        $penduduk->penyandang_cacat = $request->penyandang_cacat;
         $penduduk->save();
 
         $penduduk = Penduduk::find($request->id_penduduk);

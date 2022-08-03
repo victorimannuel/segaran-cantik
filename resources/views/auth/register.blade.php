@@ -20,33 +20,26 @@
                 <input type="text" name="name" class="form-control form-control-lg fs-3" id="inputNama" aria-describedby="namaHelp" placeholder="Nama">
                 <div id="emailHelp" class="form-text"></div>
             </div>
-            <div class="my-4">
-                {{-- <label for="" class="form-label fs-3">Nama</label>     --}}
-                <input type="text" name="jabatan" class="form-control form-control-lg fs-3" id="inputJabatan" aria-describedby="jabatanHelp" placeholder="Jabatan">
-                <div id="emailHelp" class="form-text"></div>
-                <label for="jabatan">HUBUNGAN KELUARGA</label>
-                <select class="selectpicker form-control" id="jabatan" name="jabatan">
-                    <option selected >JABATAN</option>
-                    <option selected value="PUSAT"></option>
-                    <option selected value="KASUN KRAJAN">KASUN KRAJAN</option>
-                    <option selected value="KASUN PUTAT">KASUN PUTAT</option>
-                    <option selected value="KASUN SUMBERBANTENG">KASUN SUMBERBANTENG</option>
-                    <option selected value="KASUN SUMBERJABON">KASUN SUMBERJABON</option>
-                    <option selected value="KASUN SUMBERKOTES KULON">KASUN SUMBERKOTES KULON</option>
-                    <option selected value="KASUN SUMBERKOTES WETAN">KASUN SUMBERKOTES WETAN</option>
+            <div class="my-4 h-100">
+                <select class="selectpicker form-control" style="height: 3.5rem; font-size: 0.875em;" id="jabatan" name="jabatan">
+                    <option selected >Jabatan</option>
+                    <option value="PUSAT">PUSAT</option>
+                    <option value="KASUN KRAJAN">KASUN KRAJAN</option>
+                    <option value="KASUN PUTAT">KASUN PUTAT</option>
+                    <option value="KASUN SUMBERBANTENG">KASUN SUMBERBANTENG</option>
+                    <option value="KASUN SUMBERJABON">KASUN SUMBERJABON</option>
+                    <option value="KASUN SUMBERKOTES KULON">KASUN SUMBERKOTES KULON</option>
+                    <option value="KASUN SUMBERKOTES WETAN">KASUN SUMBERKOTES WETAN</option>
                 </select>
             </div>
             <div class="my-4">
-                {{-- <label for="" class="form-label fs-3">Password</label>     --}}
                 <input type="Password" name="password" class="form-control form-control-lg fs-3" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Kata Sandi">
                 <div id="PasswordHelp" class="form-text"></div>
             </div>
             <div class="my-4">
-                {{-- <label for="" class="form-label fs-3">Confirm Password</label>     --}}
                 <input type="Password" name="password_confirmation" class="form-control form-control-lg fs-3" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Konfirmasi Kata Sandi">
                 <div id="PasswordHelp" class="form-text"></div>
             </div>
-
 
             <div class="d-grid gap-2 my-5">
                 <button class="btn btn-lg btn-primary fs-3" type="submit">Daftar</button>

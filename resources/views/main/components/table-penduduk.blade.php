@@ -32,27 +32,123 @@
         </span>
 
         <select id="rt" name="rt" class="mx-3 form-select">
+            @php
+                $rt = [
+                    'krajan' => [1,2,3,4,5,6,7,8,9],
+                    'putat' => [10,11,12,13],
+                    'sumberbanteng' => [14,15,16,17,18,19],
+                    'sumberjabon' => [29,30],
+                    'sumberkotes kulon' => [20,21,22,23,24],
+                    'sumberkotes wetan' => [25,26,27,28],
+                ];
+                $rw = [
+                    'krajan' => [1,2,3],
+                    'putat' => [4],
+                    'sumberbanteng' => [5,6],
+                    'sumberjabon' => [7],
+                    'sumberkotes kulon' => [8],
+                    'sumberkotes wetan' => [9],
+                ];
+            @endphp
             <option selected value="RT">RT</option>
+            @if($jabatan == 'PUSAT')
             @for ($i = 1; $i <= 30; $i++)
                 <option {{ $pencarian['rt'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
             @endfor
+            @endif
+            @if($jabatan == 'KASUN KRAJAN')
+            @for ($i = 1; $i <= 9; $i++)
+                <option {{ $pencarian['rt'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+            @endfor
+            @endif
+            @if($jabatan == 'KASUN PUTAT')
+                @for ($i = 10; $i <= 13; $i++)
+                    <option {{ $pencarian['rt'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            @endif
+            @if($jabatan == 'KASUN SUMBERBANTENG')
+                @for ($i = 5; $i <= 6; $i++)
+                    <option {{ $pencarian['rt'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            @endif
+            @if($jabatan == 'KASUN SUMBERJABON')
+                @for ($i = 7; $i <= 7; $i++)
+                    <option {{ $pencarian['rt'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            @endif
+            @if($jabatan == 'KASUN SUMBERKOTES KULON')
+                @for ($i = 8; $i <= 8; $i++)
+                    <option {{ $pencarian['rt'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            @endif
+            @if($jabatan == 'KASUN SUMBERKOTES WETAN')
+                @for ($i = 9; $i <= 9; $i++)
+                    <option {{ $pencarian['rt'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            @endif
         </select>
 
         <select id="rw" name="rw" class="mx-3 form-select">
             <option selected value="RW">RW</option>
+            @if($jabatan == 'PUSAT')
             @for ($i = 1; $i <= 9; $i++)
                 <option {{ $pencarian['rw'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
             @endfor
+            @endif
+            @if($jabatan == 'KASUN KRAJAN')
+                @for ($i = 1; $i <= 3; $i++)
+                    <option {{ $pencarian['rw'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            @endif
+            @if($jabatan == 'KASUN PUTAT')
+                @for ($i = 4; $i <= 4; $i++)
+                    <option {{ $pencarian['rw'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            @endif
+            @if($jabatan == 'KASUN SUMBERBANTENG')
+                @for ($i = 14; $i <= 19; $i++)
+                    <option {{ $pencarian['rw'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            @endif
+            @if($jabatan == 'KASUN SUMBERJABON')
+                @for ($i = 29; $i <= 30; $i++)
+                    <option {{ $pencarian['rw'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            @endif
+            @if($jabatan == 'KASUN SUMBERKOTES KULON')
+                @for ($i = 20; $i <= 24; $i++)
+                    <option {{ $pencarian['rw'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            @endif
+            @if($jabatan == 'KASUN SUMBERKOTES WETAN')
+                @for ($i = 25; $i <= 28; $i++)
+                    <option {{ $pencarian['rw'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            @endif
         </select>
 
         <select id="dusun" name="dusun" class="ms-3 form-select">
+            @if($jabatan == 'PUSAT')
             <option selected value="DUSUN" {{$jabatan == 'PUSAT'? 'enabled':'disabled'}}>DUSUN</option>
-            <option {{ $pencarian['dusun'] == "KRAJAN" ? 'selected':'' }} value="KRAJAN" {{$jabatan == 'PUSAT'? 'enabled':'disabled'}}>KRAJAN</option>
+            @endif
+            @if($jabatan == 'PUSAT' || $jabatan == 'KASUN KRAJAN')
+            <option {{ $pencarian['dusun'] == "KRAJAN" ? 'selected':'' }} value="KRAJAN" {{$jabatan == 'KASUN KRAJAN' || $jabatan == 'PUSAT' ? 'enabled':'disabled'}}>KRAJAN</option>
+            @endif
+            @if($jabatan == 'PUSAT' || $jabatan == 'KASUN PUTAT')
             <option {{ $pencarian['dusun'] == "PUTAT" || $jabatan == 'KASUN PUTAT' ? 'selected':'' }} value="PUTAT" {{$jabatan == 'KASUN PUTAT' || $jabatan == 'PUSAT'? 'enabled':'disabled'}}>PUTAT</option>
+            @endif
+            @if($jabatan == 'PUSAT' || $jabatan == 'KASUN SUMBERBANTENG')
             <option {{ $pencarian['dusun'] == "SUMBERBANTENG" ? 'selected':'' }} value="SUMBERBANTENG" {{$jabatan == 'KASUN SUMBERBANTENG' || $jabatan == 'PUSAT'? 'enabled':'disabled'}}>SUMBERBANTENG</option>
+            @endif
+            @if($jabatan == 'PUSAT' || $jabatan == 'KASUN SUMBERJABON')
             <option {{ $pencarian['dusun'] == "SUMBERJABON" ? 'selected':'' }} value="SUMBERJABON" {{$jabatan == 'KASUN SUMBERJABON' || $jabatan == 'PUSAT'? 'enabled':'disabled'}}>SUMBERJABON</option>
+            @endif
+            @if($jabatan == 'PUSAT' || $jabatan == 'KASUN SUMBERKOTES KULON')
             <option {{ $pencarian['dusun'] == "SUMBERKOTES KULON" ? 'selected':'' }} value="SUMBERKOTES KULON" {{$jabatan == 'KASUN SUMBERKOTES KULON' || $jabatan == 'PUSAT'? 'enabled':'disabled'}}>SUMBERKOTES KULON</option>
+            @endif
+            @if($jabatan == 'PUSAT' || $jabatan == 'KASUN SUMBERKOTES WETAN')
             <option {{ $pencarian['dusun'] == "SUMBERKOTES WETAN" ? 'selected':'' }} value="SUMBERKOTES WETAN" {{$jabatan == 'KASUN SUMBERKOTES WETAN' || $jabatan == 'PUSAT'? 'enabled':'disabled'}}>SUMBERKOTES WETAN</option>
+            @endif
         </select>
 
     </form>

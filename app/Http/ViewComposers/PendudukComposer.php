@@ -76,7 +76,13 @@ class PendudukComposer
                 break;
         }
 
-        $penduduk_paginated = $query->paginate($items)->appends(['items' => $items]);
+        $penduduk_paginated = $query->paginate($items)->appends([
+            'items' => $items,
+            'rt' => request('rt'),
+            'rw' => request('rw'),
+            'q' => request('q'),
+            'dusun' => request('dusun'),
+            ]);
 
         $penduduk = Penduduk::all();
         $jumlah_penduduk = $penduduk->count();

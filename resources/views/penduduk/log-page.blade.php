@@ -15,6 +15,7 @@
                 <table class="table">
                     <thead class="h4">
                         <tr>
+                            <th>Penduduk</th>
                             <th>Variabel</th>
                             <th>Sebelum</th>
                             <th>Sesudah</th>

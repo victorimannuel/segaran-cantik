@@ -10,7 +10,7 @@
 
             @include('main.components.header')
 
-            <section class="mx-5 align-self-center d-flex justify-content-center">
+            <section class="mx-5 align-self-center d-flex justify-content-center card p-5">
 <!-- Success message -->
 @if(Session::has('success'))
     <div class="alert alert-success">

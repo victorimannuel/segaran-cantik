@@ -10,7 +10,7 @@
 
             @include('main.components.header')
 
-            <section class="mx-5 align-self-center d-flex justify-content-center">
+            <section class="mx-5 align-self-center d-flex justify-content-center card p-5">
                 <!-- Success message -->
 
                 @if(Session::has('success'))
@@ -785,8 +785,8 @@
                     <div>
                     <div class="log">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae corporis, minus neque eum laudantium veniam quidem pariatur accusantium aperiam, voluptatibus officia possimus dolore a quae nemo delectus fugit iure illo odit dolorum rem enim ad? Impedit quis quo consequatur culpa iste ex ullam quod quisquam ea. Tempore, vitae excepturi minima a ab praesentium exercitationem voluptatem? Vero perferendis, ab repellendus, amet consequatur dolorum nostrum labore beatae eligendi illo magni. Itaque, porro nostrum! Porro aut, animi suscipit voluptates enim commodi dignissimos culpa. Eos quaerat accusantium laudantium aperiam reprehenderit earum eligendi quos dolores. Debitis vel dignissimos excepturi pariatur! Maxime beatae eos minus eius!
+                        @include('penduduk.log')
                     </div>
-                    @include('penduduk.log')
                 
 
             </section>

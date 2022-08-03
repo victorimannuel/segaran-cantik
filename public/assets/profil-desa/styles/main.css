@@ -31,8 +31,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../img/bg.png");
-  background-position: center;
+  background-image: 
+      url("../img/bg.png"),
+      url("../img/bg-blurred.png");
+  background-position: center, center;
+  background-repeat: no-repeat, repeat;
 
   width: 100%;
   height: 38rem;
@@ -122,8 +125,12 @@ a {
 #gsb {
   height: 485px;
   width: 100%;
-  background-image: url("../img/headerlpd.png");
-  background-position: center;
+
+  background-image: 
+      url("../img/headerlpd.png"),
+      url("../img/headerlpd-blurred.png");
+  background-position: center, center;
+  background-repeat: no-repeat, repeat;
 }
 #service {
   overflow-y: scroll;
@@ -141,8 +148,12 @@ a {
   margin-top: 0;
   height: 542px;
   width: 100%;
-  background-image: url("../img/hgaleri.png");
-  background-position: center;
+
+  background-image: 
+      url("../img/hgaleri.png"),
+      url("../img/hgaleri-blurred.png");
+  background-position: center, center;
+  background-repeat: no-repeat, repeat;
 }
 .column {
   justify-content: center;
@@ -168,8 +179,11 @@ a {
 #phead {
   width: 100%;
   height: 493;
-  background-image: url("../img/headerpotensi.png");
-  background-position: center;
+  background-image: 
+      url("../img/headerpotensi.png"),
+      url("../img/headerpotensi-blurred.png");
+  background-position: center, center;
+  background-repeat: no-repeat, repeat;
 }
 #kontak {
   align-content: center;
@@ -502,10 +516,14 @@ img.hover-shadow {
 }
 
 #humkm{
-  background-image: url("../img/humkm.png");
+
+  background-image: 
+      url("../img/humkm.png"),
+      url("../img/humkm-blurred.png");
+  background-position: center, center;
+  background-repeat: no-repeat, repeat;
   width: 100%;
   height: 542px;
-  background-position: center;
 }
 
 #umkm{
@@ -517,7 +535,8 @@ img.hover-shadow {
 
 #footer{
   height: 200px;
-  width: 100%;
+  width: 98%;
+  align-self: center;
 }
 #fcolumn{
   align-items: center;
@@ -534,7 +553,6 @@ img.hover-shadow {
 
 
 #frow{
-  ;
   background-color: white;
 }
 #frow::after{
@@ -542,4 +560,9 @@ img.hover-shadow {
   content: "";
   display: table;
   clear: both;
+}
+#fcopyright{
+  text-align: center;
+  margin: auto;
+  padding: 2em;
 }

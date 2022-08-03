@@ -648,12 +648,13 @@
     </div>
     <div style="width: 100%; height: 200px; background: white;"></div>
     <div id="footer">
-        <div id="frow">
+        <div id="frow" style="
+        border-bottom: 3px solid #EFF0F0;">
             <div id="fcolumn">
 
                 <img src="{{ asset('assets/profil-desa/img/footer/LOGO.png') }}" alt="">
             </div>
-            <div id="fcolumn" style="padding: 16px; border-right: 1px solid #a8a6a6a6">
+            <div id="fcolumn" style="padding: 16px; border-right: 3px solid #EFF0F0">
                 <p style="font-size: 14px;">Desa asri yang masih menjunjung tinggi nilai religius dan keberagaman, serta ramai akan potensi UMKM berkualitas.</p>
             </div>
             <div id="fcolumn" >
@@ -676,6 +677,9 @@
 
 
             </div>
+        </div>
+        <div id="fcopyright">
+            Copyright © 2022. Segaran Village. All rights reserved.
         </div>
     </div>
 </div>

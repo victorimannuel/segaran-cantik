@@ -55,6 +55,8 @@ class PendudukComposer
 
         switch ($jabatan) {
             case 'PUSAT':
+                break;
+            case 'KASUN KRAJAN':
                 $query->where('dusun', '=', 'KRAJAN');
                 break;
             case 'KASUN PUTAT':

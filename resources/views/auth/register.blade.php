@@ -24,6 +24,17 @@
                 {{-- <label for="" class="form-label fs-3">Nama</label>     --}}
                 <input type="text" name="jabatan" class="form-control form-control-lg fs-3" id="inputJabatan" aria-describedby="jabatanHelp" placeholder="Jabatan">
                 <div id="emailHelp" class="form-text"></div>
+                <label for="jabatan">HUBUNGAN KELUARGA</label>
+                <select class="selectpicker form-control" id="jabatan" name="jabatan">
+                    <option selected >JABATAN</option>
+                    <option selected value="PUSAT"></option>
+                    <option selected value="KASUN KRAJAN">KASUN KRAJAN</option>
+                    <option selected value="KASUN PUTAT">KASUN PUTAT</option>
+                    <option selected value="KASUN SUMBERBANTENG">KASUN SUMBERBANTENG</option>
+                    <option selected value="KASUN SUMBERJABON">KASUN SUMBERJABON</option>
+                    <option selected value="KASUN SUMBERKOTES KULON">KASUN SUMBERKOTES KULON</option>
+                    <option selected value="KASUN SUMBERKOTES WETAN">KASUN SUMBERKOTES WETAN</option>
+                </select>
             </div>
             <div class="my-4">
                 {{-- <label for="" class="form-label fs-3">Password</label>     --}}

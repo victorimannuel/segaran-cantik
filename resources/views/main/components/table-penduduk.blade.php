@@ -12,7 +12,7 @@
             </h1>
         </div>
         <div class="col-md-4 d-flex flex-row-reverse">
-            <select id="pagination" class="form-select fw-normal">
+            <select id="pagination" class="form-select fw-normal" name="pagination">
                 <option value="10" {{$items == 10 ? 'selected':''}}>10</option>
                 <option value="25" {{$items == 25 ? 'selected':''}}>25</option>
                 <option value="50" {{$items == 50 ? 'selected':''}}>50</option>
@@ -77,7 +77,7 @@
             </thead>
             <tbody>
             @php $i = 1; @endphp
-            @foreach($penduduks as $penduduk)
+            @foreach($penduduks as $index => $penduduk)
                 <tr>
                     <td class="text-center pe-3"><b>{{ $i }}</b></td>
                     <td >{{ $penduduk->no_kk }}</td>
@@ -108,14 +108,14 @@
         document.getElementById('pagination').onchange = function() {
             window.location = "{!! $penduduks->url(1) !!}&items=" + this.value;
         };
-        var jabatan = [
-            'KASUN PUTAT',
-            'KASUN SUMBERBANTENG',
-            'KASUN SUMBERJABON',
-            'KASUN SUMBERKOTES WETAN',
-            'KASUN SUMBERKOTES KULON',
-        ];
-        console.log({{ $jabatan }});
+        {{--var jabatan = [--}}
+        {{--    'KASUN PUTAT',--}}
+        {{--    'KASUN SUMBERBANTENG',--}}
+        {{--    'KASUN SUMBERJABON',--}}
+        {{--    'KASUN SUMBERKOTES WETAN',--}}
+        {{--    'KASUN SUMBERKOTES KULON',--}}
+        {{--];--}}
+        {{--console.log({{ $jabatan }});--}}
         {{--if ({{ $jabatan }} in jabatan) {--}}
         {{--    var selectable = [--}}
         {{--        'dusun',--}}

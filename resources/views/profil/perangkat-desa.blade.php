@@ -1,4 +1,4 @@
-<div class="row" style="width: 80%;">
+<div class="row content-container">
     <div class="column">
         <ul>
             <li>

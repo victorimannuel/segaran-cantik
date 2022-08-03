@@ -7,6 +7,7 @@
 
     {{-- javascript --}}
     <script src="{{ asset('assets/profil-desa/scripts/carousel.js') }}" defer async></script>
+
     {{-- css  --}}
     <link rel="stylesheet" href="{{ asset('assets/profil-desa/styles/main.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/profil-desa/styles/carousel.css') }}" />
@@ -30,6 +31,7 @@
     <div id="home" class="content-container">
         <img src="{{ asset('assets/profil-desa/img/beranda/segaran.png') }}" alt="" style="width: 100%; height: 100%;">
     </div>
+
     <div id="profile" class="content-container">
        {{-- <img id="profildesa" src="{{ asset('assets/profil-desa/img/curang.png') }}" > --}}
        <img src="{{ asset('assets/profil-desa/img/profil/profile-img.png') }}" alt="" style="
@@ -92,58 +94,66 @@
        </div>
     </div>  
     
+    
+    <div class="content-container">
+        
     <img src="{{ asset('assets/profil-desa/img/wisata/wisata-header.png') }}" alt="" style="width: 100%;">
-         
+    </div>
     <div id="wisata" class="content-container">
         @include('profil.wisata')
     </div>
 
-    <div id="humkm"></div>
-    <div id="umkm">
+    <div id="humkm" class="content-container">
+        <img src="{{ asset('assets/profil-desa/img/umkm/umkm-header.png') }}" alt="" style="width: 100%;">
+    </div>
+    <div id="umkm"  class="content-container">
         <div class="prow">
             <div class="pcolumn"></div>
             <div class="pcolumn" >
             </div>
         </div>
     </div>
-    <div id="gsb"></div>
+    <div id="gsb" class="content-container">
+        <img src="{{ asset('assets/profil-desa/img/lpd/lpd-header.png') }}" alt="" style="width: 100%;">
+    </div>
     <div id="service">
         @include('profil.perangkat-desa')
     </div>
-    <div id="gallery">
+    <div id="gallery" class="content-container">
 
+        <img src="{{ asset('assets/profil-desa/img/galeri/galeri-header.png') }}" alt="" style="width: 100%;">
     </div>
-    <div id="gjustifier">
+    <div id="gjustifier" class="content-container" style="height: auto;">
         <div id="gcontent">
             <div class="grow">
                 <div class="gcolumn">
-{{--                    <img class="gimg" id="gimg" src="assets/img/Galeri/futsal.png" alt="futsal" onclick="openModal();currentSlide(1)" />--}}
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/futsal.png') }}" alt="futsal" onclick="openModal();currentSlide(1)" />
-{{--                    <img class="gimg" id="gimg" src="assets/img/Galeri/KKB.png" alt="kkb" onclick="openModal();currentSlide(2)" />--}}
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/KKB.png') }}" alt="kkb" onclick="openModal();currentSlide(2)" />
-{{--                    <img class="gimg" id="gimg" src="assets/img/Galeri/lahan.png" alt="lahan" onclick="openModal();currentSlide(3)" />--}}
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/lahan.png') }}" alt="lahan" onclick="openModal();currentSlide(3)" />
-{{--                    <img class="gimg" id="gimg" src="assets/img/Galeri/Posyandu.JPG" alt="mpls" onclick="openModal();currentSlide(14)" />--}}
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/Posyandu.JPG') }}" alt="mpls" onclick="openModal();currentSlide(14)" />
+{{--                    <img class="gimg" id="gimg" src="assets/img/galeri/futsal.png" alt="futsal" onclick="openModal();currentSlide(1)" />--}}
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/futsal.png') }}" alt="futsal" onclick="openModal();currentSlide(1)" />
+{{--                    <img class="gimg" id="gimg" src="assets/img/galeri/KKB.png" alt="kkb" onclick="openModal();currentSlide(2)" />--}}
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/KKB.png') }}" alt="kkb" onclick="openModal();currentSlide(2)" />
+{{--                    <img class="gimg" id="gimg" src="assets/img/galeri/lahan.png" alt="lahan" onclick="openModal();currentSlide(3)" />--}}
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/lahan.png') }}" alt="lahan" onclick="openModal();currentSlide(3)" />
+{{--                    <img class="gimg" id="gimg" src="assets/img/galeri/Posyandu.JPG" alt="mpls" onclick="openModal();currentSlide(14)" />--}}
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/Posyandu.JPG') }}" alt="mpls" onclick="openModal();currentSlide(14)" />
                 </div>
                 <div class="gcolumn">
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/mpls.png') }}" alt="mpls" onclick="openModal();currentSlide(4)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/poskamling.png') }}" alt="poskamling" onclick="openModal();currentSlide(5)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/ramah.png') }}" alt="ramah" onclick="openModal();currentSlide(6)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/senam.png') }}" alt="senam" onclick="openModal();currentSlide(8)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/mpls.png') }}" alt="mpls" onclick="openModal();currentSlide(4)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/poskamling.png') }}" alt="poskamling" onclick="openModal();currentSlide(5)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/ramah.png') }}" alt="ramah" onclick="openModal();currentSlide(6)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/senam.png') }}" alt="senam" onclick="openModal();currentSlide(8)" />
                 </div>
                 <div class="gcolumn">
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/salat.png') }}" alt="salat" onclick="openModal();currentSlide(7)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/senam.png') }}" alt="senam" onclick="openModal();currentSlide(8)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/Terapi.png') }}" alt="terapi" onclick="openModal();currentSlide(9)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/TKK.png') }}" alt="tkk" onclick="openModal();currentSlide(10)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/posyandus.png') }}" alt="posyandus" onclick="openModal();currentSlide(13)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/salat.png') }}" alt="salat" onclick="openModal();currentSlide(7)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/senam.png') }}" alt="senam" onclick="openModal();currentSlide(8)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/Terapi.png') }}" alt="terapi" onclick="openModal();currentSlide(9)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/TKK.png') }}" alt="tkk" onclick="openModal();currentSlide(10)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/posyandus.png') }}" alt="posyandus" onclick="openModal();currentSlide(13)" />
                 </div>
                 <div class="gcolumn">
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/vaksinasi.png') }}" alt="vaksin" onclick="openModal();currentSlide(12)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/suro.JPG') }}" alt="suro" onclick="openModal();currentSlide(15)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/vaksinasi.png') }}" alt="vaksin" onclick="openModal();currentSlide(12)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/suro.JPG') }}" alt="suro" onclick="openModal();currentSlide(15)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
 
                 </div>
                 <div id="myModal" class="modal">
@@ -153,7 +163,7 @@
                         <div class="mySlides">
                             <div class="numbertext">1 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/futsal.png') }}" alt="" style="height: 200px" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/futsal.png') }}" alt="" style="height: 200px" />
                                 <br />
                                 <p>Quote pertemanan</p>
                                 <br />
@@ -175,7 +185,7 @@
                         <div class="mySlides">
                             <div class="numbertext">2 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/KKB.png') }}" alt="" style="width: 400px; height: 300px; font-size: 10px" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/KKB.png') }}" alt="" style="width: 400px; height: 300px; font-size: 10px" />
                             </div>
                             <div class="content">
                                 <h3>Sosialisasi Kampung KB</h3>
@@ -196,7 +206,7 @@
                         <div class="mySlides">
                             <div class="numbertext">3 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/lahan.png') }}" alt="" style="width: 400px; height: 400px" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/lahan.png') }}" alt="" style="width: 400px; height: 400px" />
                             </div>
                             <div class="content">
                                 <h3>Aktivitas Perawatan Lahan Pertanian</h3>
@@ -214,7 +224,7 @@
                         <div class="mySlides">
                             <div class="numbertext">4 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/mpls.png') }}" alt="" style="width: 400px; height: 400px" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/mpls.png') }}" alt="" style="width: 400px; height: 400px" />
                             </div>
                             <div class="content">
                                 <h3>MPLS SMK 3 di Kolam Renang Sumber Loo</h3>
@@ -234,7 +244,7 @@
                         <div class="mySlides">
                             <div class="numbertext">5 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/poskamling.png') }}" alt="" style="height: 400px" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/poskamling.png') }}" alt="" style="height: 400px" />
                             </div>
                             <div class="content">
                                 <h3>Kegiatan Poskamling Dusun Krajen</h3>
@@ -252,7 +262,7 @@
                         <div class="mySlides">
                             <div class="numbertext">6 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/ramah.png') }}" alt="" style="height: 400px" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/ramah.png') }}" alt="" style="height: 400px" />
                             </div>
                             <div class="content">
                                 <h3>Sikap Ramah Tamah Warga Segaran</h3>
@@ -275,7 +285,7 @@
                         <div class="mySlides">
                             <div class="numbertext">7 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/salat.png') }}" alt="" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/salat.png') }}" alt="" />
                             </div>
                             <div class="content">
                                 <h3>Salat Jum’at Dusun Krajen</h3>
@@ -293,7 +303,7 @@
                         <div class="mySlides">
                             <div class="numbertext">8 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/senam.png') }}" alt="" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/senam.png') }}" alt="" />
                             </div>
                             <div class="content">
                                 <h3>Senam Lansia (Lanjut Usia)</h3>
@@ -317,7 +327,7 @@
                         <div class="mySlides">
                             <div class="numbertext">9 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/Terapi.png') }}" alt=""  style="height: 250px ;"/>
+                                <img src="{{ asset('assets/profil-desa/img/galeri/Terapi.png') }}" alt=""  style="height: 250px ;"/>
                                 <p id="gtx" style="margin-left: 40px; margin-top:30px;">
                                     <b>Fakta Ling Tien Kung</b>
                                     <br>
@@ -337,7 +347,7 @@
                         <div class="mySlides">
                             <div class="numbertext">10 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/TKK.png') }}" alt="" style="height: 200px;"/>
+                                <img src="{{ asset('assets/profil-desa/img/galeri/TKK.png') }}" alt="" style="height: 200px;"/>
                                 <p id="gtx"  style="margin: 10px 40px 10px 40px;">“Miskonsepsi yang sering kita lihat adalah bahwa pendidikan untuk anak usia dini ini terlihat hanya untuk membaca, menulis, berhitung, calistung. Padahal ini berbeda sebenarnya dengan ilmu pendidikan anak usia dini yang harus lebih menguatkan aspek yang lebih integratif dan yang lebih melakukan bermain.”
                                     <br>
                                     <b style="text-align:right;">-Irwan Syahril, Dirjen GTK Kemendikbudristek-</b>
@@ -356,7 +366,7 @@
                         <div class="mySlides">
                             <div class="numbertext">11 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/TPQ.png') }}" alt="" style="height: 200px;"/>
+                                <img src="{{ asset('assets/profil-desa/img/galeri/TPQ.png') }}" alt="" style="height: 200px;"/>
                                 <p id="gtx"  style="padding: 10px 40px 10px 40px;">
                                     “Rasulullah shallallahu ‘alaihi wasallam bersabda: <b> “Siapa yang membaca satu huruf dari Al Quran maka baginya satu kebaikan dengan bacaan tersebut, satu kebaikan dilipatkan menjadi 10 kebaikan.”</b>
                                 </p>
@@ -375,7 +385,7 @@
                         <div class="mySlides">
                             <div class="numbertext">12 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/vaksinasi.png') }}" style="height: 400px;" alt="" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/vaksinasi.png') }}" style="height: 400px;" alt="" />
                             </div>
                             <div class="content">
                                 <h3>Vaksinasi Covid-19 Desa Segaran</h3>
@@ -390,7 +400,7 @@
                         <div class="mySlides">
                             <div class="numbertext">13 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/posyandus.png') }}" alt="" style="height: 400px ;"/>
+                                <img src="{{ asset('assets/profil-desa/img/galeri/posyandus.png') }}" alt="" style="height: 400px ;"/>
                             </div>
                             <div class="content">
                                 <h3>Kegiatan Perkumpulan PKK</h3>
@@ -404,7 +414,7 @@
                         <div class="mySlides">
                             <div class="numbertext">14 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/Posyandu.JPG') }}" alt="" style="height: 400px ;"/>
+                                <img src="{{ asset('assets/profil-desa/img/galeri/Posyandu.JPG') }}" alt="" style="height: 400px ;"/>
                             </div>
                             <div class="content">
                                 <h3>Kegiatan BIAN</h3>
@@ -418,7 +428,7 @@
                         <div class="mySlides">
                             <div class="numbertext">15 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/suro.JPG') }}" alt="" style="height: 400px ;"/>
+                                <img src="{{ asset('assets/profil-desa/img/galeri/suro.JPG') }}" alt="" style="height: 400px ;"/>
                             </div>
                             <div class="content">
                                 <h3>Kegiatan Suroan</h3>
@@ -436,7 +446,7 @@
         </div>
     </div>
     <div style="width: 100%; height: 200px; background: white;"></div>
-    <div id="footer">
+    <div id="footer" class="content-container">
         <div id="frow" style="
         border-bottom: 3px solid #EFF0F0;">
             <div id="fcolumn">

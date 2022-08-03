@@ -27,6 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;  
+  align-items: center;
 }
 
 .content-container{
@@ -54,8 +55,6 @@ body {
   background-repeat: no-repeat, repeat;
   background-size: 100% 100%;
 
-  width: 120rem;
-  height: 60rem;
 }
 
 #navmenu:hover{
@@ -104,7 +103,6 @@ a {
 
 
   /* flex-direction: row;  */
-  width: 100%;
   background: white;
   font-size: 1.6rem;
   padding: 1em;
@@ -223,12 +221,10 @@ a {
 }
 
 #gsb {
-  height: 485px;
-  width: 100%;
-
+/* 
   background-image: 
       url("../img/headerlpd.png"),
-      url("../img/headerlpd-blurred.png");
+      url("../img/headerlpd-blurred.png"); */
   background-position: center, center;
   background-repeat: no-repeat, repeat;
 }
@@ -246,12 +242,11 @@ a {
   text-align: center;
   justify-content: center;
   margin-top: 0;
-  height: 542px;
-  width: 100%;
-
+  height: 60em;
+/* 
   background-image: 
       url("../img/hgaleri.png"),
-      url("../img/hgaleri-blurred.png");
+      url("../img/hgaleri-blurred.png"); */
   background-position: center, center;
   background-repeat: no-repeat, repeat;
 }
@@ -266,7 +261,7 @@ a {
 #fotoperangkat{
   align-self: center;
   margin: auto;
-  height: 200px;
+  height: 18rem;
 }
 
 /* #urow{
@@ -617,14 +612,12 @@ img.hover-shadow {
 }
 
 #humkm{
-
+/* 
   background-image: 
       url("../img/humkm.png"),
-      url("../img/humkm-blurred.png");
+      url("../img/humkm-blurred.png"); */
   background-position: center, center;
   background-repeat: no-repeat, repeat;
-  width: 100%;
-  height: 542px;
 }
 
 #umkm{

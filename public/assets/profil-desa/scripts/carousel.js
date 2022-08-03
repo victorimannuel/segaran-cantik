@@ -1,8 +1,42 @@
-let carouselIndex = 2;
 
-let wisataCarousel = document.getElementsByClassName('wisata-carousel')
+
+let wIndex = 2;
+
+let carouselContainer = document.getElementsByClassName('carousel-container')
 let wisataDetail = document.getElementsByClassName('wisata-detail')
 
+function update(){
+    for(i = 0; i < 3; i++){
+        if(i == wIndex){
+            carouselContainer[wIndex].setAttribute("data-active", "");
+            wisataDetail[wIndex].setAttribute("data-active", "");
+        }
+        else{
+            carouselContainer[i].removeAttribute("data-active");
+            wisataDetail[i].removeAttribute("data-active");
+        }
+    }    
+}
+update()
+
+function next(){
+    if(wIndex == 2){
+        wIndex = 0
+    } 
+    else{
+        wIndex += 1
+    }
+    update()
+}
+function back(){
+    if(wIndex == 0){
+        wIndex = 2
+    } 
+    else{
+        wIndex -= 1
+    }
+    update()
+}
 
 // // Thumbnail image controls
 // function currentSlide(n) {
@@ -24,3 +58,4 @@ let wisataDetail = document.getElementsByClassName('wisata-detail')
 //   slides[slideIndex-1].style.display = "block";
 //   dots[slideIndex-1].className += " active";
 // } 
+

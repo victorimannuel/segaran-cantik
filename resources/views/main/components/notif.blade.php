@@ -2,13 +2,14 @@
 
 <div class="modal fade fs-2" id="notificationModal" tabindex="-1" aria-labelledby="notification" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable me-5">
-        <div class="modal-content px-2">
+        <div class="modal-content ">
             <div class="modal-header border-bottom-0">
                 <h1 class="modal-title" id="modalLabel"><b>Notifikasi</b></h1>
             </div>
-            <div class="modal-body">
+            <div class="modal-body p-0">
 
                 {{-- loop notifikasi disini --}}
+<<<<<<< HEAD
 {{--                @foreach($activityLogGroupBy as $log)--}}
 {{--                    @php $userName = \App\Models\User::find($log['causer_id'])->name; @endphp--}}
 {{--                    <div id="notif-container mb-5 d-flex flex-row" class="notif">--}}
@@ -38,6 +39,7 @@
                         </div>
                     </div>
                 @endforeach
+====
                 {{--  --}}
 
             </div>

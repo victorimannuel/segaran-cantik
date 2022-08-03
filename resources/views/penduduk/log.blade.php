@@ -1,5 +1,5 @@
-{{--<aside>--}}
-    <hr/>
+{{--<aside>--}
+
     <table class="table-responsive">
         @foreach($activityLogs as $log)
             <tr>
@@ -7,6 +7,7 @@
                     <br/>
                     <hr/>
                 <span style="font-size: 1.5rem;">{{ $log->description }} {{ $log->updated_at }}</span>
+
                 </td>
                 <td class="col-2">
                 </td>
@@ -20,6 +21,7 @@
                         $i_old = 0;
                     }
                 @endphp
+
                 <td>
                     <table class="table-responsive">
                         <tr><b>Variabel</b></tr>
@@ -69,4 +71,7 @@
             </tr>
         @endforeach
     </table>
+
+    <script>
+    </script>
 {{--</aside>--}}

@@ -1,10 +1,19 @@
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!--    <link rel="stylesheet" href="./assets/styles/main.css" />-->
-    <link rel="stylesheet" href="{{ asset('assets/profil-desa/styles/main.css') }}" />
-    <title>Home | Segaran</title>
+    
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    {{-- javascript --}}
+    <script src="{{ asset('assets/profil-desa/scripts/carousel.js') }}" defer async></script>
+
+    {{-- css  --}}
+    <link rel="stylesheet" href="{{ asset('assets/profil-desa/styles/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/profil-desa/styles/carousel.css') }}" />
+
+
+    <title>Home | Segaran</title>
 </head>
 
 <body>
@@ -12,349 +21,139 @@
     <nav id="navbar">
         <ul >
             <li><a id="navmenu" href="#home">Beranda</a></li>
-            <li><a  id="navmenu" href="#profildesa">Profil</a></li>
-            <li><a  id="navmenu" href="#pd">Potensi Wisata</a></li>
+            <li><a  id="navmenu" href="#profile">Profil</a></li>
+            <li><a  id="navmenu" href="#wisata">Potensi Wisata</a></li>
             <li><a id="navmenu" href="#umkm">Potensi UMKM</a> </li>
             <li><a  id="navmenu" href="#service">Layanan</a></li>
             <li><a  id="navmenu" href="#gallery">Galeri</a></li>
         </ul>
     </nav>
-    <div id="home" >
-        {{-- <img src="{{ asset('assets/profil-desa/img/bg.png') }}" alt="" style="width: 80rem;"> --}}
+    <div id="home" class="content-container">
+        <img src="{{ asset('assets/profil-desa/img/beranda/segaran.png') }}" alt="" style="width: 100%; height: 100%;">
     </div>
-    <div id="profile" >
-       <img id="profildesa" src="{{ asset('assets/profil-desa/img/curang.png') }}" >
-    </div>
-    {{-- <div id="protail"></div> --}}
-    <div id="phead"></div>
-    <div id="pd">
-        <div class="prow">
-            <div class="pcolumn" onclick="plusDivs(1)">
-                <div class="pdtext">
 
-                    <h3>Pemandian Sumber Loo</h3>
-                    <p id="ctx">
-                        Desa Segaran memiliki tempat pemandian berbentuk kolam renang yang sangat luas (berjumlah dua kolam; kolam anak dan kolam dewasa) yang sumber airnya berasal langsung dari mata air Sumber Loo, sehingga terjaga keasrian air yang benar-benar segar tanpa mengandung zat kimia apapun seperti kaporit.
-                    </p>
-{{--                    <img src="assets/img/contact.png" alt="" style="height:150px ; align-self: center; justify-self: center;"/>--}}
-                    <img src="{{ asset('assets/profil-desa/img/contact.png') }}" alt="" style="height:150px ; align-self: center; justify-self: center;"/>
+    <div id="profile" class="content-container">
+       {{-- <img id="profildesa" src="{{ asset('assets/profil-desa/img/curang.png') }}" > --}}
+       <img src="{{ asset('assets/profil-desa/img/profil/profile-img.png') }}" alt="" style="
+        height: 80%;
+       ">
 
+       <div class="col">
+
+            <div class="header">Malang</div>
+            <div class="title">Desa Segaran</div>
+            <p>Desa Segaran adalah desa yang tidak begitu ramai ,tetapi selalu mempunyai cerita unik di baliknya. Kebanyakan penduduk Desa Segaran adalah bercocok tanam. Tebu adalah hasil dari mereka bertani dan mereka juga sebagai pekerja penambang batu kapur, yang hasilnya banyak dikirim kepada pengolah batu kapur di daerah Druju, sumberejo dan di daerah Turen.</p>
+            
+            <div class="bottom-right">
+            <div class="row" style="margin-bottom: 1em;">
+                <span id="luas" style="
+                    width: 10rem;
+                    text-align: center;
+                    border-bottom: 2px solid black;
+                ">  ±11 km²</span>
+                <span id="penduduk"
+                style="
+                    margin-left: 1rem;
+                    display: flex;
+                    align-items: center;
+                ">
+                    <img src="{{ asset('assets/profil-desa/img/profil/people-icon.png') }}" alt="" width="40"
+                        style="margin-right: 0.5rem;"
+                    >
+                    ±10.100 Penduduk</span>
+            </div>
+            <div class="row" id="offset">
+                <div class="col">
+                    <img src="{{ asset('assets/profil-desa/img/profil/peta-segaran.png') }}" alt="" style="height: 20rem; z-index: 0;">
                 </div>
-                <div class="pdtext">
-                    <h3>Gunung Wali Kukun</h3>
-                    <p id="ctx">
-                        Pada Desa Segaran, di bagian Dusun Krajen, terdapat satu gunung bernama Wali Kukun yang cukup indah karena di sepanjang jalan nampak banyak bunga-bunga dan tanaman yang bervariasi. Pada gambar tersebut, terdapat satu tempat yang beberapa warga sekitar anggap suci karena terdapat suatu makam keramat yang hanya orang-orang tertentu saja yang dapat mengakses dan masuk ke dalam pemakaman tersebut.
-                    </p>
-{{--                    <img src="assets/img/contact2.png" alt="" style="height:150px ; align-self: center; justify-self: center;">--}}
-                    <img src="{{ asset('assets/profil-desa/img/contact2.png') }}" alt="" style="height:150px ; align-self: center; justify-self: center;">
-                </div>
-                <div class="pdtext">
-                    <h3>Gunung Kapur</h3>
-                    <p id="ctx">Tempat yang cukup digemari oleh baik warga lokal maupun luar Segaran yaitu Gunung Kapur yang letaknya di Dusun Sumberbanteng Wetan. Tempatnya sangat indah dengan pemandangan tanah kapur yang seperti bukit.
-                        <br><br>
-                        Namun, semenjak pandemi Covid-19, tempat wisata ini ditutup hingga saat ini.
-                    </p>
-{{--                    <img src="assets/img/contact3.png" alt=""style="height:150px ; align-self: center; justify-self: center;">--}}
-                    <img src="{{ asset('assets/profil-desa/img/contact3.png') }}" alt=""style="height:150px ; align-self: center; justify-self: center;">
+                <div class="col">
+    
+                    <div id="jarak" class="img-container">
+                        
+                    <img src="{{ asset('assets/profil-desa/img/profil/location-icon.png') }}" alt="" width="50"
+                    style="margin-right: 2rem;"
+                >
+                        1 Jam 12 Menit dari Kota Malang
+                    </div>
+        
+                    <div id="dusun" class="img-container">
+                        
+                    <img src="{{ asset('assets/profil-desa/img/profil/houses-icon.png') }}" alt="" width="50"
+                    style="margin-right: 2rem;"
+                >
+                        6 Dusun</div>
+                    <div id="rt-rw" class="img-container">
+                        
+                    <img src="{{ asset('assets/profil-desa/img/profil/house-icon.png') }}" alt="" width="50"
+                    style="margin-right: 2rem;"
+                >
+                        30 RT 9 RW</div>
                 </div>
             </div>
-            <div class="pcolumn" onclick="plusDivs(1)">
-                <div class="pdpict">
-{{--                    <img class="pdslide" src="assets/img/img1.png" style="width:400px" onclick="plusDivs(1)">--}}
-                    <img class="pdslide" src="{{ asset('assets/profil-desa/img/img1.png') }}" style="width:400px" onclick="plusDivs(1)">
-{{--                    <img class="pdslide" src="assets/img/img2.png" style="width:400px" onclick="plusDivs(1)">--}}
-                    <img class="pdslide" src="{{ asset('assets/profil-desa/img/img2.png') }}" style="width:400px" onclick="plusDivs(1)">
-{{--                    <img class="pdslide" src="assets/img/img3.png" style="width:400px" onclick="plusDivs(1)">--}}
-                    <img class="pdslide" src="{{ asset('assets/profil-desa/img/img3.png') }}" style="width:400px" onclick="plusDivs(1)">
-                </div>
             </div>
-        </div>
-
+       </div>
+    </div>  
+    
+    
+    <div class="content-container">
+        
+    <img src="{{ asset('assets/profil-desa/img/wisata/wisata-header.png') }}" alt="" style="width: 100%;">
     </div>
-    <div id="humkm"></div>
-    <div id="umkm">
+    <div id="wisata" class="content-container">
+        @include('profil.wisata')
+    </div>
+
+    <div id="humkm" class="content-container">
+        <img src="{{ asset('assets/profil-desa/img/umkm/umkm-header.png') }}" alt="" style="width: 100%;">
+    </div>
+    <div id="umkm"  class="content-container">
         <div class="prow">
             <div class="pcolumn"></div>
             <div class="pcolumn" >
             </div>
         </div>
     </div>
-    <div id="gsb"></div>
+    <div id="gsb" class="content-container">
+        <img src="{{ asset('assets/profil-desa/img/lpd/lpd-header.png') }}" alt="" style="width: 100%;">
+    </div>
     <div id="service">
-        <div class="row" style="width: 80%;">
-            <div class="column">
-                <ul>
-                    <li>
-                        <div id="kontak">
-{{--                            <img src="assets/img/kades.png" alt="" id="fotoperangkat" />--}}
-                            <img src="{{ asset('assets/profil-desa/img/kades.png') }}" alt="" id="fotoperangkat" />
-                            <div id="text">
-                                <h1 id="nama">H. Tasan</h1>
-                                <hr />
-                                <p id="jabatan">Kepala Desa</p>
-                                <div id="info">
-{{--                                    <img id="waicon" src="assets/img/waicon.png" />--}}
-                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                                    <a id="wanum" href="https://wa.me/6282229459533">0822-2945-9533</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div id="kontak">
-{{--                            <img src="assets/img/keuangan.png" alt=""  id="fotoperangkat" />--}}
-                            <img src="{{ asset('assets/profil-desa/img/keuangan.png') }}" alt=""  id="fotoperangkat" />
-                            <div id="text">
-                                <h1 id="nama">Moh. Rokip</h1>
-                                <hr />
-                                <p id="jabatan">Kaur Keuangan</p>
-                                <div id="info">
-{{--                                    <img id="waicon" src="assets/img/waicon.png" />--}}
-                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                                    <a id="wanum" href="https://wa.me/6285100675906">0851-0067-5906</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div id="kontak">
-{{--                            <img src="assets/img/Kesejahteraan.png" alt="" id="fotoperangkat"  />--}}
-                            <img src="{{ asset('assets/profil-desa/img/Kesejahteraan.png') }}" alt="" id="fotoperangkat"  />
-                            <div id="text">
-                                <h1 id="nama">Muslimin</h1>
-                                <hr />
-                                <p id="jabatan">Kaur Kesejahteraan</p>
-                                <div id="info">
-{{--                                    <img id="waicon" src="assets/img/waicon.png" />--}}
-                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                                    <a id="wanum" href="https://wa.me/6285854215179">0858-5421-5179</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div id="kontak">
-{{--                            <img src="assets/img/kasunsw.png" alt=""  id="fotoperangkat" />--}}
-                            <img src="{{ asset('assets/profil-desa/img/kasunsw.png') }}" alt=""  id="fotoperangkat" />
-                            <div id="text">
-                                <h1 id="nama">Budi Ariadi</h1>
-                                <hr />
-                                <p id="jabatan">Kasun Sumberkotes Wetan</p>
-                                <div id="info">
-{{--                                    <img id="waicon" src="assets/img/waicon.png" />--}}
-                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                                    <a id="wanum" href="https://wa.me/6285233415988">0852-3341-5988</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="column">
-                <ul>
-                    <li>
-                        <div id="kontak">
-{{--                            <img src="assets/img/sekre.png" alt=""  id="fotoperangkat" />--}}
-                            <img src="{{ asset('assets/profil-desa/img/sekre.png') }}" alt=""  id="fotoperangkat" />
-                            <div id="text">
-                                <h1 id="nama">Sutikno Adiyat</h1>
-                                <hr />
-                                <p id="jabatan">Sekretaris Desa</p>
-                                <div id="info">
-{{--                                    <img id="waicon" src="assets/img/waicon.png" />--}}
-                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                                    <a id="wanum" href="https://wa.me/6281259071106">0812-5907-1106</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div id="kontak">
-{{--                            <img src="assets/img/perencanaan.png" alt=""  id="fotoperangkat" />--}}
-                            <img src="{{ asset('assets/profil-desa/img/perencanaan.png') }}" alt=""  id="fotoperangkat" />
-                            <div id="text">
-                                <h1 id="nama">Paiman</h1>
-                                <hr />
-                                <p id="jabatan">Kaur Perencanaan</p>
-                                <div id="info">
-{{--                                    <img id="waicon" src="assets/img/waicon.png" />--}}
-                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                                    <a id="wanum" href="https://wa.me/6282232582614">0822-3258-2614</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div id="kontak">
-{{--                            <img src="assets/img/Pelayanan.png" alt=""  id="fotoperangkat" />--}}
-                            <img src="{{ asset('assets/profil-desa/img/Pelayanan.png') }}" alt=""  id="fotoperangkat" />
-                            <div id="text">
-                                <h1 id="nama">M Muhtadi</h1>
-                                <hr />
-                                <p id="jabatan">Kasi Pelayanan</p>
-                                <div id="info">
-{{--                                    <img id="waicon" src="assets/img/waicon.png" />--}}
-                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                                    <a id="wanum" href="https://wa.me/6285646597809">0856-4659-7809</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div id="kontak">
-{{--                            <img src="assets/img/kasunsj.png" alt=""  id="fotoperangkat" />--}}
-                            <img src="{{ asset('assets/profil-desa/img/kasunsj.png') }}" alt=""  id="fotoperangkat" />
-                            <div id="text">
-                                <h1 id="nama">Abdurrohman</h1>
-                                <hr />
-                                <p id="jabatan">Kasun Sumberjabon</p>
-                                <div id="info">
-{{--                                    <img id="waicon" src="assets/img/waicon.png" />--}}
-                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                                    <a id="wanum" href="https://wa.me/6282142552910">0821-4255-2910</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="column">
-                <ul>
-                    <li>
-                        <div id="kontak">
-{{--                            <img src="assets/img/kaurtu.png" alt=""  id="fotoperangkat" />--}}
-                            <img src="{{ asset('assets/profil-desa/img/kaurtu.png') }}" alt=""  id="fotoperangkat" />
-                            <div id="text">
-                                <h1 id="nama">Bambang S.</h1>
-                                <hr />
-                                <p id="jabatan">Kaur Tata Usaha & Umum</p>
-                                <div id="info">
-{{--                                    <img id="waicon" src="assets/img/waicon.png" />--}}
-                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                                    <a id="wanum" href="https://wa.me/6281249715874">0812-4971-5874</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div id="kontak">
-{{--                            <img src="assets/img/kaurpemerintah.png" alt=""  id="fotoperangkat" />--}}
-                            <img src="{{ asset('assets/profil-desa/img/kaurpemerintah.png') }}" alt=""  id="fotoperangkat" />
-                            <div id="text">
-                                <h1 id="nama" >Sungeb Mu'alim</h1>
-                                <hr />
-                                <p id="jabatan">Kasi Pemerintahan</p>
-                                <div id="info">
-{{--                                    <img id="waicon" src="assets/img/waicon.png" />--}}
-                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                                    <a id="wanum" href="https://wa.me/6282337722122">0823-3772-2122</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div id="kontak">
-{{--                            <img src="assets/img/kasunsb.png" alt=""  id="fotoperangkat" />--}}
-                            <img src="{{ asset('assets/profil-desa/img/kasunsb.png') }}" alt=""  id="fotoperangkat" />
-                            <div id="text">
-                                <h1 id="nama">H. Sabar</h1>
-                                <hr />
-                                <p id="jabatan" style="font-size: 20px">Kasun Sumberbanteng</p>
-                                <div id="info">
-{{--                                    <img id="waicon" src="assets/img/waicon.png" />--}}
-                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                                    <a id="wanum" href="https://wa.me/6282337983245">0823-3798-3245</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div id="kontak">
-{{--                            <img src="assets/img/kasunkrajan.png" alt=""  id="fotoperangkat" />--}}
-                            <img src="{{ asset('assets/profil-desa/img/kasunkrajan.png') }}" alt=""  id="fotoperangkat" />
-                            <div id="text">
-                                <h1 id="nama">Sri Indriyatno</h1>
-                                <hr />
-                                <p id="jabatan">Kasun Krajan</p>
-                                <div id="info">
-{{--                                    <img id="waicon" src="assets/img/waicon.png" />--}}
-                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                                    <a id="wanum" href="https://wa.me/6282234089218">0822-3408-9218</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="column2">
-                <div id="kontak">
-{{--                    <img src="assets/img/kaurtu.png" alt=""  id="fotoperangkat" />--}}
-                    <img src="{{ asset('assets/profil-desa/img/kaurtu.png') }}" alt=""  id="fotoperangkat" />
-                    <div id="text">
-                        <h1 id="nama">Didik</h1>
-                        <hr />
-                        <p id="jabatan">Kasun Putat</p>
-                        <div id="info">
-{{--                            <img id="waicon" src="assets/img/waicon.png" />--}}
-                            <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                            <a id="wanum" href="https://wa.me/6285746637958">0857-4663-7958</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column2">
-                <div id="kontak">
-{{--                    <img src="assets/img/Vector.png" alt=""  id="fotoperangkat" />--}}
-                    <img src="{{ asset('assets/profil-desa/img/Vector.png') }}" alt=""  id="fotoperangkat" />
-                    <div id="text">
-                        <h1 id="nama">-</h1>
-                        <hr />
-                        <p id="jabatan">Kasun Sumberkotes Kulon</p>
-                        <div id="info">
-{{--                            <img id="waicon" src="assets/img/waicon.png" />--}}
-                            <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
-                            <a id="wanum" href="#service">-</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('profil.perangkat-desa')
     </div>
-    <div id="gallery">
+    <div id="gallery" class="content-container">
 
+        <img src="{{ asset('assets/profil-desa/img/galeri/galeri-header.png') }}" alt="" style="width: 100%;">
     </div>
-    <div id="gjustifier">
+    <div id="gjustifier" class="content-container" style="height: auto;">
         <div id="gcontent">
             <div class="grow">
                 <div class="gcolumn">
-{{--                    <img class="gimg" id="gimg" src="assets/img/Galeri/futsal.png" alt="futsal" onclick="openModal();currentSlide(1)" />--}}
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/futsal.png') }}" alt="futsal" onclick="openModal();currentSlide(1)" />
-{{--                    <img class="gimg" id="gimg" src="assets/img/Galeri/KKB.png" alt="kkb" onclick="openModal();currentSlide(2)" />--}}
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/KKB.png') }}" alt="kkb" onclick="openModal();currentSlide(2)" />
-{{--                    <img class="gimg" id="gimg" src="assets/img/Galeri/lahan.png" alt="lahan" onclick="openModal();currentSlide(3)" />--}}
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/lahan.png') }}" alt="lahan" onclick="openModal();currentSlide(3)" />
-{{--                    <img class="gimg" id="gimg" src="assets/img/Galeri/Posyandu.JPG" alt="mpls" onclick="openModal();currentSlide(14)" />--}}
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/Posyandu.JPG') }}" alt="mpls" onclick="openModal();currentSlide(14)" />
+{{--                    <img class="gimg" id="gimg" src="assets/img/galeri/futsal.png" alt="futsal" onclick="openModal();currentSlide(1)" />--}}
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/futsal.png') }}" alt="futsal" onclick="openModal();currentSlide(1)" />
+{{--                    <img class="gimg" id="gimg" src="assets/img/galeri/KKB.png" alt="kkb" onclick="openModal();currentSlide(2)" />--}}
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/KKB.png') }}" alt="kkb" onclick="openModal();currentSlide(2)" />
+{{--                    <img class="gimg" id="gimg" src="assets/img/galeri/lahan.png" alt="lahan" onclick="openModal();currentSlide(3)" />--}}
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/lahan.png') }}" alt="lahan" onclick="openModal();currentSlide(3)" />
+{{--                    <img class="gimg" id="gimg" src="assets/img/galeri/Posyandu.JPG" alt="mpls" onclick="openModal();currentSlide(14)" />--}}
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/Posyandu.JPG') }}" alt="mpls" onclick="openModal();currentSlide(14)" />
                 </div>
                 <div class="gcolumn">
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/mpls.png') }}" alt="mpls" onclick="openModal();currentSlide(4)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/poskamling.png') }}" alt="poskamling" onclick="openModal();currentSlide(5)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/ramah.png') }}" alt="ramah" onclick="openModal();currentSlide(6)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/senam.png') }}" alt="senam" onclick="openModal();currentSlide(8)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/mpls.png') }}" alt="mpls" onclick="openModal();currentSlide(4)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/poskamling.png') }}" alt="poskamling" onclick="openModal();currentSlide(5)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/ramah.png') }}" alt="ramah" onclick="openModal();currentSlide(6)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/senam.png') }}" alt="senam" onclick="openModal();currentSlide(8)" />
                 </div>
                 <div class="gcolumn">
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/salat.png') }}" alt="salat" onclick="openModal();currentSlide(7)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/senam.png') }}" alt="senam" onclick="openModal();currentSlide(8)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/Terapi.png') }}" alt="terapi" onclick="openModal();currentSlide(9)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/TKK.png') }}" alt="tkk" onclick="openModal();currentSlide(10)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/posyandus.png') }}" alt="posyandus" onclick="openModal();currentSlide(13)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/salat.png') }}" alt="salat" onclick="openModal();currentSlide(7)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/senam.png') }}" alt="senam" onclick="openModal();currentSlide(8)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/Terapi.png') }}" alt="terapi" onclick="openModal();currentSlide(9)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/TKK.png') }}" alt="tkk" onclick="openModal();currentSlide(10)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/posyandus.png') }}" alt="posyandus" onclick="openModal();currentSlide(13)" />
                 </div>
                 <div class="gcolumn">
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/vaksinasi.png') }}" alt="vaksin" onclick="openModal();currentSlide(12)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/suro.JPG') }}" alt="suro" onclick="openModal();currentSlide(15)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/vaksinasi.png') }}" alt="vaksin" onclick="openModal();currentSlide(12)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/suro.JPG') }}" alt="suro" onclick="openModal();currentSlide(15)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
 
                 </div>
                 <div id="myModal" class="modal">
@@ -364,7 +163,7 @@
                         <div class="mySlides">
                             <div class="numbertext">1 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/futsal.png') }}" alt="" style="height: 200px" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/futsal.png') }}" alt="" style="height: 200px" />
                                 <br />
                                 <p>Quote pertemanan</p>
                                 <br />
@@ -386,7 +185,7 @@
                         <div class="mySlides">
                             <div class="numbertext">2 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/KKB.png') }}" alt="" style="width: 400px; height: 300px; font-size: 10px" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/KKB.png') }}" alt="" style="width: 400px; height: 300px; font-size: 10px" />
                             </div>
                             <div class="content">
                                 <h3>Sosialisasi Kampung KB</h3>
@@ -407,7 +206,7 @@
                         <div class="mySlides">
                             <div class="numbertext">3 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/lahan.png') }}" alt="" style="width: 400px; height: 400px" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/lahan.png') }}" alt="" style="width: 400px; height: 400px" />
                             </div>
                             <div class="content">
                                 <h3>Aktivitas Perawatan Lahan Pertanian</h3>
@@ -425,7 +224,7 @@
                         <div class="mySlides">
                             <div class="numbertext">4 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/mpls.png') }}" alt="" style="width: 400px; height: 400px" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/mpls.png') }}" alt="" style="width: 400px; height: 400px" />
                             </div>
                             <div class="content">
                                 <h3>MPLS SMK 3 di Kolam Renang Sumber Loo</h3>
@@ -445,7 +244,7 @@
                         <div class="mySlides">
                             <div class="numbertext">5 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/poskamling.png') }}" alt="" style="height: 400px" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/poskamling.png') }}" alt="" style="height: 400px" />
                             </div>
                             <div class="content">
                                 <h3>Kegiatan Poskamling Dusun Krajen</h3>
@@ -463,7 +262,7 @@
                         <div class="mySlides">
                             <div class="numbertext">6 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/ramah.png') }}" alt="" style="height: 400px" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/ramah.png') }}" alt="" style="height: 400px" />
                             </div>
                             <div class="content">
                                 <h3>Sikap Ramah Tamah Warga Segaran</h3>
@@ -486,7 +285,7 @@
                         <div class="mySlides">
                             <div class="numbertext">7 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/salat.png') }}" alt="" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/salat.png') }}" alt="" />
                             </div>
                             <div class="content">
                                 <h3>Salat Jum’at Dusun Krajen</h3>
@@ -504,7 +303,7 @@
                         <div class="mySlides">
                             <div class="numbertext">8 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/senam.png') }}" alt="" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/senam.png') }}" alt="" />
                             </div>
                             <div class="content">
                                 <h3>Senam Lansia (Lanjut Usia)</h3>
@@ -528,7 +327,7 @@
                         <div class="mySlides">
                             <div class="numbertext">9 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/Terapi.png') }}" alt=""  style="height: 250px ;"/>
+                                <img src="{{ asset('assets/profil-desa/img/galeri/Terapi.png') }}" alt=""  style="height: 250px ;"/>
                                 <p id="gtx" style="margin-left: 40px; margin-top:30px;">
                                     <b>Fakta Ling Tien Kung</b>
                                     <br>
@@ -548,7 +347,7 @@
                         <div class="mySlides">
                             <div class="numbertext">10 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/TKK.png') }}" alt="" style="height: 200px;"/>
+                                <img src="{{ asset('assets/profil-desa/img/galeri/TKK.png') }}" alt="" style="height: 200px;"/>
                                 <p id="gtx"  style="margin: 10px 40px 10px 40px;">“Miskonsepsi yang sering kita lihat adalah bahwa pendidikan untuk anak usia dini ini terlihat hanya untuk membaca, menulis, berhitung, calistung. Padahal ini berbeda sebenarnya dengan ilmu pendidikan anak usia dini yang harus lebih menguatkan aspek yang lebih integratif dan yang lebih melakukan bermain.”
                                     <br>
                                     <b style="text-align:right;">-Irwan Syahril, Dirjen GTK Kemendikbudristek-</b>
@@ -567,7 +366,7 @@
                         <div class="mySlides">
                             <div class="numbertext">11 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/TPQ.png') }}" alt="" style="height: 200px;"/>
+                                <img src="{{ asset('assets/profil-desa/img/galeri/TPQ.png') }}" alt="" style="height: 200px;"/>
                                 <p id="gtx"  style="padding: 10px 40px 10px 40px;">
                                     “Rasulullah shallallahu ‘alaihi wasallam bersabda: <b> “Siapa yang membaca satu huruf dari Al Quran maka baginya satu kebaikan dengan bacaan tersebut, satu kebaikan dilipatkan menjadi 10 kebaikan.”</b>
                                 </p>
@@ -586,7 +385,7 @@
                         <div class="mySlides">
                             <div class="numbertext">12 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/vaksinasi.png') }}" style="height: 400px;" alt="" />
+                                <img src="{{ asset('assets/profil-desa/img/galeri/vaksinasi.png') }}" style="height: 400px;" alt="" />
                             </div>
                             <div class="content">
                                 <h3>Vaksinasi Covid-19 Desa Segaran</h3>
@@ -601,7 +400,7 @@
                         <div class="mySlides">
                             <div class="numbertext">13 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/posyandus.png') }}" alt="" style="height: 400px ;"/>
+                                <img src="{{ asset('assets/profil-desa/img/galeri/posyandus.png') }}" alt="" style="height: 400px ;"/>
                             </div>
                             <div class="content">
                                 <h3>Kegiatan Perkumpulan PKK</h3>
@@ -615,7 +414,7 @@
                         <div class="mySlides">
                             <div class="numbertext">14 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/Posyandu.JPG') }}" alt="" style="height: 400px ;"/>
+                                <img src="{{ asset('assets/profil-desa/img/galeri/Posyandu.JPG') }}" alt="" style="height: 400px ;"/>
                             </div>
                             <div class="content">
                                 <h3>Kegiatan BIAN</h3>
@@ -629,7 +428,7 @@
                         <div class="mySlides">
                             <div class="numbertext">15 / 15</div>
                             <div class="content">
-                                <img src="{{ asset('assets/profil-desa/img/Galeri/suro.JPG') }}" alt="" style="height: 400px ;"/>
+                                <img src="{{ asset('assets/profil-desa/img/galeri/suro.JPG') }}" alt="" style="height: 400px ;"/>
                             </div>
                             <div class="content">
                                 <h3>Kegiatan Suroan</h3>
@@ -647,7 +446,7 @@
         </div>
     </div>
     <div style="width: 100%; height: 200px; background: white;"></div>
-    <div id="footer">
+    <div id="footer" class="content-container">
         <div id="frow" style="
         border-bottom: 3px solid #EFF0F0;">
             <div id="fcolumn">
@@ -686,70 +485,33 @@
 
 <script>
 
-    // Fungsi Potensi Wisata - Start
-    var pindex = 1;
-    showDivs(pindex);
-
-    function plusDivs(n) {
-        showDivs(pindex += n);
-    }
-
-    function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("pdslide");
-        var y = document.getElementsByClassName("pdtext");
-
-
-        if (n > x.length) {pindex = 1}
-        if (n < 1) {pindex = x.length}
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-            y[i].style.display = "none";
-        }
-        y[pindex-1].style.display = "block";
-        x[pindex-1].style.display = "block";
-
-
-    }
-
-    const autoslide = setInterval(plusDivs,5000,1);
-
-    // Fungsi Potensi Wisata - End
-
     if (
         event.target.matches(".button-close-modal") ||
         !event.target.closest(".modal")
     ) {
         closeModal()
     }
-
     // Open the Modal
     function openModal() {
         document.getElementById("myModal").style.display = "flex";
     }
-
     // Close the Modal
     function closeModal() {
         document.getElementById("myModal").style.display = "none";
     }
-
     var slideIndex = 1;
     showSlides(slideIndex);
-
     // Next/previous controls
     function plusSlides(n) {
         showSlides((slideIndex += n));
     }
-
     // Thumbnail image controls
     function currentSlide(n) {
         showSlides((slideIndex = n));
     }
-
     function showSlides(n) {
         var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
+        var slides = document.getElementsByClassName("mySlides");   
         var captionText = document.getElementById("caption");
         if (n > slides.length) {
             slideIndex = 1;
@@ -760,14 +522,8 @@
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
         slides[slideIndex - 1].style.display = "flex";
-        dots[slideIndex - 1].className += " active";
-        captionText.innerHTML = dots[slideIndex - 1].alt;
     }
-
 
 </script>
 </body>

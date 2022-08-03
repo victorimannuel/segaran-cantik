@@ -197,6 +197,9 @@
             @endforeach
             </tbody>
         </table>
+        <div class="mx-5">
+            {{ $penduduks->links() }}
+        </div>
 
     </div>
 

@@ -1,12 +1,12 @@
 
-form {
+.form-penduduk {
     font-size: 1.6rem;
 }
-.form-select, .form-control {
+.form-penduduk .form-select, .form-control {
     font-size: 1.6rem;
     padding: 0.8rem;
 }
-.form-control:focus {
+.form-penduduk .form-control:focus {
     border-color: #000;
     box-shadow: none;
 }
@@ -20,17 +20,17 @@ form {
     /* border: 0; */
 
 }
-label {
+.form-penduduk label {
     font-weight: 600;
 }
-.error {
+.form-penduduk .error {
     color: red;
     font-weight: 400;
     display: block;
     padding: 6px 0;
     font-size: 14px;
 }
-.form-control.error {
+.form-penduduk .form-control.error {
     border-color: red;
     padding: .375rem .75rem;
 }
@@ -39,6 +39,6 @@ label {
     
 }
 
-.back-button:hover{
+.form-penduduk .back-button:hover{
     opacity: 0.8;
 }

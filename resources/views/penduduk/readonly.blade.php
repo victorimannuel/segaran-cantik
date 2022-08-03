@@ -22,6 +22,14 @@
                 <form class="form-penduduk pb-5" method="post" action="{{ route('penduduk.store') }}">
                     <!-- CROSS Site Request Forgery Protection -->
                     @csrf
+
+                <span class="back-button d-flex flex-row" onclick="window.location='{{ route('view-penduduk.show', ['id_penduduk' => $penduduk->id])}}'" style="cursor: pointer;">
+                    <a>
+                    <img src="{{ asset("/assets/img/icons/back.png") }}" class="" width=30 alt="">
+                    </a>
+                    <p class="my-0 px-3 fs-2">Kembali</p>
+                </span>
+                
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">

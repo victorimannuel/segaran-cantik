@@ -21,11 +21,17 @@
 <form class="form-penduduk pb-5" method="post" action="{{ route('penduduk.update', ['id_penduduk' => $penduduk->id]) }}">
     <!-- CROSS Site Request Forgery Protection -->
     @csrf
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="no_kk">NOMOR KK</label>
-                <input type="text" class="form-control" value="{{ $penduduk->no_kk }}" placeholder="Nomor KK" id="no_kk" name="no_kk">
+        <div class="form-group">
+            <div class="d-flex flex-row align-items-center pb-3">
+
+                <span class="back-button d-flex flex-row" onclick="window.location='{{ route('view-penduduk.show', ['id_penduduk' => $penduduk->id])}}'" style="cursor: pointer;">
+                    <a>
+                    <img src="{{ asset("/assets/img/icons/back.png") }}" class="" width=30 alt="">
+                    </a>
+                    <p class="my-0 px-3 fs-2">Kembali</p>
+                </span>
+            </div>
+
                 <!-- Error -->
                 @if ($errors->has('no_kk'))
                     <div class="error">
@@ -424,6 +430,7 @@
             <footer class="mt-5">
 
             </footer>
+        
         </main>
     </div>
 

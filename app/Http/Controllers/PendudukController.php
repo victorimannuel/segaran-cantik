@@ -111,6 +111,7 @@ class PendudukController extends Controller
         $penduduk->no_kk = $request->no_kk;
         $penduduk->nama = $request->nama;
         $penduduk->nik = $request->nik;
+        $penduduk->hub_keluarga = $request->hub_keluarga;
         $penduduk->dusun = $request->dusun;
         $penduduk->rw = $request->rw;
         $penduduk->rt = $request->rt;

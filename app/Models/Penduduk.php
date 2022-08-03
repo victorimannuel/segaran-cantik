@@ -45,7 +45,7 @@ class Penduduk extends Model
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-            ->logOnly(self::$logAttributes)
+            ->logFillable()
             ->logOnlyDirty();
     }
 

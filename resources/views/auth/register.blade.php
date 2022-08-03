@@ -21,6 +21,11 @@
                 <div id="emailHelp" class="form-text"></div>
             </div>
             <div class="my-4">
+                {{-- <label for="" class="form-label fs-3">Nama</label>     --}}
+                <input type="text" name="jabatan" class="form-control form-control-lg fs-3" id="inputJabatan" aria-describedby="jabatanHelp" placeholder="Jabatan">
+                <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="my-4">
                 {{-- <label for="" class="form-label fs-3">Password</label>     --}}
                 <input type="Password" name="password" class="form-control form-control-lg fs-3" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Kata Sandi">
                 <div id="PasswordHelp" class="form-text"></div>

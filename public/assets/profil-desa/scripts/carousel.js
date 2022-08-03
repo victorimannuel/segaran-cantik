@@ -1,6 +1,6 @@
 
 
-let wIndex = 2;
+let wIndex = 0;
 
 let carouselContainer = document.getElementsByClassName('carousel-container')
 let wisataDetail = document.getElementsByClassName('wisata-detail')

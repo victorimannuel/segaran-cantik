@@ -81,21 +81,21 @@
 
     <!-- Full-width images with number and caption text -->
     <div class="wisata-carousel fade blur" style="">
-      <img src="{{ asset('assets/profil-desa/img/wisata/loo.png') }}">
-      <div class="text">Kolam Renang Sumberloo</div>
-    </div>
-  
+      <img src="{{ asset('assets/profil-desa/img/wisata/gwk.png') }}">
+      <div class="text">Gunung Wali Kukun</div>
+  </div>
   
     <div class="wisata-carousel fade">
       <img src="{{ asset('assets/profil-desa/img/wisata/kapur.png') }}">
       <div class="text">Wisata Gunung Kapur</div>
     </div>
   
-    <div class="wisata-carousel fade blur" style="">
-        <img src="{{ asset('assets/profil-desa/img/wisata/gwk.png') }}">
-        <div class="text">Gunung Wali Kukun</div>
-    </div>
 
+    <div class="wisata-carousel fade blur" style="">
+      <img src="{{ asset('assets/profil-desa/img/wisata/loo.png') }}">
+      <div class="text">Kolam Renang Sumberloo</div>
+    </div>
+  
     <!-- Next and previous buttons -->
     <div class="carousel-button next" onclick="next()"> > </div>
     <div class="carousel-button prev" onclick="back()"> < </div>

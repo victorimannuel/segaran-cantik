@@ -10,11 +10,32 @@
 
             @include('main.components.header')
 
-            <section class="mx-5 align-self-center d-flex justify-content-center">
-                <!-- Success message -->
-                @if(Session::has('success'))
-                    <div class="alert alert-success">
-                        {{Session::get('success')}}
+            <section class="mx-5 align-self-center d-flex justify-content-center card p-5">
+<!-- Success message -->
+@if(Session::has('success'))
+    <div class="alert alert-success">
+        {{Session::get('success')}}
+    </div>
+@endif
+{{--<form method="post" action="{{ route('penduduk.store') }}">--}}
+<form class="form-penduduk pb-5" method="post" action="{{ route('penduduk.update', ['id_penduduk' => $penduduk->id]) }}">
+    <!-- CROSS Site Request Forgery Protection -->
+    @csrf
+        <div class="form-group">
+            <div class="d-flex flex-row align-items-center pb-3">
+
+                <span class="back-button d-flex flex-row" onclick="window.location='{{ route('view-penduduk.show', ['id_penduduk' => $penduduk->id])}}'" style="cursor: pointer;">
+                    <a>
+                    <img src="{{ asset("/assets/img/icons/back.png") }}" class="" width=30 alt="">
+                    </a>
+                    <p class="my-0 px-3 fs-2">Kembali</p>
+                </span>
+            </div>
+
+                <!-- Error -->
+                @if ($errors->has('no_kk'))
+                    <div class="error">
+                        {{ $errors->first('no_kk') }}
                     </div>
                 @endif
                 {{--<form method="post" action="{{ route('penduduk.store') }}">--}}
@@ -409,6 +430,7 @@
             <footer class="mt-5">
 
             </footer>
+        
         </main>
     </div>
 

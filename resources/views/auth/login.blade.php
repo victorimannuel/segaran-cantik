@@ -10,6 +10,18 @@
 
         <form action="{{ route('login') }}" class="form" method="POST">
             @csrf
+            @if(Session::has('fail'))
+                <script type="text/javascript">
+                    swal({
+                        title:'Oops!',
+                        text:"{{Session::get('fail')}}",
+                        type:'error',
+                        timer:5000
+                    }).then((value) => {
+                    //location.reload();
+                    }).catch(swal.noop);
+                </script>
+            @endif
             @if ($errors->any())
 {{--                @foreach ($errors->all() as $error)--}}
 {{--                    <div class="error">--}}
@@ -19,6 +31,8 @@
             <div class="modal fade">
                 test
             </div>
+
+            
 {{--                <div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="demoModalLabel" aria-hidden="true">--}}
 {{--                    <div class="modal-dialog" role="document">--}}
 {{--                        <div class="modal-content">--}}

@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
 
-                {{-- for loop notifikasi disini --}}
+                {{-- loop notifikasi disini --}}
                 @for($i = 0; $i < 10; $i++)
                     <div id="notif-container mb-5 d-flex flex-row" class="notif">
                         <div class="img h-100">
@@ -21,6 +21,7 @@
                         </div>
                     </div>
                 @endfor
+                {{--  --}}
 
             </div>
         </div>

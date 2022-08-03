@@ -4,6 +4,7 @@ form {
 }
 .form-select, .form-control {
     font-size: 1.6rem;
+    padding: 0.8rem;
 }
 .form-control:focus {
     border-color: #000;
@@ -15,7 +16,7 @@ form {
 }
 
 [disabled]{
-    background-color: #F0F2FA !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
     /* border: 0; */
 
 }
@@ -32,4 +33,12 @@ label {
 .form-control.error {
     border-color: red;
     padding: .375rem .75rem;
+}
+
+.back-button{
+    
+}
+
+.back-button:hover{
+    opacity: 0.8;
 }

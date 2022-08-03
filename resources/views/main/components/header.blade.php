@@ -3,12 +3,13 @@
         <h1 class="h1"><b>{{ $page }}</b></h1>
     </span>
         <span class="d-flex flex-row align-items-center">
-
-            <img id="notificationButton" src={{ asset("assets/img/icons/activity-log.png" )  }} alt="notification" width="30" height="30" role="button"
-            type="button" class="" data-bs-toggle="modal" data-bs-target="#notificationModal"
-            data-backdrop="false"
+            <a href="/dashboard/log">
+                <img id="activityLogg" src={{ asset("assets/img/icons/activity-log.png" )  }}
+                alt="activity" width="30" height="30" role="button"
+                type="button" class="">
+            </a>
             
-            >
+            
             <img id="notificationButton" src={{ asset("assets/img/icons/notif-dot.png" )  }} alt="notification" width="30" height="30" role="button"
             type="button" class="" data-bs-toggle="modal" data-bs-target="#notificationModal"
             data-backdrop="false"

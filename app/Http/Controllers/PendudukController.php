@@ -227,4 +227,8 @@ class PendudukController extends Controller
         return view('main/components/notif', ['activityLogs' => $activityLogs,]);
     }
 
+    public function destroy(Request $request) {
+        Penduduk::find(request('id_penduduk'))->delete();
+    }
+
 }

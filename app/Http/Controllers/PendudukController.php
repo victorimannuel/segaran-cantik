@@ -25,17 +25,30 @@ class PendudukController extends Controller
         return view('penduduk/create');
     }
 
+
     public function readOnlyForm($id)
     {
         $data = $this->penduduk->find($id);
         $activityLog = Activity::all()->where('subject_id', $id);
-        return view('penduduk/readonly', ['penduduk' => $data, 'activityLogs' => $activityLog]);
+        return view('penduduk/readonly', [
+            'penduduk' => $data, 
+            'activityLogs' => $activityLog, 
+            'page' => 'Data Penduduk', 
+            'user_name' => 'user',
+            'aside_state' => 'closed'
+            
+        ]);
     }
 
     public function editForm($id)
     {
         $data = Penduduk::find($id);
-        return view('penduduk/edit', ['penduduk' => $data]);
+        return view('penduduk/edit', [
+            'penduduk' => $data, 
+            'page' => 'Ubah Data Penduduk',
+            'user_name' => 'user',
+            'aside_state' => 'closed'
+        ]);
     }
 
     public function store(Request $request)

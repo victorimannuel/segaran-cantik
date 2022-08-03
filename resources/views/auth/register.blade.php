@@ -5,8 +5,8 @@
     <div class="container container-sm">
         <img src="{{ asset('assets/img/icons/segaran-icon.png') }}" alt="logo" width="48" height="48" />
         <p class="light">Segaran Admin</p>
-        <h1 style="text-align: center;">Sign Up ke Segaran Admin</h1>
-        <p class="light">Masukkan Email, Nama, Password di bawah</p>
+        <h1 style="text-align: center;">Daftar ke Segaran Admin</h1>
+        <p class="light">Masukkan Email, Nama, Kata Sandi di bawah</p>
 
         <form action="{{ route('register') }}" class="form" method="POST">
             @csrf
@@ -22,18 +22,18 @@
             </div>
             <div class="my-4">
                 {{-- <label for="" class="form-label fs-3">Password</label>     --}}
-                <input type="Password" name="password" class="form-control form-control-lg fs-3" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Password">
+                <input type="Password" name="password" class="form-control form-control-lg fs-3" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Kata Sandi">
                 <div id="PasswordHelp" class="form-text"></div>
             </div>
             <div class="my-4">
                 {{-- <label for="" class="form-label fs-3">Confirm Password</label>     --}}
-                <input type="Password" name="password_confirmation" class="form-control form-control-lg fs-3" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Confirm Password">
+                <input type="Password" name="password_confirmation" class="form-control form-control-lg fs-3" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Konfirmasi Kata Sandi">
                 <div id="PasswordHelp" class="form-text"></div>
             </div>
 
 
             <div class="d-grid gap-2 my-5">
-                <button class="btn btn-lg btn-primary fs-3" type="submit">Sign Up</button>
+                <button class="btn btn-lg btn-primary fs-3" type="submit">Daftar</button>
             </div>
 
         </form>

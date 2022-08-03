@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-dark p-0">
         <ul class="navbar-nav w-100 ">
-            <a href="./dashboard" class="text-decoration-none mb-3">
+            <a href="/dashboard" class="text-decoration-none mb-3">
             @if ($page === 'Dashboard')
                 <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
             @else
@@ -28,7 +28,7 @@
                 </li>
             </a>
 
-            <a href="./statistik" class="text-decoration-none mb-3">
+            <a href="/statistik" class="text-decoration-none mb-3">
             @if ($page === 'Statistik')
                 <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
             @else
@@ -45,7 +45,7 @@
                 </li>
             </a>
 
-            <a href="./export-import" class="text-decoration-none mb-3">
+            <a href="/export-import" class="text-decoration-none mb-3">
                 @if ($page === 'Export / Import Data')
                     <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
                 @else

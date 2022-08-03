@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
-<html lang="id">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/form-penduduk.css') }}">
-</head>
-<body>
-{{--<div class="container mt-5">--}}
+@extends('layouts.main')
+
+@section('main-body')
+
+    <div id= "sidebarState" state="aside-closed">
+
+        @include('main.components.sidebar')
+
+        <main class="d-flex flex-column position-absolute end-0 top-0 vw-80">
+
+            @include('main.components.header')
+
+            <section class="mx-5 align-self-center d-flex justify-content-center">
 <!-- Success message -->
 @if(Session::has('success'))
     <div class="alert alert-success">
@@ -18,10 +18,9 @@
     </div>
 @endif
 {{--<form method="post" action="{{ route('penduduk.store') }}">--}}
-<form method="post" action="{{ route('penduduk.update', ['id_penduduk' => $penduduk->id]) }}">
+<form class="form-penduduk pb-5" method="post" action="{{ route('penduduk.update', ['id_penduduk' => $penduduk->id]) }}">
     <!-- CROSS Site Request Forgery Protection -->
     @csrf
-    <h2>Form Data Penduduk Desa Segaran</h2>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
@@ -307,7 +306,7 @@
         <!--  col-md-6   -->
         <div class="col-md-4">
             <div class="form-group">
-                <label for="pukul_kematian">TANGGAL KEMATIAN</label>
+                <label for="pukul_kematian">PUKUL KEMATIAN</label>
                 <input type="time" class="form-control" id="pukul_kematian" name="pukul_kematian">
             </div>
         </div>
@@ -384,7 +383,7 @@
     </div>
     <!--  row   -->
 
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-md-4">
             <div class="form-group">
             </div>
@@ -394,25 +393,10 @@
             <div class="form-group">
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <input type="button" href="/dashboard" value="Hapus" class="btn btn-danger btn-block" style="color: white;"></input>
-                    </div>
-                </div>
-                <!--  col-md-6   -->
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <input type="button" href="/dashboard" value="Kembali" class="btn btn-warning btn-block" style="color: white;"></input>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <input type="submit" name="send" value="Simpan" class="btn btn-success btn-block">
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-4 d-flex justify-content-end">
+            <input type="button" href="/dashboard" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;">
+            <input type="submit" name="send" value="Simpan" class="btn btn-success btn-lg fs-3 px-5">
+            
         </div>
         <!--  col-md-6   -->
     </div>
@@ -420,6 +404,14 @@
 
 </form>
 </div>
-</form>
-</body>
-</html>
+
+</section>
+
+<footer class="mt-5">
+
+</footer>
+</main>
+</div>
+
+@endsection
+

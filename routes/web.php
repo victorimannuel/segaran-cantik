@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Input;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login', [
-        "name" => "Kepala Desa",
-        "page" => "Login"
-    ]);
-})->middleware(['auth']);
+//Route::get('/', function () {
+//    return view('auth.login', [
+//        "name" => "Kepala Desa",
+//        "page" => "Login"
+//    ]);
+//})->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('main.dashboard', [ 'page' => 'Dashboard']);
@@ -61,5 +61,12 @@ Route::any('/dashboard/search', function(){
 Route::get('/export-import',[PendudukController::class,'importView'])->name('import-view');
 Route::post('/import',[PendudukController::class,'import'])->name('import');
 Route::get('/export-penduduk',[PendudukController::class,'exportPenduduk'])->name('export-penduduk');
+
+
+//Route::get('/profil-desa', function () {
+Route::get('/', function () {
+    return view('profil.profil');
+//    return view('profil.index');
+});
 
 require __DIR__.'/auth.php';

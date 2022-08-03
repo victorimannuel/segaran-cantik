@@ -10,7 +10,8 @@
 
             @include('main.components.header')
 
-            <div style="padding: 3rem 10rem 0 10rem;">
+            <section class="mx-5 align-self-center d-flex justify-content-center card p-5 card">
+            <div class="" style="padding: 3rem 10rem 0 10rem;">
                 <table class="table">
                     <thead class="h4">
                         <tr>
@@ -37,7 +38,7 @@
                     @endforeach
                 </table>
             </div>
-
+            <section></section>
         </main>
     </div>
 

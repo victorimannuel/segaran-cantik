@@ -9,7 +9,7 @@
             <div class="modal-body p-0">
 
                 {{-- loop notifikasi disini --}}
-<<<<<<< HEAD
+{{-- <<<<<<< HEAD --}}
 {{--                @foreach($activityLogGroupBy as $log)--}}
 {{--                    @php $userName = \App\Models\User::find($log['causer_id'])->name; @endphp--}}
 {{--                    <div id="notif-container mb-5 d-flex flex-row" class="notif">--}}
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                 @endforeach
-====
+{{-- ==== --}}
                 {{--  --}}
 
             </div>

@@ -15,7 +15,8 @@ class Penduduk extends Model
 
     protected $table = 'penduduks';
     protected static $logAttributes = ['nama', 'no_kk', 'nik'];
-    protected static $recordEvents = ['updated', 'deleted'];
+//    protected static $recordEvents = ['updated', 'deleted'];
+    protected static $recordEvents = ['updated'];
     protected static $logFillable = true;
     protected static $logOnlyDirty = true;
     protected static $logName = 'penduduk';

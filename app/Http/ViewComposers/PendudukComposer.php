@@ -113,8 +113,12 @@ class PendudukComposer
             foreach ($log->properties['attributes'] as $index => $new) {
                 $arrKeys = array_keys($log->properties['attributes']);
                 $userName = User::find($log['causer_id'])->name;
-                $penduduk = Penduduk::find($log['subject_id'])->nama;
-                array_push($arrLog, [$penduduk, $arrKeys[$i], $log->properties['old'][$index], $new, $userName, $log->updated_at, ]);
+                $penduduk = Penduduk::find($log['subject_id']);
+//                if ($penduduk == null) {
+//                    continue;
+//                }
+                $namaPenduduk = $penduduk->nama;
+                array_push($arrLog, [$namaPenduduk, $arrKeys[$i], $log->properties['old'][$index], $new, $userName, $log->updated_at, ]);
                 $i++;
             }
         }

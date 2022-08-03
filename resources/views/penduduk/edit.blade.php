@@ -485,7 +485,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 d-flex justify-content-end">
-                            <input type="button" href="/dashboard" onclick="window.location='{{ route('edit-penduduk.show', ['id_penduduk' => $penduduk->id])}}'" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;">
+                            <input type="button" onclick="window.location='{{ route('penduduk.hapus', ['id_penduduk' => $penduduk->id])}}'" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;">
                             <input type="submit" name="send" value="Simpan" class="btn btn-success btn-lg fs-3 px-5">
 
                         </div>

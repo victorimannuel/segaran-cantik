@@ -52,7 +52,10 @@ Route::post('/dashboard/penduduk/{id_penduduk}/simpan', [PendudukController::cla
 )->name('penduduk.update');
 /*                  */
 
-Route::post('/dashboard/penduduk/{id_penduduk}/hapus', [PendudukController::class, 'destroy']
+Route::get('/dashboard/penduduk/{id_penduduk}/hapus', function () {
+    return view('main.dashboard', ['page' => 'Dashboard']);
+});
+Route::post('/dashboard/penduduk/{id_penduduk}/hapus', [PendudukController::class, 'delete']
 )->name('penduduk.hapus');
 
 Route::any('/search', function(){

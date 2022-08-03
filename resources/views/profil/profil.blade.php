@@ -9,8 +9,8 @@
 
 <body>
 <div class="container">
-    <nav>
-        <ul id="navbar">
+    <nav id="navbar">
+        <ul >
             <li><a id="navmenu" href="#home">Beranda</a></li>
             <li><a  id="navmenu" href="#profildesa">Profil</a></li>
             <li><a  id="navmenu" href="#pd">Potensi Wisata</a></li>
@@ -19,12 +19,13 @@
             <li><a  id="navmenu" href="#gallery">Galeri</a></li>
         </ul>
     </nav>
-    <div id="home"></div>
-    <div id="profile" >
-{{--        <img id="profildesa" src="assets/img/curang.png" alt="" style="height: 80%;">--}}
-        <img id="profildesa" src="{{ asset('assets/profil-desa/img/curang.png') }}" alt="" style="height: 80%;">
+    <div id="home" >
+        {{-- <img src="{{ asset('assets/profil-desa/img/bg.png') }}" alt="" style="width: 80rem;"> --}}
     </div>
-    <div id="protail"></div>
+    <div id="profile" >
+       <img id="profildesa" src="{{ asset('assets/profil-desa/img/curang.png') }}" >
+    </div>
+    {{-- <div id="protail"></div> --}}
     <div id="phead"></div>
     <div id="pd">
         <div class="prow">
@@ -78,10 +79,9 @@
             </div>
         </div>
     </div>
-    <div id="ptail"></div>
     <div id="gsb"></div>
     <div id="service">
-        <div class="row">
+        <div class="row" style="width: 80%;">
             <div class="column">
                 <ul>
                     <li>
@@ -230,7 +230,7 @@
                                 <p id="jabatan">Kaur Tata Usaha & Umum</p>
                                 <div id="info">
 {{--                                    <img id="waicon" src="assets/img/waicon.png" />--}}
-                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/kaurtu.png') }}" />
+                                    <img id="waicon" src="{{ asset('assets/profil-desa/img/waicon.png') }}" />
                                     <a id="wanum" href="https://wa.me/6281249715874">0812-4971-5874</a>
                                 </div>
                             </div>
@@ -335,7 +335,7 @@
 {{--                    <img class="gimg" id="gimg" src="assets/img/Galeri/lahan.png" alt="lahan" onclick="openModal();currentSlide(3)" />--}}
                     <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/lahan.png') }}" alt="lahan" onclick="openModal();currentSlide(3)" />
 {{--                    <img class="gimg" id="gimg" src="assets/img/Galeri/Posyandu.JPG" alt="mpls" onclick="openModal();currentSlide(14)" />--}}
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/Posyandu.png') }}" alt="mpls" onclick="openModal();currentSlide(14)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/Posyandu.JPG') }}" alt="mpls" onclick="openModal();currentSlide(14)" />
                 </div>
                 <div class="gcolumn">
                     <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/mpls.png') }}" alt="mpls" onclick="openModal();currentSlide(4)" />
@@ -353,7 +353,7 @@
                 <div class="gcolumn">
                     <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
                     <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/vaksinasi.png') }}" alt="vaksin" onclick="openModal();currentSlide(12)" />
-                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/suro.png') }}" alt="futsal" onclick="openModal();currentSlide(15)" />
+                    <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/suro.JPG') }}" alt="suro" onclick="openModal();currentSlide(15)" />
                     <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/Galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
 
                 </div>
@@ -646,7 +646,7 @@
             </div>
         </div>
     </div>
-    <div style="width: 100%; height: 200px"></div>
+    <div style="width: 100%; height: 200px; background: white;"></div>
     <div id="footer">
         <div id="frow">
             <div id="fcolumn">

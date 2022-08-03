@@ -14,10 +14,10 @@
             </div>
         </div>
         <div class="d-flex flex-row align-items-center fs-3 px-5">
-            <p id="name" value="Kepala Desa" class="px-3 m-0">{{ $user_name }}</p>
+            <p id="name" value="Kepala Desa" class="pe-5 m-0">Masuk sebagai, <b> {{ $user_name }} </b></p>
 
             <div>
-                <img src= {{ asset("assets/img/default-user.png" ) }} alt="profile" width="40" height="40">
+                <img src= {{ asset("assets/img/default-user.png" ) }} alt="profile" width="40" height="40" hidden>
             </div>
         </div>
 

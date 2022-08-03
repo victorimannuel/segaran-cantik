@@ -123,20 +123,24 @@
                     <!--  row   -->
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="tempat_lahir">TEMPAT LAHIR</label>
                                 <input type="text" class="form-control" placeholder="Tempat Lahir" id="tempat_lahir" name="tempat_lahir">
                             </div>
                         </div>
-                        <!--  col-md-6   -->
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="tgl_lahir">TANGGAL LAHIR</label>
                                 <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir">
                             </div>
                         </div>
-                        <!--  col-md-6   -->
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="umur">UMUR</label>
+                                <input type="number" class="form-control" id="umur" name="umur">
+                            </div>
+                        </div>
                     </div>
                     <!--  row   -->
 
@@ -186,7 +190,7 @@
                     <hr/>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="status_pendidikan">STATUS PENDIDIKAN</label>
                                 <select class="selectpicker form-control" id="status_pendidikan" name="status_pendidikan">
@@ -197,24 +201,63 @@
                                 </select>
                             </div>
                         </div>
-                        <!--  col-md-6   -->
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="pendidikan">PENDIDIKAN</label>
                                 <select class="selectpicker form-control" id="pendidikan" name="pendidikan">
                                     <option selected value="">-- PENDIDIKAN --</option>
+                                    <option value="TIDAK/BELUM SEKOLAH">TIDAK/BELUM SEKOLAH</option>
+                                    <option value="BELUM TAMAT SD/Sederajat">BELUM TAMAT SD/Sederajat</option>
+                                    <option value="TAMAT SD/Sederajat">TAMAT SD/Sederajat</option>
+                                    <option value="SLTP/Sederajat">SLTP/Sederajat</option>
+                                    <option value="SLTA/Sederajat">SLTA/Sederajat</option>
+                                    <option value="D1">D1</option>
+                                    <option value="D1">D1</option>
                                     <option value="D1">D1</option>
                                     <option value="D2">D2</option>
                                     <option value="D3">D3</option>
+                                    <option value="D4">D4</option>
                                     <option value="S1">S1</option>
                                     <option value="S2">S2</option>
                                     <option value="S3">S3</option>
                                 </select>
                             </div>
                         </div>
-                        <!--  col-md-6   -->
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="pekerjaan">PEKERJAAN</label>
+                                <select class="selectpicker form-control" id="pekerjaan" name="pekerjaan">
+                                    <option selected value="">-- PEKERJAAN --</option>
+                                    <option value="PEDAGANG">PEDAGANG</option>
+                                    <option value="WIRASWASTA">WIRASWASTA</option>
+                                    <option value="PERANGKAT DESA">PERANGKAT DESA</option>
+                                    <option value="PELAJAR/MAHASISWA">PELAJAR/MAHASISWA</option>
+                                    <option value="BURUH TANI/PERKEBUNAN">BURUH TANI/PERKEBUNAN</option>
+                                    <option value="PETANI/PEKEBUN">PETANI/PEKEBUN</option>
+                                    <option value="KARYAWAN SWASTA">KARYAWAN SWASTA</option>
+                                    <option value="KARYAWAN BUMN">KARYAWAN BUMN</option>
+                                    <option value="KARYAWAN HONORER">KARYAWAN HONORER</option>
+                                    <option value="TENTARA NASIONAL INDONESIA">TENTARA NASIONAL INDONESIA</option>
+                                    <option value="BURUH HARIAN LEPAS">BURUH HARIAN LEPAS</option>
+                                    <option value="KONSTRUKSI">KONSTRUKSI</option>
+                                    <option value="PETERNAK">PETERNAK</option>
+                                    <option value="PERAWAT">PERAWAT</option>
+                                    <option value="TUKANG JAHIT">TUKANG JAHIT</option>
+                                    <option value="TUKANG KAYU">TUKANG KAYU</option>
+                                    <option value="PEGAWAI NEGERI SIPIL">PEGAWAI NEGERI SIPIL</option>
+                                    <option value="SOPIR">SOPIR</option>
+                                    <option value="DOKTER">DOKTER</option>
+                                    <option value="INDUSTRI">INDUSTRI</option>
+                                    <option value="TRANSPORTASI">TRANSPORTASI</option>
+                                    <option value="PENSIUNAN">PENSIUNAN</option>
+                                    <option value="GURU">GURU</option>
+                                    <option value="MENGURUS RUMAH TANGGA">MENGURUS RUMAH TANGGA</option>
+                                    <option value="BELUM/TIDAK BEKERJA">BELUM/TIDAK BEKERJA</option>
+                                    <option value="LAINNYA">LAINNYA</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <!--  row   -->
 
                     <div class="row">
                         <div class="col-md-6">

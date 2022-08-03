@@ -26,9 +26,10 @@ Route::get('/dashboard', function () {
     return view('main.dashboard', [ 'page' => 'Dashboard']);
 })->middleware(['auth'])->name('main.dashboard');
 
-Route::get('/notif', function () {
-    return view('main.components.notif');
-});
+//Route::get('/notif', function () {
+//    return view('main.components.notif');
+//});
+Route::get('/notif', [PendudukController::class, 'notifView']);
 
 Route::get('/statistik', function () {
     return view('main.statistik', ['page' => 'Statistik']);
@@ -44,8 +45,9 @@ Route::get('/dashboard/penduduk/tambah/', [PendudukController::class, 'createFor
 Route::post('/dashboard/penduduk/tambah/', [PendudukController::class, 'store']
 )->name('penduduk.store');
 
-Route::get('/dashboard/penduduk/{id_penduduk}/simpan', [PendudukController::class, 'update']
-);
+Route::get('/dashboard/penduduk/{id_penduduk}/simpan', function () {
+    return view('main.dashboard', ['page' => 'Dashboard']);
+});
 Route::post('/dashboard/penduduk/{id_penduduk}/simpan', [PendudukController::class, 'update']
 )->name('penduduk.update');
 /*                  */
@@ -62,11 +64,14 @@ Route::get('/export-import',[PendudukController::class,'importView'])->name('imp
 Route::post('/import',[PendudukController::class,'import'])->name('import');
 Route::get('/export-penduduk',[PendudukController::class,'exportPenduduk'])->name('export-penduduk');
 
-
 //Route::get('/profil-desa', function () {
 Route::get('/', function () {
     return view('profil.profil');
 //    return view('profil.index');
+});
+
+Route::get('/dashboard/log', function() {
+    return view('penduduk.log-page', [ 'page' => 'Log Data Perbaikan']);
 });
 
 require __DIR__.'/auth.php';

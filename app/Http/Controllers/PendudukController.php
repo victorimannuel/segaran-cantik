@@ -222,4 +222,9 @@ class PendudukController extends Controller
         return Excel::download(new ExportPenduduk, 'penduduks.xlsx');
     }
 
+    public function notifView(Request $request) {
+        $activityLogs = Activity::all()->where('causer_id', Auth::id());
+        return view('main/components/notif', ['activityLogs' => $activityLogs,]);
+    }
+
 }

@@ -6,7 +6,9 @@ use App\Models\Penduduk;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use Spatie\Activitylog\Models\Activity;
 
 class PendudukComposer
 {
@@ -99,12 +101,31 @@ class PendudukComposer
         $lansia = Penduduk::whereBetween('umur', [46,65])->count();
         $manula = Penduduk::where('umur', '>=', 65)->count();
 
+        $activityLogGroupBy = Activity::groupBy('causer_id')
+            ->selectRaw('count(*) as total, causer_id')
+            ->get();
+
+        $activityLogs = Activity::all();
+        error_log($activityLogs);
+        $arrLog = [];
+        foreach ($activityLogs as $log) {
+            $i = 0;
+            foreach ($log->properties['attributes'] as $index => $new) {
+                $arrKeys = array_keys($log->properties['attributes']);
+                $userName = User::find($log['causer_id'])->name;
+                array_push($arrLog, [$arrKeys[$i], $log->properties['old'][$index], $new, $userName, $log->updated_at, ]);
+                $i++;
+            }
+        }
+
         $view->with([
             'penduduks' => $penduduk_paginated,
             'items' => $items,
             'jumlah_penduduk' => $jumlah_penduduk,
             'user_name' => $user_name,
             'jabatan' => $jabatan,
+            'activityLogGroupBy' => $activityLogGroupBy,
+            'arrLog' => $arrLog,
             'jenis_kelamin' => [
                 'jumlah_laki' => $jumlah_laki,
                 'jumlah_perempuan' => $jumlah_perempuan,
@@ -122,7 +143,7 @@ class PendudukComposer
                 'dewasa' => $dewasa,
                 'lansia' => $lansia,
                 'manula' => $manula,
-            ]
+            ],
         ]);
     }
 }

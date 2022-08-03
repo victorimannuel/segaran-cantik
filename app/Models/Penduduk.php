@@ -44,9 +44,14 @@ class Penduduk extends Model
 
     public function getActivitylogOptions(): LogOptions
     {
+        $userId =Auth::id();
+        $user = new User();
+        $userName = $user->find($userId)->name;
+
         return LogOptions::defaults()
             ->logFillable()
-            ->logOnlyDirty();
+            ->logOnlyDirty()
+        ;
     }
 
     protected $fillable = [

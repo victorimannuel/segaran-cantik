@@ -64,7 +64,9 @@
             </div>
             <div class="row" id="offset">
                 <div class="col">
-                    <img src="{{ asset('assets/profil-desa/img/profil/peta-segaran.png') }}" alt="" style="height: 20rem; z-index: 0;">
+                    <a href="https://goo.gl/maps/BAuxNnzwVsfAezfMA">
+                        <img id="peta-segaran" src="{{ asset('assets/profil-desa/img/profil/peta-segaran.png') }}" alt="" style="height: 20rem; z-index: 0;">
+                    </a>
                 </div>
                 <div class="col">
     

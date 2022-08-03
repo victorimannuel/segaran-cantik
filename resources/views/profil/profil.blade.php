@@ -42,7 +42,7 @@
 
             <div class="header">Malang</div>
             <div class="title">Desa Segaran</div>
-            <p>Desa Segaran adalah desa yang tidak begitu ramai ,tetapi selalu mempunyai cerita unik di baliknya. Kebanyakan penduduk Desa Segaran adalah bercocok tanam. Tebu adalah hasil dari mereka bertani dan mereka juga sebagai pekerja penambang batu kapur, yang hasilnya banyak dikirim kepada pengolah batu kapur di daerah Druju, sumberejo dan di daerah Turen.</p>
+            <p>Desa Segaran adalah desa yang tidak begitu ramai ,tetapi selalu mempunyai cerita unik di baliknya. Kebanyakan penduduk Desa Segaran adalah bercocok tanam. Tebu adalah hasil dari mereka bertani dan mereka juga sebagai pekerja penambang batu kapur, yang hasilnya banyak dikirim kepada pengolah batu kapur di daerah Druju, Sumberejo dan di daerah Turen.</p>
             
             <div class="bottom-right">
             <div class="row" style="margin-bottom: 1em;">

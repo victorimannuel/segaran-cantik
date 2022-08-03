@@ -32,7 +32,6 @@ return new class extends Migration
             $table->string('nama_ayah')->nullable();
             $table->string('nama_ibu')->nullable();
             $table->string('status_pendidikan')->nullable();
-            $table->string('alamat')->nullable();
             $table->string('rt')->nullable();
             $table->string('rw')->nullable();
             $table->string('dusun')->nullable();

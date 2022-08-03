@@ -25,6 +25,7 @@
             <div class="d-flex flex-row align-items-center pb-3">
 
                 <span class="back-button d-flex flex-row" onclick="window.location='{{ route('view-penduduk.show', ['id_penduduk' => $penduduk->id])}}'" style="cursor: pointer;">
+{{--                <span class="back-button d-flex flex-row" onclick="window.location='{{ view('main.dashboard')}}'" style="cursor: pointer;">--}}
                     <a>
                     <img src="{{ asset("/assets/img/icons/back.png") }}" class="" width=30 alt="">
                     </a>
@@ -86,12 +87,18 @@
                             <div class="form-group">
                                 <label for="hub_keluarga">HUBUNGAN KELUARGA</label>
                                 <select class="selectpicker form-control" id="hub_keluarga" name="hub_keluarga">
-                                    <option value="Kepala Keluarga" {{$penduduk->hub_keluarga == 'Kepala keluarga' ? 'selected':''}}>Kepala Keluarga</option>
-                                    <option value="Ibu" {{$penduduk->hub_keluarga == 'Ibu' ? 'selected':''}}>Ibu</option>
-                                    <option value="Anak" {{$penduduk->hub_keluarga == 'Anak' ? 'selected':''}}>Anak</option>
+                                    <option value="" selected>-- HUBUNGAN KELUARGA --</option>
+                                    <option value="Kepala Keluarga" {{$penduduk->hub_keluarga == 'Kepala keluarga' ? 'selected': ''}}>Kepala Keluarga</option>
                                     <option value="Suami" {{$penduduk->hub_keluarga == 'Suami' ? 'selected':''}}>Suami</option>
                                     <option value="Istri" {{$penduduk->hub_keluarga == 'Istri' ? 'selected':''}}>Istri</option>
-                                    <option value="Saudara" {{$penduduk->hub_keluarga == 'Saudara' ? 'selected':''}}>Saudara</option>
+                                    <option value="Anak" {{$penduduk->hub_keluarga == 'Anak' ? 'selected':''}}>Anak</option>
+                                    <option value="Menantu" {{$penduduk->hub_keluarga == 'Menantu' ? 'selected':''}}>Menantu</option>
+                                    <option value="Cucu" {{$penduduk->hub_keluarga == 'Cucu' ? 'selected':''}}>Cucu</option>
+                                    <option value="Orang Tua" {{$penduduk->hub_keluarga == 'Orang Tua' ? 'selected':''}}>Orang Tua</option>
+                                    <option value="Mertua" {{$penduduk->hub_keluarga == 'Mertua' ? 'selected':''}}>Mertua</option>
+                                    <option value="Famili" {{$penduduk->hub_keluarga == 'Famili' ? 'selected':''}}>Famili</option>
+                                    <option value="Pembantu" {{$penduduk->hub_keluarga == 'Pembantu' ? 'selected':''}}>Pembantu</option>
+                                    <option value="Lainnya" {{$penduduk->hub_keluarga == 'Lainnya' ? 'selected':''}}>Lainnya</option>
                                 </select>
                             </div>
                         </div>
@@ -100,8 +107,9 @@
                             <div class="form-group">
                                 <label for="status_kawin">STATUS PERKAWINAN</label>
                                 <select class="selectpicker form-control" id="status_kawin" name="status_kawin">
-                                    <option selected value="Belum Kawin">Belum Kawin</option>
-                                    <option value="Kawin">Kawin</option>
+                                    <option selected value="">-- STATUS PERKAWINAN --</option>
+                                    <option value="Belum Kawin" {{$penduduk->status_kawin == 'Kepala keluarga' ? 'selected': ''}}>Belum Kawin</option>
+                                    <option value="Kawin" {{$penduduk->status_kawin == 'Kepala keluarga' ? 'selected': ''}}>Kawin</option>
                                 </select>
                             </div>
                         </div>
@@ -114,8 +122,9 @@
                             <div class="form-group">
                                 <label for="jenis_kelamin">JENIS KELAMIN</label>
                                 <select class="selectpicker form-control" id="jenis_kelamin" name="jenis_kelamin">
-                                    <option selected value="L">Laki-laki</option>
-                                    <option value="P">Perempuan</option>
+                                    <option selected value="">-- JENIS KELAMIN --</option>
+                                    <option value="L" {{$penduduk->jenis_kelamin == 'L' ? 'selected': ''}}>Laki-laki</option>
+                                    <option value="P" {{$penduduk->jenis_kelamin == 'P' ? 'selected': ''}}>Perempuan</option>
                                 </select>
                             </div>
                         </div>
@@ -124,12 +133,13 @@
                             <div class="form-group">
                                 <label for="agama">AGAMA</label>
                                 <select class="selectpicker form-control" id="agama" name="agama">
-                                    <option selected value="Islam">Islam</option>
-                                    <option value="Kristen">Kristen</option>
-                                    <option value="Katolik">Katolik</option>
-                                    <option value="Hindu">Hindu</option>
-                                    <option value="Buddha">Buddha</option>
-                                    <option value="Konghucu">Konghucu</option>
+                                    <option selected value="">-- AGAMA --</option>
+                                    <option value="Islam" {{$penduduk->agama == 'Islam' ? 'selected': ''}}>Islam</option>
+                                    <option value="Kristen" {{$penduduk->agama == 'Kristen' ? 'selected': ''}}>Kristen</option>
+                                    <option value="Katolik" {{$penduduk->agama == 'Katolik' ? 'selected': ''}}>Katolik</option>
+                                    <option value="Hindu" {{$penduduk->agama == 'Hindu' ? 'selected': ''}}>Hindu</option>
+                                    <option value="Buddha" {{$penduduk->agama == 'Buddha' ? 'selected': ''}}>Buddha</option>
+                                    <option value="Konghucu" {{$penduduk->agama == 'Konghucu' ? 'selected': ''}}>Konghucu</option>
                                 </select>
                             </div>
                         </div>
@@ -160,12 +170,10 @@
                             <div class="form-group">
                                 <label for="rt">RT</label>
                                 <select class="selectpicker form-control" id="rt" name="rt">
-                                    <option selected value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
+                                    <option selected value="">-- RT --</option>
+                                    @for ($i = 1; $i <= 30; $i++)
+                                        <option {{$penduduk->rt == $i ? 'selected': ''}} value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
                                 </select>
                             </div>
                         </div>
@@ -174,12 +182,10 @@
                             <div class="form-group">
                                 <label for="rw">RW</label>
                                 <select class="selectpicker form-control" id="rw" name="rw">
-                                    <option selected value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
+                                    <option selected value="">-- RW --</option>
+                                    @for ($i = 1; $i <= 9; $i++)
+                                        <option {{$penduduk->rw == $i ? 'selected': ''}} value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
                                 </select>
                             </div>
                         </div>
@@ -188,9 +194,13 @@
                             <div class="form-group">
                                 <label for="dusun">DUSUN</label>
                                 <select class="selectpicker form-control" id="dusun" name="dusun">
-                                    <option selected value="KRAJAN">KRAJAN</option>
-                                    <option value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
-                                    <option value="PUTAT">PUTAT</option>
+                                    <option selected value="">-- DUSUN --</option>
+                                    <option {{$penduduk->dusun == 'KRAJAN' ? 'selected': ''}} value="KRAJAN">KRAJAN</option>
+                                    <option {{$penduduk->dusun == 'PUTAT' ? 'selected': ''}} value="PUTAT">PUTAT</option>
+                                    <option {{$penduduk->dusun == 'SUMBERBANTENG' ? 'selected': ''}} value="SUMBERBANTENG">SUMBERBANTENG</option>
+                                    <option {{$penduduk->dusun == 'SUMBERJABON' ? 'selected': ''}} value="SUMBERJABON">SUMBERJABON</option>
+                                    <option {{$penduduk->dusun == 'SUMBERKOTES WETAN' ? 'selected': ''}} value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
+                                    <option {{$penduduk->dusun == 'SUMBERKOTES KULON' ? 'selected': ''}} value="SUMBERKOTES KULON">SUMBERKOTES KULON</option>
                                 </select>
                             </div>
                         </div>
@@ -205,9 +215,10 @@
                             <div class="form-group">
                                 <label for="status_pendidikan">STATUS PENDIDIKAN</label>
                                 <select class="selectpicker form-control" id="status_pendidikan" name="status_pendidikan">
-                                    <option selected value="BELUM TAMAT">BELUM TAMAT</option>
-                                    <option value="TAMAT">TAMAT</option>
-                                    <option value="BELUM SEKOLAH">BELUM SEKOLAH</option>
+                                    <option selected value="">-- STATUS PENDIDIKAN --</option>
+                                    <option {{$penduduk->status_pendidikan == 'BELUM TAMAT' ? 'selected': ''}} value="BELUM TAMAT">BELUM TAMAT</option>
+                                    <option {{$penduduk->status_pendidikan == 'TAMAT' ? 'selected': ''}}value="TAMAT">TAMAT</option>
+                                    <option {{$penduduk->status_pendidikan == 'BELUM SEKOLAH' ? 'selected': ''}}value="BELUM SEKOLAH">BELUM SEKOLAH</option>
                                 </select>
                             </div>
                         </div>
@@ -216,12 +227,13 @@
                             <div class="form-group">
                                 <label for="pendidikan">PENDIDIKAN</label>
                                 <select class="selectpicker form-control" id="pendidikan" name="pendidikan">
-                                    <option value="D1">D1</option>
-                                    <option value="D2">D2</option>
-                                    <option value="D3">D3</option>
-                                    <option selected value="S1">S1</option>
-                                    <option value="S2">S2</option>
-                                    <option value="S3">S3</option>
+                                    <option selected value="">-- PENDIDIKAN --</option>
+                                    <option {{$penduduk->pendidikan == 'D1' ? 'selected': ''}} value="D1">D1</option>
+                                    <option {{$penduduk->pendidikan == 'D2' ? 'selected': ''}} value="D2">D2</option>
+                                    <option {{$penduduk->pendidikan == 'D3' ? 'selected': ''}} value="D3">D3</option>
+                                    <option {{$penduduk->pendidikan == 'S1' ? 'selected': ''}} value="S1">S1</option>
+                                    <option {{$penduduk->pendidikan == 'S2' ? 'selected': ''}} value="S2">S2</option>
+                                    <option {{$penduduk->pendidikan == 'S3' ? 'selected': ''}} value="S3">S3</option>
                                 </select>
                             </div>
                         </div>
@@ -383,10 +395,19 @@
                             <div class="form-group">
                                 <label for="gol_darah">GOLONGAN DARAH</label>
                                 <select class="selectpicker form-control" id="gol_darah" name="gol_darah">
-                                    <option selected value="A">A</option>
-                                    <option value="B">B</option>
-                                    <option value="AB">AB</option>
-                                    <option value="O">O</option>
+                                    <option selected value="">-- GOLONGAN DARAH --</option>
+                                    <option {{$penduduk->gol_darah == 'A+' ? 'selected': ''}} value="A+">A+</option>
+                                    <option {{$penduduk->gol_darah == 'A' ? 'selected': ''}} value="A">A</option>
+                                    <option {{$penduduk->gol_darah == 'A-' ? 'selected': ''}} value="A-">A-</option>
+                                    <option {{$penduduk->gol_darah == 'B+' ? 'selected': ''}} value="B+">B+</option>
+                                    <option {{$penduduk->gol_darah == 'B' ? 'selected': ''}} value="B">B</option>
+                                    <option {{$penduduk->gol_darah == 'B-' ? 'selected': ''}} value="B-">B-</option>
+                                    <option {{$penduduk->gol_darah == 'AB+' ? 'selected': ''}} value="AB+">AB+</option>
+                                    <option {{$penduduk->gol_darah == 'AB' ? 'selected': ''}} value="AB">AB</option>
+                                    <option {{$penduduk->gol_darah == 'AB-' ? 'selected': ''}} value="AB-">AB-</option>
+                                    <option {{$penduduk->gol_darah == 'O+' ? 'selected': ''}} value="O+">O+</option>
+                                    <option {{$penduduk->gol_darah == 'O' ? 'selected': ''}} value="O">O</option>
+                                    <option {{$penduduk->gol_darah == 'O-' ? 'selected': ''}} value="O-">O-</option>
                                 </select>
                             </div>
                         </div>
@@ -395,8 +416,13 @@
                             <div class="form-group">
                                 <label for="penyandang_cacat">PENYANDANG CACAT</label>
                                 <select class="selectpicker form-control" id="penyandang_cacat" name="penyandang_cacat">
-                                    <option selected value="Ya">Ya</option>
-                                    <option value="Tidak">Tidak</option>
+                                    <option selected value="">-- PENYANDANG CACAT --</option>
+                                    <option {{$penduduk->penyandang_cacat == 'CACAT FISIK' ? 'selected': ''}} value="CACAT FISIK">CACAT FISIK</option>
+                                    <option {{$penduduk->penyandang_cacat == 'CACAT NETRA/BUTA' ? 'selected': ''}} value="CACAT NETRA/BUTA">CACAT NETRA/BUTA</option>
+                                    <option {{$penduduk->penyandang_cacat == 'CACAT RUNGU/WICARA' ? 'selected': ''}} value="CACAT RUNGU/WICARA">CACAT RUNGU/WICARA</option>
+                                    <option {{$penduduk->penyandang_cacat == 'CACAT MENTAL/JIWA' ? 'selected': ''}} value="CACAT MENTAL/JIWA">CACAT MENTAL/JIWA</option>
+                                    <option {{$penduduk->penyandang_cacat == 'CACAT FISIK DAN MENTAL' ? 'selected': ''}} value="CACAT FISIK DAN MENTAL">CACAT FISIK DAN MENTAL</option>
+                                    <option {{$penduduk->penyandang_cacat == 'CACAT LAINNYA' ? 'selected': ''}} value="CACAT LAINNYA">CACAT LAINNYA</option>
                                 </select>
                             </div>
                         </div>
@@ -430,7 +456,7 @@
             <footer class="mt-5">
 
             </footer>
-        
+
         </main>
     </div>
 

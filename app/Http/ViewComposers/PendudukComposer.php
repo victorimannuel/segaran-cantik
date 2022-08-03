@@ -21,7 +21,6 @@ class PendudukComposer
 
         $query = Penduduk::query();
 
-
         if (request('rt') != 'RT') {
             $query->when($this->request->has('rt'), function ($q) {
                 return $q->where("rt", "=", request('rt'));
@@ -49,13 +48,46 @@ class PendudukComposer
             });
         }
 
-        $penduduk_paginated = $query->paginate($items)->appends(['items' => $items]);
-
-        $penduduk = Penduduk::all();
-        $jumlah_penduduk = count($penduduk);
         $user_id =Auth::id();
         $user = new User();
         $user_name = $user->find($user_id)->name;
+        $jabatan = $user->find($user_id)->jabatan;
+
+        switch ($jabatan) {
+            case 'PUSAT':
+                break;
+            case 'KASUN KRAJAN':
+                $query->where('dusun', '=', 'KRAJAN');
+                break;
+            case 'KASUN PUTAT':
+                $query->where('dusun', '=', 'PUTAT');
+                break;
+            case 'KASUN SUMBERBANTENG':
+                $query->where('dusun', '=', 'SUMBERBANTENG');
+                break;
+            case 'KASUN SUMBERJABON':
+                $query->where('dusun', '=', 'SUMBERJABON');
+                break;
+            case 'KASUN SUMBERKOTES KULON':
+                $query->where('dusun', '=', 'SUMBERKOTES KULON');
+                break;
+            case 'KASUN SUMBERKOTES WETAN':
+                $query->where('dusun', '=', 'SUMBERKOTES WETAN');
+                break;
+            default:
+                break;
+        }
+
+        $penduduk_paginated = $query->paginate($items)->appends([
+            'items' => $items,
+            'rt' => request('rt'),
+            'rw' => request('rw'),
+            'q' => request('q'),
+            'dusun' => request('dusun'),
+            ]);
+
+        $penduduk = Penduduk::all();
+        $jumlah_penduduk = $penduduk->count();
 
         $jumlah_laki = Penduduk::where('jenis_kelamin', '=', 'L')->count();
         $jumlah_perempuan = Penduduk::where('jenis_kelamin', '=', 'P')->count();
@@ -72,6 +104,7 @@ class PendudukComposer
             'items' => $items,
             'jumlah_penduduk' => $jumlah_penduduk,
             'user_name' => $user_name,
+            'jabatan' => $jabatan,
             'jenis_kelamin' => [
                 'jumlah_laki' => $jumlah_laki,
                 'jumlah_perempuan' => $jumlah_perempuan,

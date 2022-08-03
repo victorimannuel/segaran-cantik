@@ -37,6 +37,8 @@
                         <!--  col-md-6   -->
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="no_kk">VALIDASI</label>
+                                <input type="text" class="form-control" placeholder="Validasi" id="validasi" name="validasi">
                             </div>
                         </div>
                         <!--  col-md-6   -->
@@ -65,7 +67,8 @@
                             <div class="form-group">
                                 <label for="hub_keluarga">HUBUNGAN KELUARGA</label>
                                 <select class="selectpicker form-control" id="hub_keluarga" name="hub_keluarga">
-                                    <option selected value="Kepala Keluarga">Kepala Keluarga</option>
+                                    <option selected value="">-- HUBUNGAN KELUARGA --</option>
+                                    <option value="Kepala Keluarga">Kepala Keluarga</option>
                                     <option value="Ibu">Ibu</option>
                                     <option value="Anak">Anak</option>
                                     <option value="Suami">Suami</option>
@@ -79,7 +82,8 @@
                             <div class="form-group">
                                 <label for="status_kawin">STATUS PERKAWINAN</label>
                                 <select class="selectpicker form-control" id="status_kawin" name="status_kawin">
-                                    <option selected value="Belum Kawin">Belum Kawin</option>
+                                    <option selected value="">-- STATUS PERKAWINAN --</option>
+                                    <option value="Belum Kawin">Belum Kawin</option>
                                     <option value="Kawin">Kawin</option>
                                 </select>
                             </div>
@@ -93,7 +97,8 @@
                             <div class="form-group">
                                 <label for="jenis_kelamin">JENIS KELAMIN</label>
                                 <select class="selectpicker form-control" id="jenis_kelamin" name="jenis_kelamin">
-                                    <option selected value="L">Laki-laki</option>
+                                    <option selected value="">-- JENIS KELAMIN --</option>
+                                    <option value="L">Laki-laki</option>
                                     <option value="P">Perempuan</option>
                                 </select>
                             </div>
@@ -103,7 +108,8 @@
                             <div class="form-group">
                                 <label for="agama">AGAMA</label>
                                 <select class="selectpicker form-control" id="agama" name="agama">
-                                    <option selected value="Islam">Islam</option>
+                                    <option selected value="">-- AGAMA --</option>
+                                    <option value="Islam">Islam</option>
                                     <option value="Kristen">Kristen</option>
                                     <option value="Katolik">Katolik</option>
                                     <option value="Hindu">Hindu</option>
@@ -139,8 +145,8 @@
                             <div class="form-group">
                                 <label for="rt">RT</label>
                                 <select class="selectpicker form-control" id="rt" name="rt">
-                                    <option selected value="1">1</option>
-                                    @for ($i = 2; $i <= 30; $i++)
+                                    <option selected value="">-- RT --</option>
+                                    @for ($i = 1; $i <= 30; $i++)
                                         <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                 </select>
@@ -151,8 +157,8 @@
                             <div class="form-group">
                                 <label for="rw">RW</label>
                                 <select class="selectpicker form-control" id="rw" name="rw">
-                                    <option selected value="1">1</option>
-                                    @for ($i = 2; $i <= 9; $i++)
+                                    <option selected value="">-- RW --</option>
+                                    @for ($i = 1; $i <= 9; $i++)
                                         <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                 </select>
@@ -163,9 +169,13 @@
                             <div class="form-group">
                                 <label for="dusun">DUSUN</label>
                                 <select class="selectpicker form-control" id="dusun" name="dusun">
-                                    <option selected value="KRAJAN">KRAJAN</option>
-                                    <option value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
+                                    <option selected value="">-- DUSUN --</option>
+                                    <option value="KRAJAN">KRAJAN</option>
                                     <option value="PUTAT">PUTAT</option>
+                                    <option value="SUMBERBANTENG">SUMBERBANTENG</option>
+                                    <option value="SUMBERJABON">SUMBERJABON</option>
+                                    <option value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
+                                    <option value="SUMBERKOTES KULON">SUMBERKOTES KULON</option>
                                 </select>
                             </div>
                         </div>
@@ -180,7 +190,8 @@
                             <div class="form-group">
                                 <label for="status_pendidikan">STATUS PENDIDIKAN</label>
                                 <select class="selectpicker form-control" id="status_pendidikan" name="status_pendidikan">
-                                    <option selected value="BELUM TAMAT">BELUM TAMAT</option>
+                                    <option selected value="">-- STATUS PENDIDIKAN --</option>
+                                    <option value="BELUM TAMAT">BELUM TAMAT</option>
                                     <option value="TAMAT">TAMAT</option>
                                     <option value="BELUM SEKOLAH">BELUM SEKOLAH</option>
                                 </select>
@@ -191,10 +202,11 @@
                             <div class="form-group">
                                 <label for="pendidikan">PENDIDIKAN</label>
                                 <select class="selectpicker form-control" id="pendidikan" name="pendidikan">
+                                    <option selected value="">-- PENDIDIKAN --</option>
                                     <option value="D1">D1</option>
                                     <option value="D2">D2</option>
                                     <option value="D3">D3</option>
-                                    <option selected value="S1">S1</option>
+                                    <option value="S1">S1</option>
                                     <option value="S2">S2</option>
                                     <option value="S3">S3</option>
                                 </select>
@@ -358,10 +370,19 @@
                             <div class="form-group">
                                 <label for="gol_darah">GOLONGAN DARAH</label>
                                 <select class="selectpicker form-control" id="gol_darah" name="gol_darah">
-                                    <option selected value="A">A</option>
+                                    <option selected value="">-- GOLONGAN DARAH --</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A">A</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
                                     <option value="B">B</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
                                     <option value="AB">AB</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
                                     <option value="O">O</option>
+                                    <option value="O-">O-</option>
                                 </select>
                             </div>
                         </div>
@@ -370,8 +391,13 @@
                             <div class="form-group">
                                 <label for="penyandang_cacat">PENYANDANG CACAT</label>
                                 <select class="selectpicker form-control" id="penyandang_cacat" name="penyandang_cacat">
-                                    <option selected value="Ya">Ya</option>
-                                    <option value="Tidak">Tidak</option>
+                                    <option selected value="">-- PENYANDANG CACAT --</option>
+                                    <option value="CACAT FISIK">CACAT FISIK</option>
+                                    <option value="CACAT NETRA/BUTA">CACAT NETRA/BUTA</option>
+                                    <option value="CACAT RUNGU/WICARA">CACAT RUNGU/WICARA</option>
+                                    <option value="CACAT MENTAL/JIWA">CACAT MENTAL/JIWA</option>
+                                    <option value="CACAT FISIK DAN MENTAL">CACAT FISIK DAN MENTAL</option>
+                                    <option value="CACAT LAINNYA">CACAT LAINNYA</option>
                                 </select>
                             </div>
                         </div>

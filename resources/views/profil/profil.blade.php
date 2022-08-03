@@ -449,30 +449,42 @@
     <div id="footer" class="content-container">
         <div id="frow" style="
         border-bottom: 3px solid #EFF0F0;">
-            <div id="fcolumn">
-
-                <img src="{{ asset('assets/profil-desa/img/footer/LOGO.png') }}" alt="">
+            <div id="fcolumn" style="align-items:center;">
+                <img src="{{ asset('assets/profil-desa/img/footer/LOGO.png') }}" height=58 width= 154 alt="">
             </div>
-            <div id="fcolumn" style="padding: 16px; border-right: 3px solid #EFF0F0">
-                <p style="font-size: 14px;">Desa asri yang masih menjunjung tinggi nilai religius dan keberagaman, serta ramai akan potensi UMKM berkualitas.</p>
+            <div id="fcolumn" style="padding: 16px; border-right: 3px solid #EFF0F0;">
+                <p style="font-size: 1rem; width: 85%;">Desa asri yang masih menjunjung tinggi nilai religius dan keberagaman, serta ramai akan potensi UMKM berkualitas.</p>
             </div>
-            <div id="fcolumn" >
-                <p> Kunjungi Kami
+            <div id="fcolumn" style="flex-direction: column; align-items:center;justify-content: center;">
+                <div class="fcol-container">
 
-                </p>
-                <p><a href="https://goo.gl/maps/AXS5d1cMQwkHVJ756"><img src="{{ asset('assets/profil-desa/img/footer/gmaps.png') }}" alt=""  style="height: 28px;" ></a>
-                    <a href="https://www.youtube.com/channel/UC1PRdRh0HSqLhtOnGyCtmxg"><img src="{{ asset('assets/profil-desa/img/footer/iyoutube.png') }}" alt="" style="height: 24px;" ></a>
-                    <a href="https://www.instagram.com/desa.segaran/"><img src="{{ asset('assets/profil-desa/img/footer/iinstagram.png') }}" alt=""  style="height: 28px;" ></a></p>
+                    <p style="color: #48A7F8; font-size: 1.2rem; font-weight: 500; margin-top: 0;"> Kunjungi Kami</p>
 
+                    <div id="flink">
+
+                    <a href="https://goo.gl/maps/AXS5d1cMQwkHVJ756"><img src="{{ asset('assets/profil-desa/img/footer/gmaps.png') }}" alt=""  style="height: 28px;" >
+        
+                    </a>
+                        <a href="https://www.youtube.com/channel/UC1PRdRh0HSqLhtOnGyCtmxg"><img src="{{ asset('assets/profil-desa/img/footer/iyoutube.png') }}" alt="" style="height: 24px;" ></a>
+                        <a href="https://www.instagram.com/desa.segaran/"><img src="{{ asset('assets/profil-desa/img/footer/iinstagram.png') }}" alt=""  style="height: 28px;" > </a>
+                    </div>
+
+    
+                </div>
 
 
             </div>
-            <div id="fcolumn" style="flex-direction: row;">
-                <p>Developed By
-                    <br>
-                    <a href="https://www.instagram.com/kkn.segaran/"> <img src="{{ asset('assets/profil-desa/img/footer/Desain-Logo-KKN-28-Polos 1.png') }}" alt=""></a>
-                    <a href="https://kkn-filkom.ub.ac.id/"><img src="{{ asset('assets/profil-desa/img/footer/image 7.png') }}" alt=""></a>
-                </p>
+            <div id="fcolumn" style="flex-direction: column; align-items:center;justify-content: center;">
+                <div class="fcol-container">
+                    <p style="color: #48A7F8; font-size: 1.2rem; font-weight: 500; margin-top: 0; ">Developed By
+                    </p>
+                    <div id="kknfilkom">
+    
+                        <a href="https://www.instagram.com/kkn.segaran/"> <img src="{{ asset('assets/profil-desa/img/footer/Desain-Logo-KKN-28-Polos 1.png') }}" alt=""></a>
+                        <a href="https://kkn-filkom.ub.ac.id/"><img src="{{ asset('assets/profil-desa/img/footer/image 7.png') }}" alt=""></a>
+                    </div>
+
+                </div>
 
 
             </div>

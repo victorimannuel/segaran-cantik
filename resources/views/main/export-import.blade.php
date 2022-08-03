@@ -43,7 +43,7 @@
         
                             <div class="form-group d-flex flex-column justify-content-center">
                                 <label for="customFile" class="form-label text-start fs-4">Pilih file Excel atau CSV</label>
-                                <input class="form-control fs-4" type="file" id="customFIle" name="file">
+                                <input class="form-control fs-4 form-control-lg " type="file" id="customFIle" name="file">
                             </div>
                             <button class="btn btn-primary btn-lg fs-3 my-4">Import Data Penduduk</button> 
                         </div>

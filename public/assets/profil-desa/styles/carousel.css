@@ -15,6 +15,7 @@
 
 .carousel-container[data-active]{
   display: flex !important;
+  overflow: hidden;
 }
 
 .wisata-detail[data-active]{

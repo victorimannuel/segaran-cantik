@@ -28,7 +28,7 @@
     </div>
 </div>
 
-<div id="1" class="carousel-container" style="width: 45%;">
+<div id="1" class="carousel-container" style="width: 45%; overflow:hidden;">
 
     <!-- Full-width images with number and caption text -->
   

@@ -106,7 +106,6 @@ class PendudukComposer
             ->get();
 
         $activityLogs = Activity::all();
-        error_log($activityLogs);
         $arrLog = [];
         foreach ($activityLogs as $log) {
             $i = 0;
@@ -114,10 +113,11 @@ class PendudukComposer
                 $arrKeys = array_keys($log->properties['attributes']);
                 $userName = User::find($log['causer_id'])->name;
                 $penduduk = Penduduk::find($log['subject_id']);
-//                if ($penduduk == null) {
-//                    continue;
-//                }
-                $namaPenduduk = $penduduk->nama;
+                if ($penduduk == null) {
+                    $namaPenduduk = 'Penduduk telah dihapus';
+                }else{
+                    $namaPenduduk = $penduduk->nama;
+                }
                 array_push($arrLog, [$namaPenduduk, $arrKeys[$i], $log->properties['old'][$index], $new, $userName, $log->updated_at, ]);
                 $i++;
             }

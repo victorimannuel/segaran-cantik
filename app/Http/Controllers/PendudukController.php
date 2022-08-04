@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Penduduk;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use Spatie\Activitylog\Models\Activity;
 
@@ -228,13 +229,18 @@ class PendudukController extends Controller
     }
 
     public function delete(Request $request) {
-        Penduduk::find($request->id_penduduk)->delete();
-        Activity::where('subject_id', $request->id_penduduk)->delete();
+        Penduduk::find(request('id_penduduk'))->delete();
+//        Penduduk::find($request->id_penduduk)->delete();
+//        Penduduk::where('id', $request->id_penduduk)->firstorfail()->delete();
+//        Penduduk::where('id', $request->id_penduduk)->get()->delete();
+        DB::table('activity_log')->where('id', $request->id_penduduk)->delete();
+//        Activity::where('subject_id', $request->id_penduduk)->get()->delete();
+//        return view('main/dashboard', [
+//            'page' => 'Dashboard',
+//            'success' => 'Penduduk berhasil dihapus',
+//        ]);
 
-        return view('main/dashboard', [
-            'page' => 'Dashboard',
-            'success' => 'Penduduk berhasil dihapus',
-        ]);
+        return redirect()->route('main.dashboard');
     }
 
 }

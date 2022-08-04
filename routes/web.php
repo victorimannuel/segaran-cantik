@@ -52,10 +52,10 @@ Route::post('/dashboard/penduduk/{id_penduduk}/simpan', [PendudukController::cla
 )->name('penduduk.update');
 /*                  */
 
-Route::get('/dashboard/penduduk/{id_penduduk}/hapus', function () {
-    return view('main.dashboard', ['page' => 'Dashboard']);
-});
-Route::post('/dashboard/penduduk/{id_penduduk}/hapus', [PendudukController::class, 'delete']
+//Route::get('/dashboard/penduduk/{id_penduduk}/hapus', function () {
+//    return view('main.stastitik', ['page' => 'Dashboard']);
+//});
+Route::any('/dashboard/penduduk/{id_penduduk}/hapus', [PendudukController::class, 'delete']
 )->name('penduduk.hapus');
 
 Route::any('/search', function(){

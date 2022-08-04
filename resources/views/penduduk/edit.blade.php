@@ -485,7 +485,8 @@
                             </div>
                         </div>
                         <div class="col-md-4 d-flex justify-content-end">
-                            <input type="button" onclick="window.location='{{ route('penduduk.hapus', ['id_penduduk' => $penduduk->id])}}'" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" hidden>
+                            <input type="button" onclick="window.location='{{ route('penduduk.hapus', ['id_penduduk' => $penduduk->id])}}'" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post">
+{{--                            <input type="button" formaction="{{ route('penduduk.hapus', ['id_penduduk' => $penduduk->id]) }}" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;">--}}
                             <input type="submit" name="send" value="Simpan" class="btn btn-success btn-lg fs-3 px-5">
 
                         </div>

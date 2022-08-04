@@ -40,6 +40,7 @@ class Penduduk extends Model
 
         $eventNameIDN = $this->getEventName($eventName);
 
+//        return "Data telah $eventNameIDN oleh $userName pada";
         return "Data telah $eventNameIDN oleh $userName pada";
     }
 

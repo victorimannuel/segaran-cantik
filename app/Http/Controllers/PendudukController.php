@@ -10,6 +10,7 @@ use App\Models\Penduduk;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
+use RealRashid\SweetAlert\Facades\Alert;
 use Spatie\Activitylog\Models\Activity;
 
 class PendudukController extends Controller
@@ -240,7 +241,8 @@ class PendudukController extends Controller
 //            'success' => 'Penduduk berhasil dihapus',
 //        ]);
 
-        return redirect()->route('main.dashboard');
+        Alert::success('Data berhasil dihapus');
+        return redirect()->route('main.dashboard', ['success', 'Penduduk berhasil ditambahkan',]);
     }
 
 }

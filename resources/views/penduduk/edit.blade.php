@@ -17,6 +17,7 @@
         {{Session::get('success')}}
     </div>
 @endif
+                @include('sweetalert::alert')
 {{--<form method="post" action="{{ route('penduduk.store') }}">--}}
 <form class="form-penduduk pb-5" method="post" action="{{ route('penduduk.update', ['id_penduduk' => $penduduk->id]) }}">
     <!-- CROSS Site Request Forgery Protection -->

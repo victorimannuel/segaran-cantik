@@ -13,8 +13,9 @@ class ComposerServiceProvider extends ServiceProvider
         // Using class based composers...
         View::composer(
             [
-                'main/dashboard', 'main/statistik', 'main/export-import',
-                'penduduk/create', 'penduduk/edit', 'penduduk/readonly', 'penduduk/log-page',
+                'main/dashboard', 'main/statistik', 'main/export-import', 'main/kegiatan', 'main/umkm',
+                'penduduk/create', 'penduduk/edit', 'penduduk/read', 'penduduk/log',
+                'kegiatan/create', 'kegiatan/edit', 'kegiatan/read',
             ],
             'App\Http\ViewComposers\PendudukComposer'
         );

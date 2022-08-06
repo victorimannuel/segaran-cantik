@@ -13,7 +13,7 @@ class Penduduk extends Model
 {
     use HasFactory, Notifiable, LogsActivity;
 
-    protected $table = 'penduduks';
+    protected $table = 'penduduk';
     protected static $logAttributes = ['nama', 'no_kk', 'nik'];
 //    protected static $recordEvents = ['updated', 'deleted'];
     protected static $recordEvents = ['updated'];
@@ -34,6 +34,7 @@ class Penduduk extends Model
 
     public function getDescriptionForEvent(string $eventName): string
     {
+
         $userId =Auth::id();
         $user = new User();
         $userName = $user->find($userId)->name;

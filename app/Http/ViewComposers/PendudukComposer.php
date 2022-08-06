@@ -2,6 +2,7 @@
 
 namespace App\Http\ViewComposers;
 
+use App\Models\Kegiatan;
 use App\Models\Penduduk;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -40,62 +41,42 @@ class PendudukComposer
         }
         if (request('q') != '') {
             $query->when($this->request->has('q'), function ($q) {
-                return $q->where(
-                    "nama", "like", "%" . request("q") . "%"
-                )->orWhere(
-                    "nik", "like", "%" . request("q") . "%"
-                )->orWhere(
-                    "no_kk", "like", "%" . request("q") . "%"
-                );
+                return $q->where("nama", "like", "%" . request("q") . "%")
+                    ->orWhere("nik", "like", "%" . request("q") . "%")
+                    ->orWhere("no_kk", "like", "%" . request("q") . "%");
             });
         }
 
-        $user_id =Auth::id();
-        $user = new User();
-        $user_name = $user->find($user_id)->name;
-        $jabatan = $user->find($user_id)->jabatan;
+        $user_id    = Auth::id();
+        $user       = new User();
+        $user_name  = $user->find($user_id)->name;
+        $jabatan    = $user->find($user_id)->jabatan;
 
         switch ($jabatan) {
-            case 'PUSAT':
-                break;
-            case 'KASUN KRAJAN':
-                $query->where('dusun', '=', 'KRAJAN');
-                break;
-            case 'KASUN PUTAT':
-                $query->where('dusun', '=', 'PUTAT');
-                break;
-            case 'KASUN SUMBERBANTENG':
-                $query->where('dusun', '=', 'SUMBERBANTENG');
-                break;
-            case 'KASUN SUMBERJABON':
-                $query->where('dusun', '=', 'SUMBERJABON');
-                break;
-            case 'KASUN SUMBERKOTES KULON':
-                $query->where('dusun', '=', 'SUMBERKOTES KULON');
-                break;
-            case 'KASUN SUMBERKOTES WETAN':
-                $query->where('dusun', '=', 'SUMBERKOTES WETAN');
-                break;
-            default:
-                break;
+            case 'KASUN KRAJAN': $query->where('dusun', '=', 'KRAJAN'); break;
+            case 'KASUN PUTAT': $query->where('dusun', '=', 'PUTAT'); break;
+            case 'KASUN SUMBERBANTENG': $query->where('dusun', '=', 'SUMBERBANTENG'); break;
+            case 'KASUN SUMBERJABON': $query->where('dusun', '=', 'SUMBERJABON'); break;
+            case 'KASUN SUMBERKOTES KULON': $query->where('dusun', '=', 'SUMBERKOTES KULON'); break;
+            case 'KASUN SUMBERKOTES WETAN': $query->where('dusun', '=', 'SUMBERKOTES WETAN'); break;
+            default: break;
         }
 
         $penduduk_paginated = $query->paginate($items)->appends([
             'items' => $items,
-            'rt' => request('rt'),
-            'rw' => request('rw'),
-            'q' => request('q'),
+            'rt'    => request('rt'),
+            'rw'    => request('rw'),
+            'q'     => request('q'),
             'dusun' => request('dusun'),
-            ]);
+        ]);
 
-        $penduduk = Penduduk::all();
-        $jumlah_penduduk = $penduduk->count();
+        $jumlah_penduduk    = DB::table('penduduk')->distinct('nik')->count('nik');
+        $jumlah_kk          = Penduduk::where('hub_keluarga', '=', 'Kepala Keluarga')->count();
+        $jumlah_laki        = Penduduk::where('jenis_kelamin', '=', 'L')->count();
+        $jumlah_perempuan   = Penduduk::where('jenis_kelamin', '=', 'P')->count();
 
-        $jumlah_laki = Penduduk::where('jenis_kelamin', '=', 'L')->count();
-        $jumlah_perempuan = Penduduk::where('jenis_kelamin', '=', 'P')->count();
-
-        $balita = Penduduk::whereBetween('umur', [5,11])->count();
-        $anak = Penduduk::whereBetween('umur', [5,11])->count();
+        $balita = Penduduk::whereBetween('umur', [0,5])->count();
+        $anak   = Penduduk::whereBetween('umur', [5,11])->count();
         $remaja = Penduduk::whereBetween('umur', [12,25])->count();
         $dewasa = Penduduk::whereBetween('umur', [26,45])->count();
         $lansia = Penduduk::whereBetween('umur', [46,65])->count();
@@ -123,32 +104,38 @@ class PendudukComposer
             }
         }
 
+        $queryKegiatan = Kegiatan::query();
+        $kegiatan_paginated = $queryKegiatan->paginate(10);
+
         $view->with([
-            'penduduks' => $penduduk_paginated,
-            'items' => $items,
-            'jumlah_penduduk' => $jumlah_penduduk,
-            'user_name' => $user_name,
-            'jabatan' => $jabatan,
-            'activityLogGroupBy' => $activityLogGroupBy,
-            'arrLog' => $arrLog,
+            'penduduks'             => $penduduk_paginated,
+            'items'                 => $items,
+            'jumlah_penduduk'       => $jumlah_penduduk,
+            'user_name'             => $user_name,
+            'jabatan'               => $jabatan,
+            'activityLogGroupBy'    => $activityLogGroupBy,
+            'arrLog'                => $arrLog,
+            'jumlahKk'              => $jumlah_kk,
             'jenis_kelamin' => [
-                'jumlah_laki' => $jumlah_laki,
-                'jumlah_perempuan' => $jumlah_perempuan,
+                'jumlah_laki'       => $jumlah_laki,
+                'jumlah_perempuan'  => $jumlah_perempuan,
             ],
             'pencarian' => [
-                'rt' => request('rt'),
-                'rw' => request('rw'),
-                'q' => request('q'),
-                'dusun' => request('dusun'),
+                'rt'                => request('rt'),
+                'rw'                => request('rw'),
+                'q'                 => request('q'),
+                'dusun'             => request('dusun'),
             ],
             'kategori_umur' => [
-                'balita' => $balita,
-                'anak' => $anak,
-                'remaja' => $remaja,
-                'dewasa' => $dewasa,
-                'lansia' => $lansia,
-                'manula' => $manula,
+                'balita'            => $balita,
+                'anak'              => $anak,
+                'remaja'            => $remaja,
+                'dewasa'            => $dewasa,
+                'lansia'            => $lansia,
+                'manula'            => $manula,
             ],
+
+            'kegiatans'             => $kegiatan_paginated,
         ]);
     }
 }

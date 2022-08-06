@@ -12,37 +12,37 @@
     <nav class="navbar navbar-dark p-0">
         <ul class="navbar-nav w-100 ">
             <a href="/dashboard" class="text-decoration-none mb-3">
-            @if ($page === 'Dashboard')
-                <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
-            @else
-                <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">
-            @endif
+                @if ($page === 'Dashboard')
+                    <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
+                @else
+                    <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">
+                        @endif
 
-                <div id="selectedMark" class="position-absolute h-100"></div>
-                    <div class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" >
-                        <img src="{{ asset("assets/img/icons/dashboard.png") }}" alt="" class="me-4" width="25" height="25">
-                        <p
-                            class="hiddenWhenClosed m-0"
-                        >Dashboard</p>
-                    </div>
-                </li>
+                        <div id="selectedMark" class="position-absolute h-100"></div>
+                        <div class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" >
+                            <img src="{{ asset("assets/img/icons/dashboard.png") }}" alt="" class="me-4" width="25" height="25">
+                            <p
+                                class="hiddenWhenClosed m-0"
+                            >Dashboard</p>
+                        </div>
+                    </li>
             </a>
 
             <a href="/statistik" class="text-decoration-none mb-3">
-            @if ($page === 'Statistik')
-                <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
-            @else
-                <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">
-            @endif
+                @if ($page === 'Statistik')
+                    <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
+                @else
+                    <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">
+                        @endif
 
-                <div id="selectedMark" class="position-absolute h-100"></div>
-                    <div class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" >
-                        <img src="{{ asset("assets/img/icons/stats.png") }}" alt="" class="me-4" width="25" height="25">
-                        <p
-                            class="hiddenWhenClosed m-0"
-                        >Statistik</p>
-                    </div>
-                </li>
+                        <div id="selectedMark" class="position-absolute h-100"></div>
+                        <div class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" >
+                            <img src="{{ asset("assets/img/icons/stats.png") }}" alt="" class="me-4" width="25" height="25">
+                            <p
+                                class="hiddenWhenClosed m-0"
+                            >Statistik</p>
+                        </div>
+                    </li>
             </a>
 
             <a href="/export-import" class="text-decoration-none mb-3">
@@ -50,9 +50,9 @@
                     <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
                 @else
                     <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">
-                @endif
-    
-                    <div id="selectedMark" class="position-absolute h-100"></div>
+                        @endif
+
+                        <div id="selectedMark" class="position-absolute h-100"></div>
                         <div class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" >
                             <img src="{{ asset("assets/img/icons/database-window.png") }}" alt="" class="me-4" width="25" height="25">
                             <p
@@ -60,7 +60,37 @@
                             >Export / Import</p>
                         </div>
                     </li>
-                </a>
+            </a>
+
+            <a href="/kegiatan" class="text-decoration-none mb-3">
+                @if ($page === 'Kegiatan')
+                    <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
+                @else
+                    <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">
+                        @endif
+
+                        <div id="selectedMark" class="position-absolute h-100"></div>
+                        <div class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" >
+                            <img src="{{ asset("assets/img/icons/database-window.png") }}" alt="" class="me-4" width="25" height="25">
+                            <p class="hiddenWhenClosed m-0" >Kegiatan</p>
+                        </div>
+                    </li>
+            </a>
+
+            <a href="/umkm" class="text-decoration-none mb-3">
+                @if ($page === 'UMKM')
+                    <li class="nav-item fs-3 d-flex align-items-center position-relative" selected role="button">
+                @else
+                    <li class="nav-item fs-3 d-flex align-items-center position-relative" role="button">
+                        @endif
+
+                        <div id="selectedMark" class="position-absolute h-100"></div>
+                        <div class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" >
+                            <img src="{{ asset("assets/img/icons/database-window.png") }}" alt="" class="me-4" width="25" height="25">
+                            <p class="hiddenWhenClosed m-0" >UMKM</p>
+                        </div>
+                    </li>
+            </a>
 
         </ul>
 

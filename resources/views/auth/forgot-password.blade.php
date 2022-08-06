@@ -7,7 +7,6 @@
         <h1>Atur Ulang Kata Sandi</h1>
         <p class="light">Masukkan Email di bawah ini</p>
 
-{{--        <form action="{{ route('login') }}" class="form" method="POST">--}}
         <form action="{{ route('password.email') }}" class="form" method="POST">
             @csrf
             <div class="">

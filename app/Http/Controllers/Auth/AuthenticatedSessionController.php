@@ -37,9 +37,9 @@ class AuthenticatedSessionController extends Controller
 //        }
 //        if ($request->session('success')) {
 ////            Alert::error($request->session());
-//            Alert::success('Selamat');
 //        }
         $request->authenticate();
+        Alert::success('Berhasil login');
 
         $request->session()->regenerate();
         return redirect()->intended(RouteServiceProvider::HOME);
@@ -58,7 +58,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-
+//        Alert::success('Berhasil keluar');
         return redirect('/login');
     }
 }

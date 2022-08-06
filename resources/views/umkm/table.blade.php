@@ -8,7 +8,7 @@
 
         <div class="col-md-8 w-auto m-auto">
             <h1 class="text-center">
-                <b>Data Warga Desa Segaran</b>
+                <b>UMKM Desa Segaran</b>
             </h1>
         </div>
         <div class="col-md-4 d-flex flex-row-reverse">
@@ -23,7 +23,7 @@
         </div>
 
     </div>
-    <form action="/dashboard/search" id="table-operation" class="d-flex justify-content-between my-2 px-5" method="GET" role="search">
+    <form action="/search" id="table-operation" class="d-flex justify-content-between my-2 px-5" method="GET" role="search">
 
         <span class="input-group-text border-rounded bg-white w-50" id="search-addon">
             <img src="{{ asset('assets/img/icons/search-icon.png') }}" width=20 alt="">
@@ -160,13 +160,13 @@
             <thead class="h4">
             <tr>
                 <th scope="col" class="text-center pe-3"><b>No</b></th>
-                <th scope="col">Nomor KK</th>
-                <th scope="col">Validasi</th>
-                <th scope="col">Nama</th>
-                <th scope="col">NIK</th>
-                <th scope="col" class="pe-4">RT</th>
-                <th scope="col" class="pe-4">RW</th>
-                <th scope="col">Dusun</th>
+                <th scope="col">Nama UMKM</th>
+                <th scope="col">Lokasi</th>
+                <th scope="col">Kontak</th>
+                <th scope="col"></th>
+                <th scope="col" class="pe-4"></th>
+                <th scope="col" class="pe-4"></th>
+                <th scope="col"></th>
                 <th scope="col"></th>
             </tr>
             </thead>

@@ -1,77 +1,45 @@
-{{--<aside>--}
+@extends('layouts.main')
 
-    <table class="table-responsive">
-        @foreach($activityLogs as $log)
-            <tr>
-                <td class="col-2">
-                    <br/>
-                    <hr/>
-                <span style="font-size: 1.5rem;">{{ $log->description }} {{ $log->updated_at }}</span>
+@section('main-body')
 
-                </td>
-                <td class="col-2">
-                </td>
-            </tr>
-            <tr>
-                @php
-                    $properties = json_decode($log->properties, true);
-                    if ($properties) {
-                        $arrKeys = array_keys($properties['attributes']);
-                        $i_new = 0;
-                        $i_old = 0;
-                    }
-                @endphp
+    <div id= "sidebarState" state="aside-closed">
 
-                <td>
-                    <table class="table-responsive">
-                        <tr><b>Variabel</b></tr>
-                        @if ($properties)
-                        @foreach($properties['attributes'] as $property)
-                            <tr>
+        @include('main.components.sidebar')
+
+        <main class="d-flex flex-column position-absolute end-0 top-0 vw-80">
+
+            @include('main.components.header')
+
+            <section class="mx-5 align-self-center d-flex justify-content-center card p-5 card">
+            <div class="" style="padding: 3rem 10rem 0 10rem;">
+                <table class="table">
+                    <thead class="h4">
+                        <tr>
+                            <th>Penduduk</th>
+                            <th>Variabel</th>
+                            <th>Sebelum</th>
+                            <th>Sesudah</th>
+                            <th>Pengubah</th>
+                            <th>Tanggal Diubah</th>
+                        </tr>
+                    </thead>
+                    @foreach($arrLog as $log)
+                        <tr>
+                            @foreach($log as $l)
                                 <td>
-                                    <span>{{ $arrKeys[$i_new++] }}</span>
-                                </td>
-                            </tr>
-                        @endforeach
-                        @endif
-                    </table>
-                </td>
-                <td>
-                    <table class="table-responsive">
-                        <tr><b>Sebelum</b></tr>
-                        @if ($properties)
-                        @foreach($properties['old'] as $property)
-                            <tr>
-                                <td>
-                                    <span>{{ $property }}</span>
-                                </td>
-                            </tr>
-                        @endforeach
-                        @endif
-                    </table>
-                </td>
-                <td>
-                    <table class="table-responsive">
-                        <tr><b>Sesudah</b></tr>
-                        @if ($properties)
-                        @foreach($properties['attributes'] as $property)
-                            <tr>
-                                <td>
-                                    @if($property != null)
-                                        <span>{{ $property }}</span>
+                                    @if($l != null)
+                                    <span class="fs-3">{{ $l }}</span>
                                     @else
-                                        <span>-</span>
+                                    <span class="fs-3">-</span>
                                     @endif
                                 </td>
-                            </tr>
-                        @endforeach
-                        @endif
-                    </table>
-                </td>
-            </tr>
-        @endforeach
-    </table>
+                            @endforeach
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
+            <section></section>
+        </main>
+    </div>
 
-    <script>
-    </script>
-{{--</aside>--}}
+@endsection

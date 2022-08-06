@@ -13,7 +13,6 @@
     <title>Segaran Admin | {{ $page }}</title>
 </head>
 <body>
-@include('sweetalert::alert')
 @yield('landing-body')
 </body>
 </html>

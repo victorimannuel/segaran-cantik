@@ -21,18 +21,25 @@ class PendudukController extends Controller
         $this->penduduk = new Penduduk();
     }
 
-    public function createForm()
+    // index function is not necessary because the page variables have been
+    // passed through view composer in app/Http/ViewComposers/PendudukComposer.php
+    public function index()
+    {
+    }
+
+    // show create view
+    public function viewCreate()
     {
         return view('penduduk/create', [
             'page' => 'Tambah Penduduk']);
     }
 
-
-    public function readOnlyForm($id)
+    // show read view
+    public function viewRead($id)
     {
         $data = $this->penduduk->find($id);
         $activityLog = Activity::all()->where('subject_id', $id);
-        return view('penduduk/readonly', [
+        return view('penduduk/read', [
             'penduduk' => $data,
             'activityLogs' => $activityLog,
             'page' => 'Data Penduduk',
@@ -40,7 +47,8 @@ class PendudukController extends Controller
         ]);
     }
 
-    public function editForm($id)
+    // show edit view
+    public function viewEdit($id)
     {
         $data = Penduduk::find($id);
         return view('penduduk/edit', [
@@ -50,6 +58,7 @@ class PendudukController extends Controller
         ]);
     }
 
+    // create data
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -99,13 +108,14 @@ class PendudukController extends Controller
 
         //  Store data in database
         Penduduk::create($request->all());
-
+        Alert::success('Data berhasil ditambahkan');
         return redirect()->route('main.dashboard')->with([
             'success', 'Penduduk berhasil ditambahkan',
             'page', 'dashboard',
         ]);
     }
 
+    // update data
     public function update(Request $request)
     {
         $penduduk = Penduduk::find($request->id_penduduk);
@@ -149,8 +159,8 @@ class PendudukController extends Controller
 
         $penduduk = Penduduk::find($request->id_penduduk);
         $activityLog = Activity::all()->where('subject_id', $request->id_penduduk);
-
-        return view('penduduk/readonly', [
+        Alert::success('Data berhasil diubah');
+        return view('penduduk/read', [
             'penduduk' => $penduduk,
             'page' => 'Data Penduduk',
             'success' => 'Penduduk berhasil diedit',
@@ -158,91 +168,36 @@ class PendudukController extends Controller
         ]);
     }
 
-    public function show_data(Request $request)
-    {
-        $items = request('items') ?? 100;  // get the pagination number or a default
+    // FIXME: method should not be called using GET method
+    // delete data
+    public function delete(Request $request) {
+        Penduduk::find($request->id_penduduk)->delete();
+        DB::table('activity_log')->where('id', $request->id_penduduk)->delete();
 
-        $query = Penduduk::query();
-
-        if ($this->request->has('q')) {
-            $query->when($this->request->has('q'), function ($q) {
-                return $q->where(
-                    "nama", "like", "%" . request("q") . "%"
-                )->orWhere(
-                    "nik", "like", "%" . request("q") . "%"
-                )->orWhere(
-                    "no_kk", "like", "%" . request("q") . "%"
-                );
-            });
-        }
-
-        if (request('rt') != 'RT') {
-            $query->when($this->request->has('rt'), function ($q) {
-                return $q->where("rt", "=", request('rt'));
-            });
-        }
-        if (request('rw') != 'RW') {
-            $query->when($this->request->has('rw'), function ($q) {
-                return $q->where("rw", "=", request('rw'));
-            });
-        }
-        if (request('dusun') != 'DUSUN') {
-            $query->when($this->request->has('dusun'), function ($q) {
-                return $q->where("dusun", "=", request('dusun'));
-            });
-        }
-
-        $penduduk_paginated = $query->paginate($items)->appends(['items' => $items]);
-
-        $penduduk = Penduduk::all();
-        $jumlah_penduduk = count($penduduk);
-        $user_id =Auth::id();
-        $user = new User();
-        $user_name = $user->find($user_id)->name;
-
-        return view('main/dashboard')->with([
-            'penduduks' => $penduduk_paginated,
-            'items' => $items,
-            'jumlah_penduduk' => $jumlah_penduduk,
-            'user_name' => $user_name,
-            'rt' => request('rt'),
-            'rw' => request('rw'),
-            'q' => request('q'),
-        ]);
+        Alert::success('Data berhasil dihapus');
+        return redirect()->route('main.dashboard');
     }
 
-    public function importView(Request $request){
+    // show export-import view
+    public function exportImportView(Request $request){
         return view('main/export-import', ['page' => 'Export / Import Data']);
     }
 
-    public function import(Request $request){
+    // import data
+    public function importPenduduk(Request $request){
         Excel::import(new ImportPenduduk, $request->file('file')->store('files'));
         return redirect()->back()->with('success', 'File berhasil diimport');
     }
 
+    // export data
     public function exportPenduduk(Request $request){
         return Excel::download(new ExportPenduduk, 'penduduks.xlsx');
     }
 
-    public function notifView(Request $request) {
+    // show log view
+    public function logView(Request $request) {
         $activityLogs = Activity::all()->where('causer_id', Auth::id());
         return view('main/components/notif', ['activityLogs' => $activityLogs,]);
-    }
-
-    public function delete(Request $request) {
-        Penduduk::find(request('id_penduduk'))->delete();
-//        Penduduk::find($request->id_penduduk)->delete();
-//        Penduduk::where('id', $request->id_penduduk)->firstorfail()->delete();
-//        Penduduk::where('id', $request->id_penduduk)->get()->delete();
-        DB::table('activity_log')->where('id', $request->id_penduduk)->delete();
-//        Activity::where('subject_id', $request->id_penduduk)->get()->delete();
-//        return view('main/dashboard', [
-//            'page' => 'Dashboard',
-//            'success' => 'Penduduk berhasil dihapus',
-//        ]);
-
-        Alert::success('Data berhasil dihapus');
-        return redirect()->route('main.dashboard', ['success', 'Penduduk berhasil ditambahkan',]);
     }
 
 }

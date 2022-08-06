@@ -2,7 +2,11 @@
 @extends('layouts.landing')
 
 @section('landing-body')
+
     <div class="container">
+
+        @include('sweetalert::alert')
+
         <img src="{{ asset('assets/img/icons/segaran-icon.png') }}" alt="logo" width="48" height="48" />
         <p class="light">Segaran Admin</p>
         <h1 style="text-align: center;">Masuk ke Segaran Admin</h1>
@@ -40,4 +44,5 @@
 
         </form>
     </div>
+
 @endsection

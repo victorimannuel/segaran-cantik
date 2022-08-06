@@ -17,18 +17,21 @@
     {{--  js yang digunakan--}}
     <script src="{{ asset('assets/scripts/sidebar.js') }}" async defer></script>
     <script src="{{ asset('assets/scripts/statistik.js') }}" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
     <link rel="icon" type="image/x-icon" href={{ asset('assets/img/icons/segaran-icon.png') }}>
 
     <title>Segaran Admin | {{ $page }} </title>
 </head>
 <body>
+
 @if(Session::has('success'))
     <div class="alert alert-success">
         {{Session::get('success')}}
     </div>
 @endif
 @yield('main-body')
+@include('sweetalert::alert')
 <script>
     document.getElementById('rt').onchange = function() {
             this.form.submit();

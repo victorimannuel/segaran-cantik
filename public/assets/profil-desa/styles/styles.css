@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+    /* height: 600vh; */
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: "poppins";
+}
+
+#container {
+    height: 120vh;
+    width: 100%;
+    background-image: url("../img/beranda/home.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#navbarNav {
+    align-items: center;
+    justify-content: center;
+}
+.nav-link {
+    font-family: "Poppins";
+}
+
+#profil {
+    height: 100%;
+    width: 100%;
+}
+#profil1 {
+    background-repeat: no-repeat;
+    background-image: url("../img/profil/profile-img.png");
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+p {
+    font-family: "poppins";
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+#pwheader {
+    width: 100%;
+    height: 65vh;
+    background-repeat: no-repeat;
+    background-image: url("../img/pwheader.png");
+    background-size: 100%;
+}
+
+#pu{
+    width: 100%;
+    height: 100vh;
+}
+
+#puheader {
+    width: 100%;
+    height: 65vh;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url("../img/umkm/header-fixed.png");
+}
+
+#lpdheader {
+    width: 100%;
+    height: 65vh;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url("../img/lpd/lpd-header.png");
+}
+#lpd {
+    width: 80%;
+    overflow-y: scroll;
+    height: 100vh;
+}
+#gheader {
+    height: 70vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../img/galeri/galeri-header.png");
+    background-size: 100%;
+}
+#pw {
+    height: 100vh;
+    width: 100vw;
+}
+#warousel {
+    height: 100%;
+    width: 100%;
+}
+.col {
+    height: 100%;
+}
+#wkontak {
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+#wlink {
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+}
+#wimg {
+    width: 8%;
+}
+#wtext {
+    flex-direction: column;
+    margin-left: 15%;
+    text-align: justify;
+}
+
+#lpdimg {
+    width: 80%;
+}
+
+#lpdcontact {
+    width: 60%;
+    margin-top: 15%;
+}
+
+#lpdcontact2 {
+    width: 40%;
+    margin-top: 15%;
+}
+
+#waicon {
+    width: 30%;
+    margin-left: -10%;
+}
+
+#lpdcontact a {
+    text-decoration: none;
+    color: black;
+}
+
+#lpdcontact2 a{
+    text-decoration: none;
+    color: black;
+}
+
+#urousel{
+    height: 100%;
+    width: 100%;
+}
+
+#gallery{
+   
+    height: 100vh;
+    width: 75%
+}

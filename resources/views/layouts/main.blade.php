@@ -33,13 +33,13 @@
 @yield('main-body')
 @include('sweetalert::alert')
 <script>
-    document.getElementById('rt').onchange = function() {
+    document.getElementById('search_rt').onchange = function() {
             this.form.submit();
     };
-    document.getElementById('rw').onchange = function() {
+    document.getElementById('search_rw').onchange = function() {
             this.form.submit();
     };
-    document.getElementById('dusun').onchange = function() {
+    document.getElementById('search_dusun').onchange = function() {
             this.form.submit();
     };
 </script>

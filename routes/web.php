@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\UsahaController;
 use Illuminate\Support\Facades\Input;
 
 /*
@@ -85,12 +86,45 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/kegiatan/tambah/', [KegiatanController::class, 'viewCreate']);
         Route::post('/kegiatan/tambah/', [KegiatanController::class, 'store']
         )->name('store');
+        Route::get('/kegiatan/{id_kegiatan}/edit', [KegiatanController::class, 'viewEdit']
+        )->name('edit');
+        Route::get('/kegiatan/{id_kegiatan}/read', [KegiatanController::class, 'viewRead']
+        )->name('read');
+        Route::get('/kegiatan/{id_kegiatan}/simpan', function () {
+            return view('main.kegiatan', ['page' => 'Kegiatan']);
+        });
+        Route::post('/kegiatan/{id_kegiatan}/simpan', [KegiatanController::class, 'update']
+        )->name('update');
+        //Route::get('/kegiatan/{id_kegiatan}/hapus', function () {
+        //    return view('main.stastitik', ['page' => 'Dashboard']);
+        //});
+        Route::any('/kegiatan/{id_kegiatan}/hapus', [KegiatanController::class, 'delete']
+        )->name('delete');
     });
 
-    // umkm
+    // usaha
     Route::get('/umkm', function () {
-        return view('main.umkm', [ 'page' => 'UMKM']);
-    })->name('main.umkm');
+        return view('main.usaha', [ 'page' => 'UMKM']);
+    })->name('main.usaha');
+    Route::name('usaha.')->group(function () {
+        Route::get('/usaha/tambah/', [UsahaController::class, 'viewCreate']);
+        Route::post('/usaha/tambah/', [UsahaController::class, 'store']
+        )->name('store');
+        Route::get('/usaha/{id_usaha}/edit', [UsahaController::class, 'viewEdit']
+        )->name('edit');
+        Route::get('/usaha/{id_usaha}/read', [UsahaController::class, 'viewRead']
+        )->name('read');
+        Route::get('/usaha/{id_usaha}/simpan', function () {
+            return view('main.usaha', ['page' => 'Usaha']);
+        });
+        Route::post('/usaha/{id_usaha}/simpan', [UsahaController::class, 'update']
+        )->name('update');
+        //Route::get('/usaha/{id_kegiatan}/hapus', function () {
+        //    return view('main.stastitik', ['page' => 'Dashboard']);
+        //});
+        Route::any('/usaha/{id_usaha}/hapus', [UsahaController::class, 'delete']
+        )->name('delete');
+    });
 
 });
 

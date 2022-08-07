@@ -30,7 +30,7 @@
             <input type="search" id="q" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI DATA" value="{{ $pencarian['q'] }}" name="q" onkeyup="{{ route('penduduk.search') }}"/>
         </span>
 
-        <select id="rt" name="rt" class="mx-3 form-select">
+        <select id="search_rt" name="rt" class="mx-3 form-select">
             @php
                 $rt = [
                     'krajan' => [1,2,3,4,5,6,7,8,9],
@@ -87,7 +87,7 @@
             @endif
         </select>
 
-        <select id="rw" name="rw" class="mx-3 form-select">
+        <select id="search_rw" name="rw" class="mx-3 form-select">
             <option selected value="RW">RW</option>
             @if($jabatan == 'PUSAT')
             @for ($i = 1; $i <= 9; $i++)
@@ -126,7 +126,7 @@
             @endif
         </select>
 
-        <select id="dusun" name="dusun" class="ms-3 form-select">
+        <select id="search_dusun" name="dusun" class="ms-3 form-select">
             @if($jabatan == 'PUSAT')
             <option selected value="DUSUN" {{$jabatan == 'PUSAT'? 'enabled':'disabled'}}>DUSUN</option>
             @endif

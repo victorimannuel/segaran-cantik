@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kegiatan;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class KegiatanController extends Controller
@@ -13,15 +11,16 @@ class KegiatanController extends Controller
     public function viewCreate()
     {
         return view('kegiatan/create', [
-            'page' => 'Tambah Kegiatan']);
+            'page' => 'Tambah Kegiatan'
+        ]);
     }
 
 
     public function viewRead($id)
     {
         $kegiatan = Kegiatan::find($id);
-        return view('kegiatan/readonly', [
-            'penduduk' => $kegiatan,
+        return view('kegiatan/read', [
+            'kegiatan' => $kegiatan,
             'page' => 'Data Kegiatan',
             'aside_state' => 'closed'
         ]);
@@ -43,7 +42,6 @@ class KegiatanController extends Controller
             'nama_kegiatan' => 'required',
         ]);
 
-        //  Store data in database
         Kegiatan::create($request->all());
         Alert::success('Kegiatan berhasil ditambahkan');
 
@@ -54,12 +52,13 @@ class KegiatanController extends Controller
     {
         $kegiatan = Kegiatan::find($request->id_kegiatan);
         $kegiatan->nama_kegiatan = $request->nama_kegiatan;
+        $kegiatan->tgl = $request->tgl;
         $kegiatan->save();
 
-        return view('kegiatan/readonly', [
+        Alert::success('Kegiatan berhasil diubah');
+        return view('kegiatan/read', [
             'kegiatan' => $kegiatan,
             'page' => 'Data Kegiatan',
-            'success' => 'Kegiatan berhasil diedit',
         ]);
     }
 
@@ -68,6 +67,6 @@ class KegiatanController extends Controller
         Kegiatan::find(request('id_kegiatan'))->delete();
 
         Alert::success('Data berhasil dihapus');
-        return redirect()->route('main.dashboard', ['success', 'Penduduk berhasil ditambahkan',]);
+        return redirect()->route('main.kegiatan');
     }
 }

@@ -17,26 +17,64 @@
                         {{Session::get('success')}}
                     </div>
                 @endif
-                <form class="form-penduduk pb-5" method="post" action="{{ route('kegiatan.store') }}">
+                <form class="form-penduduk pb-5" method="post" action="{{ route('usaha.store') }}">
                     <!-- CROSS Site Request Forgery Protection -->
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="no_kk">NAMA KEGIATAN</label>
-                                <input type="text" class="form-control" placeholder="Nama Kegiatan" name="nama_kegiatan">
+                                <input type="text" class="form-control" placeholder="Nama Kegiatan" name="nama_usaha">
                                 <!-- Error -->
-                                @if ($errors->has('nama_kegiatan'))
+                                @if ($errors->has('nama_usaha'))
                                     <div class="error">
-                                        {{ $errors->first('nama_kegiatan') }}
+                                        {{ $errors->first('nama_usaha') }}
                                     </div>
                                 @endif
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="no_kk">Tanggal Berlangsung</label>
-                                <input type="date" class="form-control" placeholder="Tanggal" name="tgl">
+                                <label for="no_kk">Kontak</label>
+                                <input type="text" class="form-control" placeholder="Kontak" name="kontak">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="rt">RT</label>
+                                <select class="selectpicker form-control" id="rt" name="rt">
+                                    <option selected value="">-- RT --</option>
+                                    @for ($i = 1; $i <= 30; $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="rw">RW</label>
+                                <select class="selectpicker form-control" id="rw" name="rw">
+                                    <option selected value="">-- RW --</option>
+                                    @for ($i = 1; $i <= 9; $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="dusun">DUSUN</label>
+                                <select class="selectpicker form-control" id="dusun" name="dusun">
+                                    <option selected value="">-- DUSUN --</option>
+                                    <option value="KRAJAN">KRAJAN</option>
+                                    <option value="PUTAT">PUTAT</option>
+                                    <option value="SUMBERBANTENG">SUMBERBANTENG</option>
+                                    <option value="SUMBERJABON">SUMBERJABON</option>
+                                    <option value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
+                                    <option value="SUMBERKOTES KULON">SUMBERKOTES KULON</option>
+                                </select>
                             </div>
                         </div>
                     </div>

@@ -70,8 +70,9 @@
                         @endif
 
                         <div id="selectedMark" class="position-absolute h-100"></div>
-                        <div class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" >
-                            <img src="{{ asset("assets/img/icons/database-window.png") }}" alt="" class="me-4" width="25" height="25">
+                        <div class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page">
+                            <img src="{{ asset("assets/img/icons/calendar-filled.png") }}" alt="" class="me-4" width="25" height="25">
+{{--                            <i class="fa fa-calendar me-4" width="25" height="25"></i>--}}
                             <p class="hiddenWhenClosed m-0" >Kegiatan</p>
                         </div>
                     </li>
@@ -86,7 +87,7 @@
 
                         <div id="selectedMark" class="position-absolute h-100"></div>
                         <div class="nav-link ps-5 pe-auto active d-flex align-items-center" aria-current="page" >
-                            <img src="{{ asset("assets/img/icons/database-window.png") }}" alt="" class="me-4" width="25" height="25">
+                            <img src="{{ asset("assets/img/icons/store.png") }}" alt="" class="me-4" width="25" height="25">
                             <p class="hiddenWhenClosed m-0" >UMKM</p>
                         </div>
                     </li>

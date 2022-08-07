@@ -4,6 +4,7 @@ namespace App\Http\ViewComposers;
 
 use App\Models\Kegiatan;
 use App\Models\Penduduk;
+use App\Models\Usaha;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -107,6 +108,9 @@ class PendudukComposer
         $queryKegiatan = Kegiatan::query();
         $kegiatan_paginated = $queryKegiatan->paginate(10);
 
+        $queryUsaha = Usaha::query();
+        $usaha_paginated = $queryUsaha->paginate(10);
+
         $view->with([
             'penduduks'             => $penduduk_paginated,
             'items'                 => $items,
@@ -136,6 +140,7 @@ class PendudukComposer
             ],
 
             'kegiatans'             => $kegiatan_paginated,
+            'usahas'             => $usaha_paginated,
         ]);
     }
 }

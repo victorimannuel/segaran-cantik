@@ -2,7 +2,7 @@
 
 @section('main-body')
 
-    <div id= "sidebarState" state="aside-open">
+    <div id="sidebarState" state="aside-open">
 
         @include('main.components.sidebar')
 
@@ -12,9 +12,9 @@
 
             <section class="mx-5 align-self-center d-flex justify-content-center">
 
-                @include('main.components.cards')
+{{--                @include('main.components.cards')--}}
 
-                @include('umkm.table')
+                @include('usaha.table')
 
             </section>
 

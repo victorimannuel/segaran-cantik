@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Kegiatan;
 use App\Models\Penduduk;
+use App\Models\Usaha;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -61,5 +63,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('admin123'),
         ]);
 //        Penduduk::factory(1100)->create();
+        Kegiatan::factory(10)->create();
+        Usaha::factory(10)->create();
     }
 }

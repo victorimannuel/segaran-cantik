@@ -26,9 +26,7 @@ use Illuminate\Support\Facades\Input;
 //})->middleware(['auth']);
 
 // profil desa
-Route::get('/', function () {
-    return view('profil.profil', [ProfilController::class,'getKegiatan']);
-});
+Route::any('/',  [ProfilController::class, 'getAll']);
 
 Route::middleware(['auth'])->group(function () {
 

@@ -1,6 +1,6 @@
 <html>
 <head>
-    
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -43,7 +43,7 @@
             <div class="header">Malang</div>
             <div class="title">Desa Segaran</div>
             <p>Desa Segaran adalah desa yang tidak begitu ramai ,tetapi selalu mempunyai cerita unik di baliknya. Kebanyakan penduduk Desa Segaran adalah bercocok tanam. Tebu adalah hasil dari mereka bertani dan mereka juga sebagai pekerja penambang batu kapur, yang hasilnya banyak dikirim kepada pengolah batu kapur di daerah Druju, Sumberejo dan di daerah Turen.</p>
-            
+
             <div class="bottom-right">
             <div class="row" style="margin-bottom: 1em;">
                 <span id="luas" style="
@@ -69,15 +69,15 @@
                     </a>
                 </div>
                 <div class="col">
-    
+
                     <div id="jarak" class="img-container">
-                        
+
                     <img src="{{ asset('assets/profil-desa/img/profil/location-icon.png') }}" alt="" width="50"
                     style="margin-right: 2rem;"
                 >
                         1 Jam 12 Menit dari Kota Malang
                     </div>
-        
+
                     <div id="dusun" class="img-container">
                         
                     <img src="{{ asset('assets/profil-desa/img/profil/houses-icon.png') }}" alt="" width="50"
@@ -85,7 +85,7 @@
                 >
                         6 Dusun</div>
                     <div id="rt-rw" class="img-container">
-                        
+
                     <img src="{{ asset('assets/profil-desa/img/profil/house-icon.png') }}" alt="" width="50"
                     style="margin-right: 2rem;"
                 >
@@ -94,11 +94,11 @@
             </div>
             </div>
        </div>
-    </div>  
-    
-    
+    </div>
+
+
     <div class="content-container">
-        
+
     <img src="{{ asset('assets/profil-desa/img/wisata/wisata-header.png') }}" alt="" style="width: 100%;">
     </div>
     <div id="wisata" class="content-container">
@@ -465,13 +465,13 @@
                     <div id="flink">
 
                     <a href="https://goo.gl/maps/AXS5d1cMQwkHVJ756"><img src="{{ asset('assets/profil-desa/img/footer/gmaps.png') }}" alt=""  style="height: 28px;" >
-        
+
                     </a>
                         <a href="https://www.youtube.com/channel/UC1PRdRh0HSqLhtOnGyCtmxg"><img src="{{ asset('assets/profil-desa/img/footer/iyoutube.png') }}" alt="" style="height: 24px;" ></a>
                         <a href="https://www.instagram.com/desa.segaran/"><img src="{{ asset('assets/profil-desa/img/footer/iinstagram.png') }}" alt=""  style="height: 28px;" > </a>
                     </div>
 
-    
+
                 </div>
 
 
@@ -481,7 +481,7 @@
                     <p style="color: #48A7F8; font-size: 1.2rem; font-weight: 500; margin-top: 0; ">Developed By
                     </p>
                     <div id="kknfilkom">
-    
+
                         <a href="https://www.instagram.com/kkn.segaran/"> <img src="{{ asset('assets/profil-desa/img/footer/Desain-Logo-KKN-28-Polos 1.png') }}" alt=""></a>
                         <a href="https://kkn-filkom.ub.ac.id/"><img src="{{ asset('assets/profil-desa/img/footer/image 7.png') }}" alt=""></a>
                     </div>
@@ -525,7 +525,7 @@
     }
     function showSlides(n) {
         var i;
-        var slides = document.getElementsByClassName("mySlides");   
+        var slides = document.getElementsByClassName("mySlides");
         var captionText = document.getElementById("caption");
         if (n > slides.length) {
             slideIndex = 1;

@@ -140,7 +140,7 @@ class PendudukComposer
             ],
 
             'kegiatans'             => $kegiatan_paginated,
-            'usahas'             => $usaha_paginated,
+            'usahas'                => $usaha_paginated,
         ]);
     }
 }

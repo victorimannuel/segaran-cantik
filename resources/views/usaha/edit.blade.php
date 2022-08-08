@@ -100,7 +100,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="no_kk">DESKRIPSI</label>
-                                <textarea class="form-control" value="{{ $usaha->deskripsi }}" placeholder="Deskripsi" name="deskripsi"></textarea>
+                                <textarea class="form-control" placeholder="Deskripsi" name="deskripsi">{{ $usaha->deskripsi }}</textarea>
                             </div>
                         </div>
                         <div class="col-md-6">

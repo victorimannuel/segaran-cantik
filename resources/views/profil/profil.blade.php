@@ -151,27 +151,27 @@
     <div id="urousel" class="carousel slide carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-inner" id="warousel">
 
-            @for ($i = 0; $i < 4; $i++)
+            @foreach ($usahas as $usaha)
                 <div class="carousel-item active"id="warousel">
                     <div class="row" id="warousel">
                         <div class="col d-flex justify-content-center align-items-center" id="wtext">
-                            <p class="fs-5 fw-semibold text-primary">{{ "Judul "}}</p>
+                            <p class="fs-5 fw-semibold text-primary">{{ $usaha->nama_usaha }}</p>
                             <p class="fs-6">
-                                {{"Deskripsi"}}
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, ab!
+                                {{ $usaha->deskripsi }}
                             </p>
                             <div id="wkontak">
                                 <p id="wlink"> <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" id="wimg">{{"Lokasi UMKM"}}</p>
-                                <p id="wlink"><img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" id="wimg">{{"Jam operasional"}}</p>
-                                <p id="link"><img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" id="wimg">{{"No. telp"}}</p>
+                                <p id="wlink"><img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" id="wimg">{{ $usaha->jam_buka }} - {{ $usaha->jam_tutup }}</p>
+                                <p id="link"><img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" id="wimg"><a href="https://wa.me/{{ $usaha->kontak }}">{{ $usaha->kontak }}</a></p>
                             </div>
                         </div>
                         <div class="col d-flex justify-content-center align-items-center">
-                            <img src="{{ "gambar" }}" class="d-block w-50" alt="...">
+{{--                            <img src="{{ "gambar" }}" class="d-block w-50" alt="...">--}}
+                            <img src="{{ url('/usaha/'.$usaha->file) }}" class="d-block w-50" alt="...">
                         </div>
                     </div>
                 </div>
-            @endfor
+            @endforeach
         </div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#urousel" data-bs-slide="prev">

@@ -17,14 +17,26 @@ class UsahaFactory extends Factory
     public function definition()
     {
         return [
-            'nama_usaha' => $this->faker->sentence(1),
-            'kontak'  => $this->faker->date('Y-m-d'),
+            'nama_usaha' => $this->faker->randomElement([
+                'Tahu', 'Tempe', 'Tebu', 'Batu',
+                'Pracang', 'Keropak', 'Padi', 'Kue Kering'
+            ]),
+            'deskripsi' => $this->faker->sentence(5),
+//            'kontak'  => $this->faker->numerify('###########'),
+            'kontak'  => '08978665506',
             'rt'  => $this->faker->numerify('#'),
             'rw'  => $this->faker->numerify('#'),
             'dusun'  => $this->faker->randomElement([
                 'KRAJAN', 'PUTAT', 'SUMBERBANTENG', 'SUMBERJABON',
                 'SUMBERKOTES KULON', 'SUMBERKOTES WETAN'
-            ])
+            ]),
+            'file' => $this->faker->randomElement([
+                '488162.jpg', '2416021.jpg', 'stei_logo.png', 'MU.webp',
+                'photo-1512552288940-3a300922a275.jpeg', 'beautiful_view-wallpaper-2560x1440.jpg',
+                'Screenshot from 2022-06-25 19-07-31.png',
+            ]),
+            'jam_buka' => $this->faker->time('H'),
+            'jam_tutup' => $this->faker->time('H'),
         ];
     }
 }

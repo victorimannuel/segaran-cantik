@@ -32,17 +32,29 @@
                     </span>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="no_kk">NAMA USAHA</label>
                                 <input type="text" class="form-control" value="{{ $usaha->nama_usaha }}" disabled
                                        placeholder="Nama Usaha" name="nama_usaha">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="no_kk">Kontak</label>
                                 <input type="text" class="form-control" value="{{ $usaha->kontak }}" placeholder="Kontak" name="kontak" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="jam_buka">Jam Operasional Buka</label>
+                                <input type="time" disabled class="form-control" value="{{ $usaha->jam_buka }}" name="jam_buka">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="jam_tutup">Jam Operasional Tutup</label>
+                                <input type="time" disabled class="form-control" value="{{ $usaha->jam_tutup }}" name="jam_tutup">
                             </div>
                         </div>
                     </div>
@@ -53,7 +65,7 @@
                                 <select class="selectpicker form-control" id="rt" name="rt">
                                     <option selected value="">-- RT --</option>
                                     @for ($i = 1; $i <= 30; $i++)
-                                        <option {{$usaha->rw == $i ? 'selected': ''}} value="{{ $i }}">{{ $i }}</option>
+                                        <option {{$usaha->rt == $i ? 'selected': ''}} value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                 </select>
                             </div>
@@ -84,13 +96,26 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="no_kk">DESKRIPSI</label>
+                                <textarea class="form-control" disabled value="{{ $usaha->deskripsi }}" placeholder="Deskripsi" name="deskripsi"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+{{--                                <label for="file">Gambar</label>--}}
+{{--                                <input type="file" name="file"/>--}}
+                                <img width="150px" src="{{ url('/usaha/'.$usaha->file) }}">
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
                             </div>
                         </div>
-                        <!--  col-md-6   -->
                         <div class="col-md-4">
                             <div class="form-group">
                             </div>

@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('admin123'),
         ]);
 //        Penduduk::factory(1100)->create();
-        Kegiatan::factory(10)->create();
-        Usaha::factory(10)->create();
+        Kegiatan::factory(5)->create();
+        Usaha::factory(5)->create();
     }
 }

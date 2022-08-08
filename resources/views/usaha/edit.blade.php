@@ -19,7 +19,7 @@
                     </div>
                 @endif
 
-                <form class="form-penduduk pb-5" method="post" action="{{ route('usaha.update', ['id_usaha' => $usaha->id]) }}">
+                <form class="form-penduduk pb-5" method="post" action="{{ route('usaha.update', ['id_usaha' => $usaha->id]) }}" enctype="multipart/form-data">
 
                     <!-- CROSS Site Request Forgery Protection -->
                     @csrf
@@ -33,16 +33,28 @@
                     </span>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="no_kk">NAMA USAHA</label>
                                 <input type="text" class="form-control" value="{{ $usaha->nama_usaha }}" placeholder="Nama Usaha" name="nama_usaha">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="no_kk">Kontak</label>
                                 <input type="text" class="form-control" value="{{ $usaha->kontak }}" placeholder="Kontak" name="kontak">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="jam_buka">Jam Operasional Buka</label>
+                                <input type="time" class="form-control" value="{{ $usaha->jam_buka }}" name="jam_buka">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="jam_tutup">Jam Operasional Tutup</label>
+                                <input type="time" class="form-control" value="{{ $usaha->jam_tutup }}" name="jam_tutup">
                             </div>
                         </div>
                     </div>
@@ -84,7 +96,21 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="no_kk">DESKRIPSI</label>
+                                <textarea class="form-control" value="{{ $usaha->deskripsi }}" placeholder="Deskripsi" name="deskripsi"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <img width="150px" src="{{ url('/usaha/'.$usaha->file) }}">
+                                <label for="file">Gambar</label>
+                                <input type="file" name="file"/>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row mt-3">
                         <div class="col-md-4">
                             <div class="form-group">

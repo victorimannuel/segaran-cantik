@@ -17,10 +17,14 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nama_usaha')->nullable();
+            $table->string('deskripsi')->nullable();
             $table->string('kontak')->nullable();
+            $table->time('jam_buka')->nullable();
+            $table->time('jam_tutup')->nullable();
             $table->string('rt')->nullable();
             $table->string('rw')->nullable();
             $table->string('dusun')->nullable();
+            $table->string('file')->nullable();
         });
     }
 

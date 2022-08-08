@@ -17,14 +17,14 @@
                         {{Session::get('success')}}
                     </div>
                 @endif
-                <form class="form-penduduk pb-5" method="post" action="{{ route('usaha.store') }}">
+                <form class="form-penduduk pb-5" method="post" action="{{ route('usaha.store') }}" enctype="multipart/form-data">
                     <!-- CROSS Site Request Forgery Protection -->
                     @csrf
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-group">
-                                <label for="no_kk">NAMA KEGIATAN</label>
-                                <input type="text" class="form-control" placeholder="Nama Kegiatan" name="nama_usaha">
+                                <label for="no_kk">NAMA UMKM</label>
+                                <input type="text" class="form-control" placeholder="Nama UMKM" name="nama_usaha">
                                 <!-- Error -->
                                 @if ($errors->has('nama_usaha'))
                                     <div class="error">
@@ -33,10 +33,22 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="no_kk">Kontak</label>
                                 <input type="text" class="form-control" placeholder="Kontak" name="kontak">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="jam_operasional">Jam Operasional Buka</label>
+                                <input type="time" class="form-control" name="jam_buka">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="jam_operasional">Jam Operasional Tutup</label>
+                                <input type="time" class="form-control" name="jam_tutup">
                             </div>
                         </div>
                     </div>
@@ -75,6 +87,20 @@
                                     <option value="SUMBERKOTES WETAN">SUMBERKOTES WETAN</option>
                                     <option value="SUMBERKOTES KULON">SUMBERKOTES KULON</option>
                                 </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="no_kk">DESKRIPSI</label>
+                                <textarea class="form-control" placeholder="Deskripsi" name="deskripsi"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="file">Gambar</label>
+                                <input type="file" name="file"/>
                             </div>
                         </div>
                     </div>

@@ -11,6 +11,6 @@ class Usaha extends Model
     protected $table = 'usaha';
 
     protected $fillable = [
-        'nama_usaha', 'kontak', 'rt', 'rw', 'dusun'
+        'nama_usaha', 'deskripsi', 'kontak', 'rt', 'rw', 'dusun', 'file', 'jam_buka', 'jam_tutup',
     ];
 }

@@ -43,7 +43,23 @@ class UsahaController extends Controller
             'nama_usaha' => 'required',
         ]);
 
-        Usaha::create($request->all());
+        $file = $request->file('file');
+        $tujuan_upload = 'usaha';
+        if (isset($file)) {
+            $file_name =  $file->getClientOriginalName();
+            $file->move($tujuan_upload, $file_name);
+        }
+        Usaha::create([
+            'nama_usaha' => $request->nama_usaha,
+            'deskripsi' => $request->deskripsi,
+            'rt' => $request->rt,
+            'rw' => $request->rw,
+            'dusun' => $request->dusun,
+            'file' => $file? $file_name : null,
+            'jam_buka' => $request->jam_buka,
+            'jam_tutup' => $request->jam_tutup,
+        ]);
+
         Alert::success('Data Kegiatan berhasil ditambah');
 
         return redirect()->route('main.usaha')->with(['page', 'Kegiatan']);
@@ -51,12 +67,24 @@ class UsahaController extends Controller
 
     public function update(Request $request)
     {
+        $file = $request->file('file');
+        $tujuan_upload = 'usaha';
+        if (isset($file)) {
+            $file_name =  $file->getClientOriginalName();
+            $file->move($tujuan_upload, $file_name);
+        }
+
         $usaha = Usaha::find($request->id_usaha);
         $usaha->nama_usaha = $request->nama_usaha;
         $usaha->kontak = $request->kontak;
         $usaha->rt = $request->rt;
         $usaha->rw = $request->rw;
         $usaha->dusun = $request->dusun;
+        if (isset($file)) {
+            $usaha->file = $file_name;
+        }
+        $usaha->jam_buka = $request->jam_buka;
+        $usaha->jam_tutup = $request->jam_tutup;
         $usaha->save();
 
         Alert::success('Data UMKM berhasil diubah');

@@ -27,7 +27,7 @@
 
         <span class="input-group-text border-rounded bg-white w-50" id="search-addon">
             <img src="{{ asset('assets/img/icons/search-icon.png') }}" width=20 alt="">
-            <input type="search" id="q" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI DATA" value="{{ $pencarian['q'] }}" name="q" onkeyup="{{ route('penduduk.search') }}"/>
+            <input onchange="this.form.submit()" type="search" id="q" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI DATA" value="{{ $pencarian['q'] }}" name="q" onkeyup="{{ route('penduduk.search') }}"/>
         </span>
 
         <select id="search_rt" name="rt" class="mx-3 form-select">
@@ -159,8 +159,8 @@
         <table id="list-penduduk" class="table table-hover">
             <thead class="h4">
             <tr>
-                <th scope="col" class="text-center pe-3"><b>No</b></th>
-                <th scope="col">Nomor KK</th>
+                {{-- <th scope="col" class="text-center pe-3"><b>No</b></th> --}}
+                <th class="ps-5" scope="col">Nomor KK</th>
                 <th scope="col">Validasi</th>
                 <th scope="col">Nama</th>
                 <th scope="col">NIK</th>
@@ -174,8 +174,8 @@
             @php $i = 1; @endphp
             @foreach($penduduks as $index => $penduduk)
                 <tr>
-                    <td class="text-center pe-3"><b>{{ $i }}</b></td>
-                    <td >{{ $penduduk->no_kk }}</td>
+                    {{-- <td class="text-center pe-3"><b>{{ $i }}</b></td> --}}
+                    <td class="ps-5" >{{ $penduduk->no_kk }}</td>
                     <td >{{ $penduduk->validasi }}</td>
                     <td >{{ $penduduk->nama }}</td>
                     <td >{{ $penduduk->nik  }}</td>

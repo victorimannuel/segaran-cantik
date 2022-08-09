@@ -85,6 +85,13 @@ main{
 #sidebarState[state = "aside-open"] main{
     width: max(100% - var(--sidewidth));
 }
+#sidebarState[state = "aside-open"] .divider{
+    width: 0;
+    height: 1px;
+    background: #DFE0EB;
+    opacity: 0.5;
+    width: 80%;
+}
 
 /* else */
 #sidebarState[state = "aside-closed"] aside {
@@ -144,4 +151,8 @@ main{
 
 #sidebarState[state = "aside-closed"] main{
     width: max(100% - var(--sidewidthClosed));
+}
+
+#sidebarState[state = "aside-closed"] .divider{
+    width: 0;
 }

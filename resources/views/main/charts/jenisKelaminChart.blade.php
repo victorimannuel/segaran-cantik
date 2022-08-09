@@ -4,6 +4,7 @@
 </div>
 <script>
     const ctx = document.getElementById('jenisKelaminChart').getContext('2d');
+    Chart.defaults.font.size = 25;
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {

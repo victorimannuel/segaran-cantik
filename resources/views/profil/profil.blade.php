@@ -700,11 +700,8 @@
     <div class="container" id="anniv">
         <div id="arousel" class="carousel slide carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-inner" id="warousel">
-                @php
-                    $i = 1;
-                @endphp
                 @foreach($kegiatans as $kegiatan)
-                    @if($i == 1)
+                    @if($loop->first)
                     <div class="carousel-item active" id="warousel">
                     @else
                     <div class="carousel-item" id="warousel">
@@ -727,9 +724,6 @@
                             </div>
                         </div>
                     </div>
-                    @php
-                        $i++;
-                    @endphp
                 @endforeach
             </div>
 

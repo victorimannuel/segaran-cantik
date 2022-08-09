@@ -21,7 +21,7 @@ class PendudukComposer
 
     public function compose(View $view)
     {
-        $items = request('items') ?? 100;  // get the pagination number or a default
+        $items = request('items') ?? 10;  // get the pagination number or a default
 
         $query = Penduduk::query();
 

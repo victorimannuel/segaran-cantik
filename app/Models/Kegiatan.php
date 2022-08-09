@@ -11,6 +11,6 @@ class Kegiatan extends Model
     protected $table = 'kegiatan';
 
     protected $fillable = [
-        'nama_kegiatan', 'tgl',
+        'nama_kegiatan', 'tgl', 'deskripsi', 'lokasi', 'file',
     ];
 }

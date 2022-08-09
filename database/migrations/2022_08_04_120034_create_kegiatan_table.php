@@ -18,6 +18,9 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nama_kegiatan')->nullable();
             $table->date('tgl')->nullable();
+            $table->string('deskripsi')->nullable();
+            $table->string('lokasi')->nullable();
+            $table->string('file')->nullable();
         });
     }
 

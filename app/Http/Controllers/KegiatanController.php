@@ -42,17 +42,41 @@ class KegiatanController extends Controller
             'nama_kegiatan' => 'required',
         ]);
 
-        Kegiatan::create($request->all());
-        Alert::success('Kegiatan berhasil ditambahkan');
+        $file = $request->file('file');
+        $tujuan_upload = 'data_file/kegiatan';
+        if (isset($file)) {
+            $file_name =  $file->getClientOriginalName();
+            $file->move($tujuan_upload, $file_name);
+        }
 
+        Kegiatan::create([
+            'nama_kegiatan' => $request->nama_kegiatan,
+            'deskripsi' => $request->deskripsi,
+            'file' => $file? $file_name : null,
+            'tgl' => $request->tgl,
+            'lokasi' => $request->lokasi,
+        ]);
+
+        Alert::success('Data Kegiatan berhasil ditambah');
         return redirect()->route('main.kegiatan')->with(['page', 'Kegiatan']);
     }
 
     public function update(Request $request)
     {
+        $file = $request->file('file');
+        $tujuan_upload = 'data_file/kegiatan';
+        if (isset($file)) {
+            $file_name =  $file->getClientOriginalName();
+            $file->move($tujuan_upload, $file_name);
+        }
         $kegiatan = Kegiatan::find($request->id_kegiatan);
         $kegiatan->nama_kegiatan = $request->nama_kegiatan;
         $kegiatan->tgl = $request->tgl;
+        $kegiatan->deskripsi = $request->deskripsi;
+        $kegiatan->lokasi = $request->lokasi;
+        if (isset($file)) {
+            $kegiatan->file = $file_name;
+        }
         $kegiatan->save();
 
         Alert::success('Kegiatan berhasil diubah');

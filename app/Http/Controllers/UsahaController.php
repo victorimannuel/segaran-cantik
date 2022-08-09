@@ -44,7 +44,7 @@ class UsahaController extends Controller
         ]);
 
         $file = $request->file('file');
-        $tujuan_upload = 'usaha';
+        $tujuan_upload = 'data_file/usaha';
         if (isset($file)) {
             $file_name =  $file->getClientOriginalName();
             $file->move($tujuan_upload, $file_name);
@@ -68,7 +68,7 @@ class UsahaController extends Controller
     public function update(Request $request)
     {
         $file = $request->file('file');
-        $tujuan_upload = 'usaha';
+        $tujuan_upload = 'data_file/usaha';
         if (isset($file)) {
             $file_name =  $file->getClientOriginalName();
             $file->move($tujuan_upload, $file_name);

@@ -17,11 +17,11 @@
                         {{Session::get('success')}}
                     </div>
                 @endif
-                <form class="form-penduduk pb-5" method="post" action="{{ route('kegiatan.store') }}">
+                <form class="form-penduduk pb-5" method="post" action="{{ route('kegiatan.store') }}" enctype="multipart/form-data">
                     <!-- CROSS Site Request Forgery Protection -->
                     @csrf
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="no_kk">NAMA KEGIATAN</label>
                                 <input type="text" class="form-control" placeholder="Nama Kegiatan" name="nama_kegiatan">
@@ -33,10 +33,30 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="no_kk">Tanggal Berlangsung</label>
                                 <input type="date" class="form-control" placeholder="Tanggal" name="tgl">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="no_kk">Lokasi</label>
+                                <input type="text" class="form-control" placeholder="Lokasi" name="lokasi">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="no_kk">DESKRIPSI</label>
+                                <textarea class="form-control" placeholder="Deskripsi" name="deskripsi"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="file">Gambar</label>
+                                <input type="file" name="file"/>
                             </div>
                         </div>
                     </div>

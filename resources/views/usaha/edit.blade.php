@@ -105,7 +105,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <img width="150px" src="{{ url('/usaha/'.$usaha->file) }}">
+                                <img width="150px" src="{{ url('/data_file/usaha/'.$usaha->file) }}">
                                 <label for="file">Gambar</label>
                                 <input type="file" name="file"/>
                             </div>

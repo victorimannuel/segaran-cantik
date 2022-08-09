@@ -151,8 +151,15 @@
     <div id="urousel" class="carousel slide carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-inner" id="warousel">
 
-            @foreach ($usahas as $usaha)
-                <div class="carousel-item active"id="warousel">
+                @php
+                    $i = 1;
+                @endphp
+                @foreach ($usahas as $usaha)
+                    @if($i == 1)
+                    <div class="carousel-item active" id="warousel">
+                    @else
+                    <div class="carousel-item" id="warousel">
+                    @endif
                     <div class="row" id="warousel">
                         <div class="col d-flex justify-content-center align-items-center" id="wtext">
                             <p class="fs-5 fw-semibold text-primary">{{ $usaha->nama_usaha }}</p>
@@ -166,11 +173,14 @@
                             </div>
                         </div>
                         <div class="col d-flex justify-content-center align-items-center">
-{{--                            <img src="{{ "gambar" }}" class="d-block w-50" alt="...">--}}
-                            <img src="{{ url('/usaha/'.$usaha->file) }}" class="d-block w-50" alt="...">
+                            {{--                            <img src="{{ "gambar" }}" class="d-block w-50" alt="...">--}}
+                            <img src="{{ url('/data_file/usaha/'.$usaha->file) }}" class="d-block w-50" alt="...">
                         </div>
                     </div>
                 </div>
+                @php
+                    $i++;
+                @endphp
             @endforeach
         </div>
 
@@ -681,50 +691,58 @@
                                 </p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container" id="anniv">
-            <div id="arousel" class="carousel slide carousel-dark slide" data-bs-ride="carousel">
-                <div class="carousel-inner" id="warousel">
-
-                    @for ($i = 0; $i < 4; $i++)
-                        <div class="carousel-item active"id="warousel">
-                            <div class="row" id="warousel">
-                                <div class="col d-flex justify-content-center align-items-center" id="wtext">
-                                    <p class="fs-5 fw-semibold text-primary">{{ "Judul "}}</p>
-                                    <p class="fs-6">
-                                        {{"Deskripsi"}}
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, ab!
-                                    </p>
-                                    <div id="wkontak">
-                                        <p id="wlink"> <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" id="wimg">{{"Lokasi Kegiatan"}}</p>
-                                        <p id="wlink"><img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" id="wimg">{{"Waktu Kegiatan"}}</p>
-                                        {{-- <p id="link"><img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" id="wimg">{{"No. telp"}}</p> --}}
-                                    </div>
-                                </div>
-                                <div class="col d-flex justify-content-center align-items-center">
-                                    <img src="{{ "gambar" }}" class="d-block w-50" alt="...">
-                                </div>
-                            </div>
-                        </div>
-                    @endfor
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#arousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#arousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
     </div>
 </div>
+    <div class="container" id="anniv">
+        <div id="arousel" class="carousel slide carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner" id="warousel">
+                @php
+                    $i = 1;
+                @endphp
+                @foreach($kegiatans as $kegiatan)
+                    @if($i == 1)
+                    <div class="carousel-item active" id="warousel">
+                    @else
+                    <div class="carousel-item" id="warousel">
+                    @endif
+                        <div class="row" id="warousel">
+                            <div class="col d-flex justify-content-center align-items-center" id="wtext">
+                                <p class="fs-5 fw-semibold text-primary">{{ $kegiatan->nama_kegiatan }}</p>
+                                <p class="fs-6">
+                                    {{ $kegiatan->deskripsi }}
+                                </p>
+                                <div id="wkontak">
+                                    <p id="wlink"> <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" id="wimg">{{ $kegiatan->lokasi }}</p>
+                                    <p id="wlink"><img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" id="wimg">{{ $kegiatan->tgl }}</p>
+                                    {{-- <p id="link"><img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" id="wimg">{{"No. telp"}}</p> --}}
+                                </div>
+                            </div>
+                            <div class="col d-flex justify-content-center align-items-center">
+{{--                                <img src="{{ "gambar" }}" class="d-block w-50" alt="...">--}}
+                                <img src="{{ url('/data_file/kegiatan/'.$kegiatan->file) }}" class="d-block w-50" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                    @php
+                        $i++;
+                    @endphp
+                @endforeach
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#arousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#arousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script>if (
@@ -765,6 +783,8 @@
             slides[i].style.display = "none";
         }
         slides[slideIndex - 1].style.display = "flex";
-    }</script>
+    }
+</script>
 </body>
+
 </html>

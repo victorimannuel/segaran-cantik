@@ -32,17 +32,40 @@
                     </span>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="no_kk">NAMA KEGIATAN</label>
                                 <input type="text" class="form-control" value="{{ $kegiatan->nama_kegiatan }}" disabled
                                        placeholder="Nomor KK" name="nama_kegiatan">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="no_kk">Tanggal Berlangsung</label>
                                 <input type="date" class="form-control" disabled value="{{ $kegiatan->tgl }}" placeholder="Tanggal" name="tgl">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="no_kk">Lokasi</label>
+                                <input type="text" class="form-control" placeholder="Lokasi" value="{{ $kegiatan->lokasi }}" name="lokasi">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="no_kk">DESKRIPSI</label>
+                                <textarea class="form-control" placeholder="Deskripsi" name="deskripsi">{{ $kegiatan->deskripsi }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @if($kegiatan->file)
+                                <img width="150px" src="{{ url('/data_file/kegiatan/'.$kegiatan->file) }}">
+                                @else
+                                <span>Tidak ada foto</span>
+                                @endif
                             </div>
                         </div>
                     </div>

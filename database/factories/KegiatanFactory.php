@@ -19,6 +19,13 @@ class KegiatanFactory extends Factory
         return [
             'nama_kegiatan' => $this->faker->sentence(1),
             'tgl'  => $this->faker->date('Y-m-d'),
+            'lokasi' => $this->faker->sentence(5),
+            'deskripsi' => $this->faker->sentence(2),
+            'file' => $this->faker->randomElement([
+                '488162.jpg', '2416021.jpg', 'stei_logo.png', 'MU.webp',
+                'photo-1512552288940-3a300922a275.jpeg', 'beautiful_view-wallpaper-2560x1440.jpg',
+                'Screenshot from 2022-06-25 19-07-31.png',
+            ]),
         ];
     }
 }

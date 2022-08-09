@@ -73,12 +73,12 @@ Route::middleware(['auth'])->group(function () {
 
     // log
     Route::get('/dashboard/log', function() {
-        return view('penduduk.log', [ 'page' => 'Log Data Perbaikan']);
+        return view('penduduk.log', ['page' => 'Log Data Perbaikan']);
     });
 
     // kegiatan
     Route::get('/kegiatan', function () {
-        return view('main.kegiatan', [ 'page' => 'Kegiatan']);
+        return view('main.kegiatan', ['page' => 'Kegiatan']);
     })->name('main.kegiatan');
     Route::name('kegiatan.')->group(function () {
         Route::get('/kegiatan/tambah/', [KegiatanController::class, 'viewCreate']);

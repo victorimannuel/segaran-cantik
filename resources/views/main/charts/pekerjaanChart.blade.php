@@ -1,6 +1,6 @@
-<div class="card mx-5 p-5">
+<div class="card m-5 p-5">
     <h1 class="text-center"><b>Pekerjaan</b></h1>
-    <canvas id="pekerjaanChart" class="m-5 p-4 border rounded" width=400 height=400></canvas>
+    <canvas id="pekerjaanChart" class="m-5 p-4 border rounded" width=400 height=200></canvas>
 </div>
 <script>
     const pekerjaan = document.getElementById('pekerjaanChart').getContext('2d');
@@ -8,8 +8,7 @@
     const pekerjaanChart = new Chart(pekerjaan, {
         type: 'bar',
         data: {
-            // labels: ['Balita', 'Anak-Anak', 'Remaja', 'Dewasa', 'Lansia', 'Manula'],
-{{--            labels: {{ $labelPekerjaan }},--}}
+            labels: ['Balita', 'Anak', 'Remaja', 'Dewasa', 'Lansia', 'Manula'],
             datasets: [{
                 label: 'Penduduk',
                 data: [
@@ -39,6 +38,14 @@
                 datalabels: {
                     formatter: function(value, context) {
                         return context.chart.data.labels[context.dataIndex];
+                    }
+                },
+
+                legend: {
+                    labels: {
+                        // This more specific font property overrides the global property
+                        font: {
+                        }
                     }
                 }
             }

@@ -19,7 +19,7 @@
                     </div>
                 @endif
 
-                <form class="form-penduduk pb-5" method="post">
+                <form class="form-penduduk form-penduduk-readonly pb-5" method="post">
                     <!-- CROSS Site Request Forgery Protection -->
                     @csrf
 
@@ -31,42 +31,52 @@
                         <p class="my-0 px-3 fs-2">Kembali</p>
                     </span>
 
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="no_kk">NAMA KEGIATAN</label>
-                                <input type="text" class="form-control" value="{{ $kegiatan->nama_kegiatan }}" disabled
-                                       placeholder="Nomor KK" name="nama_kegiatan">
+                    <div class="row gx-5">
+                        <div class="col-md">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="no_kk">NAMA KEGIATAN</label>
+                                    <input disabled type="text" class="form-control" value="{{ $kegiatan->nama_kegiatan }}" placeholder="Nama Kegiatan" name="nama_kegiatan">
+                                    @if ($errors->has('nama_kegiatan'))
+                                        <div class="error">
+                                            {{ $errors->first('nama_kegiatan') }}
+                                        </div>
+                                    @endif
+                                </div>  
+                            </div>
+                            <div class="row">
+                                <div class="col-md">
+                                    <div class="form-group">
+                                        <label for="no_kk">TANGGAL BERLANGSUNG</label>
+                                        <input disabled type="date" class="form-control" value="{{ $kegiatan->tgl }}" placeholder="Tanggal" name="tgl">
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="form-group">
+                                        <label for="no_kk">LOKASI</label>
+                                        <input disabled type="text" class="form-control" placeholder="Lokasi" value="{{ $kegiatan->lokasi }}" name="lokasi">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="no_kk">DESKRIPSI</label>
+                                    <textarea disabled class="form-control deskripsi-kegiatan" placeholder="Deskripsi" name="deskripsi">{{ $kegiatan->deskripsi }}</textarea>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="no_kk">Tanggal Berlangsung</label>
-                                <input type="date" class="form-control" disabled value="{{ $kegiatan->tgl }}" placeholder="Tanggal" name="tgl">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="no_kk">Lokasi</label>
-                                <input type="text" class="form-control" placeholder="Lokasi" value="{{ $kegiatan->lokasi }}" name="lokasi">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="no_kk">DESKRIPSI</label>
-                                <textarea class="form-control" placeholder="Deskripsi" name="deskripsi">{{ $kegiatan->deskripsi }}</textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
+                        <div class="col-md">
+                            <div class="form-group d-flex flex-column">
+                                <label for="file">Gambar</label>
                                 @if($kegiatan->file)
-                                <img width="150px" src="{{ url('/data_file/kegiatan/'.$kegiatan->file) }}">
+                                    <img width="150px" src="{{ url('/data_file/kegiatan/'.$kegiatan->file) }}">
                                 @else
-                                <span>Tidak ada foto</span>
+                                    <span class="border-1">Belum ada foto</span>
+
+                                    <img id="image" width=540 height=340 class="shadow rounded" style="" src="">
                                 @endif
                             </div>
+
                         </div>
                     </div>
 

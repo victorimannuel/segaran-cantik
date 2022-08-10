@@ -1,10 +1,9 @@
-<div class="card mx-5 p-5">
+<div class="card m-5 p-5">
     <h1 class="text-center"><b>Jenis Kelamin</b></h1>
     <canvas id="jenisKelaminChart" class="p-5" width=400 height=400></canvas>
 </div>
 <script>
     const ctx = document.getElementById('jenisKelaminChart').getContext('2d');
-    Chart.defaults.font.size = 25;
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {

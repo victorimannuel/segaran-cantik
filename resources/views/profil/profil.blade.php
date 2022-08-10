@@ -31,14 +31,17 @@
 <div class="container-fluid" id="profil">
     <div class="row align-items-center">
         <div class="col" id="profil1">
+            <img src="{{asset('assets/profil-desa/img/profil/profile-img.png')}}" alt="">
         </div>
         <div class="col" id="profil">
-            <p style="margin-top: 15vh ; font-size:150%;">Malang</p>
-            <p style="font-size: 200%">Desa Segaran </p>
-            <p class="fs-6" style="margin-right: 10%;"> Desa Segaran adalah desa yang tidak begitu ramai, tetapi selalu memiliki banyak cerita unik. Sebagian besar penduduk Desa Segaran bercocok tanam sebagai sumber pendapatan. Produk yang dihasilkan tidak hanya tebu, tetapi juga batu kapur dari hasil tambang. Produk - produk tersebut banyak dikirim kepada pengolah batu kapur di daerah Druju, Sumberejo, dan di daerah Turen.</p>
+            <p id="profile-title">Malang</p>
+            <p id="profile-subtitle">Desa Segaran </p>
+            <p id="profile-description" style="margin-right: 10%;"> Desa Segaran adalah desa yang tidak begitu ramai, tetapi selalu memiliki banyak cerita unik. Sebagian besar penduduk Desa Segaran bercocok tanam sebagai sumber pendapatan. Produk yang dihasilkan tidak hanya tebu, tetapi juga batu kapur dari hasil tambang. Produk - produk tersebut banyak dikirim kepada pengolah batu kapur di daerah Druju, Sumberejo, dan di daerah Turen.</p>
             <span id="luas" style="width:10rem;text-align:center;border-bottom:2px solid black; "> <img src="{{asset('assets/profil-desa/img/profil/luas.png')}}" alt="" style="margin-bottom: 0.3em"> ±11 km²</span>
             {{-- Dinamis --}}
-            <span id="penduduk" style="margin-left: 3%"><img src="{{asset('assets/profil-desa/img/profil/people-icon.png')}}" style="height: 30px" alt="">{{"Jumlah Penduduk"}}</span>
+
+            <br id="breaker">
+            <span id="penduduk" style="margin-left: 3%"><img src="{{asset('assets/profil-desa/img/profil/people-icon.png')}}"  alt="">{{"8.901 Penduduk"}}</span>
 
             <div >
 
@@ -246,6 +249,17 @@
                     </p>
                 </div>
             </div>
+            <div class="container-fluid d-flex align-items-center flex-column" id="lpdcontact">
+                <img src="{{asset('assets/profil-desa/img/Vector.png')}}" alt="" id="lpdimg">
+                <div class="container d-flex align-items-start flex-column">
+                    <p>
+                        <br>
+                    <p class="fs-4 fw-semibold">-</p>
+                    <hr style="width: 100%">
+                    <p class="fs-6">Kasun Sumberkotes Kulon</p>
+                    </p>
+                </div>
+            </div>
         </div>
         <div class="col">
             <div class="container-fluid d-flex align-items-center flex-column" id="lpdcontact">
@@ -296,6 +310,7 @@
                     </p>
                 </div>
             </div>
+            
         </div>
         <div class="col">
             <div class="container-fluid d-flex align-items-center flex-column" id="lpdcontact">
@@ -346,9 +361,21 @@
                     </p>
                 </div>
             </div>
+            <div class="container-fluid d-flex align-items-center flex-column" id="lpdcontact">
+                <img src="{{asset('assets/profil-desa/img/kasunp.png')}}" alt="" id="lpdimg">
+                <div class="container d-flex align-items-start flex-column">
+                    <p>
+                        <br>
+                    <p class="fs-3 fw-semibold">Didik</p>
+                    <hr style="width: 100%">
+                    <p class="fs-6">Kasun Putat</p>
+                    <a href="https://wa.me/6285746637958"><img src="{{asset('assets/profil-desa/img/waicon.png')}}" alt="" id="waicon">0857-4663-7958</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
+    {{-- <div class="row">
         <div class="col">
             <div class="container-fluid d-flex align-items-center flex-column" id="lpdcontact2">
                 <img src="{{asset('assets/profil-desa/img/kasunp.png')}}" alt="" id="lpdimg">
@@ -376,7 +403,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 <div class="container-fluid" id="gheader"></div>
 <div class="container-fluid" id="gallery">

@@ -23,12 +23,19 @@
         </div>
 
     </div>
-    <form action="/search" id="table-operation" class="d-flex justify-content-between my-2 px-5" method="GET" role="search">
+    <form action="/kegiatan/search" id="table-operation" class="d-flex justify-content-between my-2 px-5" method="GET" role="search">
 
         <span class="input-group-text border-rounded bg-white w-50" id="search-addon">
             <img src="{{ asset('assets/img/icons/search-icon.png') }}" width=20 alt="">
-            <input type="search" id="q" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI DATA" value="{{ $pencarian['q'] }}" name="q" onkeyup="{{ route('penduduk.search') }}"/>
+            <input type="search" id="queryKegiatan" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI DATA" value="{{ $pencarianKegiatan['queryKegiatan'] }}" name="queryKegiatan"/>
         </span>
+
+        <select id="search_tahun" name="tahun" class="mx-3 form-select">
+            <option selected value="TAHUN">Tahun</option>
+            @for ($i = 2018; $i <= 2030; $i++)
+            <option {{ $pencarianKegiatan['tahun'] == $i ? 'selected':'' }} value="{{ $i }}">{{ $i }}</option>
+            @endfor
+        </select>
 
     </form>
 
@@ -84,6 +91,9 @@
     <script type="text/javascript">
         document.getElementById('pagination').onchange = function() {
             window.location = "{!! $kegiatans->url(1) !!}&items=" + this.value;
+        };
+        document.getElementById('search_tahun').onchange = function() {
+            this.form.submit();
         };
     </script>
 

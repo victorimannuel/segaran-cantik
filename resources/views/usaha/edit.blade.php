@@ -146,22 +146,21 @@
 {{--                            <input type="button" onclick="window.location='{{ route('usaha.delete', ['id_usaha' => $usaha->id])}}'" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post">--}}
                             <input type="button" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post"
                                    onclick="
-                                   var form = $(this).closest('form');
                                         event.preventDefault();
-                                            swal({
-                                                title: 'Apakah anda yakin untuk menghapus data {{$usaha->nama}}?',
-                                                text: 'Data tidak dapat dikembalikan apabila sudah terhapus.',
-                                                icon: 'warning',
-                                                buttons: true,
-                                                dangerMode: true,
-                                            }).then((willDelete) => {
-                                                if (willDelete) {
-                                                    window.location='{{ route('usaha.delete', ['id_usaha' => $usaha->id])}}'
-                                                }
-                                            });
+                                        swal({
+                                            title: 'Apakah anda yakin untuk menghapus data {{$usaha->nama}}?',
+                                            text: 'Data tidak dapat dikembalikan apabila sudah terhapus.',
+                                            icon: 'warning',
+                                            buttons: true,
+                                            dangerMode: true,
+                                        }).then((willDelete) => {
+                                            if (willDelete) {
+                                                window.location='{{ route('usaha.delete', ['id_usaha' => $usaha->id])}}'
+                                            }
+                                        });
                                    "
                             >
-                            <input type="submit" name="send" value="Simpan" class="btn btn-success btn-lg fs-3 px-5">
+                            <input id="simpan" type="submit" name="send" value="Simpan" class="btn btn-success btn-lg fs-3 px-5">
                         </div>
                     </div>
                 </form>
@@ -177,12 +176,16 @@
 @endsection
 
 <script>
-    // window.bind("onbeforeunload",function(event) {
-    //     if(hasChanged) return "You have unsaved changes";
-    // });
-    window.onbeforeunload = function() {
-        event.preventDefault();
-        window.event.returnValue = 'You have unsaved changes';     // Chrome requires returnValue to be set
-        return '?';
-    };
+    document.addEventListener('click', function(e) {
+        if (e.target.id != "simpan") {
+            console.log('if');
+            window.onbeforeunload = function() {
+                event.preventDefault();
+                event.returnValue = '';     // Chrome requires returnValue to be set
+                return '?';
+            };
+        } else {
+            window.onbeforeunload = null;
+        }
+    }, false);
 </script>

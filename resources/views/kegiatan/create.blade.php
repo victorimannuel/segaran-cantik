@@ -65,7 +65,6 @@
                             <div class="form-group">
                             </div>
                         </div>
-                        <!--  col-md-6   -->
                         <div class="col-md-4">
                             <div class="form-group">
                             </div>
@@ -88,9 +87,7 @@
                             </div>
                         </div>
                     </div>
-
                 </form>
-
             </section>
 
             <footer class="mt-5">

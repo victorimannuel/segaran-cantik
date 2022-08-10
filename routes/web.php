@@ -74,6 +74,9 @@ Route::middleware(['auth'])->group(function () {
         return view('main.kegiatan', ['page' => 'Kegiatan']);
     })->name('main.kegiatan');
     Route::name('kegiatan.')->group(function () {
+        Route::any('/kegiatan/search', function(){
+            return view('main/kegiatan', [ 'page' => 'Kegiatan']);
+        })->name('search');
         Route::get('/kegiatan/tambah/', [KegiatanController::class, 'viewCreate']);
         Route::post('/kegiatan/tambah/', [KegiatanController::class, 'store']
         )->name('store');
@@ -98,6 +101,9 @@ Route::middleware(['auth'])->group(function () {
         return view('main.usaha', [ 'page' => 'UMKM']);
     })->name('main.usaha');
     Route::name('usaha.')->group(function () {
+        Route::any('/usaha/search', function(){
+            return view('main/usaha', [ 'page' => 'UMKM']);
+        })->name('search');
         Route::get('/usaha/tambah/', [UsahaController::class, 'viewCreate']);
         Route::post('/usaha/tambah/', [UsahaController::class, 'store']
         )->name('store');

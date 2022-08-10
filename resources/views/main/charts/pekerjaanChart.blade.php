@@ -3,21 +3,18 @@
     <canvas id="pekerjaanChart" class="m-5 p-4 border rounded" width=400 height=200></canvas>
 </div>
 <script>
+    console.log('test');
     const pekerjaan = document.getElementById('pekerjaanChart').getContext('2d');
-{{--    console.log({{ $labelPekerjaan }});--}}
+    let labelPekerjaan = eval('(' + @json($labelPekerjaan) + ')');
+    let countPekerja = eval('(' + @json($countPekerja) + ')');
+
     const pekerjaanChart = new Chart(pekerjaan, {
         type: 'bar',
         data: {
-            labels: ['Balita', 'Anak', 'Remaja', 'Dewasa', 'Lansia', 'Manula'],
+            labels: labelPekerjaan,
             datasets: [{
-                label: 'Penduduk',
-                data: [
-{{--                    {{ $pekerjaans['WIRASWASTA'] }}--}}
-                    1,
-                    2,
-                    3,
-                    4
-                ],
+                label: labelPekerjaan,
+                data: countPekerja,
                 backgroundColor: [
                     'rgb(105, 180, 102)',
                     'rgb(42, 76, 151)',

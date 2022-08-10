@@ -350,7 +350,7 @@
 
 {{-- <img id="gallery-header" src="{{ asset('assets/profil-desa/img/galeri/galeri-header.png') }}" alt=""> --}}
 
-<div id="gheader">
+<div id="gheader" class="my-4">
 </div>
 
 <div class="mx-auto" id="gallery">

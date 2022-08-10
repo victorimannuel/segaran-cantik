@@ -13,6 +13,7 @@
     <link rel="stylesheet" href={{ asset('assets/styles/sidebar.css') }}>
     <link rel="stylesheet" href={{ asset('assets/styles/table-penduduk.css') }}>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/form-penduduk.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/statistik.css') }}">
 
     {{--  js yang digunakan--}}
     <script src="{{ asset('assets/scripts/sidebar.js') }}" async defer></script>

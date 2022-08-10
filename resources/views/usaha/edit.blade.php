@@ -43,7 +43,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md">
-                                    <div class="form-group">
+                                    <div class="form    -group">
                                         <label for="no_kk">KONTAK</label>
                                         <input type="text" class="form-control" value="{{ $usaha->kontak }}" placeholder="Kontak" name="kontak">
                                     </div>
@@ -117,13 +117,17 @@
         
 
                         </div>
-                        <div class="col h-100">
-                            <div class="col">
-                                <div class="form-group d-flex flex-column">
-                                   <label for="file">GAMBAR</label>
-    {{--                                <input type="file" name="file"/>--}}
-                                    <img id="image" width=530 height=310 class="shadow rounded" style="" src="{{ url('/data_file/usaha/'.$usaha->file) }}">
-                                </div>
+                        <div class="col-md">
+                            <div class="form-group d-flex flex-column">
+                                <label for="file">Gambar</label>
+                                <input type="file" name="file"/>
+                                @if($usaha->file)
+                                    <img width=500 height=300 src="{{ url('/data_file/kegiatan/'.$usaha->file) }}">
+                                @else
+                                    <span class="border-1">Belum ada foto</span>
+
+                                    <img id="image" width=500 height=310 class="shadow rounded" style="" src="">
+                                @endif
                             </div>
 
                         </div>

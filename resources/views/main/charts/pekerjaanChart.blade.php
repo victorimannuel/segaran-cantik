@@ -1,4 +1,4 @@
-<div class="card mx-5 p-5">
+<div class="card m-5 p-5">
     <h1 class="text-center"><b>Pekerjaan</b></h1>
     <canvas id="pekerjaanChart" class="m-5 p-4 border rounded" width=400 height=400></canvas>
 </div>

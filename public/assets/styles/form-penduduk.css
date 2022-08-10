@@ -42,3 +42,15 @@
 .form-penduduk .back-button:hover{
     opacity: 0.8;
 }
+
+/* .form-penduduk-readonly input, .form-penduduk-readonly select, .form-penduduk-readonly .form-control{
+    border: 0px;
+} */
+
+.form-penduduk #deskripsi{
+    height: 5em;
+}
+
+.form-penduduk .deskripsi-kegiatan{
+    height: 13em;
+}

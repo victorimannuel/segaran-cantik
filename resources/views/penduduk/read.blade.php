@@ -19,7 +19,7 @@
                     </div>
                 @endif
 
-                <form class="form-penduduk pb-5" method="post" action="{{ route('penduduk.store') }}">
+                <form class="form-penduduk form-penduduk-readonly pb-5" method="post" action="{{ route('penduduk.store') }}">
                     <!-- CROSS Site Request Forgery Protection -->
                     @csrf
 
@@ -72,7 +72,7 @@
                                 <label for="nama">NAMA</label>
                                 <input type="text" class="form-control" value="{{ $penduduk->nama }}" disabled id="nama"
                                        placeholder="Nama" name="nama">
-                            </div>
+                            </div>5
                         </div>
                         <!--  col-md-6   -->
                     </div>

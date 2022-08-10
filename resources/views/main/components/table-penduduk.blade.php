@@ -201,6 +201,17 @@
         </div>
 
     </div>
+    <script>
+        document.getElementById('search_rt').onchange = function() {
+            this.form.submit();
+        };
+        document.getElementById('search_rw').onchange = function() {
+            this.form.submit();
+        };
+        document.getElementById('search_dusun').onchange = function() {
+            this.form.submit();
+        };
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 {{--    <script>--}}

@@ -111,6 +111,36 @@ class PendudukComposer
         $queryUsaha = Usaha::query();
         $usaha_paginated = $queryUsaha->paginate(10);
 
+        $pekerjaans = Penduduk::groupBy('pekerjaan')
+            ->select('pekerjaan', DB::raw('count(*) as total'))
+            ->orderBy('total', 'desc')
+            ->get();
+
+        $labelPekerjaan = [];
+        $arrPekerjaan = [];
+
+        foreach ($pekerjaans as $pekerjaan) {
+            array_push($labelPekerjaan, $pekerjaan['pekerjaan']);
+            $arrPekerjaan[$pekerjaan['pekerjaan']] = $pekerjaan['total'];
+        }
+
+        foreach ($labelPekerjaan as $label) {
+//            error_log($label);
+        }
+//        print_r($arrPekerjaan);
+        foreach ($arrPekerjaan as $arr) {
+//            error_log(key($arr));
+//            error_log($arr);
+//            foreach ($arr as $a) {
+//                error_log($a);
+//            }
+        }
+
+        foreach ($pekerjaans as $pekerjaan) {
+//            error_log($pekerjaan['pekerjaan']);
+//            error_log($pekerjaan['total']);
+        }
+
         $view->with([
             'penduduks'             => $penduduk_paginated,
             'items'                 => $items,
@@ -138,9 +168,10 @@ class PendudukComposer
                 'lansia'            => $lansia,
                 'manula'            => $manula,
             ],
-
             'kegiatans'             => $kegiatan_paginated,
             'usahas'                => $usaha_paginated,
+            'pekerjaans'            => $pekerjaans,
+            'labelPekerjaan'        => $labelPekerjaan,
         ]);
     }
 }

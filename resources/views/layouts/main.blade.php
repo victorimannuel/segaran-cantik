@@ -33,16 +33,6 @@
 @endif
 @yield('main-body')
 @include('sweetalert::alert')
-<script>
-    document.getElementById('search_rt').onchange = function() {
-            this.form.submit();
-    };
-    document.getElementById('search_rw').onchange = function() {
-            this.form.submit();
-    };
-    document.getElementById('search_dusun').onchange = function() {
-            this.form.submit();
-    };
-</script>
+
 </body>
 </html>

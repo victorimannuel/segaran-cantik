@@ -39,7 +39,7 @@
                         return context.chart.data.labels[context.dataIndex];
                     }
                 }
-            }
+            },
         }
     });
 </script>

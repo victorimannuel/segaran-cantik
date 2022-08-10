@@ -82,13 +82,7 @@ a:hover {
     overflow-y: scroll;
     height: 100vh;
 }
-#gheader {
-    height: 20vh;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-image: url("../img/galeri/galeri-header.png");
-    background-size: 100%;
-}
+
 #pw {
     height: 100vh;
     width: 100vw;
@@ -153,22 +147,6 @@ a:hover {
     width: 100%;
 }
 
-#gallery{
-   overflow: hidden;
-    height: 150vh;
-    width: 75%
-}
-
-#gimg{
-    cursor: pointer;
-    margin-top: 8px;
-    vertical-align: middle;
-    width: 100%;
-}
-
-#gimg:hover{
-    opacity: 0.7;
-}
 /* woi */
 .modal {
     display: none;
@@ -266,7 +244,7 @@ a:hover {
     height: 100%;width:90%;
 }
 
-  @media (max-width:600px) {
+@media (max-width:600px) {
     body {
         width: 100vw;
         overflow-x: hidden;

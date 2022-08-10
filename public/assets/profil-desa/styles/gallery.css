@@ -1,0 +1,157 @@
+#gheader {
+    width: 100%;
+    height: 45rem;
+    background-repeat: no-repeat;
+    background-image: url("../img/galeri/galeri-header.png");
+    background-size: 100%;
+
+    object-fit: contain;
+}
+
+#gheader .title{
+    
+}
+
+#gallery-header{
+    width: 100%;
+
+    object-fit: cover;
+}
+#gallery{
+    width: 80rem;
+}
+
+.gcontainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.gimg{
+    cursor: pointer;
+    vertical-align: middle;
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    
+}
+
+.gimg:hover{
+    opacity: 0.7;
+}
+
+/* #posyandu{
+
+    grid-column-start: 1;
+    grid-column-end: span 1;
+
+    grid-row-start: 1;
+    grid-row-end: span 1;
+} */
+
+#senam{
+    grid-column-start: 2;
+    grid-column-end: span 2;
+
+    grid-row-start: 1;
+    grid-row-end: span 2;
+}
+
+#salat{
+    grid-column-start: 4;
+    grid-column-end: span 1;
+
+    grid-row-start: 1;
+    grid-row-end: span 1;
+}
+
+#imunisasi{
+    aspect-ratio: 1/1;
+    grid-column-start: 4;
+    grid-column-end: span 1;
+
+    grid-row-start: 2;
+    grid-row-end: span 1;
+}
+
+#ramah{
+    grid-column-start: 1;
+    grid-column-end: span 1;
+
+    grid-row-start: 2;
+    grid-row-end: span 2;
+}
+
+#futsal{
+    grid-column-start: 3;
+    grid-column-end: span 2;
+
+    grid-row-start: 3;
+    grid-row-end: span 1;
+}
+
+#tkk{
+    grid-column-start: 1;
+    grid-column-end: span 2;
+
+    grid-row-start: 4;
+    grid-row-end: span 2;
+}
+
+#mpls{
+    grid-column-start: 3;
+    grid-column-end: span 1;
+    grid-row-start: 4;
+    grid-row-end: span 1;
+}
+#suro{
+    aspect-ratio: 1/1;
+
+    grid-column-start: 3;
+    grid-column-end: span 1;
+    grid-row-start: 5;
+    grid-row-end: span 1;
+}
+
+#vaksin{
+    aspect-ratio: 1/1;
+
+    grid-column-start: 4;
+    grid-column-end: span 1;
+    grid-row-start: 5;
+    grid-row-end: span 1;
+
+}
+
+#terapi{
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row-start: 6;
+    grid-row-end: span 1;
+}
+
+
+@media (max-width:600px) {
+    #gallery{
+        width: 30rem;
+    }
+    
+}
+
+@media (orientation:portrait) or (max-width:1300px){
+    #gallery{
+        width: 90%;
+    }
+    #gallery-header{
+        object-position: center;
+    }
+    #gheader{
+        height: 20rem;
+        background-image: url("../img/galeri/galeri-header-bigger.png");
+        
+    }
+
+}

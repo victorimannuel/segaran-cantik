@@ -40,7 +40,6 @@
                 {{ $jumlah_penduduk }}
             </p>
         </div>
-
     </div>
 
     <div class="card main-card ms-5 col-sm">
@@ -49,7 +48,7 @@
                 Jumlah KK
             </h5>
             <p class="card-text">
-                {{ $jumlah_penduduk }}
+                {{ $jumlahKk }}
             </p>
         </div>
 

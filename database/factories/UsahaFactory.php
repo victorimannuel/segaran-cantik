@@ -31,7 +31,7 @@ class UsahaFactory extends Factory
                 'SUMBERKOTES KULON', 'SUMBERKOTES WETAN'
             ]),
             'file' => $this->faker->randomElement([
-                '488162.jpg', '2416021.jpg', 'stei_logo.png', 'MU.webp',
+                'tahu.jpeg', '2416021.jpg', 'stei_logo.png', 'MU.webp',
                 'photo-1512552288940-3a300922a275.jpeg', 'beautiful_view-wallpaper-2560x1440.jpg',
                 'Screenshot from 2022-06-25 19-07-31.png',
             ]),

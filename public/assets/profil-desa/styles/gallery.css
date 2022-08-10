@@ -138,7 +138,6 @@
     #gallery{
         width: 30rem;
     }
-    
 }
 
 @media (orientation:portrait) or (max-width:1300px){
@@ -149,9 +148,18 @@
         object-position: center;
     }
     #gheader{
-        height: 20rem;
+        height: 10rem;
         background-image: url("../img/galeri/galeri-header-bigger.png");
         
     }
+    .gcontainer .mySlides{
+        display: flex;
+        flex-direction: column;
+    }
+    .gcontainer .modal-content {
+        height: 100vh;
+        padding: 1em;
+    }
+    
 
 }

@@ -297,7 +297,7 @@
         </div>
      </div><div id="mobile-mode" style="height: 100%;width:100%">
         <div id="urousel" class="carousel slide carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-inner" id="urousel-mobi">
+        <div class="carousel-inner" id="urousel-mobile">
 
                 @php
                     $i = 1;
@@ -587,6 +587,7 @@
                     <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/suro.JPG') }}" alt="suro" onclick="openModal();currentSlide(15)" />
                     <img class="gimg" id="gimg" src="{{ asset('assets/profil-desa/img/galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
 
+<<<<<<< HEAD
                 </div>
                 <div id="myModal" class="modal">
                     <div class="overlay"  onclick="closeModal()"></div>
@@ -611,6 +612,34 @@
                                     ketika sore hari.
                                 </p>
                                 <p id="gtx">Banyaknya pohon yang rindang juga membuat golongan muda memilih spot lapangan sebagai tempat berkumpul mereka.</p>
+=======
+<div id="gheader" class="my-4">
+</div>
+
+<div class="mx-auto" id="gallery">
+    @include('profil.pages.gallery')
+</div>
+
+<div class="container" id="anniv">
+    <div id="arousel" class="carousel slide carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="warousel">
+            @foreach($kegiatans as $kegiatan)
+                @if($loop->first)
+                <div class="carousel-item active" id="warousel">
+                @else
+                <div class="carousel-item" id="warousel">
+                @endif
+                    <div class="row" id="warousel">
+                        <div class="col d-flex justify-content-center align-items-center" id="wtext">
+                            <p class="fs-5 fw-semibold text-primary">{{ $kegiatan->nama_kegiatan }}</p>
+                            <p class="fs-6">
+                                {{ $kegiatan->deskripsi }}
+                            </p>
+                            <div id="wkontak">
+                                <p id="wlink"> <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" id="wimg">{{ $kegiatan->lokasi }}</p>
+                                <p id="wlink"><img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" id="wimg">{{ $kegiatan->tgl }}</p>
+                                {{-- <p id="link"><img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" id="wimg">{{"No. telp"}}</p> --}}
+>>>>>>> 854ee8e5060f94306becb37cd1c7c61a59ac9cef
                             </div>
                         </div>
                         <div class="mySlides">

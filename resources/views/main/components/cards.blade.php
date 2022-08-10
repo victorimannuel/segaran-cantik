@@ -42,4 +42,16 @@
         </div>
 
     </div>
+
+    <div class="card main-card ms-5 col-sm">
+        <div class="card-body d-flex justify-content-center flex-column">
+            <h5 class="card-title">
+                Jumlah KK
+            </h5>
+            <p class="card-text">
+                {{ $jumlah_penduduk }}
+            </p>
+        </div>
+
+    </div>
 </div>

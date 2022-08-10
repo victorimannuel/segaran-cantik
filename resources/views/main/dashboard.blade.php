@@ -12,7 +12,6 @@
 
             <section class="mx-5 align-self-center d-flex justify-content-center">
 
-                @include('main.components.cards')
 
                 @include('main.components.table-penduduk')
 

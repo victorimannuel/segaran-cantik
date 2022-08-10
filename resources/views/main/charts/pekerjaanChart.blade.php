@@ -1,22 +1,20 @@
 <div class="card m-5 p-5">
-    <h1 class="text-center"><b>Umur</b></h1>
-    <canvas id="umurChart" class="m-5 p-4 border rounded" width=400 height=400></canvas>
+    <h1 class="text-center"><b>Pekerjaan</b></h1>
+    <canvas id="pekerjaanChart" class="m-5 p-4 border rounded" width=400 height=200></canvas>
 </div>
 <script>
-    const umur = document.getElementById('umurChart').getContext('2d');
-    const umurChart = new Chart(umur, {
-        type: 'pie',
+    const pekerjaan = document.getElementById('pekerjaanChart').getContext('2d');
+    const pekerjaanChart = new Chart(pekerjaan, {
+        type: 'bar',
         data: {
-            labels: ['Balita', 'Anak-Anak', 'Remaja', 'Dewasa', 'Lansia', 'Manula'],
+            labels: ['Balita', 'Anak', 'Remaja', 'Dewasa', 'Lansia', 'Manula'],
             datasets: [{
                 label: 'Penduduk',
                 data: [
-                    {{ $kategori_umur['balita'] }},  /* data balita */
-                    {{ $kategori_umur['anak'] }},   /* data anak2  */
-                    {{ $kategori_umur['remaja'] }},  /* data remaja */
-                    {{ $kategori_umur['dewasa'] }},   /* data dewasa  */
-                    {{ $kategori_umur['lansia'] }},  /* data lansia */
-                    {{ $kategori_umur['manula'] }},   /* data manula  */
+                    1,
+                    2,
+                    3,
+                    4
                 ],
                 backgroundColor: [
                     'rgb(105, 180, 102)',
@@ -30,6 +28,7 @@
             }]
         },
         options: {
+            indexAxis: 'y',
             tooltips: {
                 enabled: false
             },
@@ -37,6 +36,14 @@
                 datalabels: {
                     formatter: function(value, context) {
                         return context.chart.data.labels[context.dataIndex];
+                    }
+                },
+
+                legend: {
+                    labels: {
+                        // This more specific font property overrides the global property
+                        font: {
+                        }
                     }
                 }
             }

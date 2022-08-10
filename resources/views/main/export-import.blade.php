@@ -13,13 +13,16 @@
             <section class=" mx-5 align-self-center align-items-center justify-content-start p-5" style="height: 80vh;">
                 
 
-                <form action="{{ route('import') }}" class="w-100" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('import') }}" class="w-100 container" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if(Session::has('success'))
-                    <div class="alert alert-success fs-3">
+                    <div class="alert alert-success fs-3 opacity-100">
+                    @else 
+                    <div class="alert alert-success fs-3 opacity-0">
+                    @endif
+                        File berhasil diimport
                         {{Session::get('success')}}
                     </div>
-                    @endif
                     <div class="container d-flex flex-row justify-content-between w-100 align-items-between p-0">
 
                         <div class="me-5 w-50 p-5 card d-flex justify-content-between" >

@@ -486,21 +486,18 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4 d-flex justify-content-end">
-                                    {{--                            <input id="delete" type="button" onclick="window.location='{{ route('penduduk.delete', ['id_penduduk' => $penduduk->id])}}'" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post">--}}
+                                    {{-- <input id="delete" type="button" onclick="window.location='{{ route('penduduk.delete', ['id_penduduk' => $penduduk->id])}}'" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post">--}}
                                     <input id="delete-confirm" type="button" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5 delete-confirm" style="color: white;" formmethod="post"
-                                        onclick="
-                                        console.log('delete clicked');
-                                        var form =  $(this).closest('form');
-                                        var name = $(this).data('name');
-                                        event.preventDefault();
-                                            swal({
-                                                title: 'Apakah anda yakin untuk menghapus data {{$penduduk->nama}}?',
-                                                text: 'Data tidak dapat dikembalikan apabila sudah terhapus.',
-                                                icon: 'warning',
-                                                buttons: true,
-                                                dangerMode: true,
-                                            })
-                                                .then((willDelete) => {
+                                           onclick="
+                                           var form = $(this).closest('form');
+                                           event.preventDefault();
+                                                swal({
+                                                    title: 'Apakah anda yakin untuk menghapus data {{$penduduk->nama}}?',
+                                                    text: 'Data tidak dapat dikembalikan apabila sudah terhapus.',
+                                                    icon: 'warning',
+                                                    buttons: true,
+                                                    dangerMode: true,
+                                                }).then((willDelete) => {
                                                     if (willDelete) {
                                                         window.location='{{ route('penduduk.delete', ['id_penduduk' => $penduduk->id])}}'
                                                     }
@@ -523,3 +520,23 @@
     </div>
 
 @endsection
+
+<script>
+    window.onbeforeunload = function() {
+        event.preventDefault();
+        event.returnValue = '';     // Chrome requires returnValue to be set
+        {{--swal({--}}
+        {{--    title: 'Apakah anda yakin untuk keluar?',--}}
+        {{--    text: 'Perubahan yang telah dilakukan belum tersimpan.',--}}
+        {{--    icon: 'warning',--}}
+        {{--    buttons: true,--}}
+        {{--    dangerMode: true,--}}
+        {{--}).then((confirm) => {--}}
+        {{--    if (confirm) {--}}
+        {{--        window.location='{{ route('main.dashboard', ['page' => 'Dashboard'])}}'--}}
+        {{--    }--}}
+        {{--});--}}
+        return '?';
+        // return "Leaving this page will reset the wizard";
+    };
+</script>

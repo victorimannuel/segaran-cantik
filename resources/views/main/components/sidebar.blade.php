@@ -114,7 +114,6 @@
                     })
                         .then((willLogout) => {
                             if (willLogout) {
-                                console.log('logout');
                                 window.location='{{ route('logout')}}'
                             }
                         });"
@@ -132,7 +131,6 @@
                     })
                         .then((willLogout) => {
                             if (willLogout) {
-                                console.log('logout');
                                 window.location='{{ route('logout')}}'
                             }
                         });"

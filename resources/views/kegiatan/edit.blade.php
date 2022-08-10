@@ -18,7 +18,7 @@
                     </div>
                 @endif
                 @include('sweetalert::alert')
-                <form class="form-penduduk pb-5" method="post" action="{{ route('kegiatan.update', ['id_kegiatan' => $kegiatan->id]) }}" enctype="multipart/form-data">
+                <form name="form-penduduk" id="form-penduduk" class="form-penduduk pb-5" method="post" action="{{ route('kegiatan.update', ['id_kegiatan' => $kegiatan->id]) }}" enctype="multipart/form-data">
 {{--                <form class="form-penduduk pb-5" method="post" action="{{ route('kegiatan.update', ['id_kegiatan' => $kegiatan->id]) }}">--}}
                     <!-- CROSS Site Request Forgery Protection -->
                     @csrf
@@ -42,7 +42,7 @@
                                             {{ $errors->first('nama_kegiatan') }}
                                         </div>
                                     @endif
-                                </div>  
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md">
@@ -91,7 +91,24 @@
                             </div>
                         </div>
                         <div class="col-md-4 d-flex justify-content-end">
-                            <input type="button" onclick="window.location='{{ route('kegiatan.delete', ['id_kegiatan' => $kegiatan->id])}}'" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post">
+{{--                            <input type="button" onclick="window.location='{{ route('kegiatan.delete', ['id_kegiatan' => $kegiatan->id])}}'" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post">--}}
+                            <input type="button" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post"
+                                   onclick="
+                                   var form = $(this).closest('form');
+                                        event.preventDefault();
+                                            swal({
+                                                title: 'Apakah anda yakin untuk menghapus data {{$kegiatan->nama_kegiatan}}?',
+                                                text: 'Data tidak dapat dikembalikan apabila sudah terhapus.',
+                                                icon: 'warning',
+                                                buttons: true,
+                                                dangerMode: true,
+                                            }).then((willDelete) => {
+                                                if (willDelete) {
+                                                    window.location='{{ route('kegiatan.delete', ['id_kegiatan' => $kegiatan->id])}}'
+                                                }
+                                            });
+                                   "
+                            >
                             <input type="submit" name="send" value="Simpan" class="btn btn-success btn-lg fs-3 px-5">
                         </div>
                     </div>
@@ -108,4 +125,15 @@
     </div>
 
 @endsection
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.AreYouSure/1.9.0/jquery.are-you-sure.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.AreYouSure/1.9.0/jquery.are-you-sure.min.js"></script>
 
+<script>
+    window.onbeforeunload = function() {
+        event.preventDefault();
+        event.returnValue = '';     // Chrome requires returnValue to be set
+        return '?';
+    };
+</script>

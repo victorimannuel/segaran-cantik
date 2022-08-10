@@ -72,7 +72,7 @@
                                 <label for="nama">NAMA</label>
                                 <input type="text" class="form-control" value="{{ $penduduk->nama }}" disabled id="nama"
                                        placeholder="Nama" name="nama">
-                            </div>5
+                            </div>
                         </div>
                         <!--  col-md-6   -->
                     </div>

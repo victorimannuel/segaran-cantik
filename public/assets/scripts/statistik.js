@@ -1,0 +1,1 @@
+Chart.defaults.font.size = "15rem";

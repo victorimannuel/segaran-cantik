@@ -16,9 +16,9 @@
     <link rel="stylesheet" href="{{ asset('assets/styles/statistik.css') }}">
 
     {{--  js yang digunakan--}}
-    <script src="{{ asset('assets/scripts/sidebar.js') }}" async defer></script>
-    <script src="{{ asset('assets/scripts/statistik.js') }}" async defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="{{ asset('assets/scripts/sidebar.js') }}" defer></script>
+    <script src="{{ asset('assets/scripts/statistik.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" defer></script>
 
     <link rel="icon" type="image/x-icon" href={{ asset('assets/img/icons/segaran-icon.png') }}>
 

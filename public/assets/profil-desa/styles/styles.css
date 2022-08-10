@@ -85,6 +85,13 @@ a:hover {
     overflow-y: scroll;
     height: 100vh;
 }
+#gheader {
+    height: 80vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-image: url("../img/galeri/galeri-header.png");
+    background-size: 100%;
+}
 #pw {
     overflow-x: hidden;
     height: 100vh;
@@ -156,6 +163,12 @@ a:hover {
 #urousel-mobile {
     height: 100%;
     width: 100%;
+}
+
+#gallery {
+    overflow: hidden;
+    height: 150vh;
+    width: 75%;
 }
 
 #gimg {
@@ -270,8 +283,18 @@ a:hover {
     height: 100%;
     width: 90%;
 }
+
 #mobile-mode {
-    display: block;
+    display: none;
+}
+#jarak img {
+    width: 50;
+}
+#dusun img {
+    width: 50;
+}
+#rt-rw img {
+    width: 50;
 }
 
 
@@ -283,7 +306,6 @@ a:hover {
         background-image: url("../img/header/pw-mobile-mode.png");
         background-size: 100%;
     }
-
     body {
         width: 100vw;
         overflow-x: hidden;

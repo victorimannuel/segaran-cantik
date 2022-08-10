@@ -18,13 +18,6 @@ use Illuminate\Support\Facades\Input;
 |
 */
 
-//Route::get('/', function () {
-//    return view('auth.login', [
-//        "name" => "Kepala Desa",
-//        "page" => "Login"
-//    ]);
-//})->middleware(['auth']);
-
 // profil desa
 Route::any('/',  [ProfilController::class, 'getAll']);
 
@@ -127,29 +120,3 @@ Route::middleware(['auth'])->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
-
-
-
-
-//Route::get('/dashboard/kegiatan/{id_kegiatan}/edit', [Kegi::class, 'viewEdit']
-//)->name('edit-kegiatan.show');
-//Route::get('/dashboard/penduduk/{id_penduduk}/read', [PendudukController::class, 'viewRead']
-//)->name('view-kegiatan.show');
-//
-//Route::get('/dashboard/penduduk/tambah/', [PendudukController::class, 'viewCreate']);
-//Route::post('/dashboard/penduduk/tambah/', [PendudukController::class, 'store']
-//)->name('penduduk.store');
-//
-//Route::get('/dashboard/penduduk/{id_penduduk}/simpan', function () {
-//    return view('main.dashboard', ['page' => 'Dashboard']);
-//});
-//Route::post('/dashboard/penduduk/{id_penduduk}/simpan', [PendudukController::class, 'update']
-//)->name('penduduk.update');
-///*                  */
-//
-////Route::get('/dashboard/penduduk/{id_penduduk}/hapus', function () {
-////    return view('main.stastitik', ['page' => 'Dashboard']);
-////});
-//Route::any('/dashboard/penduduk/{id_penduduk}/hapus', [PendudukController::class, 'delete']
-//)->name('penduduk.delete');

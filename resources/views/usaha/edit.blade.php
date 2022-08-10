@@ -177,9 +177,12 @@
 @endsection
 
 <script>
+    // window.bind("onbeforeunload",function(event) {
+    //     if(hasChanged) return "You have unsaved changes";
+    // });
     window.onbeforeunload = function() {
         event.preventDefault();
-        event.returnValue = '';     // Chrome requires returnValue to be set
+        window.event.returnValue = 'You have unsaved changes';     // Chrome requires returnValue to be set
         return '?';
     };
 </script>

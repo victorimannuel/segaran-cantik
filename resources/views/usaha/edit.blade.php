@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                             <div class="row">
-        
+
                                 <div class="col-md">
                                     <div class="form-group">
                                         <label for="jam_buka">JAM OPERASIONAL BUKA</label>
@@ -63,7 +63,7 @@
                                         <input type="time" class="form-control" value="{{ $usaha->jam_tutup }}" name="jam_tutup">
                                     </div>
                                 </div>
-        
+
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
@@ -80,8 +80,8 @@
                                         </select>
                                     </div>
                                 </div>
-        
-        
+
+
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="rt">RT</label>
@@ -112,9 +112,9 @@
                                         <textarea id="deskripsi" class="form-control" placeholder="Deskripsi" name="deskripsi">{{ $usaha->deskripsi }}</textarea>
                                     </div>
                                 </div>
-                                
+
                             </div>
-        
+
 
                         </div>
                         <div class="col-md">
@@ -122,7 +122,7 @@
                                 <label for="file">Gambar</label>
                                 <input type="file" name="file"/>
                                 @if($usaha->file)
-                                    <img width=500 height=300 src="{{ url('/data_file/kegiatan/'.$usaha->file) }}">
+                                    <img width=500 height=300 src="{{ url('/data_file/usaha/'.$usaha->file) }}">
                                 @else
                                     <span class="border-1">Belum ada foto</span>
 
@@ -138,12 +138,29 @@
                             <div class="form-group">
                             </div>
                         </div>
-                        <div class="col-md-4">           
+                        <div class="col-md-4">
                             <div class="form-group">
                             </div>
                         </div>
                         <div class="col-md-4 d-flex justify-content-end">
-                            <input type="button" onclick="window.location='{{ route('usaha.delete', ['id_usaha' => $usaha->id])}}'" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post">
+{{--                            <input type="button" onclick="window.location='{{ route('usaha.delete', ['id_usaha' => $usaha->id])}}'" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post">--}}
+                            <input type="button" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post"
+                                   onclick="
+                                   var form = $(this).closest('form');
+                                        event.preventDefault();
+                                            swal({
+                                                title: 'Apakah anda yakin untuk menghapus data {{$usaha->nama}}?',
+                                                text: 'Data tidak dapat dikembalikan apabila sudah terhapus.',
+                                                icon: 'warning',
+                                                buttons: true,
+                                                dangerMode: true,
+                                            }).then((willDelete) => {
+                                                if (willDelete) {
+                                                    window.location='{{ route('usaha.delete', ['id_usaha' => $usaha->id])}}'
+                                                }
+                                            });
+                                   "
+                            >
                             <input type="submit" name="send" value="Simpan" class="btn btn-success btn-lg fs-3 px-5">
                         </div>
                     </div>
@@ -158,3 +175,11 @@
     </div>
 
 @endsection
+
+<script>
+    window.onbeforeunload = function() {
+        event.preventDefault();
+        event.returnValue = '';     // Chrome requires returnValue to be set
+        return '?';
+    };
+</script>

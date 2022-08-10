@@ -35,17 +35,17 @@
                   </div>
 
 
-                   
-                    
-                     
-                    
-                     
-                     
-                    
-                  
+
+
+
+
+
+
+
+
                     {{-- canva ends here --}}
-                     
-              
+
+
             </section>
 
 

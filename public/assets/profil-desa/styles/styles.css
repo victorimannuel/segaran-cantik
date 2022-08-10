@@ -1,13 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-html{
+#breaker {
+    display: none;
+}
+
+html {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
 }
 
 body {
-    width: 100%;
+    width: 100vw;
     overflow-x: hidden;
     font-family: "poppins";
 }
@@ -56,7 +60,7 @@ a:hover {
     background-size: 100%;
 }
 
-#pu{
+#pu {
     width: 100%;
     height: 100vh;
 }
@@ -71,23 +75,26 @@ a:hover {
 
 #lpdheader {
     width: 100%;
-    height: 30vh;
+    height: 65vh;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-image: url("../img/lpd/lpd-header.png");
-    
 }
 #lpd {
     width: 80%;
     overflow-y: scroll;
     height: 100vh;
 }
-
 #pw {
+    overflow-x: hidden;
     height: 100vh;
     width: 100vw;
 }
 #warousel {
+    height: 100%;
+    width: 100%;
+}
+#warousel-mobile {
     height: 100%;
     width: 100%;
 }
@@ -137,16 +144,30 @@ a:hover {
     color: black;
 }
 
-#lpdcontact2 a{
+#lpdcontact2 a {
     text-decoration: none;
     color: black;
 }
 
-#urousel{
+#urousel {
+    height: 100%;
+    width: 100%;
+}
+#urousel-mobile {
     height: 100%;
     width: 100%;
 }
 
+#gimg {
+    cursor: pointer;
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+#gimg:hover {
+    opacity: 0.7;
+}
 /* woi */
 .modal {
     display: none;
@@ -158,17 +179,17 @@ a:hover {
     height: 100%;
 
     background-color: rgb(0, 0, 0, 0);
-  }
+}
 
-  .modal .overlay{
+.modal .overlay {
     width: 100vw;
     height: 100vh;
     position: fixed;
     background-color: rgb(0, 0, 0, 0.4);
-  }
+}
 
-  /* Modal Content */
-  .modal-content {
+/* Modal Content */
+.modal-content {
     justify-content: center;
     position: relative;
 
@@ -180,71 +201,89 @@ a:hover {
     max-width: 1200px;
     display: flex;
     flex-direction: column;
-  }
+}
 
-
-  /* The Close Button */
-  .close {
+/* The Close Button */
+.close {
     color: white;
     position: absolute;
     top: 10px;
     right: 25px;
     font-size: 35px;
     font-weight: bold;
-  }
+}
 
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: #999;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  #gtx{
+#gtx {
     margin-right: 10%;
     text-align: justify;
     font-size: 0.8em;
-  }
+}
 
-  #gcol{
+#gcol {
     overflow: hidden;
     height: 140vh;
     width: 100%;
-  }
-  .modal-content, #caption {
+}
+.modal-content,
+#caption {
     animation-name: zoom;
     animation-duration: 0.6s;
-  }
+}
 
-  @keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
-  }
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
 
-  #anniv{
+#anniv {
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-
-#profile-title{
-    margin-top: 15vh ; font-size:150%;
-}
-#profile-subtitle{
-    font-size: 200%
 }
 
-#penduduk img{
+#profile-title {
+    margin-top: 15vh;
+    font-size: 150%;
+}
+#profile-subtitle {
+    font-size: 200%;
+}
+
+#penduduk img {
     height: 30px;
 }
 
-#profil1 img{
-    height: 100%;width:90%;
+#profil1 img {
+    height: 100%;
+    width: 90%;
+}
+#mobile-mode {
+    display: block;
 }
 
-@media (max-width:600px) {
+
+@media (max-width: 600px) {
+    #pwheader {
+        width: 100%;
+        height: 30vh;
+        background-repeat: no-repeat;
+        background-image: url("../img/header/pw-mobile-mode.png");
+        background-size: 100%;
+    }
+
     body {
         width: 100vw;
         overflow-x: hidden;
@@ -257,28 +296,80 @@ a:hover {
         background-size: 100%;
         background-repeat: no-repeat;
     }
-   
-    #profile-title{
+
+    #profile-title {
         /* margin-top: 0; */
-         font-size:75%;
+        font-size: 75%;
     }
-    #profile-subtitle{
-        font-size: 100%
+    #profile-subtitle {
+        font-size: 100%;
     }
-    #profile-description{
+    #profile-description {
         text-align: justify;
-        font-size:70%
+        font-size: 70%;
     }
-    #profil1 img{
-        height: 100%;width:500px;margin-left:-140px;
+    #profil1 img {
+        height: 100%;
+        width: 500px;
+        margin-left: -140px;
     }
-    #luas{
+    #luas {
         font-size: 75%;
     }
-    #penduduk{
+    #penduduk {
         font-size: 75%;
     }
-    #penduduk img{
+    #penduduk img {
         height: 20px;
+    }
+    #breaker {
+        display: block;
+    }
+
+    #mobile-mode {
+        display: block;
+    }
+    #desktop-mode {
+        display: none;
+    }
+    #jarak {
+        font-size: 75%;
+    }
+    #dusun {
+        font-size: 75%;
+    }
+    #rt-rw {
+        font-size: 75%;
+    }
+
+    #profile-mobile-mode {
+        height: 30px;
+    }
+    #wtext {
+        flex-direction: column;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: justify;
+    }
+    #pw {
+        height: 85vh;
+    }
+    #puheader {
+        width: 100%;
+        height: 30vh;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: url("../img/umkm/humkm-mobile.png");
+    }
+    #lpdheader {
+        width: 100%;
+        height: 35vh;
+        background-repeat: no-repeat;
+        /* background-size: 100% 100%; */
+        background-image: url("../img/lpd/headerlpd-mobile.png");
+    }
+    #pu{
+        width: 100%;
+        height: 85vh;
     }
 }

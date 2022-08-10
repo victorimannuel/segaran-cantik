@@ -101,9 +101,43 @@
     <footer class="mt-auto mx-auto">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <input type="image" src="{{ asset("assets/img/icons/log-out.png") }}" class="hiddenWhenOpen" width="30">
-            <button class="btn btn-secondary btn-lg fs-2 fw-bold hiddenWhenClosed  border border-0" >Keluar</button>
+            <input type="image" src="{{ asset("assets/img/icons/log-out.png") }}" class="hiddenWhenOpen" width="30"
+                onclick="
+                    var form =  $(this).closest('form');
+                    event.preventDefault();
+                    swal({
+                        title: 'Apakah anda yakin untuk keluar?',
+                        text: '',
+                        icon: 'warning',
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                        .then((willLogout) => {
+                            if (willLogout) {
+                                window.location='{{ route('logout')}}'
+                            }
+                        });"
+            >
+            <button class="btn btn-secondary btn-lg fs-2 fw-bold hiddenWhenClosed border border-0"
+                    onclick="
+                    var form =  $(this).closest('form');
+                    event.preventDefault();
+                    swal({
+                        title: 'Apakah anda yakin untuk keluar?',
+                        text: '',
+                        icon: 'warning',
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                        .then((willLogout) => {
+                            if (willLogout) {
+                                window.location='{{ route('logout')}}'
+                            }
+                        });"
+            >Keluar</button>
         </form>
     </footer>
 
 </aside>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+

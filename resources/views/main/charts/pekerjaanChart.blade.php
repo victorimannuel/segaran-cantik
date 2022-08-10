@@ -4,6 +4,7 @@
 </div>
 <script>
     const pekerjaan = document.getElementById('pekerjaanChart').getContext('2d');
+{{--    console.log({{ $labelPekerjaan }});--}}
     const pekerjaanChart = new Chart(pekerjaan, {
         type: 'bar',
         data: {
@@ -11,6 +12,7 @@
             datasets: [{
                 label: 'Penduduk',
                 data: [
+{{--                    {{ $pekerjaans['WIRASWASTA'] }}--}}
                     1,
                     2,
                     3,

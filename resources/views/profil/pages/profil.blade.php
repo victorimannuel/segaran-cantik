@@ -1,9 +1,9 @@
-<div class="row d-flex justify-content-center align-items-center">
+<div class="row" id="profile-row">
     <div class="col" id="profil1">
         <img src="{{asset('assets/profil-desa/img/profil/profile-img.png')}}" alt="">
     </div>
     <div class="col" id="profil">
-        <p id="profile-title" class="h1 fs-1">Malang</p>
+        <p id="profile-title" class="h1 fs-1" style="margin-top:10% ">Malang</p>
         <p id="profile-subtitle">Desa Segaran </p>
         <p id="profile-description" style="margin-right: 10%;"> Desa Segaran adalah desa yang tidak begitu ramai, tetapi selalu memiliki banyak cerita unik. Sebagian besar penduduk Desa Segaran bercocok tanam sebagai sumber pendapatan. Produk yang dihasilkan tidak hanya tebu, tetapi juga batu kapur dari hasil tambang. Produk - produk tersebut banyak dikirim kepada pengolah batu kapur di daerah Druju, Sumberejo, dan di daerah Turen.</p>
         <span id="luas" style="width:10rem;text-align:center;border-bottom:2px solid black; "> <img src="{{asset('assets/profil-desa/img/profil/luas.png')}}" alt="" style="margin-bottom: 0.3em"> ±11 km²</span>

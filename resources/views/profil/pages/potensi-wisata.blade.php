@@ -4,8 +4,8 @@
             <div class="carousel-item active" id="">
                 <div class="row warousel-row m-auto">
                     <div class="col d-flex flex-column justify-content-center align-items-center" class="wtext">
-                        <p class="fs-2 fw-semibold text-primary">Pemandian Sumber Loo</p>
-                        <p class="fs-5">Desa Segaran memiliki tempat pemandian berbentuk kolam renang yang sangat luas (berjumlah dua kolam; kolam anak dan kolam dewasa) yang sumber airnya berasal langsung dari mata air Sumber Loo, sehingga terjaga keasrian air yang benar-benar segar tanpa mengandung zat kimia apapun seperti kaporit.</p>
+                        <p class="fs-3 fw-semibold text-primary">Pemandian Sumber Loo</p>
+                        <p class="fs-6">Desa Segaran memiliki tempat pemandian berbentuk kolam renang yang sangat luas (berjumlah dua kolam; kolam anak dan kolam dewasa) yang sumber airnya berasal langsung dari mata air Sumber Loo, sehingga terjaga keasrian air yang benar-benar segar tanpa mengandung zat kimia apapun seperti kaporit.</p>
                         <div class="wkontak">
                             <a href="https://g.page/pemandian-sumber-loo?share" class="wlink"><img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" alt="" class="wimg">Sumber Loo, Jl. Raya Segaran, RT.09/RW.03, Sumberrejo Krajan, Segaran, 65178</a>
                             <p class="wlink"> <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" class="wimg"> Setiap hari, Jum'at libur (07.30 - 16.00)</p>
@@ -21,8 +21,8 @@
             <div class="carousel-item"class="warousel">
                 <div class="row warousel-row m-auto" class="warousel">
                     <div class="col d-flex flex-column justify-content-center align-items-center" class="wtext" style="width: 75%; ">
-                        <p class="fs-2 fw-semibold text-primary">Gunung Wali Kukun</p>
-                        <p class="fs-5">Pada Desa Segaran, di bagian Dusun Krajen, terdapat satu gunung bernama Wali Kukuh yang cukup indah karena di sepanjang jalan nampak banyak bunga-bunga dan tanaman yang bervariasi. Pada gambar tersebut, terdapat satu tempat yang beberapa warga sekitar anggap suci karena terdapat suatu makam keramat yang hanya orang-orang tertentu saja yang dapat mengakses dan masuk ke dalam pemakaman tersebut.</p>
+                        <p class="fs-3 fw-semibold text-primary">Gunung Wali Kukun</p>
+                        <p class="fs-6">Pada Desa Segaran, di bagian Dusun Krajen, terdapat satu gunung bernama Wali Kukuh yang cukup indah karena di sepanjang jalan nampak banyak bunga-bunga dan tanaman yang bervariasi. Pada gambar tersebut, terdapat satu tempat yang beberapa warga sekitar anggap suci karena terdapat suatu makam keramat yang hanya orang-orang tertentu saja yang dapat mengakses dan masuk ke dalam pemakaman tersebut.</p>
                         <div class="wkontak">
                             <a href="https://goo.gl/maps/DcCBwCDZd3R8Kx1B7" class="wlink"><img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" alt="" class="wimg">Sumberbanteng Wetan, Segaran, Gedangan</a>
                             <p class="wlink"> <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" class="wimg"> Setiap hari</p>
@@ -39,8 +39,8 @@
     
                 <div class="row warousel-row m-auto" class="warousel">
                     <div class="col d-flex flex-column justify-content-center align-items-center" class="wtext">
-                        <p class="fs-2 fw-semibold text-primary">Gunung Kapur</p>
-                        <p class="fs-5">Tempat yang cukup digemari oleh baik warga lokal maupun luar Segaran yaitu Gunung Kapur yang letaknya di Dusun Sumberbanteng Wetan. Tempatnya sangat indah dengan pemandangan tanah kapur yang seperti bukit.
+                        <p class="fs-3 fw-semibold text-primary">Gunung Kapur</p>
+                        <p class="fs-6">Tempat yang cukup digemari oleh baik warga lokal maupun luar Segaran yaitu Gunung Kapur yang letaknya di Dusun Sumberbanteng Wetan. Tempatnya sangat indah dengan pemandangan tanah kapur yang seperti bukit.
                             <br>
                             Namun, tempat ini sudah ditutup sejak pandemi Covclass-19 muncul.
                         </p>

@@ -29,7 +29,7 @@
    
     <img class="gimg" id="tpq" src="{{ asset('assets/profil-desa/img/galeri/TPQ.png') }}" alt="tpq" onclick="openModal();currentSlide(11)" />
 
-    <img class="gimg" id="suro" src="{{ asset('assets/profil-desa/img/galeri/suro.JPG') }}" alt="suro" onclick="openModal();currentSlide(15)" />
+    <img class="gimg" id="suro" src="{{ asset('assets/profil-desa/img/galeri/suro.png') }}" alt="suro" onclick="openModal();currentSlide(15)" />
 
 
     
@@ -39,11 +39,11 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">1 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/futsal.png') }}" alt="" style="width: 60%"/>
+                    <img src="{{ asset('assets/profil-desa/img/galeri/futsal.png') }}" alt="" id="gmodal1"/>
                     <br />
                     <p>Quote pertemanan</p>
                     <br />
-                    <p style="margin: 0 10% 0 10%">“Apa yang kita alami demi teman terkadang melelahkan dan menjengkelkan, namun itulah yang membuat persahabatan memiliki nilai keindahan.”</p>
+                    <p id="gtx" style="margin: 0 10% 0 10%">“Apa yang kita alami demi teman terkadang melelahkan dan menjengkelkan, namun itulah yang membuat persahabatan memiliki nilai keindahan.”</p>
                 </div>
                 <div class="col">
                     <h3>Kegiatan Futsal Sore Anak-Anak di Lapangan</h3>
@@ -61,28 +61,28 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">2 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/KKB.png') }}" alt="" style="width: 50%; height: 70%; font-size: 10px" />
+                    <img src="{{ asset('assets/profil-desa/img/galeri/KKB.png') }}" alt=""   id="gmodal2"/>
                 </div>
                 <div class="col">
                     <h3>Sosialisasi Kampung KB</h3>
-                    <p id="gtx" style="font-size: 14px">
+                    <p id="gtx" >
                         Dalam rangka menerapkan prinsip Desa Cinta Statistik, Perangkat Desa Segaran melaksanakan program sosialisasi Kampung KB yang fokus pembahasannya ialah bagaimana agar data kependudukan warga selalu up-to-date dengan
                         cepat agar tidak menghambat proses administrasi kependudukan. Data yang dimaksud dapat berupa pembaruan data KTP, alamat rumah, bahkan data kelahiran dan mortalitas.
                     </p>
-                    <p id="gtx" style="font-size: 14px">
+                    <p id="gtx" >
                         Pada foto tersebut, tampak perwakilan setiap dusun menghadiri acara sosialisasi Kampung KB yang diadakan pada hari Senin, 25 Juli 2022. Kegiatan ini diharapkan dapat meningkatkan keluarga di Desa Segaran yang
                         berkualitas.
                     </p>
                     <hr style="width: 90%; margin-left: 0px" />
 
-                    <p id="gtx" style="font-size: 0.7em">Fakta Desa Segaran</p>
-                    <p id="gtx" style="font-size: 0.7em">Desa Segaran sedang melangsungkan kegiatan-kegiatan untuk mendukung prinsip Desa Cantik (Cinta Statistik).</p>
+                    <p id="gtx" >Fakta Desa Segaran</p>
+                    <p id="gtx">Desa Segaran sedang melangsungkan kegiatan-kegiatan untuk mendukung prinsip Desa Cantik (Cinta Statistik).</p>
                 </div>
             </div>
             <div class="mySlides">
                 {{-- <div class="numbertext">3 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/lahan.png') }}" alt="" style="width: 50%; height: 70%" />
+                    <img src="{{ asset('assets/profil-desa/img/galeri/lahan.png') }}" alt="" style=""  id="gmodal3"/>
                 </div>
                 <div class="col">
                     <h3>Aktivitas Perawatan Lahan Pertanian</h3>
@@ -100,7 +100,7 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">4 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/mpls.png') }}" alt="" style="width: 50%; height: 80%" />
+                    <img src="{{ asset('assets/profil-desa/img/galeri/mpls.png') }}" alt="" style=""  id="gmodal4"/>
                 </div>
                 <div class="col">
                     <h3>MPLS SMK 3 di Kolam Renang Sumber Loo</h3>
@@ -120,7 +120,7 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">5 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/poskamling.png') }}" alt="" style="height: 80%" />
+                    <img src="{{ asset('assets/profil-desa/img/galeri/poskamling.png') }}" alt="" style=""  id="gmodal5"/>
                 </div>
                 <div class="col">
                     <h3>Kegiatan Poskamling Dusun Krajen</h3>
@@ -138,7 +138,7 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">6 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/ramah.png') }}" alt="" style="height: 80%" />
+                    <img src="{{ asset('assets/profil-desa/img/galeri/ramah.png') }}" alt="" style=""  id="gmodal6"/>
                 </div>
                 <div class="col">
                     <h3>Sikap Ramah Tamah Warga Segaran</h3>
@@ -161,7 +161,7 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">7 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/salat.png') }}" alt="" />
+                    <img src="{{ asset('assets/profil-desa/img/galeri/salat.png') }}" alt=""  id="gmodal7"/>
                 </div>
                 <div class="col">
                     <h3>Salat Jum’at Dusun Krajen</h3>
@@ -179,7 +179,7 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">8 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/senam.png') }}" alt="" />
+                    <img src="{{ asset('assets/profil-desa/img/galeri/senam.png') }}" alt=""  id="gmodal8"/>
                 </div>
                 <div class="col">
                     <h3>Senam Lansia (Lanjut Usia)</h3>
@@ -203,7 +203,7 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">9 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/Terapi.png') }}" alt=""  style="height: 50% ;"/>
+                    <img src="{{ asset('assets/profil-desa/img/galeri/Terapi.png') }}" alt=""  style="" id="gmodal9"/>
                     <p id="gtx" style="margin-left: 5%; margin-top:10%;">
                         <b>Fakta Ling Tien Kung</b>
                         <br>
@@ -223,7 +223,7 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">10 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/TKK.png') }}" alt="" style="height: 50%;"/>
+                    <img src="{{ asset('assets/profil-desa/img/galeri/TKK.png') }}" alt="" style="" id="gmodal10"/>
                     <p id="gtx"  style="margin: 10px 40px 10px 40px;">“Miskonsepsi yang sering kita lihat adalah bahwa pendidikan untuk anak usia dini ini terlihat hanya untuk membaca, menulis, berhitung, calistung. Padahal ini berbeda sebenarnya dengan ilmu pendidikan anak usia dini yang harus lebih menguatkan aspek yang lebih integratif dan yang lebih melakukan bermain.”
                         <br>
                         <b style="text-align:right;">-Irwan Syahril, Dirjen GTK Kemendikbudristek-</b>
@@ -242,7 +242,7 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">11 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/TPQ.png') }}" alt="" style="height: 50%;"/>
+                    <img src="{{ asset('assets/profil-desa/img/galeri/TPQ.png') }}" alt="" style="" id="gmodal11"/>
                     <p id="gtx"  style="padding: 10px 40px 10px 40px;">
                         “Rasulullah shallallahu ‘alaihi wasallam bersabda: <b> “Siapa yang membaca satu huruf dari Al Quran maka baginya satu kebaikan dengan bacaan tersebut, satu kebaikan dilipatkan menjadi 10 kebaikan.”</b>
                     </p>
@@ -261,7 +261,7 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">12 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/vaksinasi.png') }}" style="height: 80%;" alt="" />
+                    <img src="{{ asset('assets/profil-desa/img/galeri/vaksinasi.png') }}" style="" alt=""  id="gmodal12"/>
                 </div>
                 <div class="col">
                     <h3>Vaksinasi Covid-19 Desa Segaran</h3>
@@ -276,7 +276,7 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">13 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/posyandus.png') }}" alt="" style="height: 100% ;"/>
+                    <img src="{{ asset('assets/profil-desa/img/galeri/posyandus.png') }}" alt="" style="" id="gmodal13"/>
                 </div>
                 <div class="col">
                     <h3>Kegiatan Perkumpulan PKK</h3>
@@ -290,7 +290,7 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">14 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/Posyandu.JPG') }}" alt="" style="height: 30em ;"/>
+                    <img src="{{ asset('assets/profil-desa/img/galeri/imunisasi.JPG') }}" alt="" style="" id="gmodal14"/>
                 </div>
                 <div class="col">
                     <h3>Kegiatan BIAN</h3>
@@ -304,7 +304,7 @@
             <div class="mySlides">
                 {{-- <div class="numbertext">15 / 15</div> --}}
                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <img src="{{ asset('assets/profil-desa/img/galeri/suro.JPG') }}" alt="" style="height:30em"/>
+                    <img src="{{ asset('assets/profil-desa/img/galeri/suro.png') }}" alt="" style=""  id="gmodal15"/>
                 </div>
                 <div class="col">
                     <h3>Kegiatan Suroan</h3>

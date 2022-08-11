@@ -53,14 +53,12 @@
                                     @endif
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="no_kk">VALIDASI</label>
                                     <input type="text" class="form-control" value="{{ $penduduk->validasi }}" placeholder="Validasi" id="validasi" name="validasi">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
 
                         <div class="row">
@@ -70,16 +68,13 @@
                                     <input type="text" class="form-control" value="{{ $penduduk->nik }}" placeholder="NIK" id="nik" name="nik">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nama">NAMA</label>
                                     <input type="text" class="form-control" value="{{ $penduduk->nama }}" id="nama" placeholder="Nama" name="nama">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
-                        <!--  row   -->
 
                         <div class="row">
                             <div class="col-md-6">
@@ -101,7 +96,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="status_kawin">STATUS PERKAWINAN</label>
@@ -112,9 +106,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
-                        <!--  row   -->
 
                         <div class="row">
                             <div class="col-md-6">
@@ -127,7 +119,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="agama">AGAMA</label>
@@ -142,9 +133,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
-                        <!--  row   -->
 
                         <div class="row">
                             <div class="col-md-4">
@@ -179,7 +168,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="rw">RW</label>
@@ -191,7 +179,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="dusun">DUSUN</label>
@@ -206,26 +193,40 @@
                                     </select>
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
-                        <!--  row   -->
 
                         <hr/>
 
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
+                                    @php
+                                        $arrStatusPendidikan = [
+                                            'BELUM TAMAT', 'TAMAT', 'BELUM SEKOLAH',
+                                        ];
+                                    @endphp
                                     <label for="status_pendidikan">STATUS PENDIDIKAN</label>
                                     <select class="selectpicker form-control" id="status_pendidikan" name="status_pendidikan">
                                         <option selected value="">-- STATUS PENDIDIKAN --</option>
                                         <option {{$penduduk->status_pendidikan == 'BELUM TAMAT' ? 'selected': ''}} value="BELUM TAMAT">BELUM TAMAT</option>
                                         <option {{$penduduk->status_pendidikan == 'TAMAT' ? 'selected': ''}} value="TAMAT">TAMAT</option>
                                         <option {{$penduduk->status_pendidikan == 'BELUM SEKOLAH' ? 'selected': ''}} value="BELUM SEKOLAH">BELUM SEKOLAH</option>
+                                        @if(in_array($penduduk->status_pendidikan, $arrStatusPendidikan) == false)
+                                            <option selected value="{{ $penduduk->status_pendidikan }}">{{ $penduduk->status_pendidikan }}</option>
+                                        @endif
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
+                                    @php
+                                        $arrPendidikan = [
+                                            'TIDAK/BELUM SEKOLAH', 'BELUM TAMAT SD/Sederajat', 'TAMAT SD/Sederajat',
+                                            'SLTP/Sederajat', 'SLTA/Sederajat', 'D1',
+                                            'D2', 'D3', 'D4',
+                                            'S1', 'S2', 'S3',
+                                        ];
+                                    @endphp
                                     <label for="pendidikan">PENDIDIKAN</label>
                                     <select class="selectpicker form-control" id="pendidikan" name="pendidikan">
                                         <option selected value="">-- PENDIDIKAN --</option>
@@ -241,10 +242,26 @@
                                         <option {{$penduduk->pendidikan == 'S1' ? 'selected': ''}} value="S1">S1</option>
                                         <option {{$penduduk->pendidikan == 'S2' ? 'selected': ''}} value="S2">S2</option>
                                         <option {{$penduduk->pendidikan == 'S3' ? 'selected': ''}} value="S3">S3</option>
+                                        @if(in_array($penduduk->pendidikan, $arrPendidikan) == false)
+                                            <option selected value="{{ $penduduk->pendidikan }}">{{ $penduduk->pendidikan }}</option>
+                                        @endif
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        @php
+                                            $arrPekerjaan = [
+                                                'PEDAGANG', 'WIRASWASTA', 'PERANGKAT DESA',
+                                                'PELAJAR/MAHASISWA', 'BURUH TANI/PERKEBUNAN', 'PETANI/PEKEBUN',
+                                                'KARYAWAN SWASTA', 'KARYAWAN BUMN', 'KARYAWAN HONORER',
+                                                'TENTARA NASIONAL INDONESIA', 'BURUH HARIAN LEPAS', 'KONSTRUKSI',
+                                                'PETERNAK', 'PERAWAT', 'TUKANG JAHIT',
+                                                'TUKANG KAYU', 'PEGAWAI NEGERI SIPIL', 'SOPIR',
+                                                'DOKTER', 'INDUSTRI', 'TRANSPORTASI',
+                                                'PENSIUNAN', 'GURU', 'MENGURUS RUMAH TANGGA',
+                                                'BELUM/TIDAK BEKERJA', 'LAINNYA',
+                                            ];
+                                        @endphp
                                         <label for="pekerjaan">PEKERJAAN</label>
                                         <select class="selectpicker form-control" id="pekerjaan" name="pekerjaan">
                                             <option selected value="">-- PEKERJAAN --</option>
@@ -274,13 +291,14 @@
                                             <option {{$penduduk->pekerjaan == 'MENGURUS RUMAH TANGGA' ? 'selected': ''}} value="MENGURUS RUMAH TANGGA">MENGURUS RUMAH TANGGA</option>
                                             <option {{$penduduk->pekerjaan == 'BELUM/TIDAK BEKERJA' ? 'selected': ''}} value="BELUM/TIDAK BEKERJA">BELUM/TIDAK BEKERJA</option>
                                             <option {{$penduduk->pekerjaan == 'LAINNYA' ? 'selected': ''}} value="LAINNYA">LAINNYA</option>
+                                            @if(in_array($penduduk->pekerjaan, $arrPekerjaan) == false)
+                                                <option selected value="{{ $penduduk->pekerjaan }}">{{ $penduduk->pekerjaan }}</option>
+                                            @endif
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
-                        <!--  row   -->
 
                         <div class="row">
                             <div class="col-md-6">
@@ -289,16 +307,13 @@
                                     <input type="text" class="form-control" value="{{ $penduduk->nama_ayah }}" placeholder="Nama Ayah" id="nama_ayah" name="nama_ayah">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nama_ibu">NAMA IBU</label>
                                     <input type="text" class="form-control" value="{{ $penduduk->nama_ibu }}" placeholder="Nama Ibu" id="nama_ibu" name="nama_ibu">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
-                        <!--  row   -->
 
 
                         <div class="row">
@@ -308,16 +323,13 @@
                                     <input type="text" class="form-control" value="{{ $penduduk->nik_ayah }}" placeholder="NIK Ayah" id="nik_ayah" name="nik_ayah">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nik_ibu">NIK IBU</label>
                                     <input type="text" class="form-control" value="{{ $penduduk->nik_ibu }}" placeholder="NIK Ibu" id="nik_ibu" name="nik_ibu">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
-                        <!--  row   -->
 
                         <hr/>
                         <div class="row">
@@ -327,23 +339,19 @@
                                     <input type="date" class="form-control" value="{{ $penduduk->tgl_nikah }}" id="tgl_nikah" name="tgl_nikah">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="no_buku_nikah">NOMOR BUKU NIKAH</label>
                                     <input type="text" class="form-control" value="{{ $penduduk->no_buku_nikah }}" placeholder="Nomor Buku Nikah" id="no_buku_nikah" name="no_buku_nikah">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="kua">KUA</label>
                                     <input type="text" class="form-control" value="{{ $penduduk->kua }}" placeholder="KUA" id="kua" name="kua">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
-                        <!--  row   -->
 
                         <div class="row">
                             <div class="col-md-4">
@@ -352,23 +360,19 @@
                                     <input type="text" class="form-control" value="{{ $penduduk->akte_lahir }}" placeholder="Akte Kelahiran / Surat Kenal Lahir" id="akte_lahir" name="akte_lahir">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="no_bpjs">NOMOR PBI JK / BPJS</label>
                                     <input type="text" class="form-control" value="{{ $penduduk->no_bpjs }}" placeholder="Nomor PBI JK / BPJS" id="no_bpjs" name="no_bpjs">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="telepon">TELEPON</label>
                                     <input type="tel" class="form-control" value="{{ $penduduk->telepon }}" placeholder="Telepon" id="telepon" name="telepon">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
-                        <!--  row   -->
 
                         <div class="row">
                             <div class="col-md-4">
@@ -377,23 +381,19 @@
                                     <input type="date" class="form-control" value="{{ $penduduk->tgl_kematian }}" id="tgl_kematian" name="tgl_kematian">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="pukul_kematian">PUKUL KEMATIAN</label>
                                     <input type="time" class="form-control" value="{{ $penduduk->pukul_kematian }}" id="pukul_kematian" name="pukul_kematian">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="ket_kematian">KETERANGAN KEMATIAN</label>
                                     <input type="text" class="form-control" value="{{ $penduduk->ket_kematian }}" placeholder="Keterangan Kematian" id="ket_kematian" name="ket_kematian">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
-                        <!--  row   -->
 
                         <div class="row">
                             <div class="col-md-6">
@@ -402,16 +402,13 @@
                                     <input type="text" class="form-control" value="{{ $penduduk->jabatan }}" placeholder="Jabatan" id="jabatan" name="jabatan">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="no_ijazah">NOMOR IJAZAH / STB</label>
                                     <input type="text" class="form-control" value="{{ $penduduk->no_ijazah }}" placeholder="Nomor Ijazah / STB" id="no_ijazah" name="no_ijazah">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
-                        <!--  row   -->
 
                         <div class="row">
                             <div class="col-md-6">
@@ -420,20 +417,25 @@
                                     <input type="date" class="form-control" value="{{ $penduduk->tgl_cerai }}" id="tgl_cerai" name="tgl_cerai">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="no_akta_cerai">NOMOR AKTA CERAI</label>
                                     <input type="text" class="form-control" value="{{ $penduduk->no_akta_cerai }}" placeholder="Nomor Akta Cerai" id="no_akta_cerai" name="no_akta_cerai">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
-                        <!--  row   -->
 
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    @php
+                                        $arrGolDarah = [
+                                            'A+', 'A', 'A-',
+                                            'B+', 'B', 'B-',
+                                            'AB+', 'AB', 'AB-',
+                                            'O+', 'O', 'O-',
+                                        ];
+                                    @endphp
                                     <label for="gol_darah">GOLONGAN DARAH</label>
                                     <select class="selectpicker form-control" id="gol_darah" name="gol_darah">
                                         <option selected value="">-- GOLONGAN DARAH --</option>
@@ -449,12 +451,20 @@
                                         <option {{$penduduk->gol_darah == 'O+' ? 'selected': ''}} value="O+">O+</option>
                                         <option {{$penduduk->gol_darah == 'O' ? 'selected': ''}} value="O">O</option>
                                         <option {{$penduduk->gol_darah == 'O-' ? 'selected': ''}} value="O-">O-</option>
+                                        @if(in_array($penduduk->gol_darah, $arrGolDarah) == false)
+                                            <option selected value="{{ $penduduk->gol_darah }}">{{ $penduduk->gol_darah }}</option>
+                                        @endif
                                     </select>
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    @php
+                                        $arrPenyandangCacat = [
+                                            'CACAT FISIK', 'CACAT NETRA/BUTA', 'CACAT RUNGU/WICARA',
+                                            'CACAT MENTAL/JIWA', 'CACAT FISIK DAN MENTAL', 'CACAT LAINNYA',
+                                        ];
+                                    @endphp
                                     <label for="penyandang_cacat">PENYANDANG CACAT</label>
                                     <select class="selectpicker form-control" id="penyandang_cacat" name="penyandang_cacat">
                                         <option selected value="">-- PENYANDANG CACAT --</option>
@@ -464,19 +474,19 @@
                                         <option {{$penduduk->penyandang_cacat == 'CACAT MENTAL/JIWA' ? 'selected': ''}} value="CACAT MENTAL/JIWA">CACAT MENTAL/JIWA</option>
                                         <option {{$penduduk->penyandang_cacat == 'CACAT FISIK DAN MENTAL' ? 'selected': ''}} value="CACAT FISIK DAN MENTAL">CACAT FISIK DAN MENTAL</option>
                                         <option {{$penduduk->penyandang_cacat == 'CACAT LAINNYA' ? 'selected': ''}} value="CACAT LAINNYA">CACAT LAINNYA</option>
+                                        @if(in_array($penduduk->penyandang_cacat, $arrPenyandangCacat) == false)
+                                            <option selected value="{{ $penduduk->penyandang_cacat }}">{{ $penduduk->penyandang_cacat }}</option>
+                                        @endif
                                     </select>
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                         </div>
-                        <!--  row   -->
 
                         <div class="row mt-3">
                             <div class="col-md-4">
                                 <div class="form-group">
                                 </div>
                             </div>
-                            <!--  col-md-6   -->
                             <div class="col-md-4">
                                 <div class="form-group">
                                 </div>

@@ -263,6 +263,11 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
+                                @php
+                                    $arrStatusPendidikan = [
+                                        'BELUM TAMAT', 'TAMAT', 'BELUM SEKOLAH',
+                                    ];
+                                @endphp
                                 <label for="status_pendidikan">STATUS PENDIDIKAN</label>
                                 <select class="selectpicker form-control" disabled id="status_pendidikan"
                                         name="status_pendidikan" style="cursor: not-allowed;">
@@ -276,12 +281,23 @@
                                     <option {{$penduduk->status_pendidikan == 'BELUM SEKOLAH' ? 'selected': ''}} value="BELUM SEKOLAH">
                                         BELUM SEKOLAH
                                     </option>
+                                    @if(in_array($penduduk->status_pendidikan, $arrStatusPendidikan) == false)
+                                        <option selected value="{{ $penduduk->status_pendidikan }}">{{ $penduduk->status_pendidikan }}</option>
+                                    @endif
                                 </select>
                             </div>
                         </div>
                         <!--  col-md-6   -->
                         <div class="col-md-4">
                             <div class="form-group">
+                                @php
+                                    $arrPendidikan = [
+                                        'TIDAK/BELUM SEKOLAH', 'BELUM TAMAT SD/Sederajat', 'TAMAT SD/Sederajat',
+                                        'SLTP/Sederajat', 'SLTA/Sederajat', 'D1',
+                                        'D2', 'D3', 'D4',
+                                        'S1', 'S2', 'S3',
+                                    ];
+                                @endphp
                                 <label for="pendidikan">PENDIDIKAN</label>
                                 <select class="selectpicker form-control" disabled id="pendidikan" name="pendidikan"
                                         style="cursor: not-allowed;">
@@ -308,11 +324,27 @@
                                     <option {{$penduduk->pendidikan == 'S1' ? 'selected': ''}} value="S1">S1</option>
                                     <option {{$penduduk->pendidikan == 'S2' ? 'selected': ''}} value="S2">S2</option>
                                     <option {{$penduduk->pendidikan == 'S3' ? 'selected': ''}} value="S3">S3</option>
+                                    @if(in_array($penduduk->pendidikan, $arrPendidikan) == false)
+                                        <option selected value="{{ $penduduk->pendidikan }}">{{ $penduduk->pendidikan }}</option>
+                                    @endif
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
+                                @php
+                                    $arrPekerjaan = [
+                                        'PEDAGANG', 'WIRASWASTA', 'PERANGKAT DESA',
+                                        'PELAJAR/MAHASISWA', 'BURUH TANI/PERKEBUNAN', 'PETANI/PEKEBUN',
+                                        'KARYAWAN SWASTA', 'KARYAWAN BUMN', 'KARYAWAN HONORER',
+                                        'TENTARA NASIONAL INDONESIA', 'BURUH HARIAN LEPAS', 'KONSTRUKSI',
+                                        'PETERNAK', 'PERAWAT', 'TUKANG JAHIT',
+                                        'TUKANG KAYU', 'PEGAWAI NEGERI SIPIL', 'SOPIR',
+                                        'DOKTER', 'INDUSTRI', 'TRANSPORTASI',
+                                        'PENSIUNAN', 'GURU', 'MENGURUS RUMAH TANGGA',
+                                        'BELUM/TIDAK BEKERJA', 'LAINNYA',
+                                    ];
+                                @endphp
                                 <label for="pekerjaan">PEKERJAAN</label>
                                 <select class="selectpicker form-control" id="pekerjaan" disabled name="pekerjaan">
                                     <option selected value="">-- PEKERJAAN --</option>
@@ -392,6 +424,9 @@
                                     <option {{$penduduk->pekerjaan == 'LAINNYA' ? 'selected': ''}} value="LAINNYA">
                                         LAINNYA
                                     </option>
+                                    @if(in_array($penduduk->pekerjaan, $arrPekerjaan) == false)
+                                        <option selected value="{{ $penduduk->pekerjaan }}">{{ $penduduk->pekerjaan }}</option>
+                                    @endif
                                 </select>
                             </div>
                         </div>
@@ -568,6 +603,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
+                                @php
+                                    $arrGolDarah = [
+                                        'A+', 'A', 'A-',
+                                        'B+', 'B', 'B-',
+                                        'AB+', 'AB', 'AB-',
+                                        'O+', 'O', 'O-',
+                                    ];
+                                @endphp
                                 <label for="gol_darah">GOLONGAN DARAH</label>
                                 <select class="selectpicker form-control" disabled id="gol_darah" name="gol_darah"
                                         style="cursor: not-allowed;">
@@ -584,12 +627,21 @@
                                     <option {{$penduduk->gol_darah == 'O+' ? 'selected': ''}} value="O+">O+</option>
                                     <option {{$penduduk->gol_darah == 'O' ? 'selected': ''}} value="O">O</option>
                                     <option {{$penduduk->gol_darah == 'O-' ? 'selected': ''}} value="O-">O-</option>
+                                    @if(in_array($penduduk->gol_darah, $arrGolDarah) == false)
+                                        <option selected value="{{ $penduduk->gol_darah }}">{{ $penduduk->gol_darah }}</option>
+                                    @endif
                                 </select>
                             </div>
                         </div>
                         <!--  col-md-6   -->
                         <div class="col-md-6">
                             <div class="form-group">
+                                @php
+                                    $arrPenyandangCacat = [
+                                        'CACAT FISIK', 'CACAT NETRA/BUTA', 'CACAT RUNGU/WICARA',
+                                        'CACAT MENTAL/JIWA', 'CACAT FISIK DAN MENTAL', 'CACAT LAINNYA',
+                                    ];
+                                @endphp
                                 <label for="penyandang_cacat">PENYANDANG CACAT</label>
                                 <select class="selectpicker form-control" disabled id="penyandang_cacat"
                                         name="penyandang_cacat" style="cursor: not-allowed;">
@@ -612,6 +664,9 @@
                                     <option {{$penduduk->penyandang_cacat == 'CACAT LAINNYA' ? 'selected': ''}} value="CACAT LAINNYA">
                                         CACAT LAINNYA
                                     </option>
+                                    @if(in_array($penduduk->penyandang_cacat, $arrPenyandangCacat) == false)
+                                        <option selected value="{{ $penduduk->penyandang_cacat }}">{{ $penduduk->penyandang_cacat }}</option>
+                                    @endif
                                 </select>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 <div class="card m-5 p-5">
     <h1 class="text-center"><b>Pekerjaan</b></h1>
-    <canvas id="pekerjaanChart" class="m-5 p-4 border rounded" width=400 height=200></canvas>
+    <canvas id="pekerjaanChart" class="m-5 p-4 border rounded" width=400 height=500></canvas>
 </div>
 <script>
     console.log('test');
@@ -13,7 +13,7 @@
         data: {
             labels: labelPekerjaan,
             datasets: [{
-                label: labelPekerjaan,
+                label: 'Penduduk',
                 data: countPekerja,
                 backgroundColor: [
                     'rgb(105, 180, 102)',
@@ -42,8 +42,10 @@
                     labels: {
                         // This more specific font property overrides the global property
                         font: {
+                            size: 16
                         }
-                    }
+                    },
+
                 }
             }
         }

@@ -3,7 +3,7 @@
     <canvas id="umurChart" class="m-5 p-4 border rounded" width=400 height=400></canvas>
 </div>
 <script>
-    const umur = document.getElementById('umurChart').getContext('2d');
+    const umur = document.getElementById('umurChart').getContext('2d');Chart.defaults.font.size = 22;
     const umurChart = new Chart(umur, {
         type: 'pie',
         data: {
@@ -37,6 +37,15 @@
                 datalabels: {
                     formatter: function(value, context) {
                         return context.chart.data.labels[context.dataIndex];
+                    }
+                },
+
+                legend: {
+                    labels: {
+                        // This more specific font property overrides the global property
+                        font: {
+                            size: 20
+                        }
                     }
                 }
             },

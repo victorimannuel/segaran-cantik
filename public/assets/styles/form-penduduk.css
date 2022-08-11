@@ -43,9 +43,9 @@
     opacity: 0.8;
 }
 
-/* .form-penduduk-readonly input, .form-penduduk-readonly select, .form-penduduk-readonly .form-control{
+.form-penduduk-readonly input, .form-penduduk-readonly select, .form-penduduk-readonly .form-control{
     border: 0px;
-} */
+}
 
 .form-penduduk #deskripsi{
     height: 5em;

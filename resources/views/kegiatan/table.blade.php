@@ -8,7 +8,7 @@
 
         <div class="col-md-8 w-auto m-auto">
             <h1 class="text-center">
-                <b>Kegiatan Desa Segaran</b>
+                <b>Kegiatan Tahunan Desa Segaran</b>
             </h1>
         </div>
         <div class="col-md-4 d-flex flex-row-reverse">

@@ -116,7 +116,7 @@ a:hover {
 .wisata-img{
     object-fit: cover;
     height: 30rem;
-    width: 20rem;
+    width: 30rem;
 }
 
 .carousel-item{
@@ -164,7 +164,13 @@ a:hover {
     margin-left: -10%;
 }
 
-#lpdcontact a {
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover
+{
+    border: 1px solid black !important;
+}
+
+a {
     text-decoration: none;
     color: black;
 }

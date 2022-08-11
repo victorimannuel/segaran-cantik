@@ -1,14 +1,14 @@
-<div class="desktop">
+<div class="desktop" id="warousel">
 
     <div id="urousel" class="desktop carousel slide carousel-dark slide d-flex justify-content-center align-items-center" data-bs-ride="carousel">
-        <div class="carousel-inner" id="">
+        <div class="carousel-inner" id="warousel">
             @foreach ($usahas as $usaha)
             @if($loop->first)
             <div class="carousel-item active" id="warousel">
             @else
             <div class="carousel-item" id="warousel">
             @endif
-                <div class="row warousel-row m-auto">
+                <div class="row warousel-row m-auto"  id="warousel" style="width:80%;">
                     <div class="col d-flex flex-column justify-content-center align-items-center" class="wtext">
                         <p class="fs-2 fw-semibold text-primary">
                             {{ $usaha->nama_usaha }}

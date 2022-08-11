@@ -27,6 +27,10 @@ Route::middleware(['auth'])->group(function () {
         return view('main.dashboard', [ 'page' => 'Dashboard']);
     })->name('main.dashboard');
 
+    Route::get('/administrasi', function () {
+        return view('main.dashboard', [ 'page' => 'Dashboard']);
+    })->name('main.dashboard');
+
     Route::get('/log', [PendudukController::class, 'logView']);
 
     Route::get('/statistik', function () {

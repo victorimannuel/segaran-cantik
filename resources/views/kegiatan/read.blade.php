@@ -69,7 +69,7 @@
                             <div class="form-group d-flex flex-column">
                                 <label for="file">Gambar</label>
                                 @if($kegiatan->file)
-                                    <img width="150px" src="{{ url('/data_file/kegiatan/'.$kegiatan->file) }}">
+                                    <img width=510 height=360 src="{{ url('/data_file/kegiatan/'.$kegiatan->file) }}">
                                 @else
                                     <span class="border-1">Belum ada foto</span>
 

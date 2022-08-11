@@ -17,15 +17,25 @@
                             {{ $usaha->deskripsi }}
                         </p>
                         <div class="wkontak">
-                            <a href="https://g.page/pemandian-sumber-loo?share" class="wlink">
-                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg">{{"Lokasi UMKM"}}
-                            </a>
-                            <p class="wlink"> 
+                            <div class="wlink">
+                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg"> RT {{ $usaha->rt }}
+                            </div>
+                            <div class="wlink">
+                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg"> RW {{ $usaha->rw }}
+                            </div>
+                            {{-- <div class="wlink">
+
+                                <a href="https://g.page/pemandian-sumber-loo?share" class="wlink">
+                                    <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg">{{"Lokasi UMKM"}}
+                                </a>
+                            </div> --}}
+                            <div class="wlink"> 
                                 <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" class="wimg">{{ $usaha->jam_buka }} - {{ $usaha->jam_tutup }}
-                            </p>
-                            <p class="wlink">
-                                <img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" id="wimg"><a href="https://wa.me/{{ $usaha->kontak }}">{{ $usaha->kontak }}</a>
-                            </p>
+                            </div>
+                            <div class="wlink">
+                                <a href="https://wa.me/{{ $usaha->kontak }}">
+                                <img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" id="wimg">{{ $usaha->kontak }}</a>
+                                </div>
                         </div>
                     </div>
                     <div class="col d-flex justify-content-center align-items-center">
@@ -69,10 +79,17 @@
                             {{ $usaha->deskripsi }}
                         </p>
                         <div id="wkontak">
-                            <a href="https://g.page/pemandian-sumber-loo?share" id="wlink">
-                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg">{{"Lokasi UMKM"}}
-                            </a>
-                            <p id="wlink"> 
+                            <div class="wlink">
+                                <a href="https://g.page/pemandian-sumber-loo?share" id="wlink">
+                                    <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg"> RT {{ $usaha->rt }}
+                                </a>
+                            </div>
+                            <div class="wlink">
+                                <a href="https://g.page/pemandian-sumber-loo?share" id="wlink">
+                                    <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg">RW {{ $usaha->rw }}
+                                </a>
+                            </div>
+                            <p class="wlink"> 
                                 <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" class="wimg">{{ $usaha->jam_buka }} - {{ $usaha->jam_tutup }}
                             </p>
                             <p class="wlink">

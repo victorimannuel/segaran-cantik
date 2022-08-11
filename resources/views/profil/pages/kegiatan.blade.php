@@ -1,4 +1,4 @@
-<div class="desktop my-5">
+<div class="desktop my-5" hidden>
     <div id="kerousel" class="desktop carousel slide carousel-dark slide d-flex justify-content-center align-items-center" data-bs-ride="carousel">
         <div class="carousel-inner" id="">
             @foreach ($kegiatans as $kegiatan)
@@ -46,7 +46,7 @@
     </div>
 </div>
 
-<div class="mobile-mode my-5">
+<div class="mobile-mode my-5" hidden>
     <div id="kerousel-mobile" class="carousel slide carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-inner" id>
                 @foreach ($kegiatans as $kegiatan)

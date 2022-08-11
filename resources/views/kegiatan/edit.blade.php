@@ -72,7 +72,7 @@
                                 <label for="file">Gambar</label>
                                 <input type="file" name="file"/>
                                 @if($kegiatan->file)
-                                    <img width="150px" src="{{ url('/data_file/kegiatan/'.$kegiatan->file) }}">
+                                    <img width="500" height=310 src="{{ url('/data_file/kegiatan/'.$kegiatan->file) }}">
                                 @else
                                     <span class="border-1">Belum ada foto</span>
                                     <img id="image" width=500 height=310 class="shadow rounded" style="" src="">

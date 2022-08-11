@@ -58,7 +58,8 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-//        Alert::success('Berhasil keluar');
+
         return redirect('/login');
+
     }
 }

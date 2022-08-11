@@ -27,10 +27,6 @@ Route::middleware(['auth'])->group(function () {
         return view('main.dashboard', [ 'page' => 'Dashboard']);
     })->name('main.dashboard');
 
-    Route::get('/administrasi', function () {
-        return view('main.dashboard', [ 'page' => 'Dashboard']);
-    })->name('main.dashboard');
-
     Route::get('/log', [PendudukController::class, 'logView']);
 
     Route::get('/statistik', function () {
@@ -39,7 +35,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::name('penduduk.')->group(function () {
         Route::any('/dashboard/search', function(){
-            return view('main/dashboard', [ 'page' => 'dashboard']);
+            return view('main/dashboard', [ 'page' => 'Dashboard']);
         })->name('search');
         Route::get('/dashboard/penduduk/tambah/', [PendudukController::class, 'viewCreate']);
         Route::post('/dashboard/penduduk/tambah/', [PendudukController::class, 'store']

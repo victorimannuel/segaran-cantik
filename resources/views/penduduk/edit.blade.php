@@ -483,10 +483,9 @@
                             </div>
                             <div class="col-md-4 d-flex justify-content-end">
                                 {{-- <input id="delete" type="button" onclick="window.location='{{ route('penduduk.delete', ['id_penduduk' => $penduduk->id])}}'" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post">--}}
-                                <input id="delete-confirm" type="button" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5 delete-confirm" style="color: white;" formmethod="post"
+                                <input id="hapus" type="button" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5 delete-confirm" style="color: white;" formmethod="post"
                                        onclick="
-                                           var form = $(this).closest('form');
-                                           event.preventDefault();
+                                            event.preventDefault();
                                             swal({
                                                 title: 'Apakah anda yakin untuk menghapus data {{$penduduk->nama}}?',
                                                 text: 'Data tidak dapat dikembalikan apabila sudah terhapus.',
@@ -519,8 +518,9 @@
 
 <script>
     document.addEventListener('click', function(e) {
-        if (e.target.id != "simpan") {
-            console.log('if');
+        if (e.target.id == "simpan" || e.target.id == "hapus") {
+            window.onbeforeunload = null;
+        } else {
             window.onbeforeunload = function() {
                 event.preventDefault();
                 event.returnValue = '';     // Chrome requires returnValue to be set
@@ -538,9 +538,6 @@
                 {{--});--}}
                 // return "Leaving this page will reset the wizard";
             };
-        } else {
-            window.onbeforeunload = null;
         }
     }, false);
-
 </script>

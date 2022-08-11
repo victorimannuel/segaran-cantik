@@ -150,8 +150,13 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
+                                    @php
+                                        $today = date('Y-m-d');
+                                        $tgl_lahir = $penduduk->tgl_lahir;
+                                        $umurCalculated = date_diff(date_create($tgl_lahir), date_create($today))->format('%y');
+                                    @endphp
                                     <label for="umur">UMUR</label>
-                                    <input type="number" class="form-control" value="{{ $penduduk->umur }}" id="umur" name="umur">
+                                    <input type="number" class="form-control" value="{{ $umurCalculated }}" id="umur" name="umur">
                                 </div>
                             </div>
                         </div>

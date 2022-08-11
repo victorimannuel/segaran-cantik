@@ -51,6 +51,7 @@ class UsahaController extends Controller
         }
         Usaha::create([
             'nama_usaha' => $request->nama_usaha,
+            'kontak' => $request->kontak,
             'deskripsi' => $request->deskripsi,
             'rt' => $request->rt,
             'rw' => $request->rw,

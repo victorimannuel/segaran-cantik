@@ -40,7 +40,7 @@
             <thead class="h4">
             <tr>
                 <th scope="col" class="text-center pe-3"><b>No</b></th>
-                <th scope="col">Nama Kegiatan</th>
+                <th scope="col">Nama UMKM</th>
                 <th scope="col">Kontak</th>
                 <th scope="col">RT</th>
                 <th scope="col">RW</th>

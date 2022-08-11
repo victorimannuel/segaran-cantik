@@ -484,6 +484,12 @@ footer{
         background-size: 100%;
     }
 
+    #kegiatan{
+        background-color: red;
+        width: 100%;
+        height: 100vw;
+    }
+
     #pu{
         width: 100%;
         height: 85vh;

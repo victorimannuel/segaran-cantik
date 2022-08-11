@@ -1,4 +1,4 @@
-<div class="desktop my-5" hidden>
+<div class="desktop my-5" style="height: 100%; width:100%">
     <div id="kerousel" class="desktop carousel slide carousel-dark slide d-flex justify-content-center align-items-center" data-bs-ride="carousel">
         <div class="carousel-inner" id="">
             @foreach ($kegiatans as $kegiatan)
@@ -7,7 +7,7 @@
             @else
             <div class="carousel-item" id="">
             @endif
-                <div class="row warousel-row m-auto">
+                <div class="row warousel-row m-auto ">
                     <div class="col d-flex flex-column justify-content-center align-items-center" class="wtext">
                         <p class="fs-2 fw-semibold text-primary">
                             {{ $kegiatan->nama_kegiatan }}

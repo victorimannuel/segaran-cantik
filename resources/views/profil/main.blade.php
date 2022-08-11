@@ -71,11 +71,11 @@
             @include('profil.pages.gallery')
         </div>
 
-        <div id="kegiatan" class="py-4">
+        <div id="kegiatan" class="py-4" style="height: 100%; width:100%">
             @include('profil.pages.kegiatan')
         </div>
 
-        <div id="quotes" class="py-4">
+        <div id="quotes" class="py-4" hidden>
             @include('profil.pages.quotes')
         </div>
         

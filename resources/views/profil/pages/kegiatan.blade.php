@@ -46,7 +46,7 @@
     </div>
 </div>
 
-<div class="mobile-mode my-5" hidden>
+<div class="mobile-mode my-5" >
     <div id="kerousel-mobile" class="carousel slide carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-inner" id>
                 @foreach ($kegiatans as $kegiatan)
@@ -74,7 +74,7 @@
                                 <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" class="wimg">{{ $kegiatan->jam_buka }} - {{ $kegiatan->jam_tutup }}
                             </p>
                             <p class="wlink">
-                                <img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" id="wimg"><a href="https://wa.me/{{ $kegiatan->kontak }}">{{ $kegiatan->kontak }}</a>
+                                <img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" class="wimg"><a href="https://wa.me/{{ $kegiatan->kontak }}">{{ $kegiatan->kontak }}</a>
                             </p>
                             </div>
                         </div>

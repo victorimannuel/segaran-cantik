@@ -10,7 +10,7 @@
 
             @include('main.components.header')
 
-            <section class="mx-5 align-self-center d-flex justify-content-center">
+            <section class="mx-5 align-self-center d-flex justify-content-center position-relative">
 
 
                 @include('main.components.table-penduduk')

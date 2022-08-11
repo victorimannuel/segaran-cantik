@@ -1,6 +1,6 @@
 <div id="container-penduduk" class="container mw-100 mx-0 my-5 card p-0">
     <div class="row justify-content-between p-5">
-        <div class="col-md-4">
+        <div class="col-md">
             <a href="../usaha/tambah">
                 <button class="btn btn-primary btn-lg button main-button">Tambah Data</button>
             </a>
@@ -11,7 +11,7 @@
                 <b>UMKM Desa Segaran</b>
             </h1>
         </div>
-        <div class="col-md-4 d-flex flex-row-reverse">
+        <div class="col-md d-flex flex-row-reverse">
             <select id="pagination" class="form-select fw-normal" name="pagination">
                 <option value="10" {{$items == 10 ? 'selected':''}}>10</option>
                 <option value="25" {{$items == 25 ? 'selected':''}}>25</option>

@@ -1,6 +1,6 @@
 <aside id="sidebar" class="d-flex flex-column position-fixed start-0 top-0">
     @csrf
-    <header class="d-flex position-relative justify-content-center my-5">
+    <header class="d-flex position-relative justify-content-center py-0 my-5">
         <div class="container-fluid d-flex flex-row">
             <img src={{ asset("assets/img/icons/segaran-icon.png")  }} alt="" width="50" height="50" class="hiddenWhenClosed">
             <span class="mx-3 hiddenWhenClosed">

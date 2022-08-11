@@ -41,6 +41,7 @@ for(let i=0; i<navItems.length; i++){
     console.log(navItems[i])
 }
 
+
 /* trying out media query */
 
 let mediaQuerySmall = window.matchMedia('(max-width: 1000px)')
@@ -58,8 +59,8 @@ function largeScreen(e) {
     }
 }
 
+
 mediaQuerySmall.addListener(smallScreen)
 mediaQueryLarge.addListener(largeScreen)
-handleTabletChange(mediaQuerySmall)
-handleTabletChange(mediaQueryLarge)
-
+smallScreen(mediaQuerySmall)
+largeScreen(mediaQueryLarge)

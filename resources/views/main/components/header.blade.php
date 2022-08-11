@@ -1,7 +1,7 @@
 <header class="d-flex justify-content-between align-items-center m-5">
 
     <span id="menu-toggle-mobile" class="d-flex flex-row align-items-center justify-content-center">
-        <img src={{ asset("assets/img/icons/menu-toggle-dark.png") }} alt=""  class="menu-toggle" width="40" height="40" role="button">
+        <img src={{ asset("assets/img/icons/menu-toggle-dark.png") }} alt=""  class="menu-toggle" id="menu-toggle-icon" width="40" height="40" role="button">
 
         <h1 id="currentPage" class="h1"><b role="button">{{ $page }}</b></h1>
     </span>

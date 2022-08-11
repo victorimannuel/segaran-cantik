@@ -165,8 +165,8 @@ main{
     opacity: 0.8;
 }
 
-#sidebarState[view="desktop"] #menu-toggle-mobile{
-    width: 0;
+#sidebarState[view="desktop"] #menu-toggle-icon{
+    display: none;
 }
 
 @media (max-width:1000px){

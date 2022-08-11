@@ -71,7 +71,8 @@
             @include('profil.pages.gallery')
         </div>
 
-        <div id="kegiatan" class="py-4" style="height: 100%; width:100%">
+        <div id="kegiatan-container" class="py-4">
+            {{-- <h3 style="text-align: center">Kegiatan Tambahan</h3> --}}
             @include('profil.pages.kegiatan')
         </div>
 

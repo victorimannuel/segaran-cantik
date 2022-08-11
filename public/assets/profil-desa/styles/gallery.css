@@ -8,7 +8,10 @@
     object-fit: contain;
 }
 
-
+#kegiatan-container{
+    height: 100%;
+    width: 100%;
+}
 
 #gallery-header{
     width: 100%;

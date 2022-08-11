@@ -11,15 +11,17 @@
             @include('main.components.header')
 
             <section class="mx-5 align-self-center d-flex justify-content-center card p-5">
+
                 <!-- Success message -->
                 @if(Session::has('success'))
                     <div class="alert alert-success">
                         {{Session::get('success')}}
                     </div>
                 @endif
+
                 @include('sweetalert::alert')
+
                 <form name="form-penduduk" id="form-penduduk" class="form-penduduk pb-5" method="post" action="{{ route('kegiatan.update', ['id_kegiatan' => $kegiatan->id]) }}" enctype="multipart/form-data">
-{{--                <form class="form-penduduk pb-5" method="post" action="{{ route('kegiatan.update', ['id_kegiatan' => $kegiatan->id]) }}">--}}
                     <!-- CROSS Site Request Forgery Protection -->
                     @csrf
                     <div class="form-group">
@@ -73,7 +75,6 @@
                                     <img width="150px" src="{{ url('/data_file/kegiatan/'.$kegiatan->file) }}">
                                 @else
                                     <span class="border-1">Belum ada foto</span>
-
                                     <img id="image" width=500 height=310 class="shadow rounded" style="" src="">
                                 @endif
                             </div>
@@ -92,24 +93,23 @@
                         </div>
                         <div class="col-md-4 d-flex justify-content-end">
 {{--                            <input type="button" onclick="window.location='{{ route('kegiatan.delete', ['id_kegiatan' => $kegiatan->id])}}'" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post">--}}
-                            <input type="button" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post"
+                            <input id="hapus" type="button" value="Hapus" class="btn btn-danger btn-lg fs-3 px-5 me-5" style="color: white;" formmethod="post"
                                    onclick="
-                                   var form = $(this).closest('form');
                                         event.preventDefault();
-                                            swal({
-                                                title: 'Apakah anda yakin untuk menghapus data {{$kegiatan->nama_kegiatan}}?',
-                                                text: 'Data tidak dapat dikembalikan apabila sudah terhapus.',
-                                                icon: 'warning',
-                                                buttons: true,
-                                                dangerMode: true,
-                                            }).then((willDelete) => {
-                                                if (willDelete) {
-                                                    window.location='{{ route('kegiatan.delete', ['id_kegiatan' => $kegiatan->id])}}'
-                                                }
-                                            });
+                                        swal({
+                                            title: 'Apakah anda yakin untuk menghapus data {{$kegiatan->nama_kegiatan}}?',
+                                            text: 'Data tidak dapat dikembalikan apabila sudah terhapus.',
+                                            icon: 'warning',
+                                            buttons: true,
+                                            dangerMode: true,
+                                        }).then((willDelete) => {
+                                            if (willDelete) {
+                                                window.location='{{ route('kegiatan.delete', ['id_kegiatan' => $kegiatan->id])}}'
+                                            }
+                                        });
                                    "
                             >
-                            <input type="submit" name="send" value="Simpan" class="btn btn-success btn-lg fs-3 px-5">
+                            <input id="simpan" type="submit" name="send" value="Simpan" class="btn btn-success btn-lg fs-3 px-5">
                         </div>
                     </div>
 
@@ -125,15 +125,23 @@
     </div>
 
 @endsection
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.AreYouSure/1.9.0/jquery.are-you-sure.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.AreYouSure/1.9.0/jquery.are-you-sure.min.js"></script>
+
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.5.1/jquery.js"></script>--}}
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>--}}
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.AreYouSure/1.9.0/jquery.are-you-sure.js"></script>--}}
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.AreYouSure/1.9.0/jquery.are-you-sure.min.js"></script>--}}
 
 <script>
-    window.onbeforeunload = function() {
-        event.preventDefault();
-        event.returnValue = '';     // Chrome requires returnValue to be set
-        return '?';
-    };
+    document.addEventListener('click', function(e) {
+        if (e.target.id != "simpan") {
+            window.onbeforeunload = function() {
+                event.preventDefault();
+                event.returnValue = '';     // Chrome requires returnValue to be set
+                return '?';
+            };
+        } else {
+            window.onbeforeunload = null;
+        }
+    }, false);
+
 </script>

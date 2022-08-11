@@ -23,11 +23,11 @@
         </div>
 
     </div>
-    <form action="/search" id="table-operation" class="d-flex justify-content-between my-2 px-5" method="GET" role="search">
+    <form action="/usaha/search" id="table-operation" class="d-flex justify-content-between my-2 px-5" method="GET" role="search">
 
         <span class="input-group-text border-rounded bg-white w-50" id="search-addon">
             <img src="{{ asset('assets/img/icons/search-icon.png') }}" width=20 alt="">
-            <input type="search" id="q" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI DATA" value="{{ $pencarian['q'] }}" name="q" onkeyup="{{ route('penduduk.search') }}"/>
+            <input type="search" id="queryUsaha" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI DATA" value="{{ $pencarianUsaha['queryUsaha'] }}" name="queryUsaha"/>
         </span>
 
     </form>

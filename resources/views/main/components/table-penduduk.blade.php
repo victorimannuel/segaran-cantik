@@ -27,7 +27,7 @@
 
         <span class="input-group-text border-rounded bg-white w-50" id="search-addon">
             <img src="{{ asset('assets/img/icons/search-icon.png') }}" width=20 alt="">
-            <input onchange="this.form.submit()" type="search" id="q" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI DATA" value="{{ $pencarian['q'] }}" name="q" onkeyup="{{ route('penduduk.search') }}"/>
+            <input onchange="this.form.submit()" type="search" id="q" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI NAMA, NIK, NO KK, PEKERJAAN" value="{{ $pencarian['q'] }}" name="q" onkeyup="{{ route('penduduk.search') }}"/>
         </span>
 
         <select id="search_rt" name="rt" class="mx-3 form-select">

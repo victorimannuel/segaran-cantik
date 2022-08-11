@@ -44,7 +44,18 @@ class PendudukComposer
             $query->when($this->request->has('q'), function ($q) {
                 return $q->where("nama", "like", "%" . request("q") . "%")
                     ->orWhere("nik", "like", "%" . request("q") . "%")
-                    ->orWhere("no_kk", "like", "%" . request("q") . "%");
+                    ->orWhere("no_kk", "like", "%" . request("q") . "%")
+                    ->orWhere("pekerjaan", "like", "%" . request("q") . "%")
+                    ;
+            });
+        }
+
+        $queryUsaha = Usaha::query();
+
+        if (request('queryUsaha') != '') {
+            $queryUsaha->when($this->request->has('queryUsaha'), function ($queryUsaha) {
+                return $queryUsaha->where("nama_usaha", "like", "%" . request("queryUsaha") . "%")
+                    ;
             });
         }
 
@@ -106,9 +117,19 @@ class PendudukComposer
         }
 
         $queryKegiatan = Kegiatan::query();
+        if (request('queryKegiatan') != '') {
+            $queryKegiatan->when($this->request->has('queryKegiatan'), function ($queryKegiatan) {
+                return $queryKegiatan->where("nama_kegiatan", "like", "%" . request("queryKegiatan") . "%")
+                    ;
+            });
+        }
+        if (request('tahun') != 'TAHUN') {
+            $queryKegiatan->when($this->request->has('tahun'), function ($queryKegiatan) {
+                return $queryKegiatan->where("tgl", "like", "%" . request("tahun") . "%");
+            });
+        }
         $kegiatan_paginated = $queryKegiatan->paginate(10);
 
-        $queryUsaha = Usaha::query();
         $usaha_paginated = $queryUsaha->paginate(10);
 
         $pekerjaans = Penduduk::groupBy('pekerjaan')
@@ -117,28 +138,15 @@ class PendudukComposer
             ->get();
 
         $labelPekerjaan = [];
+        $countPekerja = [];
         $arrPekerjaan = [];
 
         foreach ($pekerjaans as $pekerjaan) {
-            array_push($labelPekerjaan, $pekerjaan['pekerjaan']);
-            $arrPekerjaan[$pekerjaan['pekerjaan']] = $pekerjaan['total'];
-        }
-
-        foreach ($labelPekerjaan as $label) {
-//            error_log($label);
-        }
-//        print_r($arrPekerjaan);
-        foreach ($arrPekerjaan as $arr) {
-//            error_log(key($arr));
-//            error_log($arr);
-//            foreach ($arr as $a) {
-//                error_log($a);
-//            }
-        }
-
-        foreach ($pekerjaans as $pekerjaan) {
-//            error_log($pekerjaan['pekerjaan']);
-//            error_log($pekerjaan['total']);
+            if ($pekerjaan['total'] >= 20) {
+                array_push($labelPekerjaan, $pekerjaan['pekerjaan']);
+                array_push($countPekerja, $pekerjaan['total']);
+                $arrPekerjaan[$pekerjaan['pekerjaan']] = $pekerjaan['total'];
+            }
         }
 
         $view->with([
@@ -160,6 +168,13 @@ class PendudukComposer
                 'q'                 => request('q'),
                 'dusun'             => request('dusun'),
             ],
+            'pencarianUsaha' => [
+                'queryUsaha'        => request('queryUsaha'),
+            ],
+            'pencarianKegiatan' => [
+                'queryKegiatan'     => request('queryKegiatan'),
+                'tahun'             => request('tahun'),
+            ],
             'kategori_umur' => [
                 'balita'            => $balita,
                 'anak'              => $anak,
@@ -170,8 +185,8 @@ class PendudukComposer
             ],
             'kegiatans'             => $kegiatan_paginated,
             'usahas'                => $usaha_paginated,
-            'pekerjaans'            => $pekerjaans,
-            'labelPekerjaan'        => $labelPekerjaan,
+            'labelPekerjaan'        => json_encode($labelPekerjaan),
+            'countPekerja'          => json_encode($countPekerja),
         ]);
     }
 }

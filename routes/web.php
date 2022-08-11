@@ -18,13 +18,6 @@ use Illuminate\Support\Facades\Input;
 |
 */
 
-//Route::get('/', function () {
-//    return view('auth.login', [
-//        "name" => "Kepala Desa",
-//        "page" => "Login"
-//    ]);
-//})->middleware(['auth']);
-
 // profil desa
 Route::any('/',  [ProfilController::class, 'getAll']);
 
@@ -81,6 +74,9 @@ Route::middleware(['auth'])->group(function () {
         return view('main.kegiatan', ['page' => 'Kegiatan']);
     })->name('main.kegiatan');
     Route::name('kegiatan.')->group(function () {
+        Route::any('/kegiatan/search', function(){
+            return view('main/kegiatan', [ 'page' => 'Kegiatan']);
+        })->name('search');
         Route::get('/kegiatan/tambah/', [KegiatanController::class, 'viewCreate']);
         Route::post('/kegiatan/tambah/', [KegiatanController::class, 'store']
         )->name('store');
@@ -105,6 +101,9 @@ Route::middleware(['auth'])->group(function () {
         return view('main.usaha', [ 'page' => 'UMKM']);
     })->name('main.usaha');
     Route::name('usaha.')->group(function () {
+        Route::any('/usaha/search', function(){
+            return view('main/usaha', [ 'page' => 'UMKM']);
+        })->name('search');
         Route::get('/usaha/tambah/', [UsahaController::class, 'viewCreate']);
         Route::post('/usaha/tambah/', [UsahaController::class, 'store']
         )->name('store');
@@ -127,29 +126,3 @@ Route::middleware(['auth'])->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
-
-
-
-
-//Route::get('/dashboard/kegiatan/{id_kegiatan}/edit', [Kegi::class, 'viewEdit']
-//)->name('edit-kegiatan.show');
-//Route::get('/dashboard/penduduk/{id_penduduk}/read', [PendudukController::class, 'viewRead']
-//)->name('view-kegiatan.show');
-//
-//Route::get('/dashboard/penduduk/tambah/', [PendudukController::class, 'viewCreate']);
-//Route::post('/dashboard/penduduk/tambah/', [PendudukController::class, 'store']
-//)->name('penduduk.store');
-//
-//Route::get('/dashboard/penduduk/{id_penduduk}/simpan', function () {
-//    return view('main.dashboard', ['page' => 'Dashboard']);
-//});
-//Route::post('/dashboard/penduduk/{id_penduduk}/simpan', [PendudukController::class, 'update']
-//)->name('penduduk.update');
-///*                  */
-//
-////Route::get('/dashboard/penduduk/{id_penduduk}/hapus', function () {
-////    return view('main.stastitik', ['page' => 'Dashboard']);
-////});
-//Route::any('/dashboard/penduduk/{id_penduduk}/hapus', [PendudukController::class, 'delete']
-//)->name('penduduk.delete');

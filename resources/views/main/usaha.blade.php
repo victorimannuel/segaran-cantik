@@ -2,7 +2,7 @@
 
 @section('main-body')
 
-    <div id="sidebarState" state="aside-open">
+    <div id="sidebarState" view="desktop" state="aside-open">
 
         @include('main.components.sidebar')
 

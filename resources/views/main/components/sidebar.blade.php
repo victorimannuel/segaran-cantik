@@ -1,12 +1,15 @@
-<aside class="d-flex flex-column position-fixed start-0 top-0">
+<aside id="sidebar" class="d-flex flex-column position-fixed start-0 top-0">
     @csrf
-    <header class="d-flex justify-content-center ms-2 me-auto mb-5">
-        <img src={{ asset("assets/img/icons/segaran-icon.png")  }} alt="" width="50" height="50" class="hiddenWhenClosed">
-        <span class="mx-3 hiddenWhenClosed">
-        <h1>Segaran </h1>
-        <h4>Admin</h4>
-    </span>
-        <img src={{ asset("assets/img/icons/menu-toggle.png") }} alt="" id="menu-toggle"     width="40" height="40" role="button">
+    <header class="d-flex position-relative justify-content-center my-5">
+        <div class="container-fluid d-flex flex-row">
+            <img src={{ asset("assets/img/icons/segaran-icon.png")  }} alt="" width="50" height="50" class="hiddenWhenClosed">
+            <span class="mx-3 hiddenWhenClosed">
+            <h1>Segaran </h1>
+            <h4>Admin</h4>
+            </span>
+        </div>
+        <img src={{ asset("assets/img/icons/menu-toggle.png") }} alt="" id="menu-toggle"  class="menu-toggle" width="40" height="40" role="button">
+
     </header>
 
     <nav class="navbar navbar-dark p-0">

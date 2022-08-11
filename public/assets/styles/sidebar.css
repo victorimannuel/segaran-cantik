@@ -5,6 +5,8 @@ html{
 
 aside{
     transition: width 0.3s, display 0.3s;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 aside button{
@@ -18,7 +20,7 @@ main{
     transition: width 0.3s;
 }
 
-#menu-toggle:hover{
+.menu-toggle:hover{
     opacity: 0.8;
 }
 
@@ -26,12 +28,13 @@ main{
     background-color: transparent !important;
  }
 
-/* if open */
-#sidebarState[state = "aside-open"] aside{
+ #sidebarState aside{
+    width: var(--sidewidth);
     background: #363740;
     height: 100%;
-    width: var(--sidewidth);
-
+ }
+/* if open */
+#sidebarState[state = "aside-open"] aside{
     color: #F8FAFC;
 }
 
@@ -94,8 +97,6 @@ main{
 
 /* else */
 #sidebarState[state = "aside-closed"] aside {
-    background: #363740;
-    height: 100%;
     width: var(--sidewidthClosed);
 
     color: #F8FAFC;
@@ -157,4 +158,47 @@ main{
     background: #DFE0EB;
     opacity: 0.5;
     width: 50%;
+}
+
+#sidebarState header #menu-toggle-mobile:hover{
+
+    opacity: 0.8;
+}
+
+#sidebarState[view="desktop"] #menu-toggle-mobile{
+    width: 0;
+}
+
+@media (max-width:1000px){
+    #sidebarState{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sidebarState[state = "aside-open"] header{
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    #sidebarState[state = "aside-open"]  aside{
+        width: 100vw;
+        z-index: 99999;
+        
+    }
+
+    #sidebarState[state = "aside-open"] main{
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #sidebarState[state = "aside-closed"]  aside{
+        opacity: 0;
+        
+    }
+    #sidebarState[state = "aside-closed"]  main{
+        width: 100%;
+        
+    }
 }

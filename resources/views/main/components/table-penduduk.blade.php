@@ -1,6 +1,6 @@
 <div id="container-penduduk" class="container mw-100 mx-0 my-5 card p-0">
     <div class="row justify-content-between p-5">
-        <div class="col-md-4">
+        <div class="col-md">
             <a href="/dashboard/penduduk/tambah">
                 <button class="btn btn-primary btn-lg button main-button">Tambah Data</button>
             </a>
@@ -11,7 +11,7 @@
                 <b>Data Warga Desa Segaran</b>
             </h1>
         </div>
-        <div class="col-md-4 d-flex flex-row-reverse">
+        <div class="col-md d-flex flex-row-reverse">
             <select id="pagination" class="form-select fw-normal" name="pagination">
                 <option value="10" {{$items == 10 ? 'selected':''}}>10</option>
                 <option value="25" {{$items == 25 ? 'selected':''}}>25</option>
@@ -23,14 +23,14 @@
         </div>
 
     </div>
-    <form action="/dashboard/search" id="table-operation" class="d-flex justify-content-between my-2 px-5" method="GET" role="search">
+    <form action="/dashboard/search" id="table-operation" class="d-flex w-100 justify-content-between my-2 row gx-5" method="GET" role="search">
 
-        <span class="input-group-text border-rounded bg-white w-50" id="search-addon">
+        <span class="input-group-text border-rounded bg-white w-auto col-md mx-5 my-2" id="search-addon">
             <img src="{{ asset('assets/img/icons/search-icon.png') }}" width=20 alt="">
             <input onchange="this.form.submit()" type="search" id="q" class="form-control border border-0 rounded p-0 ps-2" placeholder="CARI NAMA, NIK, NO KK, PEKERJAAN" value="{{ $pencarian['q'] }}" name="q" onkeyup="{{ route('penduduk.search') }}"/>
         </span>
 
-        <select id="search_rt" name="rt" class="mx-3 form-select">
+        <select id="search_rt" name="rt" class="form-select col-md mx-5 my-2">
             @php
                 $rt = [
                     'krajan' => [1,2,3,4,5,6,7,8,9],
@@ -87,7 +87,7 @@
             @endif
         </select>
 
-        <select id="search_rw" name="rw" class="mx-3 form-select">
+        <select id="search_rw" name="rw" class="form-select col-md mx-5 my-2">
             <option selected value="RW">RW</option>
             @if($jabatan == 'PUSAT')
             @for ($i = 1; $i <= 9; $i++)
@@ -126,7 +126,7 @@
             @endif
         </select>
 
-        <select id="search_dusun" name="dusun" class="ms-3 form-select">
+        <select id="search_dusun" name="dusun" class="form-select col-md mx-5 my-2">
             @if($jabatan == 'PUSAT')
             <option selected value="DUSUN" {{$jabatan == 'PUSAT'? 'enabled':'disabled'}}>DUSUN</option>
             @endif

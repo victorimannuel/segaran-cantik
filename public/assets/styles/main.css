@@ -19,10 +19,14 @@ body{
 main{
     /* background: hotpink; */
     width: max(100% - var(--sidewidth));
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main header{
     /* background: blue; */
+    width: 90%;
 }
 
 main header #line{
@@ -84,7 +88,3 @@ section {
     background-color: rgba(0, 0, 0, 0.075);
 }
 
-
-@media screen {
-
-}

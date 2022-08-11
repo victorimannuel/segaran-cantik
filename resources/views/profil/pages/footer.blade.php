@@ -38,8 +38,8 @@
     <div class="col-md d-flex flex-row justify-content-around">
         <div class="footer-developed-by pb-5">
             <p class="text-primary fs-5">Developed By</p>
-            <img src="{{  asset("assets/profil-desa/img/footer/logo-kkn-28.png") }}" alt="" class="fbutton">
-            <img src="{{  asset("assets/profil-desa/img/footer/filkom-ub.png") }}" alt="" class="fbutton">
+            <a href="https://www.instagram.com/kkn.segaran/"><img src="{{  asset("assets/profil-desa/img/footer/logo-kkn-28.png") }}" alt="" class="fbutton"></a>
+            <a href="https://kkn-filkom.ub.ac.id/"><img src="{{  asset("assets/profil-desa/img/footer/filkom-ub.png") }}" alt="" class="fbutton"></a>
         </div>
     </div>
 </div>

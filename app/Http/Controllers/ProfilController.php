@@ -13,7 +13,7 @@ class ProfilController extends Controller
         $kegiatan = Kegiatan::all();
         $usaha = Usaha::all();
 
-        return view('profil.profil')->with([
+        return view('profil.main')->with([
             'kegiatans' => $kegiatan,
             'usahas' => $usaha,
             'items' => 10,

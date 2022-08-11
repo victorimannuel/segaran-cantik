@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+.blockquote {
+  padding: 20px;
+}
+
+.quote {
+  font-size: 1.4rem;
+  max-width: 400px;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.author {
+  float: right;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.quote-icon {
+  margin-bottom: 10px;
+}
+
+.blockquote hr {
+  margin-top: 50px;
+}

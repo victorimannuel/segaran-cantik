@@ -8,40 +8,38 @@ html {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    font-family: "Poppins";
 }
 
 body {
-    width: 100vw;
-    overflow-x: hidden;
-    font-family: "poppins";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#container {
-    height: 120vh;
-    width: 100%;
-    background-image: url("../img/beranda/Home.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
 #navbarNav {
     align-items: center;
     justify-content: center;
 }
 .nav-link {
-    font-family: "Poppins";
+}
+
+#main-container{
+    width: 120rem;
+}
+
+#home{
+    width: 100%;
+    height: 80rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../img/beranda/Home.png");
 }
 
 #profil {
     height: 100%;
     width: 100%;
-}
-#profil1 {
-    overflow: hidden;
-    background-repeat: no-repeat;
-    /* background-image: url("../img/profil/profile-img.png"); */
-    background-size: 100%;
-    width: 100vw;
-    height: 100vh;
 }
 
 p {
@@ -54,10 +52,15 @@ a:hover {
 
 #pwheader {
     width: 100%;
-    height: 65vh;
+    height: 60vh;
     background-repeat: no-repeat;
     background-image: url("../img/pwheader.png");
     background-size: 100%;
+}
+
+.wtext{
+
+
 }
 
 #pu {
@@ -75,9 +78,9 @@ a:hover {
 
 #lpdheader {
     width: 100%;
-    height: 65vh;
+    height: 50rem;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100%;
     background-image: url("../img/lpd/lpd-header.png");
 }
 #lpd {
@@ -105,26 +108,41 @@ a:hover {
     height: 100%;
     width: 100%;
 }
+
+.warousel-row{
+    width: 70%;
+    
+}
+.wisata-img{
+    object-fit: cover;
+    height: 30rem;
+    width: 20rem;
+}
+
+.carousel-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item{
+    object-fit: cover;
+}
+
 .col {
     height: 100%;
 }
-#wkontak {
+.wkontak {
     align-items: flex-start;
     justify-content: flex-start;
     width: 100%;
 }
-#wlink {
+.wlink {
     color: black;
     text-decoration: none;
-    font-size: 12px;
 }
-#wimg {
+.wimg {
     width: 8%;
-}
-#wtext {
-    flex-direction: column;
-    margin-left: 15%;
-    text-align: justify;
 }
 
 #lpdimg {
@@ -166,8 +184,6 @@ a:hover {
 }
 
 #gallery {
-    overflow: hidden;
-    height: 150vh;
     width: 75%;
 }
 
@@ -268,7 +284,6 @@ a:hover {
 }
 
 #profile-title {
-    margin-top: 15vh;
     font-size: 150%;
 }
 #profile-subtitle {
@@ -287,6 +302,9 @@ a:hover {
 #mobile-mode {
     display: none;
 }
+.mobile-mode {
+    display: none;
+}
 #jarak img {
     width: 50;
 }
@@ -297,21 +315,35 @@ a:hover {
     width: 50;
 }
 
+footer img{
+    object-fit: contain;
+}
+footer a{
+    text-decoration: none;
+    color: #1E2833;
+}
+.desktop{
+    display: block;
+}
 
+.fbutton:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+footer{
+    width: 100%;
+}
 @media (max-width: 600px) {
-    #pwheader {
-        width: 100%;
-        height: 30vh;
-        background-repeat: no-repeat;
-        background-image: url("../img/header/pw-mobile-mode.png");
-        background-size: 100%;
-    }
     body {
         width: 100vw;
         overflow-x: hidden;
         font-family: "poppins";
     }
-    #container {
+    #main-container{
+        width: 100vw;
+    }
+    #home {
         height: 100vh;
         width: 100%;
         background-image: url("../img/beranda/hp.png");
@@ -326,6 +358,19 @@ a:hover {
     #profile-subtitle {
         font-size: 100%;
     }
+
+    #mobile-mode {
+        display: block;
+    }
+    .mobile-mode {
+        display: block;
+    }
+
+    .desktop{
+        display: none;
+    }
+
+
     #profile-description {
         text-align: justify;
         font-size: 70%;
@@ -390,8 +435,19 @@ a:hover {
         /* background-size: 100% 100%; */
         background-image: url("../img/lpd/headerlpd-mobile.png");
     }
+    #pwheader {
+        width: 100%;
+        height: 35vh;
+        background-repeat: no-repeat;
+        background-image: url("../img/wisata/wisataheader-mobile.png");
+        background-size: 100%;
+    }
+
     #pu{
         width: 100%;
         height: 85vh;
+    }
+    footer{
+        border-top: 1px solid rgba(30, 40, 51, 0.2);
     }
 }

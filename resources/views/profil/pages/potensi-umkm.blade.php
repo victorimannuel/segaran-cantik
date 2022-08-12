@@ -66,9 +66,9 @@
             @else
             <div class="carousel-item" id="warousel">
             @endif
-                <div class="row warousel-row m-auto"  id="warousel" style="width:80%;">
-                    <div class="col d-flex justify-content-center align-items-center">
-                        <img  src="{{ url('/data_file/usaha/'.$usaha->file) }}" class="d-block w-85" alt="...">
+                <div class="row warousel-row m-auto" id="warousel" style="width:80%; flex-direction:column;">
+                    <div class="col d-flex justify-content-center align-items-center" >
+                        <img  src="{{ url('/data_file/usaha/'.$usaha->file) }}" class="d-block" alt="..." style="width: 75%">
                     </div>
                     <div class="col d-flex flex-column justify-content-center align-items-center" class="wtext">
                         <p class="fs-5 fw-semibold text-primary">
@@ -79,10 +79,10 @@
                         </p>
                         <div class="wkontak">
                             <div class="wlink">
-                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg"> RT {{ $usaha->rt }}
+                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" id="wimg"  style="font-size:75%;"> RT {{ $usaha->rt }}
                             </div>
                             <div class="wlink">
-                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg"> RW {{ $usaha->rw }}
+                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" id="wimg" style="font-size:75%;"> RW {{ $usaha->rw }}
                             </div>
                             {{-- <div class="wlink">
 
@@ -91,11 +91,11 @@
                                 </a>
                             </div> --}}
                             <div class="wlink"> 
-                                <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" class="wimg">{{ $usaha->jam_buka }} - {{ $usaha->jam_tutup }}
+                                <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" id="wimg" style="font-size:75%;">{{ $usaha->jam_buka }} - {{ $usaha->jam_tutup }}
                             </div>
                             <div class="wlink">
                                 <a href="https://wa.me/{{ $usaha->kontak }}">
-                                <img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" class="wimg">{{ $usaha->kontak }}</a>
+                                <img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" id="wimg" style="font-size:75%;">{{ $usaha->kontak }}</a>
                                 </div>
                         </div>
                     </div>

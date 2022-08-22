@@ -22,9 +22,9 @@
                             <p class="wlink"> 
                                 <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" class="wimg">{{ $kegiatan->jam_buka }} - {{ $kegiatan->jam_tutup }}
                             </p>
-                            <p class="wlink">
+                            {{-- <p class="wlink">
                                 <img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" id="wimg"><a href="https://wa.me/{{ $kegiatan->kontak }}">{{ $kegiatan->kontak }}</a>
-                            </p>
+                            </p> --}}
                         </div>
                     </div>
                     <div class="col d-flex justify-content-center align-items-center">
@@ -73,9 +73,9 @@
                             <p id="wlink"> 
                                 <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" class="wimg">{{ $kegiatan->jam_buka }} - {{ $kegiatan->jam_tutup }}
                             </p>
-                            <p class="wlink">
+                            {{-- <p class="wlink">
                                 <img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" class="wimg"><a href="https://wa.me/{{ $kegiatan->kontak }}">{{ $kegiatan->kontak }}</a>
-                            </p>
+                            </p> --}}
                             </div>
                         </div>
                         

@@ -26,7 +26,7 @@
                             <img id="profile-mobile-mode" src="{{ asset('assets/profil-desa/img/profil/location-icon.png') }}" alt="" 
                                 style="margin-right: 1rem;"
                             >
-                            {{"Jarak dari lokasi anda"}}
+                            41 KM dari Kota Malang
                         </div>
 
                         <div id="dusun" class="img-container">
@@ -51,7 +51,7 @@
                             <img src="{{ asset('assets/profil-desa/img/profil/location-icon.png') }}" alt="" width="50"
                                 style="margin-right: 1rem;"
                             >
-                            {{"Jarak dari lokasi anda"}}
+                            41 KM dari Kota Malang
                         </div>
 
                         <div id="dusun" class="img-container">

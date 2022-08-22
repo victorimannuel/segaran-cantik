@@ -216,21 +216,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 {{--    <script>--}}
     <script type="text/javascript">
-        document.getElementById('pagination').onchange = function() {
-            window.location = "{!! $penduduks->url(1) !!}&items=" + this.value;
-        };
+        {{--document.getElementById('pagination').onchange = function() {--}}
+        {{--    window.location = "{!! $penduduks->url(1) !!}&items=" + this.value;--}}
+        {{--};--}}
             // $('#search').on('keyup',function(){
-        document.getElementById('q').on('keyup',function(){
-            $value = $(this).val();
-            $.ajax({
-            type    : 'get',
-            url     : '{{URL::to('search')}}',
-            data    : {'search':$value},
-            success : function(data){
-                $('tbody').html(data);
-            }
-            });
-        })
+        {{--document.getElementById('q').on('keyup',function(){--}}
+        {{--    $value = $(this).val();--}}
+        {{--    $.ajax({--}}
+        {{--    type    : 'get',--}}
+        {{--    url     : '{{URL::to('search')}}',--}}
+        {{--    data    : {'search':$value},--}}
+        {{--    success : function(data){--}}
+        {{--        $('tbody').html(data);--}}
+        {{--    }--}}
+        {{--    });--}}
+        {{--})--}}
     {{--<script type="text/javascript">--}}
         $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
     {{--</script>--}}

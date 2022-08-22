@@ -106,8 +106,7 @@
             @csrf
             <input type="image" src="{{ asset("assets/img/icons/log-out.png") }}" class="hiddenWhenOpen" width="30"
                 onclick="
-                    var form =  $(this).closest('form');
-                    event.preventDefault();
+                    window.event.preventDefault();
                     swal({
                         title: 'Apakah anda yakin untuk keluar?',
                         text: '',
@@ -119,12 +118,12 @@
                             if (willLogout) {
                                 window.location='{{ route('logout')}}'
                             }
-                        });"
-            >
+                        });
+                "
+            />
             <button class="btn btn-secondary btn-lg fs-2 fw-bold hiddenWhenClosed border border-0"
                     onclick="
-                    var form =  $(this).closest('form');
-                    event.preventDefault();
+                    window.event.preventDefault();
                     swal({
                         title: 'Apakah anda yakin untuk keluar?',
                         text: '',
@@ -136,7 +135,8 @@
                             if (willLogout) {
                                 window.location='{{ route('logout')}}'
                             }
-                        });"
+                        });
+                    "
             >Keluar</button>
         </form>
     </footer>

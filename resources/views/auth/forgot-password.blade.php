@@ -20,7 +20,8 @@
 
 
             <div class="d-grid gap-2">
-                <button name="send" class="btn btn-lg btn-primary fs-3" type="button">Reset</button>
+{{--                <button name="send" class="btn btn-lg btn-primary fs-3" type="button">Reset</button>--}}
+                <button name="send" class="btn btn-lg btn-primary fs-3" type="submit">Reset</button>
             </div>
         </form>
     </div>

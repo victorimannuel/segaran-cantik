@@ -111,7 +111,7 @@ class PendudukController extends Controller
         Alert::success('Data berhasil ditambahkan');
         return redirect()->route('main.dashboard')->with([
             'success', 'Penduduk berhasil ditambahkan',
-            'page', 'dashboard',
+            'page', 'Dashboard',
         ]);
     }
 

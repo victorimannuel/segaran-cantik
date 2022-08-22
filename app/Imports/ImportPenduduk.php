@@ -4,9 +4,11 @@ namespace App\Imports;
 
 use App\Models\Penduduk;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithBatchInserts;
+use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Maatwebsite\Excel\Concerns\WithStartRow;
 
-class ImportPenduduk implements ToModel, WithStartRow
+class ImportPenduduk implements ToModel, WithStartRow, WithChunkReading, WithBatchInserts
 {
     /**
      * @param array $row
@@ -16,12 +18,12 @@ class ImportPenduduk implements ToModel, WithStartRow
     public function model(array $row)
     {
         return new Penduduk([
-            'no_kk' => $row[1],
+            'no_kk' => strval($row[1]),
             'validasi' => $row[2],
-            'nik' => $row[3],
+            'nik' => strval($row[3]),
             'nama' => $row[4],
             'tempat_lahir' => $row[5],
-            'tgl_lahir' => $row[24]? date("Y-m-d", strtotime($row[6])): null,
+            'tgl_lahir' => $row[6]? date("Y-m-d", strtotime($row[6])): null,
             'umur' => $row[7],
             'hub_keluarga' => $row[8],
             'status_kawin' => $row[9],
@@ -35,7 +37,7 @@ class ImportPenduduk implements ToModel, WithStartRow
             'rt' => $row[17],
             'rw' => $row[18],
             'dusun' => $row[19],
-            'tgl_nikah' => $row[24]? date("Y-m-d", strtotime($row[20])): null,
+            'tgl_nikah' => $row[20]? date("Y-m-d", strtotime($row[20])): null,
             'no_buku_nikah' => $row[21],
             'kua' => $row[22],
             'akte_lahir' => $row[23],
@@ -48,7 +50,7 @@ class ImportPenduduk implements ToModel, WithStartRow
             'no_ijazah' => $row[30],
             'nik_ayah' => $row[31],
             'nik_ibu' => $row[32],
-            'tgl_cerai' => $row[24]? date("Y-m-d", strtotime($row[33])): null,
+            'tgl_cerai' => $row[33]? date("Y-m-d", strtotime($row[33])): null,
             'no_akta_cerai' => $row[34],
             'gol_darah' => $row[35],
             'penyandang_cacat' => $row[36],
@@ -58,5 +60,13 @@ class ImportPenduduk implements ToModel, WithStartRow
     public function startRow(): int
     {
         return 2;
+    }
+
+    public function batchSize(): int{
+        return 1000;
+    }
+    public function chunkSize(): int
+    {
+        return 1000;
     }
 }

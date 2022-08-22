@@ -177,15 +177,14 @@
 
 <script>
     document.addEventListener('click', function(e) {
-        if (e.target.id != "simpan") {
-            console.log('if');
+        if (e.target.id == "simpan" || e.target.id == "hapus") {
+            window.onbeforeunload = null;
+        } else {
             window.onbeforeunload = function() {
                 event.preventDefault();
                 event.returnValue = '';     // Chrome requires returnValue to be set
                 return '?';
             };
-        } else {
-            window.onbeforeunload = null;
         }
     }, false);
 </script>

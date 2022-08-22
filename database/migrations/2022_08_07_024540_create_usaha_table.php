@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nama_usaha')->nullable();
-            $table->string('deskripsi')->nullable();
+            $table->string('deskripsi', 1000)->nullable();
             $table->string('kontak')->nullable();
             $table->time('jam_buka')->nullable();
             $table->time('jam_tutup')->nullable();

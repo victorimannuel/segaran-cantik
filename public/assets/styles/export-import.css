@@ -1,0 +1,13 @@
+.export-card{
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+    min-width: 30em;
+    max-width: 55em;
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

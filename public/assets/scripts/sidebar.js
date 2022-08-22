@@ -44,8 +44,8 @@ for(let i=0; i<navItems.length; i++){
 
 /* trying out media query */
 
-let mediaQuerySmall = window.matchMedia('(max-width: 1000px)')
-let mediaQueryLarge = window.matchMedia('(min-width: 1000px)')
+let mediaQuerySmall = window.matchMedia('(max-width: 1200px)')
+let mediaQueryLarge = window.matchMedia('(min-width: 1200px)')
 function smallScreen(e) {
     if(e.matches){
         sidebarState.setAttribute("state", "aside-closed")

@@ -169,7 +169,7 @@ main{
     display: none;
 }
 
-@media (max-width:1000px){
+@media (max-width:1200px){
     #sidebarState{
         display: flex;
         flex-direction: column;

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href={{ asset('assets/styles/table.css') }}>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/form-penduduk.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/styles/statistik.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/export-import.css') }}">
 
     {{--  js yang digunakan--}}
     <script src="{{ asset('assets/scripts/sidebar.js') }}" defer></script>

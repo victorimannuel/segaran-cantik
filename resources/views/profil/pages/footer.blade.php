@@ -21,8 +21,9 @@
                     </a>
                 </li>
                 <li class="fbutton my-2">
-                    <img src="{{  asset("assets/profil-desa/img/footer/iyoutube.png") }}" alt="">
-                    Desa Segaran
+                    <a href="https://www.youtube.com/channel/UC1PRdRh0HSqLhtOnGyCtmxg">
+                        <img src="{{  asset("assets/profil-desa/img/footer/iyoutube.png") }}" alt="">
+                        Desa Segaran</a>
                 </li>
                 <li class="fbutton">
                     <a href="https://www.instagram.com/desa.segaran/">

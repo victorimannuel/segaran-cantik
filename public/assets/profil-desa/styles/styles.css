@@ -4,7 +4,7 @@
     display: none;
 }
 
-#profil1{
+#profil1 {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -34,11 +34,11 @@ body {
 /* .nav-link {
 } */
 
-#main-container{
+#main-container {
     width: 120rem;
 }
 
-#home{
+#home {
     width: 100%;
     height: 70rem;
     background-size: contain;
@@ -48,12 +48,10 @@ body {
 }
 
 #profil {
-    
     padding-right: 5%;
     height: 100vh;
     width: 100%;
 }
-
 
 p {
     font-family: "poppins";
@@ -76,7 +74,7 @@ a:hover {
     justify-content: center;
     align-items: center; */
 
-/* } */  
+/* } */
 
 #pu {
     width: 100%;
@@ -125,23 +123,22 @@ a:hover {
     width: 100%;
 }
 
-.warousel-row{
+.warousel-row {
     width: 70%;
-    
 }
-.wisata-img{
+.wisata-img {
     object-fit: cover;
     height: 30rem;
     width: 30rem;
 }
 
-.carousel-item{
+.carousel-item {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.carousel-item{
+.carousel-item {
     object-fit: cover;
 }
 
@@ -160,7 +157,6 @@ a:hover {
 .wimg {
     width: 8%;
 }
-
 
 #lpdimg {
     width: 80%;
@@ -182,8 +178,7 @@ a:hover {
 }
 
 .carousel-control-prev-icon:hover,
-.carousel-control-next-icon:hover
-{
+.carousel-control-next-icon:hover {
     border: 1px solid black !important;
 }
 
@@ -276,7 +271,6 @@ a {
     margin-right: 10%;
     text-align: justify;
     font-size: 0.9em;
-    
 }
 
 #gcol {
@@ -339,28 +333,26 @@ a {
     width: 50;
 }
 
-footer img{
+footer img {
     object-fit: contain;
 }
-footer a{
+footer a {
     text-decoration: none;
-    color: #1E2833;
+    color: #1e2833;
 }
-.desktop{
+.desktop {
     display: block;
 }
 
-.fbutton:hover{
+.fbutton:hover {
     cursor: pointer;
     opacity: 0.8;
 }
 
-footer{
+footer {
     width: 100%;
 }
 @media (max-width: 600px) {
-    
-
     /* #profil1{
         height: 50vh;
         width: 100%;
@@ -371,7 +363,7 @@ footer{
         overflow-x: hidden;
         font-family: "poppins";
     }
-    #main-container{
+    #main-container {
         width: 100vw;
     }
     #home {
@@ -397,7 +389,7 @@ footer{
         display: block;
     }
 
-    .desktop{
+    .desktop {
         display: none;
     }
     #gtx {
@@ -405,12 +397,10 @@ footer{
         margin-left: 10px;
         text-align: justify;
         font-size: 10px;
-        
     }
-    .mySlides h3{
-        font-size:12px ;
+    .mySlides h3 {
+        font-size: 12px;
     }
-
 
     #profile-description {
         text-align: justify;
@@ -418,10 +408,8 @@ footer{
     }
     #profil1 img {
         align-self: center;
-        
+
         height: 100%;
-        
-        
     }
     #luas {
         font-size: 75%;
@@ -486,24 +474,25 @@ footer{
         background-size: 100%;
     }
 
-    #kegiatan{
+    #kegiatan {
         /* background-color: red; */
         width: 100%;
         height: 100vh;
     }
 
-    #pu{
+    #pu {
+        overflow-y: scroll;
         width: 100%;
         height: 85vh;
     }
-    footer{
+    footer {
         border-top: 1px solid rgba(30, 40, 51, 0.2);
     }
-    #wlink{
+    #wlink {
         font-size: 75%;
     }
 
-    #wimg{
-        height:40px ;
+    #wimg {
+        height: 40px;
     }
 }

@@ -17,10 +17,11 @@
                         </p>
                         <div class="wkontak">
                             <a href="https://g.page/pemandian-sumber-loo?share" class="wlink">
-                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg">{{"Lokasi UMKM"}}
+{{--                            <a href="https://www.google.com/maps/dir//-8.248314,112.6303037/@-8.2481972,112.6303466,18z/data=!4m2!4m1!3e0" id="wlink">--}}
+                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg">{{ $kegiatan->lokasi }}
                             </a>
-                            <p class="wlink"> 
-                                <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" class="wimg">{{ $kegiatan->jam_buka }} - {{ $kegiatan->jam_tutup }}
+                            <p class="wlink">
+                                <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" class="wimg">{{ $kegiatan->tgl }}
                             </p>
                             {{-- <p class="wlink">
                                 <img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" id="wimg"><a href="https://wa.me/{{ $kegiatan->kontak }}">{{ $kegiatan->kontak }}</a>
@@ -34,7 +35,7 @@
             </div>
             @endforeach
         </div>
-    
+
         <button class="carousel-control-prev" type="button" data-bs-target="#kerousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -68,23 +69,24 @@
                         </p>
                         <div id="wkontak">
                             <a href="https://g.page/pemandian-sumber-loo?share" id="wlink">
-                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg">{{"Lokasi UMKM"}}
+{{--                            <a href="https://www.google.com/maps/@-8.2481972,112.6303466,18z" id="wlink">--}}
+                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg">{{ $kegiatan->lokasi }}
                             </a>
-                            <p id="wlink"> 
-                                <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" class="wimg">{{ $kegiatan->jam_buka }} - {{ $kegiatan->jam_tutup }}
+                            <p id="wlink">
+                                <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" class="wimg">{{ $kegiatan->tgl }}
                             </p>
                             {{-- <p class="wlink">
                                 <img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" class="wimg"><a href="https://wa.me/{{ $kegiatan->kontak }}">{{ $kegiatan->kontak }}</a>
                             </p> --}}
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
 
                 @endforeach
             </div>
-    
+
             <button class="carousel-control-prev" type="button" data-bs-target="#kerousel-mobile" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>

@@ -6,7 +6,7 @@
         <p class="light">Segaran Admin</p>
         <h1>Atur Ulang Kata Sandi</h1>
         <p class="light">Masukkan Email di bawah ini</p>
-
+        @include('sweetalert::alert')
         <form action="{{ route('password.email') }}" class="form" method="POST">
             @csrf
             <div class="">

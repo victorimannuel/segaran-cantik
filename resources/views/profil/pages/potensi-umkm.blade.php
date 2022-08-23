@@ -77,12 +77,12 @@
                         <p style="font-size: 75%">
                             {{ $usaha->deskripsi }}
                         </p>
-                        <div class="wkontak">
+                        <div class="wkontak" style="font-size: 10px">
                             <div class="wlink">
-                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" id="wimg"  style="font-size:75%;"> RT {{ $usaha->rt }}
+                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" id="wimg"  style="font-size:12px;"> RT {{ $usaha->rt }}
                             </div>
                             <div class="wlink">
-                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" id="wimg" style="font-size:75%;"> RW {{ $usaha->rw }}
+                                <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" id="wimg" style="font-size:12px;"> RW {{ $usaha->rw }}
                             </div>
                             {{-- <div class="wlink">
 
@@ -91,11 +91,11 @@
                                 </a>
                             </div> --}}
                             <div class="wlink"> 
-                                <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" id="wimg" style="font-size:75%;">{{ $usaha->jam_buka }} - {{ $usaha->jam_tutup }}
+                                <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" id="wimg" style="font-size:12px;">{{ $usaha->jam_buka }} - {{ $usaha->jam_tutup }}
                             </div>
                             <div class="wlink">
                                 <a href="https://wa.me/{{ $usaha->kontak }}">
-                                <img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" id="wimg" style="font-size:75%;">{{ $usaha->kontak }}</a>
+                                <img src="{{asset('assets/profil-desa/img/wisata/wcontact.png')}}" alt="" id="wimg" style="font-size:12px;">{{ $usaha->kontak }}</a>
                                 </div>
                         </div>
                     </div>

@@ -59,8 +59,8 @@
             
         </div>
         </div>
-        <div class="contianer-fluid" id="lpdheader"></div>
-        <div class="container-fluid" id="lpd">
+        <div class="" id="lpdheader"></div>
+        <div class="" id="lpd">
             @include('profil.pages.perangkat-desa')
         </div>
 

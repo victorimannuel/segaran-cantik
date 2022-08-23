@@ -1,4 +1,4 @@
-<div class="desktop my-5" style="height: 100%; width:100%">
+<div class="desktop my-5" style="height: 100%; width:100%; overflow-y:scroll; overflow-x:hidden">
     <div id="kerousel" class="desktop carousel slide carousel-dark slide d-flex justify-content-center align-items-center" data-bs-ride="carousel">
         <div class="carousel-inner" id="">
             @foreach ($kegiatans as $kegiatan)
@@ -16,10 +16,10 @@
                             {{ $kegiatan->deskripsi }}
                         </p>
                         <div class="wkontak">
-                            <a href="https://g.page/pemandian-sumber-loo?share" class="wlink">
-{{--                            <a href="https://www.google.com/maps/dir//-8.248314,112.6303037/@-8.2481972,112.6303466,18z/data=!4m2!4m1!3e0" id="wlink">--}}
+                            <p class="wlink">
+    {{--                            <a href="https://www.google.com/maps/dir//-8.248314,112.6303037/@-8.2481972,112.6303466,18z/data=!4m2!4m1!3e0" id="wlink">--}}
                                 <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg">{{ $kegiatan->lokasi }}
-                            </a>
+    </p>
                             <p class="wlink">
                                 <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" class="wimg">{{ $kegiatan->tgl }}
                             </p>
@@ -47,7 +47,7 @@
     </div>
 </div>
 
-<div class="mobile-mode my-5" >
+<div class="mobile-mode my-5" style="overflow-y: scroll">
     <div id="kerousel-mobile" class="carousel slide carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-inner" id>
                 @foreach ($kegiatans as $kegiatan)

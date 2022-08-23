@@ -116,6 +116,7 @@ a:hover {
     width: 100vw;
 }
 #warousel {
+    text-align: justify;
     height: 100%;
     width: 100%;
 }

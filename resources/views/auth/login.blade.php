@@ -39,7 +39,7 @@
             </div>
 
             <div class="d-grid gap-2">
-                <button class="btn btn-lg btn-primary  fs-3" type="submit">Masuk</button>
+                <button class="btn btn-lg btn-primary fs-3" type="submit">Masuk</button>
             </div>
 
         </form>

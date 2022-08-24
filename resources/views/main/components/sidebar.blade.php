@@ -121,7 +121,7 @@
                         });
                 "
             />
-            <button class="btn btn-secondary btn-lg fs-2 fw-bold hiddenWhenClosed border border-0"
+            <button id="logout-button" class="btn btn-secondary btn-lg fs-2 fw-bold hiddenWhenClosed border border-0"
                     onclick="
                     window.event.preventDefault();
                     swal({

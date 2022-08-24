@@ -27,6 +27,13 @@ menuToggleMobile.addEventListener('click', () => {
         closeSidebar()
 })
 
+let logoutButton = document.getElementById('logout-button')
+
+logoutButton.addEventListener('click', () => {
+    if(sidebarState.getAttribute('view') ==="mobile"){
+        closeSidebar()
+    }
+})
 
 /* adding interactive sidebar on mobile */
 

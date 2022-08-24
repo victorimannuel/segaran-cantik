@@ -68,10 +68,10 @@
                             {{ $kegiatan->deskripsi }}
                         </p>
                         <div id="wkontak">
-                            <a href="https://g.page/pemandian-sumber-loo?share" id="wlink">
+                            <p id="wlink">
 {{--                            <a href="https://www.google.com/maps/@-8.2481972,112.6303466,18z" id="wlink">--}}
                                 <img src="{{asset('assets/profil-desa/img/wisata/wloc.png')}}" class="wimg">{{ $kegiatan->lokasi }}
-                            </a>
+</p>
                             <p id="wlink">
                                 <img src="{{asset('assets/profil-desa/img/wisata/wtime.png')}}" alt="" class="wimg">{{ $kegiatan->tgl }}
                             </p>

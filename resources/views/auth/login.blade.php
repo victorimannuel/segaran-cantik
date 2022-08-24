@@ -19,8 +19,12 @@
                 <input type="email" name="email" class="form-control form-control-lg fs-3 py-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email anda">
                 <div id="emailHelp" class="form-text"></div>
             </div>
-            <div class="my-3">
+            <div id="password" class="input-group my-3">
                 <input type="password" class="form-control form-control-lg fs-3 text-opacity-50 py-2" id="exampleInputPassword1" name="password" placeholder="Kata Sandi" >
+                <button class=" card d-flex justify-content-center align-items-center" type="button" id="button-addon2">
+                    <img class="password-toggle" src="{{ asset('assets/img/icons/show.png') }}" alt="logo" width="30" height="30" />
+                    <img class="password-toggle" src="{{ asset('assets/img/icons/hide.png') }}" hidden alt="logo" width="30" height="30" />
+                </button>
             </div>
 
             <div class="row mb-4 fs-3">

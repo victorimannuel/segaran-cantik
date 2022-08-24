@@ -32,14 +32,25 @@
                     <option value="KASUN SUMBERKOTES WETAN">KASUN SUMBERKOTES WETAN</option>
                 </select>
             </div>
-            <div class="my-4">
+            {{-- <div class="my-4">
                 <input type="Password" name="password" class="form-control form-control-lg fs-3" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Kata Sandi">
                 <div id="PasswordHelp" class="form-text"></div>
+            </div> --}}
+            
+            <div id="password" class="input-group my-3">
+                <input type="password" class="form-control form-control-lg fs-3 text-opacity-50 py-2" id="inputPassword" name="password" placeholder="Kata Sandi" >
+                <button class=" card d-flex justify-content-center align-items-center" type="button" id="button-addon2">
+                    <img class="password-toggle" src="{{ asset('assets/img/icons/show.png') }}" alt="logo" width="30" height="30" />
+                    <img class="password-toggle" src="{{ asset('assets/img/icons/hide.png') }}" hidden alt="logo" width="30" height="30" />
+                </button>
             </div>
+
             <div class="my-4">
                 <input type="Password" name="password_confirmation" class="form-control form-control-lg fs-3" id="inputPassword" aria-describedby="PasswordHelp" placeholder="Konfirmasi Kata Sandi">
                 <div id="PasswordHelp" class="form-text"></div>
             </div>
+
+            
 
             <div class="d-grid gap-2 my-5">
                 <button class="btn btn-lg btn-primary fs-3" type="submit">Daftar</button>

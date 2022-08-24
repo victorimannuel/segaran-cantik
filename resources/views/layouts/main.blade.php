@@ -20,7 +20,6 @@
     <script src="{{ asset('assets/scripts/sidebar.js') }}" defer></script>
     <script src="{{ asset('assets/scripts/statistik.js') }}" defer></script>
     <script src="{{ asset('assets/scripts/media-query.js') }}" defer></script>
-    <script src="{{ asset('assets/scripts/loading.js') }}" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" defer></script>
 
     <link rel="icon" type="image/x-icon" href={{ asset('assets/img/icons/segaran-icon.png') }}>

@@ -9,6 +9,7 @@
     @include('layouts.import')
 
     <link rel="stylesheet" href={{ asset('assets/styles/landing.css') }}>
+    <script src="{{ asset('assets/scripts/password-field.js') }}" defer></script>
 
     <title>Segaran Admin | {{ $page }}</title>
 </head>

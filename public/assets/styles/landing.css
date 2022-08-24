@@ -55,9 +55,16 @@ form {
     width: 90%;
 }
 
-button {}
 
-@media screen and (max-width: 1000px) {
+.password-toggle{
+    border-radius: 100%;
+}
+.password-toggle:hover{
+    background-color: #dadada;
+}
+
+
+@media screen and (max-width: 900px) {
     .container {
         width: 100vw;
         height: 100vh;

@@ -2,7 +2,6 @@ passwordToggle = document.querySelectorAll(".password-toggle")
 
 let visibilityToggle = ()=>{
     passwordField = document.querySelectorAll("input[name='password']")[0]
-    console.log(passwordField.getAttribute('type'))
     if(passwordField.getAttribute('type') === 'password'){
         passwordField.setAttribute('type', 'text')
     } else{
